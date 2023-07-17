@@ -13,3 +13,7 @@ kernelspec:
 ---
 
 # Python Installation
+
+```{code-cell} ipython3
+
+```

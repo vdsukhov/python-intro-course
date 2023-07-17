@@ -7,5 +7,11 @@ Throughout the course, you will learn the fundamental concepts of programming, s
 By the end of this course, you will have a solid foundation in Python programming, empowering you to build your own applications, solve problems, and explore the vast possibilities that programming has to offer. 
 Get ready to unleash your creativity and dive into the captivating world of Python!
 
+## Course prerequisites
+
+- Basic knowledge of command line interface (CLI)
+- Basic knowledge of math (vector space, distance function)
+- Capability to seek and learn independently using online resources
+
 ```{tableofcontents}
 ```
