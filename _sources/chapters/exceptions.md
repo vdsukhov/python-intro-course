@@ -11,5 +11,8 @@ kernelspec:
   language: python
   name: python3
 ---
+# Exception Handling
 
-# Введение
+```{code-cell} ipython3
+
+```

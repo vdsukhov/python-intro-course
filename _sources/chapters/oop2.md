@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Python Installation
+# Object-Oriented Programming (Part 2)
 
 ```{code-cell} ipython3
 
