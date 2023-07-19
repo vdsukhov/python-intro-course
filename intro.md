@@ -1,4 +1,4 @@
-# Introduction
+# Welcome Page
 
 Welcome to the Introduction to Python Programming course! 
 In this course, you will embark on an exciting journey into the world of Python, one of the most popular and versatile programming languages today. 
@@ -12,6 +12,8 @@ Get ready to unleash your creativity and dive into the captivating world of Pyth
 - Basic knowledge of command line interface (CLI)
 - Basic knowledge of math (vector space, distance function)
 - Capability to seek and learn independently using online resources
+
+## Table of contents
 
 ```{tableofcontents}
 ```
