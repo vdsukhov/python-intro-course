@@ -1,5 +1,14 @@
 # Welcome Page
 
+
+```{image} ./chapters/pics/hokusai_python.png
+:width: 720px
+:align: center
+```
+
+<br/>
+<br/>
+
 Welcome to the Introduction to Python Programming course! 
 In this course, you will embark on an exciting journey into the world of Python, one of the most popular and versatile programming languages today. 
 Python is renowned for its simplicity and readability, making it an excellent choice for beginners and experienced programmers alike. 

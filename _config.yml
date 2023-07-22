@@ -3,7 +3,7 @@
 
 title: Python Introduction Course
 author: Vladimir Sukhov
-logo: logo.svg
+logo: python_course_logo.png
 copyright: "2023"
 
 # Force re-execution of notebooks on each build.
@@ -31,4 +31,4 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: true
-  favicon: logo.svg
+  favicon: python_course_logo.png
