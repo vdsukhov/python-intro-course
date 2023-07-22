@@ -31,4 +31,4 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: true
-  favicon: python_course_logo.png
+  favicon: favicon.png
