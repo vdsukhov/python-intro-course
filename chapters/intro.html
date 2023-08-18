@@ -307,7 +307,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -323,6 +325,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter">Python Interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-process">Installation Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-downloading-the-python-installer">Step 1: Downloading the Python installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-starting-the-installation">Step 2: Starting the Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-completing-the-installation">Step 3: Completing the Installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -334,6 +351,51 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
 <h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+<section id="python-interpreter">
+<h2>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Permalink to this headline">#</a></h2>
+<p>Today, we will go through the process of installing Python on your computer.
+Python is a versatile and powerful programming language widely used for various applications.
+Before we begin, let’s understand the concept of a Python interpreter (programm that we are going to install) and draw an analogy to real life.</p>
+<p>A Python interpreter is like a translator between you and your computer.
+Imagine you’re in a foreign country, and you want to communicate with the locals.
+However, you don’t speak their language.
+So, you have a translator who understands both languages and can help you convey your thoughts effectively.
+Similarly, a Python interpreter translates the human-readable code you write into a language that your computer understands.</p>
+</section>
+<section id="installation-process">
+<h2>Installation Process<a class="headerlink" href="#installation-process" title="Permalink to this headline">#</a></h2>
+<section id="step-1-downloading-the-python-installer">
+<h3>Step 1: Downloading the Python installer<a class="headerlink" href="#step-1-downloading-the-python-installer" title="Permalink to this headline">#</a></h3>
+<p>Open your web browser and navigate to the official Python website: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a>.
+Go to <em>Downloads</em> tab.
+I will install the default suggested Python version which in my case is <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.11.4</span></code>.</p>
+</section>
+<section id="step-2-starting-the-installation">
+<h3>Step 2: Starting the Installation<a class="headerlink" href="#step-2-starting-the-installation" title="Permalink to this headline">#</a></h3>
+<p>Once the installer is downloaded, locate the file and run it.</p>
+<div class="admonition-installation-on-windows admonition">
+<p class="admonition-title">Installation on Windows</p>
+<p>Check the box that says “Add Python X.X to PATH” (X.X represents the version number).
+This option ensures that you can use Python from the command line.</p>
+</div>
+</section>
+<section id="step-3-completing-the-installation">
+<h3>Step 3: Completing the Installation<a class="headerlink" href="#step-3-completing-the-installation" title="Permalink to this headline">#</a></h3>
+<p>Once the installation is complete, you’ll see a screen that says “Setup was successful.”</p>
+<div class="admonition-installation-on-windows admonition">
+<p class="admonition-title">Installation on Windows</p>
+<p>You can also opt to disable the path length limit by checking the box. This can be useful if you plan to work with deeply nested directories.</p>
+</div>
+</section>
+</section>
+<section id="verifying-the-installation">
+<h2>Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Permalink to this headline">#</a></h2>
+<p>To ensure that Python is installed correctly, open a command prompt (Windows) or a terminal (macOS/Linux) and type python –version or python3 –version.
+This should display the version of Python you installed.</p>
+<p>Congratulations!
+You’ve successfully installed Python on your computer.
+Just like a translator facilitates communication between you and locals in a foreign land, the Python interpreter bridges the gap between your code and your computer’s understanding.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,6 +450,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter">Python Interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-process">Installation Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-downloading-the-python-installer">Step 1: Downloading the Python installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-starting-the-installation">Step 2: Starting the Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-completing-the-installation">Step 3: Completing the Installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
