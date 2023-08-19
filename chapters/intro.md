@@ -49,7 +49,14 @@ You can also opt to disable the path length limit by checking the box. This can 
 
 ## Verifying the Installation
 
-To ensure that Python is installed correctly, open a command prompt (Windows) or a terminal (macOS/Linux) and type python --version or python3 --version. 
+To ensure that Python is installed correctly, open a command prompt (Windows) or a terminal (macOS/Linux) and type 
+```bash
+python --version
+```
+or 
+```bash
+python3 --version
+```
 This should display the version of Python you installed.
 
 Congratulations! 
