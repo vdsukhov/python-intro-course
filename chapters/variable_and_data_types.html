@@ -307,7 +307,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -323,6 +325,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -334,6 +345,104 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-and-data-types">
 <h1>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this headline">#</a></h1>
+<p>In the world of programming, our focus is on understanding things through a computer’s eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we’re trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to ask.</p>
+<section id="numbers">
+<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">#</a></h2>
+<p>We can use numbers in Python in obvious way. To demonstrate this, we will use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to output some examples. Simply specify a number and print it to the standard output.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>This is an example of an integer number. In Python, integer numbers have the type <code class="docutils literal notranslate"><span class="pre">int</span></code>. Numbers with a fractional part (e.g. <code class="docutils literal notranslate"><span class="pre">42.3</span></code>, <code class="docutils literal notranslate"><span class="pre">1.0</span></code>) have the type <code class="docutils literal notranslate"><span class="pre">float</span></code>. You can always get the type of an object in Python by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function. Let’s check out a couple of examples:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">42.3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>We can perform various operations with numbers (both for <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> types), which will work as expected from a mathematical point of view:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Almost always as expected, however you should try to execute the following code: <code class="docutils literal notranslate"><span class="pre">print(0.3</span> <span class="pre">+</span> <span class="pre">0.3</span> <span class="pre">+</span> <span class="pre">0.3)</span></code></p>
+</div>
+</aside>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> - difference</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> - multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> - division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> - integer division (rounds down for both positive and negative numbers)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> - modulo operation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> - exponentiation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> - we can enforce order of operations with parentheses</p></li>
+</ul>
+<p>Now let’s look usage examples:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+5
+15
+2.6666666666666665
+2
+3
+243
+64
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="logical-data-type">
+<h2>Logical data type<a class="headerlink" href="#logical-data-type" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,6 +497,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
