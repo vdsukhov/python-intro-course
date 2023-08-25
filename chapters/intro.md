@@ -74,7 +74,7 @@ Just like a translator facilitates communication between you and locals in a for
 I will share my point of view about programming and why it is worth learning a programming language. 
 My perspective is based on analyzing and researching the real world.
 
-Programming and computers can be considered useful tools that help us draw new laws and observations. 
+Programming and computers can be considered useful tools that help us draw new laws and observations about world around us. 
 By using programming, we can create representations of real-world objects. 
 The crucial step in this representation process is identifying and extracting important features that can be used to classify or analyze objects.
 
@@ -86,7 +86,7 @@ To analyze and extract meaningful insights from this data, programming plays a c
 - Multiplexed tissue image
 
 Of course, there may be examples that resonate more with your personal interests. 
-For instance, text analysis, where [ChatGPT](https://chat.openai.com/) can serve as an example, or image analysis and generation, where [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) could be a good reference.
+For instance, text analysis, where [ChatGPT](https://chat.openai.com/) can serve as an example, or image analysis and generation, where [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) could be a good reference. All these examples would not be possible without programming.
 
 
 ## Flow
@@ -107,7 +107,7 @@ But for today's lesson it is enough to use just default notepad or another text 
 
 Now, let's write the following command inside the file:
 ```python
-print("Hello Python World")
+print("I'm Python. Nice to meet you!")
 ```
 After writing the command, save the file and open a terminal or command line inside the current directory. 
 Then, we should use the Python program with this file. 
@@ -116,7 +116,7 @@ In other words, we are asking the Python interpreter to translate our program in
 ```bash
 python program.py
 ```
-You should see the following string as output in your terminal or command line: `"Hello Python World"`.
+You should see the following string as output in your terminal or command line: `"I'm Python. Nice to meet you!"`.
 
 Congratulations! You have written your first Python program.
 
@@ -130,3 +130,5 @@ Let's change the `program.py` file in the following way:
 Python say Hello Python World
 ```
 and execute it `python program.py`. As a result, we get an error message stating `SyntaxError: invalid syntax`. During the process of writing your own code, you will often see different types of errors. Typically, these errors indicate that Python cannot execute or understand the provided commands.
+
+Now, let's learn about the basic data types in Python and the ways to operate on them.
