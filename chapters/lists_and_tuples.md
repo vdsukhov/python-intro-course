@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Lists and Tuples
+# Lists, Tuples and Strings
 
 ```{code-cell} ipython3
 
