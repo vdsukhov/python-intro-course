@@ -62,4 +62,18 @@ print(3**5)
 print((3 + 5) * 8)
 ```
 
+## Strings
+We already saw the first example of strings in python in our first program: `"I'm Python. Nice to meet you!"`.
+Strings are used in python to handle and operate with texts.
+There are couple different ways how you can specify string in python:
+- `'content'` - single quotes
+- `"content"` - double quotes
+- `"""content"""` or `'''content'''` - triple quotes (used for multiline strings)
+
 ## Logical data type
+
+In programming, we often encounter situations that demand binary decision.
+When I think about it I always recall the moment from "Matrix" movie where there is the Neo making decision between red and blue pills.
+Logical data types serve as the digital manifestation of this choice.
+To manipulate between with different decisions python has `bool` data type with two objects `True` and `False`.
+They enable us to represent two distinct possibilities: true or false.

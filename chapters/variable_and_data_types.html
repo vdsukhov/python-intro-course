@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction to Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables and Data Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="control_flow.html">Control Flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lists_and_tuples.html">Lists and Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_and_tuples.html">Lists, Tuples and Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dict_and_set.html">Dictionaries and Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funcs.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Modules and Packages</a></li>
@@ -331,6 +331,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
 </ul>
             </nav>
@@ -440,8 +441,24 @@ document.write(`
 </details>
 </div>
 </section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
+<p>We already saw the first example of strings in python in our first program: <code class="docutils literal notranslate"><span class="pre">&quot;I'm</span> <span class="pre">Python.</span> <span class="pre">Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!&quot;</span></code>.
+Strings are used in python to handle and operate with texts.
+There are couple different ways how you can specify string in python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'content'</span></code> - single quotes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;content&quot;</span></code> - double quotes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;content&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''content'''</span></code> - triple quotes (used for multiline strings)</p></li>
+</ul>
+</section>
 <section id="logical-data-type">
 <h2>Logical data type<a class="headerlink" href="#logical-data-type" title="Permalink to this headline">#</a></h2>
+<p>In programming, we often encounter situations that demand binary decision.
+When I think about it I always recall the moment from “Matrix” movie where there is the Neo making decision between red and blue pills.
+Logical data types serve as the digital manifestation of this choice.
+To manipulate between with different decisions python has <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type with two objects <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+They enable us to represent two distinct possibilities: true or false.</p>
 </section>
 </section>
 
@@ -507,6 +524,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
 </ul>
   </nav></div>
