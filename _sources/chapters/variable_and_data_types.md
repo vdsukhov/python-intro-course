@@ -235,6 +235,14 @@ value_1 = 0 # we can assign a new value to a variable
 print(value_1)
 ```
 
+In case you need to assign multiple variables at once you can use the following syntax:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+
+x, y, z = "User", 1, True
+print(x, y, z)
+```
+
 ### Rules for Python variables
 - A variable name must start with a letter or the underscore character
 - A variable name cannot start with a number
@@ -244,4 +252,94 @@ print(value_1)
 
 
 ## Type Conversion
+Sometimes, you need to change the way a computer understands data. 
+Imagine you have two pieces of text, `"4"` and `"2"` and you want to put them together like words. You can do this with a plus `+` operator, like `"4" + "2"` which makes `"42"`.
+
+But what if you want the computer to treat these like numbers instead of just text? 
+That's when Python Type Conversions come to the rescue. 
+Let's look at some everyday examples of how to do this.
+
+### `int` to `float`
+
+You can convert an integer to a floating-point number using the `float()` function. For example:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+integer_num = 5
+print(integer_num)
+float_num = float(integer_num)
+print(float_num)
+```
+
+### `float` to `int`
+To convert a floating-point number to an integer, you can use the `int()` function. Be aware that this truncates the decimal part, not rounding. For example:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+float_num = 3.14
+print("float_num =", float_num)
+integer_num = int(float_num)  # int_num will be 3
+print("int_num =", integer_num)
+```
+
+### `str` to `int` or `float`
+You can convert a string containing a numeric value to an integer or float using `int()` or `float()`. For example:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+num_str = "42"
+int_num = int(num_str)
+float_num = float(num_str)
+print("int_num =", int_num)
+print("float_num =", float_num)
+```
+
+But if your string doesn't represent number then you will get an error if you try to convert it to numerical data type:
+
+```python3
+line = "xyz"
+int_num = int(line)
+float_num = float(line)
+print("int_num =", int_num)
+print("float_num =", float_num)
+```
+You shoud get the following error:
+```
+ValueError: invalid literal for int() with base 10: 'xyz'
+```
+
+### `int` or `float` to `str`
+To convert an integer or float object to a string, you can use the `str()` function. For example:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+
+int_num = 42
+float_num = 3.1415
+str_int = str(int_num)
+str_float = str(float_num)
+print("type(str_int):", type(str_int), " str_int = ", str_int)
+print("type(str_float):", type(str_float), " str_float = ", str_float)
+```
+
+### `bool` Truthy and Falsy values
+To change an object into a logical data type, you can use the `bool()` function. Here's a simple rule for how this conversion works:
+
+- If you have `0`, `0.0`, or an empty text `""`, they turn into `False`.
+- For all other values, they become `True`.
+
+This rule helps you understand how different values are seen by the computer in a true or false way.
+Examples:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+print(bool(0), bool(0.0), bool(""))
+print(bool(101), bool(-10), bool("ABC"))
+```
+When certain values act like they are `True` in a computer's eyes, we call them **Truthy**. 
+Similarly, when values act like they are `False` we call them **Falsy**. 
+Understanding these concepts is important when dealing with conditions and decisions in programming. 
+
+
+
+
+
+
+
+
 

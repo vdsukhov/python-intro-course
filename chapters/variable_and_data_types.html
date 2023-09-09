@@ -346,7 +346,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-python-variables">Rules for Python variables</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-to-float"><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-int"><code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-to-int-or-float"><code class="docutils literal notranslate"><span class="pre">str</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-or-float-to-str"><code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-truthy-and-falsy-values"><code class="docutils literal notranslate"><span class="pre">bool</span></code> Truthy and Falsy values</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -782,6 +789,26 @@ In the example above, we can think that we have a box named <code class="docutil
 </div>
 </details>
 </div>
+<p>In case you need to assign multiple variables at once you can use the following syntax:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User 1 True
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <section id="rules-for-python-variables">
 <h3>Rules for Python variables<a class="headerlink" href="#rules-for-python-variables" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -795,6 +822,163 @@ In the example above, we can think that we have a box named <code class="docutil
 </section>
 <section id="type-conversion">
 <h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, you need to change the way a computer understands data.
+Imagine you have two pieces of text, <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> and you want to put them together like words. You can do this with a plus <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, like <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span> <span class="pre">+</span> <span class="pre">&quot;2&quot;</span></code> which makes <code class="docutils literal notranslate"><span class="pre">&quot;42&quot;</span></code>.</p>
+<p>But what if you want the computer to treat these like numbers instead of just text?
+That’s when Python Type Conversions come to the rescue.
+Let’s look at some everyday examples of how to do this.</p>
+<section id="int-to-float">
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#int-to-float" title="Permalink to this heading">#</a></h3>
+<p>You can convert an integer to a floating-point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function. For example:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integer_num</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integer_num</span><span class="p">)</span>
+<span class="n">float_num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">integer_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+5.0
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="float-to-int">
+<h3><code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#float-to-int" title="Permalink to this heading">#</a></h3>
+<p>To convert a floating-point number to an integer, you can use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function. Be aware that this truncates the decimal part, not rounding. For example:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_num</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float_num =&quot;</span><span class="p">,</span> <span class="n">float_num</span><span class="p">)</span>
+<span class="n">integer_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">float_num</span><span class="p">)</span>  <span class="c1"># int_num will be 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int_num =&quot;</span><span class="p">,</span> <span class="n">integer_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float_num = 3.14
+int_num = 3
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="str-to-int-or-float">
+<h3><code class="docutils literal notranslate"><span class="pre">str</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#str-to-int-or-float" title="Permalink to this heading">#</a></h3>
+<p>You can convert a string containing a numeric value to an integer or float using <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code>. For example:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_str</span> <span class="o">=</span> <span class="s2">&quot;42&quot;</span>
+<span class="n">int_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
+<span class="n">float_num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int_num =&quot;</span><span class="p">,</span> <span class="n">int_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float_num =&quot;</span><span class="p">,</span> <span class="n">float_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int_num = 42
+float_num = 42.0
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>But if your string doesn’t represent number then you will get an error if you try to convert it to numerical data type:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;xyz&quot;</span>
+<span class="n">int_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">float_num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int_num =&quot;</span><span class="p">,</span> <span class="n">int_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float_num =&quot;</span><span class="p">,</span> <span class="n">float_num</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You shoud get the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;xyz&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="int-or-float-to-str">
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#int-or-float-to-str" title="Permalink to this heading">#</a></h3>
+<p>To convert an integer or float object to a string, you can use the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. For example:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_num</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">float_num</span> <span class="o">=</span> <span class="mf">3.1415</span>
+<span class="n">str_int</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">int_num</span><span class="p">)</span>
+<span class="n">str_float</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">float_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(str_int):&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">str_int</span><span class="p">),</span> <span class="s2">&quot; str_int = &quot;</span><span class="p">,</span> <span class="n">str_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(str_float):&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">str_float</span><span class="p">),</span> <span class="s2">&quot; str_float = &quot;</span><span class="p">,</span> <span class="n">str_float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type(str_int): &lt;class &#39;str&#39;&gt;  str_int =  42
+type(str_float): &lt;class &#39;str&#39;&gt;  str_float =  3.1415
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="bool-truthy-and-falsy-values">
+<h3><code class="docutils literal notranslate"><span class="pre">bool</span></code> Truthy and Falsy values<a class="headerlink" href="#bool-truthy-and-falsy-values" title="Permalink to this heading">#</a></h3>
+<p>To change an object into a logical data type, you can use the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function. Here’s a simple rule for how this conversion works:</p>
+<ul class="simple">
+<li><p>If you have <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, or an empty text <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, they turn into <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>For all other values, they become <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+<p>This rule helps you understand how different values are seen by the computer in a true or false way.
+Examples:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">101</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False False False
+True True True
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>When certain values act like they are <code class="docutils literal notranslate"><span class="pre">True</span></code> in a computer’s eyes, we call them <strong>Truthy</strong>.
+Similarly, when values act like they are <code class="docutils literal notranslate"><span class="pre">False</span></code> we call them <strong>Falsy</strong>.
+Understanding these concepts is important when dealing with conditions and decisions in programming.</p>
+</section>
 </section>
 </section>
 
@@ -880,7 +1064,14 @@ In the example above, we can think that we have a box named <code class="docutil
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-python-variables">Rules for Python variables</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-to-float"><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-int"><code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-to-int-or-float"><code class="docutils literal notranslate"><span class="pre">str</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-or-float-to-str"><code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-truthy-and-falsy-values"><code class="docutils literal notranslate"><span class="pre">bool</span></code> Truthy and Falsy values</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
