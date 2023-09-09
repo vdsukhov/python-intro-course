@@ -118,7 +118,9 @@ python program.py
 ```
 You should see the following string as output in your terminal or command line: `"I'm Python. Nice to meet you!"`.
 
+```{admonition} Great job
 Congratulations 🎉! You have written your first Python program.
+````
 
 Let's for a moment go back to the 'flow' chart that we show previously.
 In this example, we did not have any input data. However, we did have our scripts and output. To obtain some output, we utilized the built-in Python function `print`. The basic usage of this function is as follows: we write `print` and then, inside brackets, we specify the object or objects that should be printed to standard output.
