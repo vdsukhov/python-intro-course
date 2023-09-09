@@ -100,6 +100,8 @@ They enable us to represent two distinct possibilities: true or false.
 
 This data type will assist us in making decisions within our programs. There will be situations where we need to execute one part of the code if certain statements are true, and another part if they are false.
 
+### Logical operators
+
 For now, let's review some basic logical operations:
 - `and` - logical and
 - `or` - logical or
@@ -131,6 +133,35 @@ Possible examples of the logic for `and` and `or`:
 2. Imagine you want to choose a movie to watch, but it must meet certain criteria: it must be either a drama OR a comedy. If the movie doesn't fit into either of these categories, then we won't consider watching it. In all other cases, we can watch it. This is an example of the logic for the `or` operator.
 ```
 
+### Comparison operators
+You can get `bool` data type as result after performing comparison of other objects.
+Here is the list of comparison operators:
+- `==` - equal
+- `!=` - no equal
+- `>` - greater than
+- `<` - less than
+- `>=` - greater than or equal to
+- `<=` - less than or equal to
+
+Let's take a look on couple examples:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+print(1 == 0)
+print(1 != 0)
+print(1 > 0)
+print(1 <= 0)
+
+# it is possible to compare strings as well
+print("Hello" == "Hello")
+print("alpha" <= "beta")
+```
+
+```{note}
+:class: dropdown
+In my opinion, the section about comparison operators is highly important. While it is obvious when dealing with real numbers, there will be times when you need to compare other types of objects, such as genes for example. In such cases, it is important to find a way to map your object to real numbers to make comparison possible. For instance, when comparing genes, you may need to consider the number of nucleotides that make them up, or the value expression, depending on the task at hand.
+```
+
+
 ## Precedence of Operators
 Ok, we took a look on some operations separately.
 In reality often we need to combine them in more complex way.
@@ -155,8 +186,8 @@ The following table summarizes the operator precedence from highest to lowest:
   - `not`
 * - 2
   - `and`
-* - 1
+* - 1 (low)
   - `or`
 ```
 ````
-As ususal you can enforce order of operations with parentheses `()`.
+As usual you can enforce order of operations with parentheses `()`.
