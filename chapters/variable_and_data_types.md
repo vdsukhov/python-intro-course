@@ -14,7 +14,7 @@ kernelspec:
 
 # Variables and Data Types
 
-In the world of programming, our focus is on understanding things through a computer's eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we're trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to ask.
+In the world of programming, our focus is on understanding things through a computer's eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we're trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to answer.
 
 
 ## Numbers
@@ -89,7 +89,25 @@ print('I\'m a human') # Here we use enclosing for `'` symbol
 print('I am a "human"') 
 print("I am a \"human\"") 
 ```
-I would recommend always use enclosing (`\'` and `\"`).
+I would recommend use enclosing (`\'` and `\"`).
+
+### Operations on strings
+- **Concatenation**.
+We can merge strings into one by using the `+` operator or by simply putting them one after the other.
+Here are some examples:
+```{code-cell} ipthon3
+:tags: ["hide-output"]
+print("Hello" " World!")
+print("Hello" + " World!")
+```
+- **String repeation**.
+If you need to repeat a string, you can use the  operator, followed by the desired number of repeats. Here is an example:
+```{code-cell} ipthon3
+:tags: ["hide-output"]
+print("You talking to me? " * 3)
+```
+
+These are exaples of basic string operations further in the course we will see some other things that we could do with strings.
 ## Logical data type
 
 In programming, we often encounter situations that demand binary decision.
@@ -161,12 +179,8 @@ print("alpha" <= "beta")
 In my opinion, the section about comparison operators is highly important. While it is obvious when dealing with real numbers, there will be times when you need to compare other types of objects, such as genes for example. In such cases, it is important to find a way to map your object to real numbers to make comparison possible. For instance, when comparing genes, you may need to consider the number of nucleotides that make them up, or the value expression, depending on the task at hand.
 ```
 
-
 ## Precedence of Operators
-Ok, we took a look on some operations separately.
-In reality often we need to combine them in more complex way.
-To do so we should remember about precedence of operators.
-The following table summarizes the operator precedence from highest to lowest:
+Okay, we have looked at some operations separately. In reality, we often need to combine them in a more complex way. To do this, we need to remember the precedence of operators. The following table summarizes the operator precedence from highest to lowest:
 ````{card}
 ```{list-table} Precedence of Operators
 :header-rows: 1
@@ -191,3 +205,43 @@ The following table summarizes the operator precedence from highest to lowest:
 ```
 ````
 As usual you can enforce order of operations with parentheses `()`.
+
+## Variables
+Okay, so far we have learned how to create objects in Python and print them immediately. However, we usually want to store objects and reuse them in our code. To do this, we use variables in Python. We can create a specific name and assign it to a specific object in Python. Here is an example:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+name = "Vladimir"
+print("Hello " + name)
+print(name + ", how are you today?")
+```
+
+```{note}
+In programming, the concept of variables is very important because it allows for the reuse of specific parts of code. Throughout our course, we will also cover other concepts that enable code reuse.
+Code reuse refers to the practice of writing code in a way that it can be used in multiple parts of a program or even in different programs. This promotes efficiency, reduces redundancy, and simplifies maintenance and debugging.
+We will also cover functions and packages, which demonstrate the beauty of code reuse further along in the course.
+```
+
+A commonly used analogy for variables is to think of them as named boxes where we can store our objects. 
+In the example above, we can think that we have a box named `name` that contains the string `"Vladimir"`.
+
+Some other examples of possible operations over variables:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+value_1 = 101
+value_2 = 42
+
+print(value_1 + value_2)
+value_1 = 0 # we can assign a new value to a variable
+print(value_1)
+```
+
+### Rules for Python variables
+- A variable name must start with a letter or the underscore character
+- A variable name cannot start with a number
+- A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+- Variable names are case-sensitive (age, Age and AGE are three different variables)
+- A variable name cannot be any of the [Python keywords](https://www.w3schools.com/python/python_ref_keywords.asp).
+
+
+## Type Conversion
+
