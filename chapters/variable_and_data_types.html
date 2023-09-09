@@ -332,7 +332,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence-of-operators">Precedence of Operators</a></li>
 </ul>
             </nav>
@@ -514,6 +518,8 @@ Logical data types serve as the digital manifestation of this choice.
 To manipulate between with different decisions python has <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type with two objects <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 They enable us to represent two distinct possibilities: true or false.</p>
 <p>This data type will assist us in making decisions within our programs. There will be situations where we need to execute one part of the code if certain statements are true, and another part if they are false.</p>
+<section id="logical-operators">
+<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">#</a></h3>
 <p>For now, let’s review some basic logical operations:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> - logical and</p></li>
@@ -570,6 +576,55 @@ not False: True
 </ol>
 </div>
 </section>
+<section id="comparison-operators">
+<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">#</a></h3>
+<p>You can get <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type as result after performing comparison of other objects.
+Here is the list of comparison operators:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> - equal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> - no equal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> - greater than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> - less than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> - greater than or equal to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> - less than or equal to</p></li>
+</ul>
+<p>Let’s take a look on couple examples:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># it is possible to compare strings as well</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span> <span class="o">==</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span> <span class="o">&lt;=</span> <span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+True
+False
+True
+True
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>In my opinion, the section about comparison operators is highly important. While it is obvious when dealing with real numbers, there will be times when you need to compare other types of objects, such as genes for example. In such cases, it is important to find a way to map your object to real numbers to make comparison possible. For instance, when comparing genes, you may need to consider the number of nucleotides that make them up, or the value expression, depending on the task at hand.</p>
+</div>
+</section>
+</section>
 <section id="precedence-of-operators">
 <h2>Precedence of Operators<a class="headerlink" href="#precedence-of-operators" title="Permalink to this headline">#</a></h2>
 <p>Ok, we took a look on some operations separately.
@@ -608,14 +663,14 @@ The following table summarizes the operator precedence from highest to lowest:</
 <tr class="row-odd"><td><p class="sd-card-text">2</p></td>
 <td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p class="sd-card-text">1</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1 (low)</p></td>
 <td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>As ususal you can enforce order of operations with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>As usual you can enforce order of operations with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 </section>
 </section>
 
@@ -682,7 +737,11 @@ The following table summarizes the operator precedence from highest to lowest:</
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-data-type">Logical data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence-of-operators">Precedence of Operators</a></li>
 </ul>
   </nav></div>
