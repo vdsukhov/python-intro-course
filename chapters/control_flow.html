@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Control Flow &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,13 +38,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Lists, Tuples and Strings" href="lists_and_tuples.html" />
     <link rel="prev" title="Variables and Data Types" href="variable_and_data_types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -357,12 +356,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow">
-<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h1>
+<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h1>
 <p>In this section, we’ll explore <strong>control flow</strong>, which determines the sequence in which a program’s code runs.</p>
 <p>Up until now, we’ve executed all our commands one after the other, like reading a book from start to finish. But there are times when we want the program to behave differently. Sometimes, we only want certain parts of the code to run if specific conditions are met, and other times, we want to repeat a piece of code several times. The following chart represents possible options for control flow in Python.</p>
 <p>Before we dive into control flow, let’s first understand the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
 <section id="input-function">
-<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this headline">#</a></h2>
 <p>Previously, we learned that programming generally involves input data, commands for the computer in Python’s language, and resulting output from our programs. However, we have only covered the second and third components of this fundamental programming concept. Now, we will learn the first way to obtain input data and interact with users.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function in Python is a fundamental tool for interactive programming. It allows you to collect user input directly from the keyboard during the execution of your program. When you call <code class="docutils literal notranslate"><span class="pre">input()</span></code>, the program pauses and waits for the user to type something and press “Enter”. Whatever the user enters is typically stored as a string. You can then use this input to make your program more interactive and responsive, whether it’s for gathering user preferences, processing user-generated data, or creating simple text-based games. It’s important to note that you can convert the input to different data types (like integers or floats) using typecasting if needed. The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function significantly enhances the user experience in Python programs by enabling two-way communication between the program and its users.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
@@ -398,30 +397,30 @@ The <code class="docutils literal notranslate"><span class="pre">prompt</span></
 </div>
 </section>
 <section id="conditional-statements">
-<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
 <section id="if">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="if-else">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="if-elif-else">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="nested-if-else">
-<h3>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#nested-if-else" title="Permalink to this heading">#</a></h3>
+<h3>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#nested-if-else" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="match">
-<h3><code class="docutils literal notranslate"><span class="pre">match</span></code><a class="headerlink" href="#match" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">match</span></code><a class="headerlink" href="#match" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="iterative-statements">
-<h2>Iterative Statements<a class="headerlink" href="#iterative-statements" title="Permalink to this heading">#</a></h2>
+<h2>Iterative Statements<a class="headerlink" href="#iterative-statements" title="Permalink to this headline">#</a></h2>
 <section id="for-loop">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="while-loop">
-<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 </section>
@@ -452,10 +451,7 @@ The <code class="docutils literal notranslate"><span class="pre">prompt</span></
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="variable_and_data_types.html"
@@ -475,10 +471,7 @@ The <code class="docutils literal notranslate"><span class="pre">prompt</span></
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -515,7 +508,7 @@ The <code class="docutils literal notranslate"><span class="pre">prompt</span></
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -545,7 +538,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -554,8 +547,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
