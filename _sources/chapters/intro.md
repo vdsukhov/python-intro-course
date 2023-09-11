@@ -126,7 +126,7 @@ By using programming, we can create representations of real-world objects.
 The crucial step in this representation process is identifying and extracting important features that can be used to classify or analyze objects.
 
 Now, let's discuss why these tools are vital. 
-Nowadays, we live in a technology-driven world where graphics.mp4an enormous amount of data is generated every day. 
+Nowadays, we live in a technology-driven world where an enormous amount of data is generated every day. 
 To analyze and extract meaningful insights from this data, programming plays a crucial role. Here are a few examples where manual analysis would be impossible or inefficient in terms of time spent.
 
 ### Black hole image
