@@ -308,7 +308,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -324,6 +326,27 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function"><code class="docutils literal notranslate"><span class="pre">input</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else"><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else"><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-else">Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match"><code class="docutils literal notranslate"><span class="pre">match</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-statements">Iterative Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -335,6 +358,72 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow">
 <h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h1>
+<p>In this section, we’ll explore <strong>control flow</strong>, which determines the sequence in which a program’s code runs.</p>
+<p>Up until now, we’ve executed all our commands one after the other, like reading a book from start to finish. But there are times when we want the program to behave differently. Sometimes, we only want certain parts of the code to run if specific conditions are met, and other times, we want to repeat a piece of code several times. The following chart represents possible options for control flow in Python.</p>
+<p>Before we dive into control flow, let’s first understand the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
+<section id="input-function">
+<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this heading">#</a></h2>
+<p>Previously, we learned that programming generally involves input data, commands for the computer in Python’s language, and resulting output from our programs. However, we have only covered the second and third components of this fundamental programming concept. Now, we will learn the first way to obtain input data and interact with users.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function in Python is a fundamental tool for interactive programming. It allows you to collect user input directly from the keyboard during the execution of your program. When you call <code class="docutils literal notranslate"><span class="pre">input()</span></code>, the program pauses and waits for the user to type something and press “Enter”. Whatever the user enters is typically stored as a string. You can then use this input to make your program more interactive and responsive, whether it’s for gathering user preferences, processing user-generated data, or creating simple text-based games. It’s important to note that you can convert the input to different data types (like integers or floats) using typecasting if needed. The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function significantly enhances the user experience in Python programs by enabling two-way communication between the program and its users.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;user_name =&quot;</span><span class="p">,</span> <span class="n">user_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(user_name):&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">user_name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Possible example of output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Enter your name: Vladimir
+user_name = Vladimir
+type(user_name): &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<p>In this example the string <code class="docutils literal notranslate"><span class="pre">&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;</span></code> specifies the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> of <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.
+This string is displayed in standard output. After that, Python reads all input until the Enter button is pressed.
+The <code class="docutils literal notranslate"><span class="pre">prompt</span></code> could be omitted:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;user_name =&quot;</span><span class="p">,</span> <span class="n">user_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(user_name):&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">user_name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this case, the program behavior is the same except that we do not print the message of the <code class="docutils literal notranslate"><span class="pre">input</span></code> function in the standard output.</p>
+<p>As you can see, by default, we read input and store it as a <code class="docutils literal notranslate"><span class="pre">str</span></code> data type object. If necessary, we can use type conversion:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the first number: &quot;</span><span class="p">))</span>
+<span class="n">number_2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the second number: &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_1</span> <span class="o">*</span> <span class="n">number_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">first</span> <span class="n">number</span><span class="p">:</span> <span class="mi">42</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">second</span> <span class="n">number</span><span class="p">:</span> <span class="mi">8</span>
+<span class="mi">336</span>
+</pre></div>
+</div>
+</section>
+<section id="conditional-statements">
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<section id="if">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="if-else">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="if-elif-else">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="nested-if-else">
+<h3>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#nested-if-else" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="match">
+<h3><code class="docutils literal notranslate"><span class="pre">match</span></code><a class="headerlink" href="#match" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="iterative-statements">
+<h2>Iterative Statements<a class="headerlink" href="#iterative-statements" title="Permalink to this heading">#</a></h2>
+<section id="for-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="while-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -395,6 +484,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function"><code class="docutils literal notranslate"><span class="pre">input</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else"><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else"><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-else">Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match"><code class="docutils literal notranslate"><span class="pre">match</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-statements">Iterative Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
