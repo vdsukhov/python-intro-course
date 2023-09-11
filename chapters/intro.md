@@ -27,7 +27,47 @@ Similarly, a Python interpreter translates the human-readable code you write int
 
 ## Installation Process
 
-### Step 1: Downloading the Python installer
+### Linux
+
+This section covers the process of installing Python on an Ubuntu system (a Linux distribution based on Debian). In most cases, Python is already pre-installed on Ubuntu by default.
+
+To check whether Python is already installed on your system, run the following command in your terminal:
+```bash
+python --version
+```
+If the output of the command shows that the version of your Python starts with `3.`, then you are all set.
+
+
+
+````{admonition} If you got an error or your version starts with '2'
+:class: dropdown
+In your terminal run the following command:
+```bash
+sudo apt update
+```
+
+You should now be able to install Python:
+```bash
+sudo apt install python3
+```
+
+Also, I recommend installing the program `python-is-python3`.
+```bash
+sudo apt install python-is-python3
+```
+
+Now, enter the command:
+```bash
+python --version
+```
+it should return version which starts from `3.`.
+
+````
+
+
+### Windows
+
+#### Step 1: Downloading the Python installer
 
 Open your web browser and navigate to the official Python website: [https://www.python.org/](https://www.python.org/).
 Go to *Downloads* tab.
@@ -39,7 +79,7 @@ As of now, Python 2 is no longer supported, so it's recommended to choose the la
 Please make sure that you selected 3rd version as well.
 ```
 
-### Step 2: Starting the Installation
+#### Step 2: Starting the Installation
 
 Once the installer is downloaded, locate the file and run it.
 
@@ -47,13 +87,13 @@ Once the installer is downloaded, locate the file and run it.
 Check the box that says "Add Python X.X to PATH" (X.X represents the version number). 
 This option ensures that you can use Python from the command line.
 ```
-### Step 3: Completing the Installation
+#### Step 3: Completing the Installation
 Once the installation is complete, you'll see a screen that says "Setup was successful."
 ```{admonition} Installation on Windows
 You can also opt to disable the path length limit by checking the box. This can be useful if you plan to work with deeply nested directories.
 ```
 
-## Verifying the Installation
+### Verifying the Installation
 
 To ensure that Python is installed correctly, open a command prompt (Windows) or a terminal (macOS/Linux) and type 
 ```bash
@@ -65,9 +105,13 @@ python3 --version
 ```
 This should display the version of Python you installed.
 
-Congratulations! 
+```{admonition} Great job
+Congratulations 🎉! 
 You've successfully installed Python on your computer. 
 Just like a translator facilitates communication between you and locals in a foreign land, the Python interpreter bridges the gap between your code and your computer's understanding. 
+```
+
+
 
 ## Programming philosophy
 
@@ -77,17 +121,33 @@ My perspective is based on analyzing and researching the real world.
 Programming and computers can be considered useful tools that help us draw new laws and observations about world around us. 
 By using programming, we can create representations of real-world objects.
 ```{image} ./pics/digitalize_world.gif
-:width: 500px
 :align: center
 ```
 The crucial step in this representation process is identifying and extracting important features that can be used to classify or analyze objects.
 
 Now, let's discuss why these tools are vital. 
 Nowadays, we live in a technology-driven world where graphics.mp4an enormous amount of data is generated every day. 
-To analyze and extract meaningful insights from this data, programming plays a crucial role. Here are a few examples where manual analysis would be impossible or inefficient in terms of time spent:
+To analyze and extract meaningful insights from this data, programming plays a crucial role. Here are a few examples where manual analysis would be impossible or inefficient in terms of time spent.
 
-- Black hole image
-- Multiplexed tissue image
+### Black hole image
+
+Here is the first image of a black hole:
+
+```{image} ./pics/blackhole.jpg
+:width: 360px
+:align: center
+```
+At first glance, it may seem funny, but the accumulated data for this project was mind-boggling. It equated to processing petabytes of information, which is an amount so vast that it could fill thousands of hard drives.
+Storing the data required to obtain this image took a lot of hard drives, weighing around 500kg.
+```{image} ./pics/hard_drives.gif
+:align: center
+```
+
+The total amount of data were around 5 petabytes of information. 
+
+
+
+### Multiplexed tissue image
 
 Of course, there may be examples that resonate more with your personal interests. 
 For instance, text analysis, where [ChatGPT](https://chat.openai.com/) can serve as an example, or image analysis and generation, where [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) could be a good reference. All these examples would not be possible without programming.
@@ -124,7 +184,7 @@ You should see the following string as output in your terminal or command line: 
 
 ```{admonition} Great job
 Congratulations 🎉! You have written your first Python program.
-````
+```
 
 Let's for a moment go back to the 'flow' chart that we show previously.
 In this example, we did not have any input data. However, we did have our scripts and output. To obtain some output, we utilized the built-in Python function `print`. The basic usage of this function is as follows: we write `print` and then, inside brackets, we specify the object or objects that should be printed to standard output.
