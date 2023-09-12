@@ -126,7 +126,7 @@ By using programming, we can create representations of real-world objects.
 The crucial step in this representation process is identifying and extracting important features that can be used to classify or analyze objects.
 
 Now, let's discuss why these tools are vital. 
-Nowadays, we live in a technology-driven world where graphics.mp4an enormous amount of data is generated every day. 
+Nowadays, we live in a technology-driven world where an enormous amount of data is generated every day. 
 To analyze and extract meaningful insights from this data, programming plays a crucial role. Here are a few examples where manual analysis would be impossible or inefficient in terms of time spent.
 
 ### Black hole image
@@ -139,12 +139,16 @@ Here is the first image of a black hole:
 ```
 At first glance, it may seem funny, but the accumulated data for this project was mind-boggling. It equated to processing petabytes of information, which is an amount so vast that it could fill thousands of hard drives.
 Storing the data required to obtain this image took a lot of hard drives, weighing around 500kg.
-```{image} ./pics/hard_drives.gif
-:align: center
-```
+The total amount of data were around 5 petabytes of information.
+To give you an idea of how massive this data is, consider the following video: one small dot represents the size of the Ultra HD version of the movie Interstellar (which is around 100GB). Next, there is a representation of 5 petabytes of data, which was required to obtain the black hole image. Insane, isn't it?
 
-The total amount of data were around 5 petabytes of information. 
++++
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/interstellar_compared_to_black_hole.mp4" type="video/mp4">
+</video>
+
++++
 
 
 ### Multiplexed tissue image
