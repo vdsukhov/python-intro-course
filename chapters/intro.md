@@ -153,6 +153,19 @@ To give you an idea of how massive this data is, consider the following video: o
 
 ### Multiplexed tissue image
 
+What impresses me a lot is that you can obtain the huge amount of data even when you are not focusing on astro images of the universe. For instance, you can obtain a lot of information while analyzing cell biology. Let's take a look at multiplexed tissue images as an example. Here is an image of whole-slide human FFPE sample with 2.5 million cells, imaged on the [PhenoCycler-Fusion System](https://www.akoyabio.com/phenocycler/):
+```{image} ./pics/codex_example.gif
+:name: codex_image_example
+:align: center
+```
+This technology allows for the capture of the expression of dozens of proteins. Typically, the size of tissue used in such experiments is around 1cm by 1cm. However, the generated raw data size for one experiment can easily exceed 1TB.
+
+
+
+
+
+--- 
+
 Of course, there may be examples that resonate more with your personal interests. 
 For instance, text analysis, where [ChatGPT](https://chat.openai.com/) can serve as an example, or image analysis and generation, where [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) could be a good reference. All these examples would not be possible without programming.
 
