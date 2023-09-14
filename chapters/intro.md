@@ -176,6 +176,10 @@ I want to emphasize once again that our main task is to learn a new language, ju
 
 The general flow can be represented by the following scheme: we typically have input data, which can be in the form of tables (such as Google spreadsheets), images, music, etc. We then use commands in the Python language to instruct the computer on what to do with this data. After running these commands, we obtain output data, which can be in the form of spreadsheets, images, etc.
 
+```{image} ./pics/flow.png
+:align: center
+```
+
 ## First Program
 
 Let's jump in and write our first program in Python. 
