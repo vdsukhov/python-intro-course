@@ -113,6 +113,7 @@ print("End of the program")
 ### `if` - `else`
 Ok, now let's consider another situation where a person reads all messages except for messages from a specific person.
 If we got the message from this person we on purpose ignore it.
+To do so we can use an `else` statement which is used in conjunction with an `if` statement to specify what should happen if the condition in the `if` statement is false.
 Here is an possible code example to handle such case:
 
 ```python
@@ -161,6 +162,8 @@ Now let's consider the following scenario:
 - If the message is from `"Lucy"`, the person ignores it.
 - In all other cases person just read the message.
 
+To resolve this task, the `elif` statement can be used. `elif` (short for "else if") is used when multiple conditions need to be checked in sequence. 
+It allows you to test a series of conditions and execute the first block of code whose condition is true.
 The possible code could be:
 
 ```python
@@ -208,8 +211,6 @@ Message was read
 ::::
 
 ```{note}
-`elif` - stands for else if
-
 You can use arbitrary number of `elif` statements in your programs
 ```
 
@@ -217,7 +218,7 @@ You can use arbitrary number of `elif` statements in your programs
 
 ### Nested `if` - `else`
 
-You can nest `if-elif-else` statements inside other `if` statements. Let's consider the following simple example: we are receiving a message. First, we check if it is from `"Vladimir"`. Then, we check if it is a text or audio message. If it is a text message, we read it; if it is an audio message, we ignore it.
+You can nest `if-elif-else` statements inside other `if` statements. Let's consider the following simple example: we are receiving a message. First, we check if it is from `"Vladimir"`. If it is, we then check whether it is a text or audio message. If it is a text message, we read it; if it is an audio message, we ignore it.
 
 ```python
 name = input("Enter your name: ")
@@ -258,16 +259,14 @@ Message was ignored
 
 ::::
 
-```{admonition} Great job
-Congratulations 🎉! You have learnt about conditional statements in Python.
-```
-
 ## Iterative Statements
 
 Now, we will learn how to repeat a piece of code a required number of times in Python.
 To accomplish this task in Python we can use `for` and `while` loops (or also cycles).
 
 ### `for` loop
+A for loop in Python is a control structure used to iterate (repeat) a block of code a specific number of times. It is a fundamental programming construct for performing repetitive tasks efficiently.
+
 I usually use this type of loop if I know in advance how many iterations I need to perform.
 The syntax of loop is very easy:
 
@@ -284,6 +283,38 @@ Let's break this down into parts to make it easier to understand:
 As you can see, we specify the body of a loop using indentation, as we do with conditional statements.
 
 Now let's take a look on `range()` function.
+The `range()` function in Python is a built-in function used to generate a sequence of numbers within a specified range. It's commonly used in for loops to control the number of iterations or to create sequences of numbers. Here's how the `range()` function works:
+
+```python
+range(stop)
+range(start, stop)
+range(start, stop, step)
+```
+`range()` function can take three arguments, two of them are optional and 1 is required.
+- `start` (optional): The starting value of the sequence (inclusive). If not provided, it **defaults to 0**.
+- `stop` (required): The end value of the sequence (exclusive). This value is not included in the generated sequence.
+- `step` (optional): The step or increment between numbers in the sequence. If not provided, it **defaults to 1**.
+
+Examples:
+
+```{code-cell} ipython3
+:tags: ["hide-output"]
+print("Example 1 -- range(4):")
+for i in range(4):
+    print(i)  # Outputs 0, 1, 2, 3
+
+print("Example 2  -- range(2, 6):")
+for i in range(2, 6):
+    print(i)  # Outputs 2, 3, 4, 5
+
+print("Example 3 -- range(1, 5, 2):")
+for i in range(1, 5, 2):
+    print(i)  # Outputs 1, 3
+
+print("Example 4 -- range(4, 0, -1):")
+for i in range(4, 0, -1):
+    print(i)  # Outputs 4, 3, 2, 1
+```
 
 
 

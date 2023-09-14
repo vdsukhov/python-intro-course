@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Variables and Data Types &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Control Flow" href="control_flow.html" />
     <link rel="prev" title="Introduction to Python" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -366,10 +367,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-and-data-types">
-<h1>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this headline">#</a></h1>
+<h1>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this heading">#</a></h1>
 <p>In the world of programming, our focus is on understanding things through a computer’s eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we’re trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to answer.</p>
 <section id="numbers">
-<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">#</a></h2>
+<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h2>
 <p>We can use numbers in Python in obvious way. To demonstrate this, we will use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to output some examples. Simply specify a number and print it to the standard output.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -463,7 +464,7 @@ document.write(`
 </div>
 </section>
 <section id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
 <p>We already saw the first example of strings in python in our first program: <code class="docutils literal notranslate"><span class="pre">&quot;I'm</span> <span class="pre">Python.</span> <span class="pre">Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!&quot;</span></code>.
 Strings are used in python to handle and operate with texts.
 There are couple different ways how you can specify string in python:</p>
@@ -526,7 +527,7 @@ I am a &quot;human&quot;
 </div>
 <p>I would recommend use enclosing (<code class="docutils literal notranslate"><span class="pre">\'</span></code> and <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code>).</p>
 <section id="operations-on-strings">
-<h3>Operations on strings<a class="headerlink" href="#operations-on-strings" title="Permalink to this headline">#</a></h3>
+<h3>Operations on strings<a class="headerlink" href="#operations-on-strings" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Concatenation</strong>.
 We can merge strings into one by using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator or by simply putting them one after the other.
@@ -578,7 +579,7 @@ If you need to repeat a string, you can use the  operator, followed by the desir
 </section>
 </section>
 <section id="logical-data-type">
-<h2>Logical data type<a class="headerlink" href="#logical-data-type" title="Permalink to this headline">#</a></h2>
+<h2>Logical data type<a class="headerlink" href="#logical-data-type" title="Permalink to this heading">#</a></h2>
 <p>In programming, we often encounter situations that demand binary decision.
 When I think about it I always recall the moment from “Matrix” movie where there is the Neo making decision between red and blue pills.
 Logical data types serve as the digital manifestation of this choice.
@@ -586,7 +587,7 @@ To manipulate between with different decisions python has <code class="docutils 
 They enable us to represent two distinct possibilities: true or false.</p>
 <p>This data type will assist us in making decisions within our programs. There will be situations where we need to execute one part of the code if certain statements are true, and another part if they are false.</p>
 <section id="logical-operators">
-<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">#</a></h3>
+<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h3>
 <p>For now, let’s review some basic logical operations:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> - logical and</p></li>
@@ -644,7 +645,7 @@ not False: True
 </div>
 </section>
 <section id="comparison-operators">
-<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">#</a></h3>
+<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
 <p>You can get <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type as result after performing comparison of other objects.
 Here is the list of comparison operators:</p>
 <ul class="simple">
@@ -693,16 +694,12 @@ True
 </section>
 </section>
 <section id="precedence-of-operators">
-<h2>Precedence of Operators<a class="headerlink" href="#precedence-of-operators" title="Permalink to this headline">#</a></h2>
+<h2>Precedence of Operators<a class="headerlink" href="#precedence-of-operators" title="Permalink to this heading">#</a></h2>
 <p>Okay, we have looked at some operations separately. In reality, we often need to combine them in a more complex way. To do this, we need to remember the precedence of operators. The following table summarizes the operator precedence from highest to lowest:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table" id="id1">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Precedence of Operators</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Level</p></th>
 <th class="head"><p class="sd-card-text">Operators</p></th>
@@ -737,7 +734,7 @@ True
 <p>As usual you can enforce order of operations with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Okay, so far we have learned how to create objects in Python and print them immediately. However, we usually want to store objects and reuse them in our code. To do this, we use variables in Python. We can create a specific name and assign it to a specific object in Python. Here is an example:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -814,7 +811,7 @@ In the example above, we can think that we have a box named <code class="docutil
 </details>
 </div>
 <section id="rules-for-python-variables">
-<h3>Rules for Python variables<a class="headerlink" href="#rules-for-python-variables" title="Permalink to this headline">#</a></h3>
+<h3>Rules for Python variables<a class="headerlink" href="#rules-for-python-variables" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>A variable name must start with a letter or the underscore character</p></li>
 <li><p>A variable name cannot start with a number</p></li>
@@ -825,14 +822,14 @@ In the example above, we can think that we have a box named <code class="docutil
 </section>
 </section>
 <section id="type-conversion">
-<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline">#</a></h2>
+<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this heading">#</a></h2>
 <p>Sometimes, you need to change the way a computer understands data.
 Imagine you have two pieces of text, <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> and you want to put them together like words. You can do this with a plus <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, like <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span> <span class="pre">+</span> <span class="pre">&quot;2&quot;</span></code> which makes <code class="docutils literal notranslate"><span class="pre">&quot;42&quot;</span></code>.</p>
 <p>But what if you want the computer to treat these like numbers instead of just text?
 That’s when Python Type Conversions come to the rescue.
 Let’s look at some everyday examples of how to do this.</p>
 <section id="int-to-float">
-<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#int-to-float" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#int-to-float" title="Permalink to this heading">#</a></h3>
 <p>You can convert an integer to a floating-point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> function. For example:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -858,7 +855,7 @@ Let’s look at some everyday examples of how to do this.</p>
 </div>
 </section>
 <section id="float-to-int">
-<h3><code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#float-to-int" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#float-to-int" title="Permalink to this heading">#</a></h3>
 <p>To convert a floating-point number to an integer, you can use the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function. Be aware that this truncates the decimal part, not rounding. For example:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -884,7 +881,7 @@ int_num = 3
 </div>
 </section>
 <section id="str-to-int-or-float">
-<h3><code class="docutils literal notranslate"><span class="pre">str</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#str-to-int-or-float" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">str</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#str-to-int-or-float" title="Permalink to this heading">#</a></h3>
 <p>You can convert a string containing a numeric value to an integer or float using <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code>. For example:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -923,7 +920,7 @@ float_num = 42.0
 </div>
 </section>
 <section id="int-or-float-to-str">
-<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#int-or-float-to-str" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#int-or-float-to-str" title="Permalink to this heading">#</a></h3>
 <p>To convert an integer or float object to a string, you can use the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. For example:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -951,7 +948,7 @@ type(str_float): &lt;class &#39;str&#39;&gt;  str_float =  3.1415
 </div>
 </section>
 <section id="bool-truthy-and-falsy-values">
-<h3><code class="docutils literal notranslate"><span class="pre">bool</span></code> Truthy and Falsy values<a class="headerlink" href="#bool-truthy-and-falsy-values" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">bool</span></code> Truthy and Falsy values<a class="headerlink" href="#bool-truthy-and-falsy-values" title="Permalink to this heading">#</a></h3>
 <p>To change an object into a logical data type, you can use the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function. Here’s a simple rule for how this conversion works:</p>
 <ul class="simple">
 <li><p>If you have <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, or an empty text <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, they turn into <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -1012,7 +1009,10 @@ Understanding these concepts is important when dealing with conditions and decis
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -1032,7 +1032,10 @@ Understanding these concepts is important when dealing with conditions and decis
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1078,7 +1081,7 @@ Understanding these concepts is important when dealing with conditions and decis
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1108,7 +1111,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1117,8 +1120,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
