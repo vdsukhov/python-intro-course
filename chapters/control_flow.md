@@ -259,10 +259,10 @@ Message was ignored
 
 ::::
 
-## Iterative Statements
+## Loops/Cycles
 
 Now, we will learn how to repeat a piece of code a required number of times in Python.
-To accomplish this task in Python we can use `for` and `while` loops (or also cycles).
+To accomplish this task in Python we can use `for` and `while` loops.
 
 ### `for` loop
 A for loop in Python is a control structure used to iterate (repeat) a block of code a specific number of times. It is a fundamental programming construct for performing repetitive tasks efficiently.
