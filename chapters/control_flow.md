@@ -13,6 +13,12 @@ kernelspec:
 ---
 # Control Flow
 
+
+<!-- ```{image} ./pics/control_flow_snake_circle.png
+:width: 560px
+:align: center
+``` -->
+
 In this section, we'll explore **control flow**, which determines the sequence in which a program's code runs.
 
 Up until now, we've executed all our commands one after the other, like reading a book from start to finish. But there are times when we want the program to behave differently. Sometimes, we only want certain parts of the code to run if specific conditions are met, and other times, we want to repeat a piece of code several times. The following chart represents possible options for control flow in Python.
@@ -282,8 +288,14 @@ Let's break this down into parts to make it easier to understand:
 
 As you can see, we specify the body of a loop using indentation, as we do with conditional statements.
 
+#### `range()` function
+
 Now let's take a look on `range()` function.
 The `range()` function in Python is a built-in function used to generate a sequence of numbers within a specified range. It's commonly used in for loops to control the number of iterations or to create sequences of numbers. Here's how the `range()` function works:
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/range_overview.mp4" type="video/mp4">
+</video>
 
 ```python
 range(stop)
@@ -294,6 +306,14 @@ range(start, stop, step)
 - `start` (optional): The starting value of the sequence (inclusive). If not provided, it **defaults to 0**.
 - `stop` (required): The end value of the sequence (exclusive). This value is not included in the generated sequence.
 - `step` (optional): The step or increment between numbers in the sequence. If not provided, it **defaults to 1**.
+
+
+
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/range_examples.mp4" type="video/mp4">
+</video>
+
 
 Examples:
 
@@ -316,8 +336,38 @@ for i in range(4, 0, -1):
     print(i)  # Outputs 4, 3, 2, 1
 ```
 
+#### Nested `for` loops
+
+It is possible to create more complex structures where one `for` loop is nested inside another.
+Let's consider the task of generating all possible pairs `(i, j)` where i takes values from `{1, 2, ..., 5}` and j takes values from `{1, 2, 3}`.
+To accomplish this, we can use the following code:
+
+```{code-cell} ipython3
+:tags: ["hide-output"]
+for i in range(1, 6):
+    for j in range(1, 4):
+        print("(", i, ", ", j, ")", sep="")
+```
+Here, we are using the `sep` argument of the `print` function for the first time.
+This argument controls the separator used to separate the elements passed to the function.
+By default, the value for `sep` is a whitespace, but here we have changed it to an empty string.
+You can try removing `sep=""` from the `print` function to see how it affects the output.
+
+````{note}
+There are often multiple ways to achieve the same task in programming. For example, in this case, we could omit the use of the `sep` argument by using the following approach:
+```python
+for i in range(1, 6):
+    for j in range(1, 4):
+        print("(" + str(i) + ", " + str(j) + ")")
+```
+````
+
+In my opinion, the `for` loop is very useful when you already know the exact number of iterations needed in advance.
+However, there are cases where it is not known or difficult to determine the number of iterations required to accomplish a specific task.
+To handle such situations, Python provides the `while` loop. Let's take a closer look at it.
 
 
 ### `while` loop
+
 
 

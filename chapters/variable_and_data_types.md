@@ -14,6 +14,11 @@ kernelspec:
 
 # Variables and Data Types
 
+<!-- ```{image} ./pics/variables_and_data_types_box.png
+:width: 560px
+:align: center
+``` -->
+
 In the world of programming, our focus is on understanding things through a computer's eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we're trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to answer.
 
 
