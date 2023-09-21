@@ -265,6 +265,34 @@ Message was ignored
 
 ::::
 
+### Ternary `if ... else` operator
+
+There is one more way to use conditional statements, it is `if-else` ternary operator.
+You can also use the if-else statement as a ternary operator, which is a concise way to express conditional expressions in a single line of code.
+
+Here's the basic syntax for the if-else ternary operator:
+```python
+val_opt_a if condition else val_opt_b
+```
+Here:
+- `condition` this is the condition that you want to check
+- `val_opt_a` if the condition is true, this value will be returned
+- `val_opt_b` if the condition is false, this value will be returned
+
+Here's an example using the if-else ternary operator to determine the maximum of two numbers:
+```{code-cell} ipython3
+:tags: ['hide-output']
+a = 10
+b = 20
+
+max_value = a if a > b else b
+print(max_value)
+```
+
+In this example, the condition `a > b` is evaluated. If it's true, the value of `a` is assigned to `max_value`; otherwise, the value of `b` is assigned.
+
+The if-else ternary operator is a concise and readable way to express simple conditional logic in one line of code. However, it's essential to use it judiciously, as it can become less readable if the conditions or expressions are complex.
+
 ## Loops/Cycles
 
 Now, we will learn how to repeat a piece of code a required number of times in Python.
@@ -369,5 +397,73 @@ To handle such situations, Python provides the `while` loop. Let's take a closer
 
 ### `while` loop
 
+Let's imagine that we want to obtain an integer number from the user that belongs to the interval from 0 to 100 (inclusive on both sides).
+However, the user can enter a value that is outside of this interval, and we don't know in advance how many iterations it will take until the user enters the proper value.
+
+Let's explore a possible implementation:
+```python
+inp_value = int(input("Enter number in interval from 0 to 100: "))
+
+while not (0 <= inp_value <= 100):
+    inp_value = int(input("Entered value was outisde of interval. Try one more time: "))
+```
+
+Here is a possible output:
+```
+Enter number in interval from 0 to 100: 1001
+Entered value was outisde of interval. Try one more time: 500
+Entered value was outisde of interval. Try one more time: 50
+```
+
+
+Aslo, it is possible to use `while` in the same manner as we used `for` loop:
+```{code-cell} ipython3
+:tags: ['hide-output']
+
+i = 0
+while i < 10:
+    print(i)
+    i = i + 1
+```
+
+````{note}
+You can use plus-equals operator `+=` which provides a convenient way to add a value to an existing variable and assign the new value back to the same variable.
+```python
+i = 0
+while i < 10:
+    print(i)
+    i += 1
+```
+
+Also, there are operators for subtraction `-=`, multiplication `*=` and division `/=`.
+
+````
+
+### `continue` and `break`  statements
+
+Sometimes, it is necessary to skip certain iterations or stop the entire loop. Python provides the `continue` and `break` statements to achieve this.
+
+Let's take a look at some examples:
+```{code-cell} ipython
+:tags: ['hide-output']
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
+```
+In this example, we skip the remaining body of the loop if the number `i` is even.
+
+
+In case you need to stop loop if some condition met:
+```{code-cell} ipython
+:tags: ['hide-output']
+for i in range(10):
+    if i > 5:
+        break
+    print(i)
+```
+
+
+Both `continue` and `break` work similar with `while` loop.
 
 
