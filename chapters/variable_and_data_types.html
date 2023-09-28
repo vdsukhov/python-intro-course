@@ -817,6 +817,29 @@ In the example above, we can think that we have a box named <code class="docutil
 </div>
 </details>
 </div>
+<p>In Python, it is very easy to swap the values of two variables. While other programming languages often require an additional variable to accomplish this task, Python makes it much simpler:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x and y before swap:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x and y after swap:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x and y before swap: 1 2
+x and y after swap: 2 1
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <section id="rules-for-python-variables">
 <h3>Rules for Python variables<a class="headerlink" href="#rules-for-python-variables" title="Permalink to this headline">#</a></h3>
 <ul class="simple">

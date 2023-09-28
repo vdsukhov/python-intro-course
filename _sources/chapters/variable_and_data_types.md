@@ -248,6 +248,16 @@ x, y, z = "User", 1, True
 print(x, y, z)
 ```
 
+In Python, it is very easy to swap the values of two variables. While other programming languages often require an additional variable to accomplish this task, Python makes it much simpler:
+```{code-cell} ipython3
+:tags: ["hide-output"]
+x, y = 1, 2
+print("x and y before swap:", x, y)
+x, y = y, x
+print("x and y after swap:", x, y)
+```
+
+
 ### Rules for Python variables
 - A variable name must start with a letter or the underscore character
 - A variable name cannot start with a number
