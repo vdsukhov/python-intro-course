@@ -63,6 +63,7 @@ print("After pop:", stress_level)
 stress_level.sort()
 print("After sort:", stress_level)
 ```
+In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.
 
 ### Operations with `list`-s
 
@@ -81,4 +82,63 @@ stress_level = stress_level + [10] * 3
 print(stress_level)
 ```
 
-### Iterating over list
+### Indexing
+
+Let's create the following list:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+Now we want to access specific elements of a list. To do that, we can use indexing. In Python, indexing starts from `0`. This means that the first element in a list is associated with index `0`. Here are some examples:
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+print("numbers[0]:", numbers[0])
+print("numbers[3]:", numbers[3])
+```
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
+</video>
+
+### Slicing
+
+Great! Now we need to learn how to access specific elements from our list.
+There are times when we need to retrieve a specific part of the list, not just a single value.
+To efficiently do that, we can use slicing techniques.
+The concept is somewhat similar to the `range` function that we previously learned in the course.
+The general syntax for slicing is as follows:
+```python
+list_object[start:stop:step]
+```
+Here:
+- `start` is the starting point from which we want to begin our slice. Default value is `0`.
+- `stop` the position where we want to stop the slicing (take a look at the fact that the value itself is not included in the range, just like with the `range` function). Default value is length of the list object.
+- `step` is the step for our slicing. Default value is `1`
+
+Let's take a look on some exapmles:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print("numbers[:3]:", numbers[:3]) # same as numbers[0:3:1]
+print("numbers[3:]:", numbers[3:]) # same as numbers[3:10:1]
+print("numbers[::2]:", numbers[::2]) # same as numbers[0:10:2]
+```
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_slicing.mp4" type="video/mp4">
+</video>
+
+### `len` function
+
+In python there is very easy and convinient way to get the length of the object.
+To get the length you can simply use the `len` function.
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print(len(numbers))
+```
+
+### `for` loop and lists

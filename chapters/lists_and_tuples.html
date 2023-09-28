@@ -334,7 +334,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-data-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods"><code class="docutils literal notranslate"><span class="pre">list</span></code> methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-list-s">Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-list">Iterating over list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-function"><code class="docutils literal notranslate"><span class="pre">len</span></code> function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop-and-lists"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists</a></li>
 </ul>
 </li>
 </ul>
@@ -441,6 +444,7 @@ After sort: [0, 0, 0, 0, 10, 20, 80, 90, 100]
 </div>
 </details>
 </div>
+<p>In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.</p>
 </section>
 <section id="operations-with-list-s">
 <h3>Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s<a class="headerlink" href="#operations-with-list-s" title="Permalink to this headline">#</a></h3>
@@ -475,8 +479,111 @@ Examples:</p></li>
 </details>
 </div>
 </section>
-<section id="iterating-over-list">
-<h3>Iterating over list<a class="headerlink" href="#iterating-over-list" title="Permalink to this headline">#</a></h3>
+<section id="indexing">
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
+<p>Let’s create the following list:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want to access specific elements of a list. To do that, we can use indexing. In Python, indexing starts from <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that the first element in a list is associated with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. Here are some examples:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[0]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[3]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers[0]: 10
+numbers[3]: 40
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
+</video>
+</section>
+<section id="slicing">
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
+<p>Great! Now we need to learn how to access specific elements from our list.
+There are times when we need to retrieve a specific part of the list, not just a single value.
+To efficiently do that, we can use slicing techniques.
+The concept is somewhat similar to the <code class="docutils literal notranslate"><span class="pre">range</span></code> function that we previously learned in the course.
+The general syntax for slicing is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_object</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">step</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> is the starting point from which we want to begin our slice. Default value is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code> the position where we want to stop the slicing (take a look at the fact that the value itself is not included in the range, just like with the <code class="docutils literal notranslate"><span class="pre">range</span></code> function). Default value is length of the list object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code> is the step for our slicing. Default value is <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+</ul>
+<p>Let’s take a look on some exapmles:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[:3]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># same as numbers[0:3:1]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[3:]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span> <span class="c1"># same as numbers[3:10:1]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[::2]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># same as numbers[0:10:2]</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers[:3]: [10, 20, 30]
+numbers[3:]: [40, 50, 60, 70, 80, 90, 100]
+numbers[::2]: [10, 30, 50, 70, 90]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_slicing.mp4" type="video/mp4">
+</video>
+</section>
+<section id="len-function">
+<h3><code class="docutils literal notranslate"><span class="pre">len</span></code> function<a class="headerlink" href="#len-function" title="Permalink to this headline">#</a></h3>
+<p>In python there is very easy and convinient way to get the length of the object.
+To get the length you can simply use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="for-loop-and-lists">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists<a class="headerlink" href="#for-loop-and-lists" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 </section>
@@ -545,7 +652,10 @@ Examples:</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-data-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods"><code class="docutils literal notranslate"><span class="pre">list</span></code> methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-list-s">Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-list">Iterating over list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-function"><code class="docutils literal notranslate"><span class="pre">len</span></code> function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop-and-lists"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists</a></li>
 </ul>
 </li>
 </ul>

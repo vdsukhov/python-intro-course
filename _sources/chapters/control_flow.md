@@ -435,7 +435,12 @@ while i < 10:
     i += 1
 ```
 
-Also, there are operators for subtraction `-=`, multiplication `*=` and division `/=`.
+Also, there are operators for subtraction `-=`, multiplication `*=` and division `/=`. One more example:
+```python
+x = 5
+x *= 3
+print(x)
+```
 
 ````
 
