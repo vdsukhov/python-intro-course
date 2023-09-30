@@ -142,3 +142,92 @@ print(len(numbers))
 ```
 
 ### `for` loop and lists
+Now, let's imagine that we want to iterate over each element in a list and perform some action on it. In order to do this, we can use a `for` loop.
+
+First, let's start by creating the list using a `for` loop:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [] # here we create an empty list
+for i in range(10):
+    numbers.append(i)
+
+print(numbers)
+```
+
+Now we can perform some actions over the list:
+```{code-cell} ipython3
+:tags: ['hide-output']
+for i in range(len(numbers)):
+    print(numbers[i] ** 2)
+```
+For example, we took each element from the list and calculated its square value.
+Take a look that we did not modify the original list, since we just print some values.
+However, if you want to modify values you can use indexing and reassign operator:
+```{code-cell} ipython3
+:tags: ['hide-output']
+print("List before modification:", numbers)
+
+for i in range(len(numbers)):
+    numbers[i] = numbers[i] * numbers[i]
+
+print("List after modification:", numbers)
+```
+
+````{note}
+Python offers an alternative method for iterating over list elements using the `for` loop. Instead of using the `range` function and index variable `i`, we can directly specify a variable to hold a copy of each element during the iteration. Let's take a look at that:
+````
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+for elem in numbers:
+    print(elem, end = " ")
+```
+In this example, instead of iterating over all possible indexes, we are directly iterating through the elements. We used the variable name `elem` and replaced the `range` function with the name of the list object.
+A key moment here is that the variable `elem` is associated with a new object that is a copy of the real element in the list. This means that we cannot directly change the elements of the list in-place.
+Here is the example:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [0, 1, 2, 3, 4]
+for elem in numbers:
+    elem = elem + 5
+print(numbers)
+```
+
+So, you can use this approach if you do not want to modify the values in your list.
+
+
+### List comprehension
+
+List comprehension is very cool way to define the list and fill it.
+We saw previously this way to fill list with using for loop:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = []
+for i in range(10):
+    numbers.append(i)
+```
+However, it requires a total of 4 lines of code to perform this simple action. In such situations, we can use list comprehension to simplify it.
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [i for i in range(10)]
+print(numbers)
+```
+Cool, isn't it? 
+It appears that we have placed the for loop inside the list declaration.
+Let's split it into two parts:
+
+- `i`: This is the value that will be placed inside the list. You can modify it and check the results.
+- `for i in range(10)`: This statement specifies the number of objects and the elements that should be used as a specimen to be placed into the list.
+
+Also we can specify some condition which will filter out elements from the list which don't meet some property:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [i * 10 for i in range(10) if (i * 10) >= 50]
+print(numbers)
+```
+Here we have three parts:
+- The element `i * 10` will be added to the list.
+- The statement `for i in range(10)` specifies the range for `i`.
+- The condition `if i >= 50` is used as a filter to keep only those elements that meet the given criteria.
+

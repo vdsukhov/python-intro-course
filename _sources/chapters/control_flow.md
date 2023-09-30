@@ -444,6 +444,26 @@ print(x)
 
 ````
 
+For example if you need to read the input until the empty string is passed you can use the following code:
+
+```python3
+inp_line = input()
+while inp_line:
+    print("Echo:", inp_line)
+    inp_line = input()
+```
+
+Example of possible input-output:
+```
+Who
+Echo: Who
+You
+Echo: You
+Are
+Echo: Are
+
+```
+
 ### `continue` and `break`  statements
 
 Sometimes, it is necessary to skip certain iterations or stop the entire loop. Python provides the `continue` and `break` statements to achieve this.

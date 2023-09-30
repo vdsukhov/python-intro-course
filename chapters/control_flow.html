@@ -889,6 +889,23 @@ However, the user can enter a value that is outside of this interval, and we don
 </pre></div>
 </div>
 </div>
+<p>For example if you need to read the input until the empty string is passed you can use the following code:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">inp_line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">inp_line</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Echo:&quot;</span><span class="p">,</span> <span class="n">inp_line</span><span class="p">)</span>
+    <span class="n">inp_line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Example of possible input-output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Who</span>
+<span class="n">Echo</span><span class="p">:</span> <span class="n">Who</span>
+<span class="n">You</span>
+<span class="n">Echo</span><span class="p">:</span> <span class="n">You</span>
+<span class="n">Are</span>
+<span class="n">Echo</span><span class="p">:</span> <span class="n">Are</span>
+
+</pre></div>
+</div>
 </section>
 <section id="continue-and-break-statements">
 <h3><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>  statements<a class="headerlink" href="#continue-and-break-statements" title="Permalink to this headline">#</a></h3>
