@@ -74,6 +74,10 @@ Enter the second number: 8
 
 Now we are ready to start learning the different ways of controlling program code flow. Let's consider the following situation, which should help us understand conditional statements. Imagine you have written a message, and now another person must decide whether to read it or skip it.
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/phone_notification.mp4" type="video/mp4">
+</video>
+
 ### `if`
 
 In the first case, let's make our decision very simple: if we write something, person will always read it. 
