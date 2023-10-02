@@ -21,6 +21,10 @@ kernelspec:
 
 In the world of programming, our focus is on understanding things through a computer's eyes, like looking at objects in a special way. To make this happen, we need to pick out the most crucial details about these objects that will help us answer our questions. This is where the magic of Python comes in. Python is like a toolkit full of different kinds of containers. Some containers are like boxes for holding whole numbers, others are for numbers with decimal points, and some are for words and sentences. These containers help us gather and sort the important details about objects, and each type of container is designed to hold a different kind of detail. So, if we're trying to understand things in the world using Python, we use these containers to hold the important bits of information, like the numbers and words that matter most for the questions we want to answer.
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/feature_extraction_from_car.mp4" type="video/mp4">
+</video>
+
 
 ## Numbers
 We can use numbers in Python in obvious way. To demonstrate this, we will use the `print` function to output some examples. Simply specify a number and print it to the standard output.
@@ -114,6 +118,10 @@ print("You talking to me? " * 3)
 
 These are exaples of basic string operations further in the course we will see some other things that we could do with strings.
 ## Logical data type
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/red_and_blue_pills.mp4" type="video/mp4">
+</video>
 
 In programming, we often encounter situations that demand binary decision.
 When I think about it I always recall the moment from "Matrix" movie where there is the Neo making decision between red and blue pills.
@@ -267,6 +275,11 @@ print("x and y after swap:", x, y)
 
 
 ## Type Conversion
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/type_conversion.mp4" type="video/mp4">
+</video>
+
 Sometimes, you need to change the way a computer understands data. 
 Imagine you have two pieces of text, `"4"` and `"2"` and you want to put them together like words. You can do this with a plus `+` operator, like `"4" + "2"` which makes `"42"`.
 
