@@ -36,6 +36,125 @@ l = ["abc", 1, 42.0]
 print(l)
 ```
 
+
+### Indexing
+
+Let's create the following list:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+In reality, each element in a list is associated with an index. This allows us to access specific elements from our list.
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
+</video>
+
+
+In Python, indexing starts from `0`, so the first element in a list is associated with the index `0`.
+Now let's use indexing to access elements from a list.Here are some examples:
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+print("numbers[0]:", numbers[0])
+print("numbers[3]:", numbers[3])
+```
+
+We can change specific elements of our list by using the indexes:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+numbers[0] = -100
+numbers[-1] = 0
+print(numbers)
+```
+
+
+### Slicing
+
+There are times when we need to retrieve a specific part of the list, not just a single value.
+To efficiently do that, we can use slicing techniques.
+The concept is somewhat similar to the `range` function that we previously learned in the course.
+The general syntax for slicing is as follows:
+```python
+list_object[start:stop:step]
+```
+Here:
+- `start` is the starting point from which we want to begin our slice. Default value is `0`.
+- `stop` the position where we want to stop the slicing (take a look at the fact that the value itself is not included in the range, just like with the `range` function). Default value is length of the list object.
+- `step` is the step for our slicing. Default value is `1`
+
+Let's take a look on some exapmles:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print("numbers[:3]:", numbers[:3]) # same as numbers[0:3:1]
+print("numbers[3:]:", numbers[3:]) # same as numbers[3:10:1]
+print("numbers[::2]:", numbers[::2]) # same as numbers[0:10:2]
+```
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_slicing.mp4" type="video/mp4">
+</video>
+
+### `list` assignments
+
+Let's examine the list assignment, as it may appear challenging at first glance.
+```python3
+numbers_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+numbers_2 = numbers_1
+
+numbers_2[0] = 100
+```
+
+````{tab-set}
+```{tab-item} Question
+What do you think stores in the `numbers_1` variable?
+```
+
+```{tab-item} Answer
+`numbers_1` corresponds to the following list: `[100, 20, 30, 40, 50, 60, 70, 80, 90, 100]`
+```
+````
+
+This happens because in reality, in this specific case, the computer memory contains a dedicated place that contains the values of our list. After we specify a variable, it simply points to this object. When we use `numbers_2 = numbers_1`, we do not create another object (meaning we don't copy it), but rather create another pointer to the same object.
+Because of this, when we modify `numbers_2`, we are also modifying the underlying object, which is the same as the `numbers_1` variable.
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_assignment.mp4" type="video/mp4">
+</video>
+
+If you need to create an actual copy of the list, you can use slicing. Slicing always results in a new list.
+Here is an example:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+numbers_2 = numbers_1[::]
+
+numbers_2[0] = 100
+print("numbers_1:", numbers_1)
+print("numbers_2:", numbers_2)
+```
+
+However, if you want to check whether the underlying objects of the variables are the same, you can use the built-in `id` function. Here is how it works:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+numbers_2 = numbers_1
+
+print("Ids after numbers_2 = numbers_1")
+print(id(numbers_1), id(numbers_2))
+
+numbers_2 = numbers_1[::]
+print("Ids after numbers_2 = numbers_1[::]")
+print(id(numbers_1), id(numbers_2))
+```
+
+As you can see in the first case, the results of the "id" calls are the same. However, when we use slicing, we have two different underlying objects in memory.
+
+
+
 ### `list` methods
 Before I did not mention it, but in reality, each object in Python has specific features that are specified by its data type. Lists are no exception. These features are called methods. Let's take a look at some of them.
 You can append new element to list:
@@ -82,57 +201,6 @@ stress_level = stress_level + [10] * 3
 print(stress_level)
 ```
 
-### Indexing and Slicing
-
-Let's create the following list:
-```{code-cell} ipython3
-:tags: ['hide-output']
-numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-```
-
-In reality, each element in a list is associated with an index. This allows us to access specific elements from our list.
-
-<video autoplay loop playsinline controls muted>
-    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
-</video>
-
-
-In Python, indexing starts from `0`, so the first element in a list is associated with the index `0`.
-Now let's use indexing to access elements from a list.Here are some examples:
-
-```{code-cell} ipython3
-:tags: ['hide-output']
-print("numbers[0]:", numbers[0])
-print("numbers[3]:", numbers[3])
-```
-
-
-
-Great! Now we need to learn how to access specific elements from our list.
-There are times when we need to retrieve a specific part of the list, not just a single value.
-To efficiently do that, we can use slicing techniques.
-The concept is somewhat similar to the `range` function that we previously learned in the course.
-The general syntax for slicing is as follows:
-```python
-list_object[start:stop:step]
-```
-Here:
-- `start` is the starting point from which we want to begin our slice. Default value is `0`.
-- `stop` the position where we want to stop the slicing (take a look at the fact that the value itself is not included in the range, just like with the `range` function). Default value is length of the list object.
-- `step` is the step for our slicing. Default value is `1`
-
-Let's take a look on some exapmles:
-```{code-cell} ipython3
-:tags: ['hide-output']
-numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-print("numbers[:3]:", numbers[:3]) # same as numbers[0:3:1]
-print("numbers[3:]:", numbers[3:]) # same as numbers[3:10:1]
-print("numbers[::2]:", numbers[::2]) # same as numbers[0:10:2]
-```
-
-<video autoplay loop playsinline controls muted>
-    <source src="../_static/videos/list_slicing.mp4" type="video/mp4">
-</video>
 
 ### `len` function
 

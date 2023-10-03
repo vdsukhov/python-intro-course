@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Control Flow &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,13 +39,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Lists, Tuples and Strings" href="lists_and_tuples.html" />
     <link rel="prev" title="Variables and Data Types" href="variable_and_data_types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -363,7 +362,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow">
-<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h1>
+<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h1>
 <!-- ```{image} ./pics/control_flow_snake_circle.png
 :width: 560px
 :align: center
@@ -372,7 +371,7 @@ document.write(`
 <p>Up until now, we’ve executed all our commands one after the other, like reading a book from start to finish. But there are times when we want the program to behave differently. Sometimes, we only want certain parts of the code to run if specific conditions are met, and other times, we want to repeat a piece of code several times. The following chart represents possible options for control flow in Python.</p>
 <p>Before we dive into control flow, let’s first understand the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
 <section id="input-function">
-<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this headline">#</a></h2>
 <img alt="../_images/flow.png" class="align-center" src="../_images/flow.png" />
 <p>Previously, we learned that programming generally involves input data, commands for the computer in Python’s language, and resulting output from our programs. However, we have only covered the second and third components of this fundamental programming concept. Now, we will learn the first way to obtain input data and interact with users.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function in Python is a fundamental tool for interactive programming. It allows you to collect user input directly from the keyboard during the execution of your program. When you call <code class="docutils literal notranslate"><span class="pre">input()</span></code>, the program pauses and waits for the user to type something and press “Enter”. Whatever the user enters is typically stored as a string. You can then use this input to make your program more interactive and responsive, whether it’s for gathering user preferences, processing user-generated data, or creating simple text-based games. It’s important to note that you can convert the input to different data types (like integers or floats) using typecasting if needed. The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function significantly enhances the user experience in Python programs by enabling two-way communication between the program and its users.</p>
@@ -409,13 +408,13 @@ The <code class="docutils literal notranslate"><span class="pre">prompt</span></
 </div>
 </section>
 <section id="conditional-statements">
-<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
 <p>Now we are ready to start learning the different ways of controlling program code flow. Let’s consider the following situation, which should help us understand conditional statements. Imagine you have written a message, and now another person must decide whether to read it or skip it.</p>
 <video autoplay loop playsinline controls muted>
     <source src="../_static/videos/phone_notification.mp4" type="video/mp4">
 </video>
 <section id="if">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this headline">#</a></h3>
 <p>In the first case, let’s make our decision very simple: if we write something, person will always read it.
 Now, we just need to use proper Python syntax to implement such a program.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
@@ -456,7 +455,7 @@ To summarize, we can use the following code:</p>
 </div>
 </section>
 <section id="if-else">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this headline">#</a></h3>
 <p>Ok, now let’s consider another situation where a person reads all messages except for messages from a specific person.
 If we got the message from this person we on purpose ignore it.
 To do so we can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement which is used in conjunction with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to specify what should happen if the condition in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is false.
@@ -507,7 +506,7 @@ End of the program
 <p>In this example person reads message if the message came from <code class="docutils literal notranslate"><span class="pre">&quot;Vladimir&quot;</span></code> otherwise the person ingore it.</p>
 </section>
 <section id="if-elif-else">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this headline">#</a></h3>
 <p>Now let’s consider the following scenario:</p>
 <ul class="simple">
 <li><p>If the message is from <code class="docutils literal notranslate"><span class="pre">&quot;Vladimir&quot;</span></code>, the person reads it and starts typing back.</p></li>
@@ -580,7 +579,7 @@ Input-2</div>
 </div>
 </section>
 <section id="nested-if-else">
-<h3>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#nested-if-else" title="Permalink to this heading">#</a></h3>
+<h3>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#nested-if-else" title="Permalink to this headline">#</a></h3>
 <p>You can nest <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> statements inside other <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Let’s consider the following simple example: we are receiving a message. First, we check if it is from <code class="docutils literal notranslate"><span class="pre">&quot;Vladimir&quot;</span></code>. If it is, we then check whether it is a text or audio message. If it is a text message, we read it; if it is an audio message, we ignore it.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
 <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message: &quot;</span><span class="p">)</span>
@@ -630,7 +629,7 @@ Input-2</div>
 </div>
 </section>
 <section id="ternary-if-else-operator">
-<h3>Ternary <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code> operator<a class="headerlink" href="#ternary-if-else-operator" title="Permalink to this heading">#</a></h3>
+<h3>Ternary <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code> operator<a class="headerlink" href="#ternary-if-else-operator" title="Permalink to this headline">#</a></h3>
 <p>There is one more way to use conditional statements, it is <code class="docutils literal notranslate"><span class="pre">if-else</span></code> ternary operator.
 You can also use the if-else statement as a ternary operator, which is a concise way to express conditional expressions in a single line of code.</p>
 <p>Here’s the basic syntax for the if-else ternary operator:</p>
@@ -671,11 +670,11 @@ You can also use the if-else statement as a ternary operator, which is a concise
 </section>
 </section>
 <section id="loops-cycles">
-<h2>Loops/Cycles<a class="headerlink" href="#loops-cycles" title="Permalink to this heading">#</a></h2>
+<h2>Loops/Cycles<a class="headerlink" href="#loops-cycles" title="Permalink to this headline">#</a></h2>
 <p>Now, we will learn how to repeat a piece of code a required number of times in Python.
 To accomplish this task in Python we can use <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
 <section id="for-loop">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h3>
 <p>A for loop in Python is a control structure used to iterate (repeat) a block of code a specific number of times. It is a fundamental programming construct for performing repetitive tasks efficiently.</p>
 <p>I usually use this type of loop if I know in advance how many iterations I need to perform.
 The syntax of loop is very easy:</p>
@@ -702,7 +701,7 @@ Iteration: 2
 </ol>
 <p>As you can see, we specify the body of a loop using indentation, as we do with conditional statements.</p>
 <section id="range-function">
-<h4><code class="docutils literal notranslate"><span class="pre">range()</span></code> function<a class="headerlink" href="#range-function" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">range()</span></code> function<a class="headerlink" href="#range-function" title="Permalink to this headline">#</a></h4>
 <p>Now let’s take a look on <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.
 The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function in Python is a built-in function used to generate a sequence of numbers within a specified range. It’s commonly used in for loops to control the number of iterations or to create sequences of numbers. Here’s how the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function works:</p>
 <video autoplay loop playsinline controls muted>
@@ -774,7 +773,7 @@ Example 4 -- range(4, 0, -1):
 </div>
 </section>
 <section id="nested-for-loops">
-<h4>Nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#nested-for-loops" title="Permalink to this heading">#</a></h4>
+<h4>Nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#nested-for-loops" title="Permalink to this headline">#</a></h4>
 <p>It is possible to create more complex structures where one <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is nested inside another.
 Let’s consider the task of generating all possible pairs <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j)</span></code> where i takes values from <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">...,</span> <span class="pre">5}</span></code> and j takes values from <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3}</span></code>.
 To accomplish this, we can use the following code:</p>
@@ -831,7 +830,7 @@ To handle such situations, Python provides the <code class="docutils literal not
 </section>
 </section>
 <section id="while-loop">
-<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h3>
 <p>Let’s imagine that we want to obtain an integer number from the user that belongs to the interval from 0 to 100 (inclusive on both sides).
 However, the user can enter a value that is outside of this interval, and we don’t know in advance how many iterations it will take until the user enters the proper value.</p>
 <p>Let’s explore a possible implementation:</p>
@@ -913,7 +912,7 @@ However, the user can enter a value that is outside of this interval, and we don
 </div>
 </section>
 <section id="continue-and-break-statements">
-<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>  statements<a class="headerlink" href="#continue-and-break-statements" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>  statements<a class="headerlink" href="#continue-and-break-statements" title="Permalink to this headline">#</a></h3>
 <p>Sometimes, it is necessary to skip certain iterations or stop the entire loop. Python provides the <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements to achieve this.</p>
 <p>Let’s take a look at some examples:</p>
 <div class="cell tag_hide-output docutils container">
@@ -1000,10 +999,7 @@ However, the user can enter a value that is outside of this interval, and we don
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="variable_and_data_types.html"
@@ -1023,10 +1019,7 @@ However, the user can enter a value that is outside of this interval, and we don
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1068,7 +1061,7 @@ However, the user can enter a value that is outside of this interval, and we don
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1098,7 +1091,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -1107,8 +1100,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
