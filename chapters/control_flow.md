@@ -26,6 +26,11 @@ Up until now, we've executed all our commands one after the other, like reading 
 Before we dive into control flow, let's first understand the `input` function.
 
 ## `input` function
+
+```{image} ./pics/flow.png
+:align: center
+```
+
 Previously, we learned that programming generally involves input data, commands for the computer in Python's language, and resulting output from our programs. However, we have only covered the second and third components of this fundamental programming concept. Now, we will learn the first way to obtain input data and interact with users.
 
 The `input()` function in Python is a fundamental tool for interactive programming. It allows you to collect user input directly from the keyboard during the execution of your program. When you call `input()`, the program pauses and waits for the user to type something and press "Enter". Whatever the user enters is typically stored as a string. You can then use this input to make your program more interactive and responsive, whether it's for gathering user preferences, processing user-generated data, or creating simple text-based games. It's important to note that you can convert the input to different data types (like integers or floats) using typecasting if needed. The `input()` function significantly enhances the user experience in Python programs by enabling two-way communication between the program and its users.

@@ -82,7 +82,7 @@ stress_level = stress_level + [10] * 3
 print(stress_level)
 ```
 
-### Indexing
+### Indexing and Slicing
 
 Let's create the following list:
 ```{code-cell} ipython3
@@ -90,7 +90,15 @@ Let's create the following list:
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-Now we want to access specific elements of a list. To do that, we can use indexing. In Python, indexing starts from `0`. This means that the first element in a list is associated with index `0`. Here are some examples:
+In reality, each element in a list is associated with an index. This allows us to access specific elements from our list.
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
+</video>
+
+
+In Python, indexing starts from `0`, so the first element in a list is associated with the index `0`.
+Now let's use indexing to access elements from a list.Here are some examples:
 
 ```{code-cell} ipython3
 :tags: ['hide-output']
@@ -98,11 +106,7 @@ print("numbers[0]:", numbers[0])
 print("numbers[3]:", numbers[3])
 ```
 
-<video autoplay loop playsinline controls muted>
-    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
-</video>
 
-### Slicing
 
 Great! Now we need to learn how to access specific elements from our list.
 There are times when we need to retrieve a specific part of the list, not just a single value.
