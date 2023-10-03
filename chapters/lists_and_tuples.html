@@ -334,8 +334,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-data-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods"><code class="docutils literal notranslate"><span class="pre">list</span></code> methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-list-s">Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-function"><code class="docutils literal notranslate"><span class="pre">len</span></code> function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop-and-lists"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a></li>
@@ -480,8 +479,8 @@ Examples:</p></li>
 </details>
 </div>
 </section>
-<section id="indexing">
-<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
+<section id="indexing-and-slicing">
+<h3>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">#</a></h3>
 <p>Let’s create the following list:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -490,7 +489,12 @@ Examples:</p></li>
 </div>
 </div>
 </div>
-<p>Now we want to access specific elements of a list. To do that, we can use indexing. In Python, indexing starts from <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that the first element in a list is associated with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. Here are some examples:</p>
+<p>In reality, each element in a list is associated with an index. This allows us to access specific elements from our list.</p>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
+</video>
+<p>In Python, indexing starts from <code class="docutils literal notranslate"><span class="pre">0</span></code>, so the first element in a list is associated with the index <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+Now let’s use indexing to access elements from a list.Here are some examples:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers[0]:&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -511,12 +515,6 @@ numbers[3]: 40
 </div>
 </details>
 </div>
-<video autoplay loop playsinline controls muted>
-    <source src="../_static/videos/list_indexing.mp4" type="video/mp4">
-</video>
-</section>
-<section id="slicing">
-<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
 <p>Great! Now we need to learn how to access specific elements from our list.
 There are times when we need to retrieve a specific part of the list, not just a single value.
 To efficiently do that, we can use slicing techniques.
@@ -848,8 +846,7 @@ Let’s split it into two parts:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-data-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods"><code class="docutils literal notranslate"><span class="pre">list</span></code> methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-list-s">Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-function"><code class="docutils literal notranslate"><span class="pre">len</span></code> function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop-and-lists"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a></li>
