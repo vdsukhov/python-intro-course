@@ -565,9 +565,9 @@ numbers_2: [100, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ids after numbers_2 = numbers_1
-140534010499136 140534010499136
+140250658803968 140250658803968
 Ids after numbers_2 = numbers_1[::]
-140534010499136 140534012461760
+140250658803968 140250658700352
 </pre></div>
 </div>
 </div>
@@ -627,6 +627,30 @@ Let’s take a look on some other examples:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>After extend: [0, 0, 10, 20, 100, 0, 0, 90, 80, 70]
 After pop: [0, 0, 10, 20, 100, 0, 0, 90, 80]
 After sort: [0, 0, 0, 0, 10, 20, 80, 90, 100]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>If you want to remove an element, you can use the method <code class="docutils literal notranslate"><span class="pre">remove</span></code>. However, if you prefer to remove the element by index, you can use the <code class="docutils literal notranslate"><span class="pre">del</span></code> operator instead of the <code class="docutils literal notranslate"><span class="pre">remove</span></code> method. Here is an example of how it works:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stress_level</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stress_level before del:&#39;</span><span class="p">,</span> <span class="n">stress_level</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">stress_level</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stress_level after del:&#39;</span><span class="p">,</span> <span class="n">stress_level</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stress_level before del: [0, 0, 10, 20, 100, 0, 0]
+stress_level after del: [0, 0, 20, 100, 0, 0]
 </pre></div>
 </div>
 </div>
@@ -827,13 +851,25 @@ Here is the example:</p>
 <p>List comprehension is very cool way to define the list and fill it.
 We saw previously this way to fill list with using for loop:</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <p>However, it requires a total of 4 lines of code to perform this simple action. In such situations, we can use list comprehension to simplify it.</p>
 <div class="cell tag_hide-output docutils container">
@@ -888,6 +924,11 @@ Let’s split it into two parts:</p>
 <li><p>The statement <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(10)</span></code> specifies the range for <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
 <li><p>The condition <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">i</span> <span class="pre">&gt;=</span> <span class="pre">50</span></code> is used as a filter to keep only those elements that meet the given criteria.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>List comprehensions are like shortcuts in Python for creating lists. They’re great when you want to make a new list by applying a simple operation to every item in an existing list. For example, if you have a list of numbers and want to double each one, a list comprehension is perfect.</p>
+<p>However, you should avoid list comprehensions when things get too complex. If you need to write a long, convoluted expression or if you’re not working with lists, but instead need to perform actions that involve multiple lines of code or complex logic, it’s better to use a regular <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. List comprehensions are like race cars on a straight track; they’re fast and efficient, but when the road gets twisty, it’s better to go with the steady and reliable option.</p>
+</div>
 </section>
 </section>
 </section>

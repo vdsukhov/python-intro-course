@@ -182,6 +182,19 @@ print("After pop:", stress_level)
 stress_level.sort()
 print("After sort:", stress_level)
 ```
+If you want to remove an element, you can use the method `remove`. However, if you prefer to remove the element by index, you can use the `del` operator instead of the `remove` method. Here is an example of how it works:
+```{code-cell} ipython3
+:tags: ['hide-output']
+
+stress_level = [0, 0, 10, 20, 100, 0, 0]
+print('stress_level before del:', stress_level)
+
+del stress_level[2]
+print('stress_level after del:', stress_level)
+```
+
+
+
 In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.
 
 ### Operations with `list`-s
@@ -277,6 +290,7 @@ We saw previously this way to fill list with using for loop:
 numbers = []
 for i in range(10):
     numbers.append(i)
+print(numbers)
 ```
 However, it requires a total of 4 lines of code to perform this simple action. In such situations, we can use list comprehension to simplify it.
 
@@ -303,3 +317,8 @@ Here we have three parts:
 - The statement `for i in range(10)` specifies the range for `i`.
 - The condition `if i >= 50` is used as a filter to keep only those elements that meet the given criteria.
 
+```{warning}
+List comprehensions are like shortcuts in Python for creating lists. They're great when you want to make a new list by applying a simple operation to every item in an existing list. For example, if you have a list of numbers and want to double each one, a list comprehension is perfect.
+
+However, you should avoid list comprehensions when things get too complex. If you need to write a long, convoluted expression or if you're not working with lists, but instead need to perform actions that involve multiple lines of code or complex logic, it's better to use a regular `for` loop. List comprehensions are like race cars on a straight track; they're fast and efficient, but when the road gets twisty, it's better to go with the steady and reliable option.
+```
