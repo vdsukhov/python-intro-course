@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lists, Tuples and Strings &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Dictionaries and Sets" href="dict_and_set.html" />
     <link rel="prev" title="Control Flow" href="control_flow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -342,6 +343,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type"><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-data-type"><code class="docutils literal notranslate"><span class="pre">str</span></code> data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-to-a-string">Converting a List to a String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-string-to-a-list">Converting a String to a List</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities-between-lists-tuples-and-strings">Similarities between lists, tuples, and strings</a></li>
 </ul>
             </nav>
         </div>
@@ -354,12 +363,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists-tuples-and-strings">
-<h1>Lists, Tuples and Strings<a class="headerlink" href="#lists-tuples-and-strings" title="Permalink to this headline">#</a></h1>
+<h1>Lists, Tuples and Strings<a class="headerlink" href="#lists-tuples-and-strings" title="Permalink to this heading">#</a></h1>
 <p>In this episode, we will discuss some iterable objects in Python, such as lists, tuples, and strings.</p>
 <p>Previously, we talked about the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type, where each object could only store one specific value of this type. However, there are times when it is crucial to combine objects into a collection for easier manipulation and work with them.</p>
 <p>Let’s begin by exploring the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type.</p>
 <section id="list-data-type">
-<h2><code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#list-data-type" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#list-data-type" title="Permalink to this heading">#</a></h2>
 <p>Imagine wanting to measure your stress level every five minutes. In this case, you would have 288 observations for just one day. However, storing and operating on this data in Python would require 288 different variables, which is not very efficient.</p>
 <p>To address this issue, we can use lists in Python. Here is an example of how you can create a list in Python:</p>
 <div class="cell tag_hide-output docutils container">
@@ -389,8 +398,54 @@ document.write(`
 </div>
 </details>
 </div>
+<p>To create an empty list, you can use the following syntax:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>I prefer <code class="docutils literal notranslate"><span class="pre">[]</span></code> because it is shorter.</p>
+<p>If you want to check whether a list contains a specific element, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <section id="indexing">
-<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
 <p>Let’s create the following list:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -449,7 +504,7 @@ numbers[3]: 40
 </div>
 </section>
 <section id="slicing">
-<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this heading">#</a></h3>
 <p>There are times when we need to retrieve a specific part of the list, not just a single value.
 To efficiently do that, we can use slicing techniques.
 The concept is somewhat similar to the <code class="docutils literal notranslate"><span class="pre">range</span></code> function that we previously learned in the course.
@@ -492,7 +547,7 @@ numbers[::2]: [10, 30, 50, 70, 90]
 </video>
 </section>
 <section id="list-assignments">
-<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> assignments<a class="headerlink" href="#list-assignments" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> assignments<a class="headerlink" href="#list-assignments" title="Permalink to this heading">#</a></h3>
 <p>Let’s examine the list assignment, as it may appear challenging at first glance.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
@@ -565,18 +620,69 @@ numbers_2: [100, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ids after numbers_2 = numbers_1
-140250658803968 140250658803968
+140117281619008 140117281619008
 Ids after numbers_2 = numbers_1[::]
-140250658803968 140250658700352
+140117281619008 140117281613248
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <p>As you can see in the first case, the results of the “id” calls are the same. However, when we use slicing, we have two different underlying objects in memory.</p>
+<p>To check whether two lists are equal in Python, you can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator. In this case, Python simply checks that all values are the same in both lists:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="o">==</span> <span class="n">numbers_2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>But if you want to check whether two variables refer to the same object, you need to use the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="ow">is</span> <span class="n">numbers_2</span><span class="p">)</span>
+
+<span class="n">numbers_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="ow">is</span> <span class="n">numbers_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 <section id="list-methods">
-<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> methods<a class="headerlink" href="#list-methods" title="Permalink to this heading">#</a></h3>
 <p>Before I did not mention it, but in reality, each object in Python has specific features that are specified by its data type. Lists are no exception. These features are called methods. Let’s take a look at some of them.
 You can append new element to list:</p>
 <div class="cell tag_hide-output docutils container">
@@ -659,7 +765,7 @@ stress_level after del: [0, 0, 20, 100, 0, 0]
 <p>In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.</p>
 </section>
 <section id="operations-with-list-s">
-<h3>Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s<a class="headerlink" href="#operations-with-list-s" title="Permalink to this headline">#</a></h3>
+<h3>Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s<a class="headerlink" href="#operations-with-list-s" title="Permalink to this heading">#</a></h3>
 <p>You can use the following operators with lists: <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - concatenates two lists into one, similar to how it works with strings.</p></li>
@@ -692,7 +798,7 @@ Examples:</p></li>
 </div>
 </section>
 <section id="len-function">
-<h3><code class="docutils literal notranslate"><span class="pre">len</span></code> function<a class="headerlink" href="#len-function" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">len</span></code> function<a class="headerlink" href="#len-function" title="Permalink to this heading">#</a></h3>
 <p>In python there is very easy and convinient way to get the length of the object.
 To get the length you can simply use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function.</p>
 <div class="cell tag_hide-output docutils container">
@@ -716,7 +822,7 @@ To get the length you can simply use the <code class="docutils literal notransla
 </div>
 </section>
 <section id="for-loop-and-lists">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists<a class="headerlink" href="#for-loop-and-lists" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists<a class="headerlink" href="#for-loop-and-lists" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s imagine that we want to iterate over each element in a list and perform some action on it. In order to do this, we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>First, let’s start by creating the list using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="cell tag_hide-output docutils container">
@@ -847,7 +953,7 @@ Here is the example:</p>
 <p>So, you can use this approach if you do not want to modify the values in your list.</p>
 </section>
 <section id="list-comprehension">
-<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h3>
+<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this heading">#</a></h3>
 <p>List comprehension is very cool way to define the list and fill it.
 We saw previously this way to fill list with using for loop:</p>
 <div class="cell tag_hide-output docutils container">
@@ -924,12 +1030,343 @@ Let’s split it into two parts:</p>
 <li><p>The statement <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(10)</span></code> specifies the range for <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
 <li><p>The condition <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">i</span> <span class="pre">&gt;=</span> <span class="pre">50</span></code> is used as a filter to keep only those elements that meet the given criteria.</p></li>
 </ul>
+<p>Additionally, you can use multiple for loops within a list comprehension.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0, 0&#39;, &#39;0, 1&#39;, &#39;0, 2&#39;, &#39;0, 3&#39;, &#39;1, 0&#39;, &#39;1, 1&#39;, &#39;1, 2&#39;, &#39;1, 3&#39;, &#39;2, 0&#39;, &#39;2, 1&#39;, &#39;2, 2&#39;, &#39;2, 3&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>List comprehensions are like shortcuts in Python for creating lists. They’re great when you want to make a new list by applying a simple operation to every item in an existing list. For example, if you have a list of numbers and want to double each one, a list comprehension is perfect.</p>
 <p>However, you should avoid list comprehensions when things get too complex. If you need to write a long, convoluted expression or if you’re not working with lists, but instead need to perform actions that involve multiple lines of code or complex logic, it’s better to use a regular <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. List comprehensions are like race cars on a straight track; they’re fast and efficient, but when the road gets twisty, it’s better to go with the steady and reliable option.</p>
 </div>
 </section>
+</section>
+<section id="tuple-data-type">
+<h2><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type<a class="headerlink" href="#tuple-data-type" title="Permalink to this heading">#</a></h2>
+<p>Tuples are another example of a data type that can store multiple objects. However, once you create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> object, you cannot change its elements. To create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> object, use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we’ve created a tuple called coordinates with two values, (3, 4).</p>
+<p>You can access the elements of a tuple object using indexing, in the same way as we did with a list.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 4
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>However, if you try to change an element of a tuple object, you will get an error. You can try executing the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The error message is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<p>Now, let’s highlight some key differences between tuples and lists:</p>
+<ul class="simple">
+<li><p>Immutability: Tuples are immutable, meaning you can’t change their contents once created, while lists are mutable, so you can modify them.</p></li>
+<li><p>Syntax: Tuples use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> for creation, while lists use square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p></li>
+<li><p>Use Cases: Tuples are useful when you want to ensure data remains constant, like latitude and longitude coordinates or information in a database record. Lists, being mutable, are better when you need a flexible collection to add or remove items.</p></li>
+</ul>
+<p>So, in summary, when you want data that won’t change, use a tuple, and when you need flexibility, go with a list. It’s like choosing between a sealed bag (tuple) and a versatile backpack (list) based on your specific needs in Python.</p>
+</section>
+<section id="str-data-type">
+<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> data type<a class="headerlink" href="#str-data-type" title="Permalink to this heading">#</a></h2>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
+<p>Previously, we have already seen the data type for strings in Python. Today, we will take a closer look at them and learn about their new features.
+Strings come with some helpful built-in functions, often called methods, that let you perform various operations on them. Here are a few common ones (the full list of methods you can find <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp">here</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code>: Transforms all characters to uppercase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code>: Converts all characters to lowercase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code>: Substitutes one part of the string with another.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code>: Breaks the string into a list using a separator.</p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Random text&quot;</span>
+<span class="n">upper_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">lower_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">repl_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Random&quot;</span><span class="p">,</span> <span class="s2">&quot;Non-random&quot;</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;upper_text:&quot;</span><span class="p">,</span> <span class="n">upper_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lower_text:&quot;</span><span class="p">,</span> <span class="n">lower_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;repl_text:&quot;</span><span class="p">,</span> <span class="n">repl_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;words:&quot;</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>upper_text: RANDOM TEXT
+lower_text: random text
+repl_text: Non-random text
+words: [&#39;Random&#39;, &#39;text&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>An important note is that strings are immutable objects. In all cases of method usage, we did not modify the original string.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random text
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>We can determine the length of a string using the same method as we did with lists. Additionally, we can use indexing:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: R
+1: a
+2: n
+3: d
+4: o
+5: m
+6:  
+7: t
+8: e
+9: x
+10: t
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Since strings are immutable, we cannot reassign specific elements.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Random text&quot;</span>
+<span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;W&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+</section>
+<section id="converting-a-list-to-a-string">
+<h3>Converting a List to a String<a class="headerlink" href="#converting-a-list-to-a-string" title="Permalink to this heading">#</a></h3>
+<p>If you have a list and want to turn it into a single string, you can use the join() method. This method joins the elements of a list into a single string, with a specified separator in between.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="n">fruit_string</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple_banana_cherry
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="converting-a-string-to-a-list">
+<h3>Converting a String to a List<a class="headerlink" href="#converting-a-string-to-a-list" title="Permalink to this heading">#</a></h3>
+<p>If you have a string and want to split it into a list of elements, you can use the split() method. This method breaks the string into parts using a specified separator.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_string</span> <span class="o">=</span> <span class="s2">&quot;apple, banana, cherry&quot;</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="n">fruit_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>If you want to create a list where each symbol is a separate element, you can use the following approach:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_str</span> <span class="o">=</span> <span class="s2">&quot;Vladimir&quot;</span>
+<span class="n">name_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">name_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;V&#39;, &#39;l&#39;, &#39;a&#39;, &#39;d&#39;, &#39;i&#39;, &#39;m&#39;, &#39;i&#39;, &#39;r&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="similarities-between-lists-tuples-and-strings">
+<h2>Similarities between lists, tuples, and strings<a class="headerlink" href="#similarities-between-lists-tuples-and-strings" title="Permalink to this heading">#</a></h2>
+<p>Despite their differences, lists, strings, and tuples also share some common features.</p>
+<ul class="simple">
+<li><p><strong>One common feature is that they all have a length, which can be obtained using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</strong></p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;The happiness of your life depends upon the quality of your thoughts.&quot;</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">configs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">,</span> <span class="s2">&quot;Windows&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span> <span class="c1"># number of symbols</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span> <span class="c1"># number of elements </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">configs</span><span class="p">))</span> <span class="c1"># number of elements</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69
+10
+3
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<ul class="simple">
+<li><p><strong>Lists, strings, and tuples are iterable objects, allowing iteration over them using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</strong></p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">configs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The happiness of your life depends upon the quality of your thoughts.
+0 10 20 30 40 50 60 70 80 90 
+1920 1080 Windows 
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Here we use an additional <code class="docutils literal notranslate"><span class="pre">end</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">print</span></code> function, which allows us to replace the default new line symbol <code class="docutils literal notranslate"><span class="pre">\n</span></code> with a custom one.</p>
+<ul class="simple">
+<li><p><strong>We can check whether an element or substring is part of a list, tuple, or string by using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator:</strong></p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;happiness&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1920</span> <span class="ow">in</span> <span class="n">configs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 </section>
 
@@ -959,7 +1396,10 @@ Let’s split it into two parts:</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="control_flow.html"
@@ -979,7 +1419,10 @@ Let’s split it into two parts:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1005,6 +1448,14 @@ Let’s split it into two parts:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type"><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-data-type"><code class="docutils literal notranslate"><span class="pre">str</span></code> data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-list-to-a-string">Converting a List to a String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-string-to-a-list">Converting a String to a List</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities-between-lists-tuples-and-strings">Similarities between lists, tuples, and strings</a></li>
 </ul>
   </nav></div>
 
@@ -1013,7 +1464,7 @@ Let’s split it into two parts:</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1043,7 +1494,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1052,8 +1503,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

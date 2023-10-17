@@ -35,8 +35,23 @@ In general lists could contain different data types:
 l = ["abc", 1, 42.0]
 print(l)
 ```
+To create an empty list, you can use the following syntax:
+```{code-cell} ipython3
+:tags: ['hide-output']
+l = []
+print(l)
+l = list()
+print(l)
+```
+I prefer `[]` because it is shorter.
 
-
+If you want to check whether a list contains a specific element, you can use the `in` operator.
+```{code-cell} ipython3
+:tags: ['hide-output']
+l = [1, 2, 3]
+print(1 in l)
+print(4 in l)
+```
 ### Indexing
 
 Let's create the following list:
@@ -152,6 +167,31 @@ print(id(numbers_1), id(numbers_2))
 ```
 
 As you can see in the first case, the results of the "id" calls are the same. However, when we use slicing, we have two different underlying objects in memory.
+
+To check whether two lists are equal in Python, you can use the `==` operator. In this case, Python simply checks that all values are the same in both lists:
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers_1 = [1, 2, 3]
+numbers_2 = numbers_1
+
+print(numbers_1 == numbers_2)
+
+print([1, 2, 3] == [1, 2, 3, 4])
+```
+
+But if you want to check whether two variables refer to the same object, you need to use the `is` operator.
+```{code-cell} ipython3
+:tags: ['hide-output']
+numbers_1 = [1, 2, 3]
+numbers_2 = numbers_1
+
+print(numbers_1 is numbers_2)
+
+numbers_2 = [1, 2, 3]
+print(numbers_1 is numbers_2)
+```
+
+
 
 
 
@@ -317,8 +357,173 @@ Here we have three parts:
 - The statement `for i in range(10)` specifies the range for `i`.
 - The condition `if i >= 50` is used as a filter to keep only those elements that meet the given criteria.
 
+Additionally, you can use multiple for loops within a list comprehension.
+```{code-cell} ipython3
+:tags: ['hide-output']
+pairs = [str(i) + ", " + str(j) for i in range(3) for j in range(4)]
+print(pairs)
+```
+
 ```{warning}
 List comprehensions are like shortcuts in Python for creating lists. They're great when you want to make a new list by applying a simple operation to every item in an existing list. For example, if you have a list of numbers and want to double each one, a list comprehension is perfect.
 
 However, you should avoid list comprehensions when things get too complex. If you need to write a long, convoluted expression or if you're not working with lists, but instead need to perform actions that involve multiple lines of code or complex logic, it's better to use a regular `for` loop. List comprehensions are like race cars on a straight track; they're fast and efficient, but when the road gets twisty, it's better to go with the steady and reliable option.
 ```
+
+
+## `tuple` data type
+Tuples are another example of a data type that can store multiple objects. However, once you create a `tuple` object, you cannot change its elements. To create a `tuple` object, use parentheses `()`.
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+coordinates = (3, 4)
+```
+In this example, we've created a tuple called coordinates with two values, (3, 4).
+
+You can access the elements of a tuple object using indexing, in the same way as we did with a list.
+```{code-cell} ipython3
+:tags: ['hide-output']
+x = coordinates[0]
+y = coordinates[1]
+print(x, y)
+```
+
+However, if you try to change an element of a tuple object, you will get an error. You can try executing the following code:
+```python
+coordinates = (3, 4)
+coordinates[0] = 0
+```
+The error message is the following:
+```
+TypeError: 'tuple' object does not support item assignment
+```
+
+
+Now, let's highlight some key differences between tuples and lists:
+
+- Immutability: Tuples are immutable, meaning you can't change their contents once created, while lists are mutable, so you can modify them.
+- Syntax: Tuples use parentheses `()` for creation, while lists use square brackets `[]`.
+- Use Cases: Tuples are useful when you want to ensure data remains constant, like latitude and longitude coordinates or information in a database record. Lists, being mutable, are better when you need a flexible collection to add or remove items.
+
+So, in summary, when you want data that won't change, use a tuple, and when you need flexibility, go with a list. It's like choosing between a sealed bag (tuple) and a versatile backpack (list) based on your specific needs in Python.
+
+
+## `str` data type
+
+### Methods
+Previously, we have already seen the data type for strings in Python. Today, we will take a closer look at them and learn about their new features.
+Strings come with some helpful built-in functions, often called methods, that let you perform various operations on them. Here are a few common ones (the full list of methods you can find [here](https://www.w3schools.com/python/python_ref_string.asp)):
+- `upper()`: Transforms all characters to uppercase.
+- `lower()`: Converts all characters to lowercase.
+- `replace()`: Substitutes one part of the string with another.
+- `split()`: Breaks the string into a list using a separator.
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+text = "Random text"
+upper_text = text.upper()
+lower_text = text.lower()
+repl_text = text.replace("Random", "Non-random")
+words = text.split()
+
+print("upper_text:", upper_text)
+print("lower_text:", lower_text)
+print("repl_text:", repl_text)
+print("words:", words)
+```
+
+An important note is that strings are immutable objects. In all cases of method usage, we did not modify the original string.
+```{code-cell} ipython3
+:tags: ['hide-output']
+print(text)
+```
+
+We can determine the length of a string using the same method as we did with lists. Additionally, we can use indexing:
+```{code-cell} ipython3
+:tags: ['hide-output']
+for i in range(len(text)):
+    print(str(i) + ": " + text[i])
+```
+
+Since strings are immutable, we cannot reassign specific elements.
+```python
+text = "Random text"
+text[0] = "W"
+```
+
+```
+TypeError: 'str' object does not support item assignment
+```
+
+### Converting a List to a String
+
+If you have a list and want to turn it into a single string, you can use the join() method. This method joins the elements of a list into a single string, with a specified separator in between.
+```{code-cell} ipython3
+:tags: ['hide-output']
+fruits = ["apple", "banana", "cherry"]
+fruit_string = "_".join(fruits)
+print(fruit_string)
+```
+
+
+### Converting a String to a List
+
+If you have a string and want to split it into a list of elements, you can use the split() method. This method breaks the string into parts using a specified separator.
+
+```{code-cell} ipython3
+:tags: ['hide-output']
+fruit_string = "apple, banana, cherry"
+fruits = fruit_string.split(", ")
+print(fruits)
+```
+
+If you want to create a list where each symbol is a separate element, you can use the following approach:
+```{code-cell} ipython3
+:tags: ['hide-output']
+name_str = "Vladimir"
+name_list = list(name_str)
+print(name_list)
+```
+
+
+## Similarities between lists, tuples, and strings
+Despite their differences, lists, strings, and tuples also share some common features.
+
+- **One common feature is that they all have a length, which can be obtained using the `len` function:**
+```{code-cell} ipython3
+:tags: ['hide-output']
+line = "The happiness of your life depends upon the quality of your thoughts."
+numbers = [i * 10 for i in range(10)]
+configs = (1920, 1080, "Windows")
+
+print(len(line)) # number of symbols
+print(len(numbers)) # number of elements 
+print(len(configs)) # number of elements
+```
+
+- **Lists, strings, and tuples are iterable objects, allowing iteration over them using a `for` loop:**
+```{code-cell} ipython3
+:tags: ['hide-output']
+for elem in line:
+    print(elem, end="")
+print()
+
+for elem in numbers:
+    print(elem, end=" ")
+print()
+
+for elem in configs:
+    print(elem, end=" ")
+print()
+```
+Here we use an additional `end` argument in the `print` function, which allows us to replace the default new line symbol `\n` with a custom one.
+
+- **We can check whether an element or substring is part of a list, tuple, or string by using the `in` operator:**
+```{code-cell} ipython3
+:tags: ['hide-output']
+print("happiness" in line)
+print(10 in numbers)
+print(1920 in configs)
+```
+
+
