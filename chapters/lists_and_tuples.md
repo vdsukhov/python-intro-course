@@ -22,6 +22,10 @@ Let's begin by exploring the `list` data type.
 ## `list` data type
 Imagine wanting to measure your stress level every five minutes. In this case, you would have 288 observations for just one day. However, storing and operating on this data in Python would require 288 different variables, which is not very efficient.
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_stress.mp4" type="video/mp4">
+</video>
+
 To address this issue, we can use lists in Python. Here is an example of how you can create a list in Python:
 ```{code-cell} ipython3
 :tags: ['hide-output']
@@ -35,23 +39,8 @@ In general lists could contain different data types:
 l = ["abc", 1, 42.0]
 print(l)
 ```
-To create an empty list, you can use the following syntax:
-```{code-cell} ipython3
-:tags: ['hide-output']
-l = []
-print(l)
-l = list()
-print(l)
-```
-I prefer `[]` because it is shorter.
 
-If you want to check whether a list contains a specific element, you can use the `in` operator.
-```{code-cell} ipython3
-:tags: ['hide-output']
-l = [1, 2, 3]
-print(1 in l)
-print(4 in l)
-```
+
 ### Indexing
 
 Let's create the following list:
@@ -167,31 +156,6 @@ print(id(numbers_1), id(numbers_2))
 ```
 
 As you can see in the first case, the results of the "id" calls are the same. However, when we use slicing, we have two different underlying objects in memory.
-
-To check whether two lists are equal in Python, you can use the `==` operator. In this case, Python simply checks that all values are the same in both lists:
-```{code-cell} ipython3
-:tags: ['hide-output']
-numbers_1 = [1, 2, 3]
-numbers_2 = numbers_1
-
-print(numbers_1 == numbers_2)
-
-print([1, 2, 3] == [1, 2, 3, 4])
-```
-
-But if you want to check whether two variables refer to the same object, you need to use the `is` operator.
-```{code-cell} ipython3
-:tags: ['hide-output']
-numbers_1 = [1, 2, 3]
-numbers_2 = numbers_1
-
-print(numbers_1 is numbers_2)
-
-numbers_2 = [1, 2, 3]
-print(numbers_1 is numbers_2)
-```
-
-
 
 
 
