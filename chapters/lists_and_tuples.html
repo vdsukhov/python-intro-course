@@ -370,6 +370,9 @@ document.write(`
 <section id="list-data-type">
 <h2><code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#list-data-type" title="Permalink to this heading">#</a></h2>
 <p>Imagine wanting to measure your stress level every five minutes. In this case, you would have 288 observations for just one day. However, storing and operating on this data in Python would require 288 different variables, which is not very efficient.</p>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/list_stress.mp4" type="video/mp4">
+</video>
 <p>To address this issue, we can use lists in Python. Here is an example of how you can create a list in Python:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -393,52 +396,6 @@ document.write(`
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abc&#39;, 1, 42.0]
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<p>To create an empty list, you can use the following syntax:</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-[]
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<p>I prefer <code class="docutils literal notranslate"><span class="pre">[]</span></code> because it is shorter.</p>
-<p>If you want to check whether a list contains a specific element, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">l</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">l</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
 </pre></div>
 </div>
 </div>
@@ -620,66 +577,15 @@ numbers_2: [100, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ids after numbers_2 = numbers_1
-140117281619008 140117281619008
+140402174035008 140402174035008
 Ids after numbers_2 = numbers_1[::]
-140117281619008 140117281613248
+140402174035008 140402174032256
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <p>As you can see in the first case, the results of the “id” calls are the same. However, when we use slicing, we have two different underlying objects in memory.</p>
-<p>To check whether two lists are equal in Python, you can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator. In this case, Python simply checks that all values are the same in both lists:</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="o">==</span> <span class="n">numbers_2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<p>But if you want to check whether two variables refer to the same object, you need to use the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator.</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="ow">is</span> <span class="n">numbers_2</span><span class="p">)</span>
-
-<span class="n">numbers_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers_1</span> <span class="ow">is</span> <span class="n">numbers_2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 <section id="list-methods">
 <h3><code class="docutils literal notranslate"><span class="pre">list</span></code> methods<a class="headerlink" href="#list-methods" title="Permalink to this heading">#</a></h3>
