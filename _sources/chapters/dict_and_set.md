@@ -290,3 +290,24 @@ print("A - B", A - B)
 print("A <= B:", A <= B)
 print("A >= B:", A >= B)
 ```
+
+### Iterating Through a Set
+
+You can use `for` loops to go through all elements in a set:
+```{code-cell} ipython3
+:tags: ['hide-output']
+A = {1, 2, 3, 4, 5}
+for elem in A:
+    print(elem)
+```
+
+````{warning}
+Sets in Python are unordered objects. 
+This means there's no guarantee that different runs of your program will have the same order of elements during iterations. 
+You can verify this by running the following example several times:
+```python
+elements = set(["ABC", "L" * 10, "B" * 5, "DEF"])
+for elem in elements:
+    print(elem)
+```
+````
