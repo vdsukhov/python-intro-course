@@ -343,6 +343,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-number-of-arguments">Arbitrary Number of Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement"><code class="docutils literal notranslate"><span class="pre">return</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
 </ul>
             </nav>
         </div>
@@ -364,6 +365,9 @@ Functions play a pivotal role in making code organized, reusable, and easier to 
 Their importance cannot be overstated, as they enable you to break down complex tasks into manageable chunks, making your code more modular and maintainable.
 Key features of functions include the ability to accept input, perform specific operations, and return results.
 This versatility, along with the power to create your functions, empowers programmers to tackle a wide range of problems with elegance and efficiency.</p>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/function_concept.mp4" type="video/mp4">
+</video>
 <p>In our previous explorations, we’ve already encountered some of Python’s built-in functions like <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, and <code class="docutils literal notranslate"><span class="pre">type()</span></code>, which have been important for various tasks.
 Today, we’re taking the next step in our journey by delving into the art of crafting our own functions.
 We’ll learn how to create custom functions for our specific needs, allowing us to open the full creative power of Python in solving problems and simplifying complex tasks.
@@ -729,6 +733,39 @@ Now, let’s explore what happens when we don’t specify a <code class="docutil
 <p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement also denotes that the function has ended. Any code after return is not executed.</p>
 </div>
 </section>
+<section id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h2>
+<p>Recursion is a programming concept where a function calls itself to solve a problem. It’s like a “function loop” where the function keeps calling itself until it reaches a specific condition to stop.</p>
+<p>Key elements of recursion:</p>
+<ul class="simple">
+<li><p><strong>Base case:</strong> Every recursive function needs a base case, which is a condition that tells the function when to stop calling itself. Without a base case, the function would keep calling itslef infinitely.</p></li>
+<li><p><strong>Recursive call:</strong> In a recursion function, there’s a part where it calls itself with a slighlty simpler version of the problem. This is essential for making progress towards the base case.</p></li>
+</ul>
+<p>Let’s take a look on example of calculating the factorial.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example the base case is when <code class="docutils literal notranslate"><span class="pre">n</span></code> equals 1. At that point, we return 1 because the factorial of 1 is 1.
+In the recursive call, the function calculates <code class="docutils literal notranslate"><span class="pre">n</span></code> times the factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>. It keeps calling itself with a smaller value until it reaches the base case.</p>
+<p><strong>How Recursion Works:</strong></p>
+<ul class="simple">
+<li><p>You call the factorial function with a number, e.g., <code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code>.</p></li>
+<li><p>Inside the function, it checks if <code class="docutils literal notranslate"><span class="pre">n</span></code> is 1. If not, it calculates <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">factorial(n-1)</span></code>.</p></li>
+<li><p>The function calls itself with <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, which is <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code>.</p></li>
+<li><p>This process continues until <code class="docutils literal notranslate"><span class="pre">n</span></code> becomes 1. Then, it starts returning values to calculate the final result.
+So, in <code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code>, it calculates 5 * 4 * 3 * 2 * 1 and returns the result, which is 120.
+Recursion can be a powerful and elegant way to solve certain problems, but it’s essential to have a clear base case and ensure that the function converges towards it to avoid infinite recursion.</p></li>
+</ul>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/function_recursion.mp4" type="video/mp4">
+</video></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -804,6 +841,7 @@ Now, let’s explore what happens when we don’t specify a <code class="docutil
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-number-of-arguments">Arbitrary Number of Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement"><code class="docutils literal notranslate"><span class="pre">return</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
 </ul>
   </nav></div>
 

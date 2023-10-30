@@ -23,6 +23,10 @@ Their importance cannot be overstated, as they enable you to break down complex 
 Key features of functions include the ability to accept input, perform specific operations, and return results. 
 This versatility, along with the power to create your functions, empowers programmers to tackle a wide range of problems with elegance and efficiency.
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/function_concept.mp4" type="video/mp4">
+</video>
+
 In our previous explorations, we've already encountered some of Python's built-in functions like `print()`, `len()`, and `type()`, which have been important for various tasks. 
 Today, we're taking the next step in our journey by delving into the art of crafting our own functions. 
 We'll learn how to create custom functions for our specific needs, allowing us to open the full creative power of Python in solving problems and simplifying complex tasks. 
@@ -234,4 +238,35 @@ As you can observe, when a function lacks an explicit `return` statement, Python
 The `return` statement also denotes that the function has ended. Any code after return is not executed.
 ```
 
+## Recursion
+Recursion is a programming concept where a function calls itself to solve a problem. It's like a "function loop" where the function keeps calling itself until it reaches a specific condition to stop.
+
+Key elements of recursion:
+
+- **Base case:** Every recursive function needs a base case, which is a condition that tells the function when to stop calling itself. Without a base case, the function would keep calling itslef infinitely.
+- **Recursive call:** In a recursion function, there's a part where it calls itself with a slighlty simpler version of the problem. This is essential for making progress towards the base case.
+
+Let's take a look on example of calculating the factorial.
+```{code-cell} ipython3
+:tags: ['hide-output']
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+```
+In this example the base case is when `n` equals 1. At that point, we return 1 because the factorial of 1 is 1.
+In the recursive call, the function calculates `n` times the factorial of `n-1`. It keeps calling itself with a smaller value until it reaches the base case.
+
+**How Recursion Works:**
+
+- You call the factorial function with a number, e.g., `factorial(5)`.
+- Inside the function, it checks if `n` is 1. If not, it calculates `n * factorial(n-1)`.
+- The function calls itself with `n-1`, which is `factorial(4)`.
+- This process continues until `n` becomes 1. Then, it starts returning values to calculate the final result.
+So, in `factorial(5)`, it calculates 5 * 4 * 3 * 2 * 1 and returns the result, which is 120.
+Recursion can be a powerful and elegant way to solve certain problems, but it's essential to have a clear base case and ensure that the function converges towards it to avoid infinite recursion.
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/function_recursion.mp4" type="video/mp4">
+</video>
 
