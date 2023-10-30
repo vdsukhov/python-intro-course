@@ -22,6 +22,9 @@ Get ready to unleash your creativity and dive into the captivating world of Pyth
 - Basic knowledge of math (vector space, distance function)
 - Capability to seek and learn independently using online resources
 
+
+<a href="https://storyset.com/computer">On this website I use illustrations by Storyset</a>
+
 ## Table of contents
 
 ```{tableofcontents}
