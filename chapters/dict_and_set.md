@@ -31,6 +31,10 @@ print(M[0][0])
 print(M[1][2])
 ```
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/2d_array.mp4" type="video/mp4">
+</video>
+
 You can create more complex nested structures.
 Now, I will show you examples of how to create 2D lists using list comprehensions:
 
@@ -280,6 +284,10 @@ Python allows basic operations on sets, working as expected from a mathematical 
 - `-` - stands for set difference
 - `<=` - checks whether the left operand is a subset of the right one
 - `>=` - checks whether the right operand is a subset of the left one
+
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/set_operations.mp4" type="video/mp4">
+</video>
 
 ```{code-cell} ipython3
 :tags: ['hide-output']
