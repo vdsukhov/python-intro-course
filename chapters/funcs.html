@@ -342,6 +342,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments">Function arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-number-of-arguments">Arbitrary Number of Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-unpacking">Arguments unpacking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement"><code class="docutils literal notranslate"><span class="pre">return</span></code> statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
 </ul>
@@ -700,6 +701,66 @@ For in-depth information, you can explore this <a class="reference external" hre
 Additionally, I highly recommend you to read about <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> for a deeper understanding of handling keyword arguments in Python.
 It’s a powerful feature that can enhance your code’s flexibility and readability.</p>
 </section>
+<section id="arguments-unpacking">
+<h2>Arguments unpacking<a class="headerlink" href="#arguments-unpacking" title="Permalink to this heading">#</a></h2>
+<p>Argument unpacking during a function call in Python allows you to pass a sequence (like a list or tuple) as arguments to a function.
+This is particularly useful when you want to pass multiple values from a sequence as individual arguments to a function.
+Python provides two ways to achieve this:</p>
+<p><strong>Unpacking with <code class="docutils literal notranslate"><span class="pre">*</span></code> (Asterisk):</strong>
+You can use the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator before a sequence to unpack its elements and pass them as separate arguments to a function. Here’s how it works:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">*values</span></code> unpacks the elements from the values list and passes them as separate arguments to the add function.</p>
+<p><strong>Unpacking with <code class="docutils literal notranslate"><span class="pre">**</span></code> (Double Asterisk):</strong>
+For dictionaries, you can use the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator to unpack key-value pairs as keyword arguments to a function. Here’s an example:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! You are </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">greet</span><span class="p">(</span><span class="o">**</span><span class="n">person</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Alice! You are 30 years old.
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">**person</span></code> unpacks the key-value pairs in the person dictionary and passes them as keyword arguments to the greet function.</p>
+<hr class="docutils" />
+<p>Argument unpacking is handy when you have data stored in lists, tuples, or dictionaries and want to pass that data as arguments to a function without manually extracting and passing each value. It makes your code more concise and readable, especially when working with functions that require a specific number of arguments or keyword arguments.</p>
+</section>
 <section id="return-statement">
 <h2><code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#return-statement" title="Permalink to this heading">#</a></h2>
 <p>In our functions, it’s important to understand that we may or may not include a return statement.
@@ -840,6 +901,7 @@ Recursion can be a powerful and elegant way to solve certain problems, but it’
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments">Function arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-number-of-arguments">Arbitrary Number of Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-unpacking">Arguments unpacking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement"><code class="docutils literal notranslate"><span class="pre">return</span></code> statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
 </ul>
