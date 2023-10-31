@@ -217,6 +217,42 @@ Additionally, I highly recommend you to read about `**kwargs` for a deeper under
 It's a powerful feature that can enhance your code's flexibility and readability.
 
 
+## Arguments unpacking
+
+Argument unpacking during a function call in Python allows you to pass a sequence (like a list or tuple) as arguments to a function. 
+This is particularly useful when you want to pass multiple values from a sequence as individual arguments to a function. 
+Python provides two ways to achieve this:
+
+**Unpacking with `*` (Asterisk):**
+You can use the `*` operator before a sequence to unpack its elements and pass them as separate arguments to a function. Here's how it works:
+```{code-cell} ipython3
+:tags: ['hide-output']
+def add(a, b, c):
+    return a + b + c
+
+values = [1, 2, 3]
+result = add(*values)
+print(result)
+```
+In this example, `*values` unpacks the elements from the values list and passes them as separate arguments to the add function.
+
+**Unpacking with `**` (Double Asterisk):**
+For dictionaries, you can use the `**` operator to unpack key-value pairs as keyword arguments to a function. Here's an example:
+```{code-cell} ipython3
+:tags: ['hide-output']
+def greet(name, age):
+    return f"Hello, {name}! You are {age} years old."
+
+person = {"name": "Alice", "age": 30}
+result = greet(**person)
+print(result)
+```
+Here, `**person` unpacks the key-value pairs in the person dictionary and passes them as keyword arguments to the greet function.
+
+---
+
+Argument unpacking is handy when you have data stored in lists, tuples, or dictionaries and want to pass that data as arguments to a function without manually extracting and passing each value. It makes your code more concise and readable, especially when working with functions that require a specific number of arguments or keyword arguments.
+
 ## `return` statement
 
 In our functions, it's important to understand that we may or may not include a return statement. 
