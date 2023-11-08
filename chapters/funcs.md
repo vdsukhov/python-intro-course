@@ -250,6 +250,7 @@ result = greet(**person)
 print(result)
 ```
 Here, `**person` unpacks the key-value pairs in the person dictionary and passes them as keyword arguments to the greet function.
+Also, in these examples, we used the fstring for the first time. This allows us to format our strings in a very nice way. You can read more information about them [here](https://realpython.com/python-f-strings/).
 
 ---
 
