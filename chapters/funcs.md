@@ -224,6 +224,7 @@ This is particularly useful when you want to pass multiple values from a sequenc
 Python provides two ways to achieve this:
 
 **Unpacking with `*` (Asterisk):**
+
 You can use the `*` operator before a sequence to unpack its elements and pass them as separate arguments to a function. Here's how it works:
 ```{code-cell} ipython3
 :tags: ['hide-output']
@@ -237,6 +238,7 @@ print(result)
 In this example, `*values` unpacks the elements from the values list and passes them as separate arguments to the add function.
 
 **Unpacking with `**` (Double Asterisk):**
+
 For dictionaries, you can use the `**` operator to unpack key-value pairs as keyword arguments to a function. Here's an example:
 ```{code-cell} ipython3
 :tags: ['hide-output']
