@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Modules and Packages &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,13 +39,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="File Handling" href="files.html" />
     <link rel="prev" title="Functions" href="funcs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -314,7 +313,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -330,6 +331,37 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-import">Module import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-module">Importing a module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-a-module">Renaming a module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-specific-functions-or-variables">Importing Specific Functions or Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-everything-from-a-module">Importing Everything from a Module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-specific-function-or-variable-with-an-alias">Importing a Specific Function or Variable with an Alias:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name"><code class="docutils literal notranslate"><span class="pre">__name__</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-name-usage">Possible <code class="docutils literal notranslate"><span class="pre">__name__</span></code> usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-own-package">Building our own package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#builtin-packages">Builtin packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal"><code class="docutils literal notranslate"><span class="pre">decimal</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math"><code class="docutils literal notranslate"><span class="pre">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os"><code class="docutils literal notranslate"><span class="pre">os</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys"><code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#itertools"><code class="docutils literal notranslate"><span class="pre">itertools</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages-installation">Third-party packages installation:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -340,7 +372,838 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modules-and-packages">
-<h1>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this heading">#</a></h1>
+<h1>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">#</a></h1>
+<p>In this episode, we will dive into the world of Python modules and packages.
+If you are new to Python or looking to organize your code better, you’re in the right place.
+We will break down modules and packages using simple examples. Let’s start.</p>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
+<p>In Python, a module is like a file that contains Python code. It can be functions, variables, or classes.
+Modules help you organize your code and make it reusable.
+Let’s create a simple module.
+To do that let’s create the separate folder and file with following name <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code>.
+Here is the structure of our directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>tree<span class="w"> </span>module_example/
+module_example/
+└──<span class="w"> </span>math_module.py
+</pre></div>
+</div>
+<p>Now let’s specify some relative code inside of our module (<code class="docutils literal notranslate"><span class="pre">math_module.py</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">absolute_value</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.718281828459045090795598298427648842334747314453125</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793115997963468544185161590576171875</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we have created our first module.</p>
+<p>Now, we can use our functions in other Python files. Let’s create another file named <code class="docutils literal notranslate"><span class="pre">usage.py</span></code>.
+The current directory structure is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>tree<span class="w"> </span>module_example/
+module_example/
+├──<span class="w"> </span>math_module.py
+└──<span class="w"> </span>usage.py
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">usage.py</span></code> file:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math_module</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math_module</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_module</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_module</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_module</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+3628800
+2.718281828459045
+3.141592653589793
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Now, we can access all objects from the <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code> file using the following syntax: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math_module</span></code>. After importing, we can access the objects by specifying the module name followed by a dot and the name of the object we want to access. For example, <code class="docutils literal notranslate"><span class="pre">math_module.gcd(a,</span> <span class="pre">b)</span></code> is a call to the gcd function.</p>
+</section>
+<section id="module-import">
+<h2>Module import<a class="headerlink" href="#module-import" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in Python is used to bring external code into your program. There are several ways to use the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax, each with its own purpose. Here are the different ways to use import:</p>
+<section id="importing-a-module">
+<h3>Importing a module:<a class="headerlink" href="#importing-a-module" title="Permalink to this headline">#</a></h3>
+<p>The simplest use of import is to import an entire module. This makes all functions, variables, and classes from that module available in your code. (Examples we saw previously)</p>
+</section>
+<section id="renaming-a-module">
+<h3>Renaming a module:<a class="headerlink" href="#renaming-a-module" title="Permalink to this headline">#</a></h3>
+<p>You can give an imported module an alias to make it easier to reference in your code. This is especially useful when dealing with modules with long names.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math_module</span> <span class="k">as</span> <span class="nn">mm</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mm</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="importing-specific-functions-or-variables">
+<h3>Importing Specific Functions or Variables:<a class="headerlink" href="#importing-specific-functions-or-variables" title="Permalink to this headline">#</a></h3>
+<p>Sometimes, you only need specific functions or variables from a module. You can import them individually.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math_module</span> <span class="kn">import</span> <span class="n">gcd</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="importing-everything-from-a-module">
+<h3>Importing Everything from a Module:<a class="headerlink" href="#importing-everything-from-a-module" title="Permalink to this headline">#</a></h3>
+<p>You can import everything from a module and use its functions, variables, and classes directly without the module name prefix. However, this approach is generally discouraged as it can lead to naming conflicts.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math_module</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
+3.141592653589793
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="importing-a-specific-function-or-variable-with-an-alias">
+<h3>Importing a Specific Function or Variable with an Alias:<a class="headerlink" href="#importing-a-specific-function-or-variable-with-an-alias" title="Permalink to this headline">#</a></h3>
+<p>You can combine aliasing and importing specific functions or variables for a more concise reference.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math_module</span> <span class="kn">import</span> <span class="n">factorial</span> <span class="k">as</span> <span class="n">f</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3628800
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="name">
+<h2><code class="docutils literal notranslate"><span class="pre">__name__</span></code><a class="headerlink" href="#name" title="Permalink to this headline">#</a></h2>
+<p>Now we understand that we can consider each Python file as a module.
+Before running a program, the Python interpreter assigns the name of the Python module to a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.
+The value assigned to <code class="docutils literal notranslate"><span class="pre">__name__</span></code> depends on whether you run the program from the command line or import the module into another module.
+If you run your module as a script, like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>program.py
+</pre></div>
+</div>
+<p>then the Python interpreter will automatically set the value of <code class="docutils literal notranslate"><span class="pre">__name__</span></code> to the string <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.</p>
+<p>To check it let’s fill the <code class="docutils literal notranslate"><span class="pre">program.py</span></code> file with following code:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>As you can see, we have access to the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable inside our program. When running the program from the command line, the value of this variable is <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.</p>
+<p>However, if your module is imported in another module, the value will be different.
+Let’s use our <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code> module as an example again, but this time let’s rewrite the <code class="docutils literal notranslate"><span class="pre">usage.py</span></code> as follows:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math_module</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>math_module
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Here, you can see that if you import the module, the value of <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.</p>
+<section id="possible-name-usage">
+<h3>Possible <code class="docutils literal notranslate"><span class="pre">__name__</span></code> usage<a class="headerlink" href="#possible-name-usage" title="Permalink to this headline">#</a></h3>
+<p>Sometimes, we need a Python file that contains reusable functionality, but we also want to include certain instructions that should only be executed when we run the file directly from the console. In this scenario, we can use the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable’s behavior to achieve this dual functionality.</p>
+<p>Let’s take the example of a Python module named “math_module.py.” This module contains various functions and constants:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">absolute_value</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.718281828459045090795598298427648842334747314453125</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793115997963468544185161590576171875</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>No matter whether we import or run this module from the console, it will always display the output as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>However, if we want to run only specific parts of the program when it’s executed from the console, we can use the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">absolute_value</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.718281828459045090795598298427648842334747314453125</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793115997963468544185161590576171875</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Now, when we import the module, we won’t see any output. However, if we run the module directly from the console, it will execute the specified code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>This technique allows us to create modules that can be used both for their functions and, when necessary, for standalone execution, providing flexibility and reusability in our code.</p>
+</section>
+</section>
+<section id="building-our-own-package">
+<h2>Building our own package<a class="headerlink" href="#building-our-own-package" title="Permalink to this headline">#</a></h2>
+<p>In this section, we will cover the basics of creating our own packages in Python. We will be using Poetry for package management. You can find instructions on how to install Poetry on your PC <a class="reference external" href="https://python-poetry.org/docs/#installation">here</a>.</p>
+<p>Let’s create our own package. I will call it <code class="docutils literal notranslate"><span class="pre">package-demo</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>package_demo
+</pre></div>
+</div>
+<p>After that we have the following folder structure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>tree<span class="w"> </span>package_demo/
+package_demo/
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>package_demo
+│<span class="w">   </span>└──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>pyproject.toml
+└──<span class="w"> </span>tests
+<span class="w">    </span>└──<span class="w"> </span>__init__.py
+
+<span class="m">2</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">4</span><span class="w"> </span>files
+</pre></div>
+</div>
+<p>Now let’s add our <code class="docutils literal notranslate"><span class="pre">math_module</span></code> module into package. We need simply to create file <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code> in <code class="docutils literal notranslate"><span class="pre">package_demo</span></code> folder.
+The structure of our package after that is following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>tree<span class="w"> </span>package_demo/
+package_demo/
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>package_demo
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>└──<span class="w"> </span>math_module.py
+├──<span class="w"> </span>poetry.lock
+├──<span class="w"> </span>pyproject.toml
+└──<span class="w"> </span>tests
+<span class="w">    </span>└──<span class="w"> </span>__init__.py
+
+<span class="m">2</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">6</span><span class="w"> </span>files
+</pre></div>
+</div>
+<p>Here is the content of our <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">absolute_value</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.718281828459045090795598298427648842334747314453125</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793115997963468544185161590576171875</span>
+</pre></div>
+</div>
+<p>Great! Now we just need to package it into a <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> file, and then we can install it using <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Python package installer).
+To accomplish it let’s execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>build
+</pre></div>
+</div>
+<p>Now, we can install our package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>dist/package_demo-0.1.0.tar.gz<span class="w"> </span>
+</pre></div>
+</div>
+<p>That’s it! Simple, isn’t it? However, this example only covers a very simple case. If you want to build a more complex package with different dependencies, please refer to the poetry documentation.</p>
+<p>Now, let’s try to import it when we are not in the package’s folder.</p>
+</section>
+<section id="builtin-packages">
+<h2>Builtin packages<a class="headerlink" href="#builtin-packages" title="Permalink to this headline">#</a></h2>
+<p>In this section we will briefly cover some of the builtin packages in Python, specifically:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/decimal.html"><code class="docutils literal notranslate"><span class="pre">decimal</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/math.html"><code class="docutils literal notranslate"><span class="pre">math</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html"><code class="docutils literal notranslate"><span class="pre">os</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/sys.html"><code class="docutils literal notranslate"><span class="pre">sys</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/itertools.html"><code class="docutils literal notranslate"><span class="pre">itertools</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></p></li>
+</ol>
+<section id="decimal">
+<h3><code class="docutils literal notranslate"><span class="pre">decimal</span></code><a class="headerlink" href="#decimal" title="Permalink to this headline">#</a></h3>
+<p>The decimal package in Python provides arbitrary-precision decimal arithmetic. It’s particularly useful for applications where precision is critical, such as financial calculations, scientific research, and more. Here are some interesting examples of decimal package usage:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="c1"># Perform precise arithmetic</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>As you remember in case of float numbers we could not get the precise result:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Let’s also calculate compound interest:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="n">deposit</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1_000_000&#39;</span><span class="p">)</span>
+<span class="n">rate_per_year</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.15&#39;</span><span class="p">)</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">outcome</span> <span class="o">=</span> <span class="n">deposit</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate_per_year</span><span class="p">)</span> <span class="o">**</span> <span class="n">years</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16366537.39294611304210562898
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="math">
+<h3><code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#math" title="Permalink to this headline">#</a></h3>
+<p>The Python math package is a built-in library that provides a wide range of mathematical functions for various calculations. Here are some interesting examples of math package usage:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># Basic math operations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;math.sqrt(25):&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>  <span class="c1"># Square root</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;math.pow(2, 3)&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Exponentiation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;math.sin(math.radians(30)):&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)))</span>  <span class="c1"># Sine function (convert degrees to radians)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>math.sqrt(25): 5.0
+math.pow(2, 3) 8.0
+math.sin(math.radians(30)): 0.49999999999999994
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Trigonometric Calculations:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trigonometric functions</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">sine</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">cosine</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">tangent</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sine</span><span class="p">,</span> <span class="n">cosine</span><span class="p">,</span> <span class="n">tangent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475 0.7071067811865476 0.9999999999999999
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Ceiling and Floor Functions:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ceiling (smallest integer &gt;= number) and Floor (largest integer &lt;= number) functions</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span>  <span class="c1"># Ceiling</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.7</span><span class="p">)</span>  <span class="c1"># Floor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">,</span> <span class="n">result2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 4
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="os">
+<h3><code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#os" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> package in Python provides a way to interact with the operating system, allowing you to perform tasks related to file and directory management, process management, and more. Here are some interesting examples of <code class="docutils literal notranslate"><span class="pre">os</span></code> package usage.</p>
+<p>File and directory operations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># List files and directories in a directory</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/path/to/directory&#39;</span><span class="p">)</span>
+
+<span class="c1"># Check if a file or directory exists</span>
+<span class="n">exists</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/path/to/file_or_directory&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a new directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;/path/to/new_directory&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rename a file or directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;/path/to/old_name&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/new_name&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove a file</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove an empty directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;/path/to/empty_directory&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove a directory and its contents</span>
+<span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s1">&#39;/path/to/directory_and_contents&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Working with Paths:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Join paths to create a new path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/path&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;file.txt&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get the absolute path</span>
+<span class="n">absolute_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extract the filename from a path</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/path/to/file.txt&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extract the directory from a path</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;/path/to/file.txt&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="sys">
+<h3><code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#sys" title="Permalink to this headline">#</a></h3>
+<p>The sys module in Python provides functions and variables that allow you to interact with the Python runtime environment and system-specific parameters. Here is interesting example of sys module usage.</p>
+<p>Command-Line Arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Access command-line arguments</span>
+<span class="n">script_name</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Get all command-line arguments after the script name</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script name: </span><span class="si">{</span><span class="n">script_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Command-line arguments: </span><span class="si">{</span><span class="n">arguments</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="itertools">
+<h3><code class="docutils literal notranslate"><span class="pre">itertools</span></code><a class="headerlink" href="#itertools" title="Permalink to this headline">#</a></h3>
+<p>The itertools module in Python provides a collection of fast, memory-efficient tools for working with iterators and combinatorial functions. Here are some interesting examples of itertools package usage:</p>
+<p>You can generate permutations and combinations of elements using <code class="docutils literal notranslate"><span class="pre">itertools.permutations</span></code> and <code class="docutils literal notranslate"><span class="pre">itertools.combinations</span></code>:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">permutations</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">combinations</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Permutations:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>  <span class="c1"># Generates all permutations of 2 elements</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Combinations:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">comb</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">comb</span><span class="p">)</span>  <span class="c1"># Generates all combinations of 2 elements</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Permutations:
+(1, 2)
+(1, 3)
+(2, 1)
+(2, 3)
+(3, 1)
+(3, 2)
+Combinations:
+(1, 2)
+(1, 3)
+(2, 3)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Cartesian product of input iterables:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First product result:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second product result:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First product result:
+(&#39;A&#39;, &#39;x&#39;)
+(&#39;A&#39;, &#39;y&#39;)
+(&#39;B&#39;, &#39;x&#39;)
+(&#39;B&#39;, &#39;y&#39;)
+(&#39;C&#39;, &#39;x&#39;)
+(&#39;C&#39;, &#39;y&#39;)
+(&#39;D&#39;, &#39;x&#39;)
+(&#39;D&#39;, &#39;y&#39;)
+Second product result:
+(0, 0, 0)
+(0, 0, 1)
+(0, 1, 0)
+(0, 1, 1)
+(1, 0, 0)
+(1, 0, 1)
+(1, 1, 0)
+(1, 1, 1)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="datetime">
+<h3><code class="docutils literal notranslate"><span class="pre">datetime</span></code><a class="headerlink" href="#datetime" title="Permalink to this headline">#</a></h3>
+<p>The datetime module in Python provides classes for working with dates and times. Here are some interesting examples of datetime package usage.</p>
+<p>Current Date and Time:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Get the current date and time</span>
+<span class="n">current_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">current_datetime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-08 16:29:17.540385
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Formatting Dates and Times:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Format a date as a string</span>
+<span class="n">current_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">formatted_date</span> <span class="o">=</span> <span class="n">current_datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">formatted_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-08 16:29:17
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Parsing Date Strings:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Parse a date string into a datetime object</span>
+<span class="n">date_str</span> <span class="o">=</span> <span class="s2">&quot;2023-11-06 15:30:00&quot;</span>
+<span class="n">parsed_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parsed_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-06 15:30:00
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Date Arithmetic:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Perform date arithmetic</span>
+<span class="n">current_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">one_week_ago</span> <span class="o">=</span> <span class="n">current_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">one_week_ago</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-01 16:29:17.558448
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Date Comparisons:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Compare dates</span>
+<span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">date1</span> <span class="o">&lt;</span> <span class="n">date2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;date1 is earlier than date2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date1 is earlier than date2
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Calculating Time Differences:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+
+<span class="c1"># Calculate the difference between two dates</span>
+<span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">date2</span><span class="p">,</span> <span class="n">date1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Years: </span><span class="si">{</span><span class="n">difference</span><span class="o">.</span><span class="n">years</span><span class="si">}</span><span class="s2">, Months: </span><span class="si">{</span><span class="n">difference</span><span class="o">.</span><span class="n">months</span><span class="si">}</span><span class="s2">, Days: </span><span class="si">{</span><span class="n">difference</span><span class="o">.</span><span class="n">days</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Years: 1, Months: 0, Days: 0
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="third-party-packages-installation">
+<h2>Third-party packages installation:<a class="headerlink" href="#third-party-packages-installation" title="Permalink to this headline">#</a></h2>
+<p>To install third-party packages in Python, you can use a package manager like pip. pip is the most commonly used package manager for Python and makes it easy to download and install packages from the Python Package Index (PyPI) or other sources. Here’s how you can install third-party packages.</p>
+<p>To install a third-party package, open a terminal or command prompt and use the pip install command, followed by the package name. For example (in your console):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>package-name
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -369,10 +1232,7 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="funcs.html"
@@ -392,20 +1252,54 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-import">Module import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-module">Importing a module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-a-module">Renaming a module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-specific-functions-or-variables">Importing Specific Functions or Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-everything-from-a-module">Importing Everything from a Module:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-specific-function-or-variable-with-an-alias">Importing a Specific Function or Variable with an Alias:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name"><code class="docutils literal notranslate"><span class="pre">__name__</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-name-usage">Possible <code class="docutils literal notranslate"><span class="pre">__name__</span></code> usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-own-package">Building our own package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#builtin-packages">Builtin packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal"><code class="docutils literal notranslate"><span class="pre">decimal</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math"><code class="docutils literal notranslate"><span class="pre">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os"><code class="docutils literal notranslate"><span class="pre">os</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys"><code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#itertools"><code class="docutils literal notranslate"><span class="pre">itertools</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages-installation">Third-party packages installation:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -435,7 +1329,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -444,8 +1338,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>

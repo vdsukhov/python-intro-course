@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Lists, Tuples and Strings &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,13 +39,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2D Lists, Dictionaries and Sets" href="dict_and_set.html" />
     <link rel="prev" title="Control Flow" href="control_flow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -368,12 +367,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists-tuples-and-strings">
-<h1>Lists, Tuples and Strings<a class="headerlink" href="#lists-tuples-and-strings" title="Permalink to this heading">#</a></h1>
+<h1>Lists, Tuples and Strings<a class="headerlink" href="#lists-tuples-and-strings" title="Permalink to this headline">#</a></h1>
 <p>In this episode, we will discuss some iterable objects in Python, such as lists, tuples, and strings.</p>
 <p>Previously, we talked about the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type, where each object could only store one specific value of this type. However, there are times when it is crucial to combine objects into a collection for easier manipulation and work with them.</p>
 <p>Let’s begin by exploring the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type.</p>
 <section id="list-data-type">
-<h2><code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#list-data-type" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#list-data-type" title="Permalink to this headline">#</a></h2>
 <p>Imagine wanting to measure your stress level every five minutes. In this case, you would have 288 observations for just one day. However, storing and operating on this data in Python would require 288 different variables, which is not very efficient.</p>
 <video autoplay loop playsinline controls muted>
     <source src="../_static/videos/list_stress.mp4" type="video/mp4">
@@ -407,7 +406,7 @@ document.write(`
 </details>
 </div>
 <section id="indexing">
-<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
 <p>Let’s create the following list:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -466,7 +465,7 @@ numbers[3]: 40
 </div>
 </section>
 <section id="slicing">
-<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this heading">#</a></h3>
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
 <p>There are times when we need to retrieve a specific part of the list, not just a single value.
 To efficiently do that, we can use slicing techniques.
 The concept is somewhat similar to the <code class="docutils literal notranslate"><span class="pre">range</span></code> function that we previously learned in the course.
@@ -509,7 +508,7 @@ numbers[::2]: [10, 30, 50, 70, 90]
 </video>
 </section>
 <section id="list-assignments">
-<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> assignments<a class="headerlink" href="#list-assignments" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> assignments<a class="headerlink" href="#list-assignments" title="Permalink to this headline">#</a></h3>
 <p>Let’s examine the list assignment, as it may appear challenging at first glance.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">numbers_2</span> <span class="o">=</span> <span class="n">numbers_1</span>
@@ -582,9 +581,9 @@ numbers_2: [100, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ids after numbers_2 = numbers_1
-140648695594112 140648695594112
+139814120343552 139814120343552
 Ids after numbers_2 = numbers_1[::]
-140648695594112 140648695588416
+139814120343552 139814119041344
 </pre></div>
 </div>
 </div>
@@ -593,7 +592,7 @@ Ids after numbers_2 = numbers_1[::]
 <p>As you can see in the first case, the results of the “id” calls are the same. However, when we use slicing, we have two different underlying objects in memory.</p>
 </section>
 <section id="list-methods">
-<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> methods<a class="headerlink" href="#list-methods" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">#</a></h3>
 <p>Before I did not mention it, but in reality, each object in Python has specific features that are specified by its data type. Lists are no exception. These features are called methods. Let’s take a look at some of them.
 You can append new element to list:</p>
 <div class="cell tag_hide-output docutils container">
@@ -676,7 +675,7 @@ stress_level after del: [0, 0, 20, 100, 0, 0]
 <p>In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.</p>
 </section>
 <section id="operations-with-list-s">
-<h3>Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s<a class="headerlink" href="#operations-with-list-s" title="Permalink to this heading">#</a></h3>
+<h3>Operations with <code class="docutils literal notranslate"><span class="pre">list</span></code>-s<a class="headerlink" href="#operations-with-list-s" title="Permalink to this headline">#</a></h3>
 <p>You can use the following operators with lists: <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - concatenates two lists into one, similar to how it works with strings.</p></li>
@@ -709,7 +708,7 @@ Examples:</p></li>
 </div>
 </section>
 <section id="len-function">
-<h3><code class="docutils literal notranslate"><span class="pre">len</span></code> function<a class="headerlink" href="#len-function" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">len</span></code> function<a class="headerlink" href="#len-function" title="Permalink to this headline">#</a></h3>
 <p>In python there is very easy and convinient way to get the length of the object.
 To get the length you can simply use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function.</p>
 <div class="cell tag_hide-output docutils container">
@@ -733,7 +732,7 @@ To get the length you can simply use the <code class="docutils literal notransla
 </div>
 </section>
 <section id="for-loop-and-lists">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists<a class="headerlink" href="#for-loop-and-lists" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lists<a class="headerlink" href="#for-loop-and-lists" title="Permalink to this headline">#</a></h3>
 <p>Now, let’s imagine that we want to iterate over each element in a list and perform some action on it. In order to do this, we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>First, let’s start by creating the list using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="cell tag_hide-output docutils container">
@@ -864,7 +863,7 @@ Here is the example:</p>
 <p>So, you can use this approach if you do not want to modify the values in your list.</p>
 </section>
 <section id="list-comprehension">
-<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this heading">#</a></h3>
+<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h3>
 <p>List comprehension is very cool way to define the list and fill it.
 We saw previously this way to fill list with using for loop:</p>
 <div class="cell tag_hide-output docutils container">
@@ -969,7 +968,7 @@ Let’s split it into two parts:</p>
 </section>
 </section>
 <section id="tuple-data-type">
-<h2><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type<a class="headerlink" href="#tuple-data-type" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type<a class="headerlink" href="#tuple-data-type" title="Permalink to this headline">#</a></h2>
 <p>Tuples are another example of a data type that can store multiple objects. However, once you create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> object, you cannot change its elements. To create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> object, use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -1018,9 +1017,9 @@ Let’s split it into two parts:</p>
 <p>So, in summary, when you want data that won’t change, use a tuple, and when you need flexibility, go with a list. It’s like choosing between a sealed bag (tuple) and a versatile backpack (list) based on your specific needs in Python.</p>
 </section>
 <section id="str-data-type">
-<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> data type<a class="headerlink" href="#str-data-type" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> data type<a class="headerlink" href="#str-data-type" title="Permalink to this headline">#</a></h2>
 <section id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h3>
 <p>Previously, we have already seen the data type for strings in Python. Today, we will take a closer look at them and learn about their new features.
 Strings come with some helpful built-in functions, often called methods, that let you perform various operations on them. Here are a few common ones (the full list of methods you can find <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp">here</a>):</p>
 <ul class="simple">
@@ -1118,7 +1117,7 @@ words: [&#39;Random&#39;, &#39;text&#39;]
 </div>
 </section>
 <section id="converting-a-list-to-a-string">
-<h3>Converting a List to a String<a class="headerlink" href="#converting-a-list-to-a-string" title="Permalink to this heading">#</a></h3>
+<h3>Converting a List to a String<a class="headerlink" href="#converting-a-list-to-a-string" title="Permalink to this headline">#</a></h3>
 <p>If you have a list and want to turn it into a single string, you can use the join() method. This method joins the elements of a list into a single string, with a specified separator in between.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -1142,7 +1141,7 @@ words: [&#39;Random&#39;, &#39;text&#39;]
 </div>
 </section>
 <section id="converting-a-string-to-a-list">
-<h3>Converting a String to a List<a class="headerlink" href="#converting-a-string-to-a-list" title="Permalink to this heading">#</a></h3>
+<h3>Converting a String to a List<a class="headerlink" href="#converting-a-string-to-a-list" title="Permalink to this headline">#</a></h3>
 <p>If you have a string and want to split it into a list of elements, you can use the split() method. This method breaks the string into parts using a specified separator.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -1188,7 +1187,7 @@ words: [&#39;Random&#39;, &#39;text&#39;]
 </section>
 </section>
 <section id="similarities-between-lists-tuples-and-strings">
-<h2>Similarities between lists, tuples, and strings<a class="headerlink" href="#similarities-between-lists-tuples-and-strings" title="Permalink to this heading">#</a></h2>
+<h2>Similarities between lists, tuples, and strings<a class="headerlink" href="#similarities-between-lists-tuples-and-strings" title="Permalink to this headline">#</a></h2>
 <p>Despite their differences, lists, strings, and tuples also share some common features.</p>
 <ul class="simple">
 <li><p><strong>One common feature is that they all have a length, which can be obtained using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</strong></p></li>
@@ -1307,10 +1306,7 @@ True
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="control_flow.html"
@@ -1330,10 +1326,7 @@ True
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1375,7 +1368,7 @@ True
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1405,7 +1398,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -1414,8 +1407,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
