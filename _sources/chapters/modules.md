@@ -156,6 +156,10 @@ print(math_module.__name__)
 ```
 Here, you can see that if you import the module, the value of `__name__` is not equal to `"__main__"`.
 
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/modules_name.mp4" type="video/mp4">
+</video>
+
 ### Possible `__name__` usage
 Sometimes, we need a Python file that contains reusable functionality, but we also want to include certain instructions that should only be executed when we run the file directly from the console. In this scenario, we can use the `__name__` variable's behavior to achieve this dual functionality.
 
