@@ -13,7 +13,7 @@ parts:
       - file: chapters/dict_and_set.ipynb
       - file: chapters/funcs.ipynb
       - file: chapters/modules.ipynb
-      - file: chapters/files.ipynb
+      - file: chapters/files/files.ipynb
       - file: chapters/oop1.ipynb
       - file: chapters/oop2.ipynb
       - file: chapters/exceptions.ipynb
