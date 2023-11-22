@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>File Handling &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Object-Oriented Programming (Part 1)" href="../oop1.html" />
     <link rel="prev" title="Modules and Packages" href="../modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -339,6 +340,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file">File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-path">File Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files-in-python">Opening and closing files in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a></li>
 </ul>
             </nav>
         </div>
@@ -351,10 +353,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="file-handling">
-<h1>File Handling<a class="headerlink" href="#file-handling" title="Permalink to this headline">#</a></h1>
+<h1>File Handling<a class="headerlink" href="#file-handling" title="Permalink to this heading">#</a></h1>
 <p>In this episode we will cover some aspects of working with files in Python.</p>
 <section id="file">
-<h2>File<a class="headerlink" href="#file" title="Permalink to this headline">#</a></h2>
+<h2>File<a class="headerlink" href="#file" title="Permalink to this heading">#</a></h2>
 <p>A computer file is a collection of data that is stored as a single unit and is identified by a filename. The data within a file is organized in a specific format or structure, and this organization is defined by a file format.</p>
 <p>The term “byte” refers to a unit of digital information that consists of 8 bits. Files are composed of bytes, and the arrangement and interpretation of these bytes are dictated by the file format. Different types of files (such as text files, image files, or executable files) have different rules and structures for how the bytes are organized.</p>
 <p>I will categorize files into two distinct groups:</p>
@@ -381,11 +383,11 @@ document.write(`
 </ol>
 </section>
 <section id="file-path">
-<h2>File Path<a class="headerlink" href="#file-path" title="Permalink to this headline">#</a></h2>
+<h2>File Path<a class="headerlink" href="#file-path" title="Permalink to this heading">#</a></h2>
 <p>To work with files in Python, it is important to have some basic knowledge about paths within the operating system. Assuming that you are already familiar with this concept, let’s proceed.</p>
 </section>
 <section id="opening-and-closing-files-in-python">
-<h2>Opening and closing files in Python<a class="headerlink" href="#opening-and-closing-files-in-python" title="Permalink to this headline">#</a></h2>
+<h2>Opening and closing files in Python<a class="headerlink" href="#opening-and-closing-files-in-python" title="Permalink to this heading">#</a></h2>
 <p>To open file inside of Python program we can use built-in function <code class="docutils literal notranslate"><span class="pre">open</span></code>.
 Let’s create the text file <code class="docutils literal notranslate"><span class="pre">quote.txt</span></code> with following content:</p>
 <div class="admonition-file-content admonition">
@@ -423,6 +425,26 @@ Here are the different modes available in Python:</p>
 </div>
 </div>
 </section>
+<section id="with-statement">
+<h2><code class="docutils literal notranslate"><span class="pre">with</span></code> statement<a class="headerlink" href="#with-statement" title="Permalink to this heading">#</a></h2>
+<p>However, in Python there’s a cool trick that lets you forget about remembering to close files.
+It is the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement that provides a concise and clean way to work with external resources, such as files.
+Its primary purpose is to simplify resource management, ensuring that acquired resources are properly and automatically released, even if an exception occurs during the execution of the code block.
+When it comes to file handling, the with statement is particularly advantageous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./quote.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp_f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inp_f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;_io.TextIOWrapper name=&#39;./quote.txt&#39; mode=&#39;r&#39; encoding=&#39;UTF-8&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -451,7 +473,10 @@ Here are the different modes available in Python:</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../modules.html"
@@ -471,7 +496,10 @@ Here are the different modes available in Python:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -489,6 +517,7 @@ Here are the different modes available in Python:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file">File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-path">File Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files-in-python">Opening and closing files in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a></li>
 </ul>
   </nav></div>
 
@@ -497,7 +526,7 @@ Here are the different modes available in Python:</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -527,7 +556,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -536,8 +565,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

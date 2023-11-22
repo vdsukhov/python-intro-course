@@ -80,3 +80,14 @@ We've covered the process of opening files, and it's important to note that, bef
 ```{code-cell} ipython3
 file.close()
 ```
+
+## `with` statement
+However, in Python there's a cool trick that lets you forget about remembering to close files.
+It is the `with` statement that provides a concise and clean way to work with external resources, such as files. 
+Its primary purpose is to simplify resource management, ensuring that acquired resources are properly and automatically released, even if an exception occurs during the execution of the code block. 
+When it comes to file handling, the with statement is particularly advantageous.
+
+```{code-cell} ipython3
+with open("./quote.txt", "r") as inp_f:
+    print(inp_f)
+```

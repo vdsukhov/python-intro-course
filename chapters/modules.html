@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Modules and Packages &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="File Handling" href="files/files.html" />
     <link rel="prev" title="Functions" href="funcs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -372,12 +373,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modules-and-packages">
-<h1>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">#</a></h1>
+<h1>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this heading">#</a></h1>
 <p>In this episode, we will dive into the world of Python modules and packages.
 If you are new to Python or looking to organize your code better, you’re in the right place.
 We will break down modules and packages using simple examples. Let’s start.</p>
 <section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h2>
 <p>In Python, a module is like a file that contains Python code. It can be functions, variables, or classes.
 Modules help you organize your code and make it reusable.
 Let’s create a simple module.
@@ -452,14 +453,14 @@ module_example/
 <p>Now, we can access all objects from the <code class="docutils literal notranslate"><span class="pre">math_module.py</span></code> file using the following syntax: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math_module</span></code>. After importing, we can access the objects by specifying the module name followed by a dot and the name of the object we want to access. For example, <code class="docutils literal notranslate"><span class="pre">math_module.gcd(a,</span> <span class="pre">b)</span></code> is a call to the gcd function.</p>
 </section>
 <section id="module-import">
-<h2>Module import<a class="headerlink" href="#module-import" title="Permalink to this headline">#</a></h2>
+<h2>Module import<a class="headerlink" href="#module-import" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in Python is used to bring external code into your program. There are several ways to use the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax, each with its own purpose. Here are the different ways to use import:</p>
 <section id="importing-a-module">
-<h3>Importing a module:<a class="headerlink" href="#importing-a-module" title="Permalink to this headline">#</a></h3>
+<h3>Importing a module:<a class="headerlink" href="#importing-a-module" title="Permalink to this heading">#</a></h3>
 <p>The simplest use of import is to import an entire module. This makes all functions, variables, and classes from that module available in your code. (Examples we saw previously)</p>
 </section>
 <section id="renaming-a-module">
-<h3>Renaming a module:<a class="headerlink" href="#renaming-a-module" title="Permalink to this headline">#</a></h3>
+<h3>Renaming a module:<a class="headerlink" href="#renaming-a-module" title="Permalink to this heading">#</a></h3>
 <p>You can give an imported module an alias to make it easier to reference in your code. This is especially useful when dealing with modules with long names.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -486,7 +487,7 @@ module_example/
 </div>
 </section>
 <section id="importing-specific-functions-or-variables">
-<h3>Importing Specific Functions or Variables:<a class="headerlink" href="#importing-specific-functions-or-variables" title="Permalink to this headline">#</a></h3>
+<h3>Importing Specific Functions or Variables:<a class="headerlink" href="#importing-specific-functions-or-variables" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, you only need specific functions or variables from a module. You can import them individually.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -513,7 +514,7 @@ module_example/
 </div>
 </section>
 <section id="importing-everything-from-a-module">
-<h3>Importing Everything from a Module:<a class="headerlink" href="#importing-everything-from-a-module" title="Permalink to this headline">#</a></h3>
+<h3>Importing Everything from a Module:<a class="headerlink" href="#importing-everything-from-a-module" title="Permalink to this heading">#</a></h3>
 <p>You can import everything from a module and use its functions, variables, and classes directly without the module name prefix. However, this approach is generally discouraged as it can lead to naming conflicts.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -539,7 +540,7 @@ module_example/
 </div>
 </section>
 <section id="importing-a-specific-function-or-variable-with-an-alias">
-<h3>Importing a Specific Function or Variable with an Alias:<a class="headerlink" href="#importing-a-specific-function-or-variable-with-an-alias" title="Permalink to this headline">#</a></h3>
+<h3>Importing a Specific Function or Variable with an Alias:<a class="headerlink" href="#importing-a-specific-function-or-variable-with-an-alias" title="Permalink to this heading">#</a></h3>
 <p>You can combine aliasing and importing specific functions or variables for a more concise reference.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -564,7 +565,7 @@ module_example/
 </section>
 </section>
 <section id="name">
-<h2><code class="docutils literal notranslate"><span class="pre">__name__</span></code><a class="headerlink" href="#name" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">__name__</span></code><a class="headerlink" href="#name" title="Permalink to this heading">#</a></h2>
 <p>Now we understand that we can consider each Python file as a module.
 Before running a program, the Python interpreter assigns the name of the Python module to a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.
 The value assigned to <code class="docutils literal notranslate"><span class="pre">__name__</span></code> depends on whether you run the program from the command line or import the module into another module.
@@ -619,7 +620,7 @@ Let’s use our <code class="docutils literal notranslate"><span class="pre">mat
     <source src="../_static/videos/modules_name.mp4" type="video/mp4">
 </video>
 <section id="possible-name-usage">
-<h3>Possible <code class="docutils literal notranslate"><span class="pre">__name__</span></code> usage<a class="headerlink" href="#possible-name-usage" title="Permalink to this headline">#</a></h3>
+<h3>Possible <code class="docutils literal notranslate"><span class="pre">__name__</span></code> usage<a class="headerlink" href="#possible-name-usage" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, we need a Python file that contains reusable functionality, but we also want to include certain instructions that should only be executed when we run the file directly from the console. In this scenario, we can use the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable’s behavior to achieve this dual functionality.</p>
 <p>Let’s take the example of a Python module named “math_module.py.” This module contains various functions and constants:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -678,7 +679,7 @@ Let’s use our <code class="docutils literal notranslate"><span class="pre">mat
 </section>
 </section>
 <section id="building-our-own-package">
-<h2>Building our own package<a class="headerlink" href="#building-our-own-package" title="Permalink to this headline">#</a></h2>
+<h2>Building our own package<a class="headerlink" href="#building-our-own-package" title="Permalink to this heading">#</a></h2>
 <p>In this section, we will cover the basics of creating our own packages in Python. We will be using Poetry for package management. You can find instructions on how to install Poetry on your PC <a class="reference external" href="https://python-poetry.org/docs/#installation">here</a>.</p>
 <p>Let’s create our own package. I will call it <code class="docutils literal notranslate"><span class="pre">package-demo</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>package_demo
@@ -744,7 +745,7 @@ To accomplish it let’s execute the following command:</p>
 <p>Now, let’s try to import it when we are not in the package’s folder.</p>
 </section>
 <section id="builtin-packages">
-<h2>Builtin packages<a class="headerlink" href="#builtin-packages" title="Permalink to this headline">#</a></h2>
+<h2>Builtin packages<a class="headerlink" href="#builtin-packages" title="Permalink to this heading">#</a></h2>
 <p>In this section we will briefly cover some of the builtin packages in Python, specifically:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/decimal.html"><code class="docutils literal notranslate"><span class="pre">decimal</span></code></a></p></li>
@@ -755,7 +756,7 @@ To accomplish it let’s execute the following command:</p>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></p></li>
 </ol>
 <section id="decimal">
-<h3><code class="docutils literal notranslate"><span class="pre">decimal</span></code><a class="headerlink" href="#decimal" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">decimal</span></code><a class="headerlink" href="#decimal" title="Permalink to this heading">#</a></h3>
 <p>The decimal package in Python provides arbitrary-precision decimal arithmetic. It’s particularly useful for applications where precision is critical, such as financial calculations, scientific research, and more. Here are some interesting examples of decimal package usage:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -826,7 +827,7 @@ To accomplish it let’s execute the following command:</p>
 </div>
 </section>
 <section id="math">
-<h3><code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#math" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#math" title="Permalink to this heading">#</a></h3>
 <p>The Python math package is a built-in library that provides a wide range of mathematical functions for various calculations. Here are some interesting examples of math package usage:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -901,7 +902,7 @@ math.sin(math.radians(30)): 0.49999999999999994
 </div>
 </section>
 <section id="os">
-<h3><code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#os" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#os" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> package in Python provides a way to interact with the operating system, allowing you to perform tasks related to file and directory management, process management, and more. Here are some interesting examples of <code class="docutils literal notranslate"><span class="pre">os</span></code> package usage.</p>
 <p>File and directory operations:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -947,7 +948,7 @@ math.sin(math.radians(30)): 0.49999999999999994
 </div>
 </section>
 <section id="sys">
-<h3><code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#sys" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#sys" title="Permalink to this heading">#</a></h3>
 <p>The sys module in Python provides functions and variables that allow you to interact with the Python runtime environment and system-specific parameters. Here is interesting example of sys module usage.</p>
 <p>Command-Line Arguments:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -961,7 +962,7 @@ math.sin(math.radians(30)): 0.49999999999999994
 </div>
 </section>
 <section id="itertools">
-<h3><code class="docutils literal notranslate"><span class="pre">itertools</span></code><a class="headerlink" href="#itertools" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">itertools</span></code><a class="headerlink" href="#itertools" title="Permalink to this heading">#</a></h3>
 <p>The itertools module in Python provides a collection of fast, memory-efficient tools for working with iterators and combinatorial functions. Here are some interesting examples of itertools package usage:</p>
 <p>You can generate permutations and combinations of elements using <code class="docutils literal notranslate"><span class="pre">itertools.permutations</span></code> and <code class="docutils literal notranslate"><span class="pre">itertools.combinations</span></code>:</p>
 <div class="cell tag_hide-output docutils container">
@@ -1049,7 +1050,7 @@ Second product result:
 </div>
 </section>
 <section id="datetime">
-<h3><code class="docutils literal notranslate"><span class="pre">datetime</span></code><a class="headerlink" href="#datetime" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">datetime</span></code><a class="headerlink" href="#datetime" title="Permalink to this heading">#</a></h3>
 <p>The datetime module in Python provides classes for working with dates and times. Here are some interesting examples of datetime package usage.</p>
 <p>Current Date and Time:</p>
 <div class="cell tag_hide-output docutils container">
@@ -1068,7 +1069,7 @@ Second product result:
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 16:05:28.569301
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 21:08:08.631321
 </pre></div>
 </div>
 </div>
@@ -1092,7 +1093,7 @@ Second product result:
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 16:05:28
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 21:08:08
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1141,7 @@ Second product result:
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-14 16:05:28.583350
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-14 21:08:08.644164
 </pre></div>
 </div>
 </div>
@@ -1200,7 +1201,7 @@ Second product result:
 </section>
 </section>
 <section id="third-party-packages-installation">
-<h2>Third-party packages installation:<a class="headerlink" href="#third-party-packages-installation" title="Permalink to this headline">#</a></h2>
+<h2>Third-party packages installation:<a class="headerlink" href="#third-party-packages-installation" title="Permalink to this heading">#</a></h2>
 <p>To install third-party packages in Python, you can use a package manager like pip. pip is the most commonly used package manager for Python and makes it easy to download and install packages from the Python Package Index (PyPI) or other sources. Here’s how you can install third-party packages.</p>
 <p>To install a third-party package, open a terminal or command prompt and use the pip install command, followed by the package name. For example (in your console):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>package-name
@@ -1235,7 +1236,10 @@ Second product result:
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="funcs.html"
@@ -1255,7 +1259,10 @@ Second product result:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1302,7 +1309,7 @@ Second product result:
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1332,7 +1339,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1341,8 +1348,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
