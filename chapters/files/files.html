@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>File Handling &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,13 +39,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -69,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Object-Oriented Programming (Part 1)" href="../oop1.html" />
     <link rel="prev" title="Modules and Packages" href="../modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -341,6 +340,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-path">File Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files-in-python">Opening and closing files in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files-in-python">Working with text files in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading">Reading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing">Writing</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -353,10 +357,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="file-handling">
-<h1>File Handling<a class="headerlink" href="#file-handling" title="Permalink to this heading">#</a></h1>
+<h1>File Handling<a class="headerlink" href="#file-handling" title="Permalink to this headline">#</a></h1>
 <p>In this episode we will cover some aspects of working with files in Python.</p>
 <section id="file">
-<h2>File<a class="headerlink" href="#file" title="Permalink to this heading">#</a></h2>
+<h2>File<a class="headerlink" href="#file" title="Permalink to this headline">#</a></h2>
 <p>A computer file is a collection of data that is stored as a single unit and is identified by a filename. The data within a file is organized in a specific format or structure, and this organization is defined by a file format.</p>
 <p>The term “byte” refers to a unit of digital information that consists of 8 bits. Files are composed of bytes, and the arrangement and interpretation of these bytes are dictated by the file format. Different types of files (such as text files, image files, or executable files) have different rules and structures for how the bytes are organized.</p>
 <p>I will categorize files into two distinct groups:</p>
@@ -383,18 +387,18 @@ document.write(`
 </ol>
 </section>
 <section id="file-path">
-<h2>File Path<a class="headerlink" href="#file-path" title="Permalink to this heading">#</a></h2>
+<h2>File Path<a class="headerlink" href="#file-path" title="Permalink to this headline">#</a></h2>
 <p>To work with files in Python, it is important to have some basic knowledge about paths within the operating system. Assuming that you are already familiar with this concept, let’s proceed.</p>
 </section>
 <section id="opening-and-closing-files-in-python">
-<h2>Opening and closing files in Python<a class="headerlink" href="#opening-and-closing-files-in-python" title="Permalink to this heading">#</a></h2>
+<h2>Opening and closing files in Python<a class="headerlink" href="#opening-and-closing-files-in-python" title="Permalink to this headline">#</a></h2>
 <p>To open file inside of Python program we can use built-in function <code class="docutils literal notranslate"><span class="pre">open</span></code>.
 Let’s create the text file <code class="docutils literal notranslate"><span class="pre">quote.txt</span></code> with following content:</p>
 <div class="admonition-file-content admonition">
 <p class="admonition-title">File Content</p>
-<p>It never ceases to amaze me:</p>
-<p>we all love ourselves more than other people,</p>
-<p>but care more about their opinion than our own.</p>
+<p>It never ceases to amaze me:<br />
+we all love ourselves more than other people,<br />
+but care more about their opinion than our own.</p>
 </div>
 <p>Now to work with this file inside of Python we can use the following syntax:</p>
 <div class="cell docutils container">
@@ -426,7 +430,7 @@ Here are the different modes available in Python:</p>
 </div>
 </section>
 <section id="with-statement">
-<h2><code class="docutils literal notranslate"><span class="pre">with</span></code> statement<a class="headerlink" href="#with-statement" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">with</span></code> statement<a class="headerlink" href="#with-statement" title="Permalink to this headline">#</a></h2>
 <p>However, in Python there’s a cool trick that lets you forget about remembering to close files.
 It is the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement that provides a concise and clean way to work with external resources, such as files.
 Its primary purpose is to simplify resource management, ensuring that acquired resources are properly and automatically released, even if an exception occurs during the execution of the code block.
@@ -444,6 +448,116 @@ When it comes to file handling, the with statement is particularly advantageous.
 </div>
 </div>
 </div>
+</section>
+<section id="working-with-text-files-in-python">
+<h2>Working with text files in Python<a class="headerlink" href="#working-with-text-files-in-python" title="Permalink to this headline">#</a></h2>
+<section id="reading">
+<h3>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">#</a></h3>
+<p>Excellent! With our understanding of file manipulation in Python, we’re ready to delve into extracting data from text files within the Python environment. Let’s begin by exploring the methods available to achieve this goal:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">read()</span></code> method returns the specified number of bytes from the file. Default is -1 which means the whole file.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">readline()</span></code> method returns one line from the file. You can also specified how many bytes from the line to return, by using the size parameter.</p></li>
+</ul>
+<p>Let’s take a closer look on both of them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./quote.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp_f</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">inp_f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It never ceases to amaze me:
+we all love ourselves more than other people,
+but care more about their opinion than our own.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this instance, we utilize the <code class="docutils literal notranslate"><span class="pre">read</span></code> method to access the entire file. Feel free to experiment by specifying the size of the file in bytes that you wish to read, rather than reading the entire file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./quote.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp_f</span><span class="p">:</span>
+   <span class="n">line_1</span> <span class="o">=</span> <span class="n">inp_f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+   <span class="n">line_2</span> <span class="o">=</span> <span class="n">inp_f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line_1: </span><span class="si">{</span><span class="n">line_1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line_2: </span><span class="si">{</span><span class="n">line_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>line_1: It never ceases to amaze me:
+line_2: we all love ourselves more than other people,
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here I used the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method to trim the new line symbol which is by default returned in the <code class="docutils literal notranslate"><span class="pre">readline()</span></code> method.</p>
+<p>If you prefer to iterate over each line in your file, you can achieve this using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in the following manner:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./quote.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp_f</span><span class="p">:</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">inp_f</span><span class="p">:</span>
+       <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;current line: </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>current line: It never ceases to amaze me:
+current line: we all love ourselves more than other people,
+current line: but care more about their opinion than our own.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over each line of a file is advantageous for several reasons. It promotes memory efficiency by processing one line at a time, making it suitable for large files. The lazy loading approach allows incremental processing without loading the entire file into memory. This method is more performant for certain operations and supports a streaming approach, enabling real-time data processing. In contrast, the <code class="docutils literal notranslate"><span class="pre">read</span></code> method loads the entire content into memory, which can be inefficient for large files. Therefore, when dealing with files, particularly those with substantial data, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop provides a more resource-friendly and responsive solution.</p>
+</div>
+</section>
+<section id="writing">
+<h3>Writing<a class="headerlink" href="#writing" title="Permalink to this headline">#</a></h3>
+<p>Now, let’s explore the process of creating a new file and adding content to it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Embrace what you cannot change, </span>
+<span class="sd">and focus your energy </span>
+<span class="sd">on mastering what lies within your control.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Embrace what you cannot change, </span>
+<span class="s2">and focus your energy </span>
+<span class="s2">on mastering what lies within your control.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_f</span><span class="p">:</span>
+    <span class="n">out_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>After executing this code snippet, you will discover that a new file has been successfully created in your current working directory, named <code class="docutils literal notranslate"><span class="pre">out.txt</span></code>. The main distinction from previous examples lies in the use of the argument <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code>, which signifies that the file is opened in write mode. This allows you write content in the file as needed.
+It’s crucial to note that if the file already existed, executing this code will result in the loss of any information it previously contained. To demonstrate this, let’s rerun our program with a slightly modified variable, <code class="docutils literal notranslate"><span class="pre">'text'</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Have I been made for this, to lie under the blankets and keep myself warm?</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_f</span><span class="p">:</span>
+    <span class="n">out_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>As you can see we completly lost our previous text.
+In case you want to append new information to existed file you can use the <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Embrace what you cannot change, </span>
+<span class="s2">and focus your energy </span>
+<span class="s2">on mastering what lies within your control.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_f</span><span class="p">:</span>
+    <span class="n">out_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -473,10 +587,7 @@ When it comes to file handling, the with statement is particularly advantageous.
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../modules.html"
@@ -496,10 +607,7 @@ When it comes to file handling, the with statement is particularly advantageous.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -518,6 +626,11 @@ When it comes to file handling, the with statement is particularly advantageous.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-path">File Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files-in-python">Opening and closing files in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files-in-python">Working with text files in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading">Reading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing">Writing</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -526,7 +639,7 @@ When it comes to file handling, the with statement is particularly advantageous.
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -556,7 +669,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -565,8 +678,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
