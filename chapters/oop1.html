@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Object-Oriented Programming (Part 1) &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Object-Oriented Programming (Part 2)" href="oop2.html" />
     <link rel="prev" title="File Handling" href="files/files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -137,13 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Python Introduction Course - Home"/>
+    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Python Introduction Course - Home"/>`);</script>
   
   
 </a></div>
@@ -298,10 +310,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -309,11 +321,13 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -329,6 +343,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#namespace-and-scopes">Namespace and Scopes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#namespace">Namespace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scopes">Scopes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#local-scope">Local scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enclosing-scope">Enclosing scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-scope">Global scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-scope">Built-in scope</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legb-rule-and-namespace-search-order">LEGB Rule and Namespace Search Order</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -339,7 +372,131 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="object-oriented-programming-part-1">
-<h1>Object-Oriented Programming (Part 1)<a class="headerlink" href="#object-oriented-programming-part-1" title="Permalink to this headline">#</a></h1>
+<h1>Object-Oriented Programming (Part 1)<a class="headerlink" href="#object-oriented-programming-part-1" title="Permalink to this heading">#</a></h1>
+<p>In this episode we will take a look at Object-Oriented Programming (OOP) in Python!
+Object-oriented programming is a powerful paradigm that allows you to structure your code in a way that reflects the real-world entities and their interactions.
+In Python, OOP is a fundamental aspect of the language, providing a robust and flexible approach to designing and organizing code.</p>
+<p>However before we will start learning OOP I want to cover some aspects of Namespaces and Scopes in Python.</p>
+<section id="namespace-and-scopes">
+<h2>Namespace and Scopes<a class="headerlink" href="#namespace-and-scopes" title="Permalink to this heading">#</a></h2>
+<section id="namespace">
+<h3>Namespace<a class="headerlink" href="#namespace" title="Permalink to this heading">#</a></h3>
+<p>Earlier in our discussions about variables in Python, we established that a variable essentially acts as a link to an object in the computer’s memory. Visualizing this relationship, we can group variables and their corresponding objects into pairs, creating a structured mapping.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obj1&quot;</span><span class="p">:</span> <span class="n">obj1</span><span class="p">,</span> <span class="s2">&quot;obj2&quot;</span><span class="p">:</span> <span class="n">obj2</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This simply is a namespace in Python. So in Python, namespace act as dynamic containers, responsible for establishing a mapping between names and objects. Think of a namespace as an intelligent dictionary, where names are keys, and objects are values. This dynamic mapping allows Python to efficiently manage and organize the various elements within your program.
+For next code snippet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variable &quot;x&quot; pointing to an object in memory</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>we could say that namespace mapping is <code class="docutils literal notranslate"><span class="pre">{&quot;x&quot;:</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]}</span></code>.</p>
+<p>In Python, we like to keep things organized. So, the <code class="docutils literal notranslate"><span class="pre">print</span></code> function and our variable <code class="docutils literal notranslate"><span class="pre">x</span></code> don’t share the same space.
+Why? Well, Python has different areas, called “scopes”, and each of them has its own place to store names and their stuff.
+It’s like having separate rooms for different things. Now, let’s explore these scopes in Python.</p>
+</section>
+<section id="scopes">
+<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this heading">#</a></h3>
+<section id="local-scope">
+<h4>Local scope<a class="headerlink" href="#local-scope" title="Permalink to this heading">#</a></h4>
+<p><strong>Local scope</strong> refers to the part of your code, usually within a function or method, where variables have local significance. Each function call creates its own local namespace.</p>
+<p>When a function is called, a local namespace is created, acting as a container for variables within that function. This namespace is isolated from the global namespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">local_scope_example</span><span class="p">():</span>
+    <span class="n">local_variable</span> <span class="o">=</span> <span class="s2">&quot;I am local&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
+
+<span class="n">local_scope_example</span><span class="p">()</span>
+<span class="c1"># This line would raise an error as local_variable is not accessible here.</span>
+<span class="c1"># print(local_variable)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am local
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="enclosing-scope">
+<h4>Enclosing scope<a class="headerlink" href="#enclosing-scope" title="Permalink to this heading">#</a></h4>
+<p><strong>Enclosed scope</strong>. This scope occur when functions are defined within other functions. Each function has its own local namespace, and it can access variables from its own namespace as well as those from the enclosing scopes.</p>
+<p>In the example below, <code class="docutils literal notranslate"><span class="pre">inner_function</span></code> has access to both its local namespace and the namespace of <code class="docutils literal notranslate"><span class="pre">outer_function</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer_function</span><span class="p">():</span>
+    <span class="n">outer_variable</span> <span class="o">=</span> <span class="s2">&quot;I am in the outer function&quot;</span>
+
+    <span class="k">def</span> <span class="nf">inner_function</span><span class="p">():</span>
+        <span class="n">inner_variable</span> <span class="o">=</span> <span class="s2">&quot;I am in the inner function&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">outer_variable</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">inner_variable</span><span class="p">)</span>
+
+    <span class="n">inner_function</span><span class="p">()</span>
+
+<span class="n">outer_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am in the outer function
+I am in the inner function
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="global-scope">
+<h4>Global scope<a class="headerlink" href="#global-scope" title="Permalink to this heading">#</a></h4>
+<p><strong>Global scope</strong> encompasses the entire Python script or module. Variables in the global scope are accessible from any part of the code.</p>
+<p>Variables defined outside any function or method belong to the global namespace. They persist throughout the program.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">global_variable</span> <span class="o">=</span> <span class="s2">&quot;I am global&quot;</span>
+
+<span class="k">def</span> <span class="nf">global_scope_example</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">global_variable</span><span class="p">)</span>
+
+<span class="n">global_scope_example</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">global_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am global
+I am global
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="built-in-scope">
+<h4>Built-in scope<a class="headerlink" href="#built-in-scope" title="Permalink to this heading">#</a></h4>
+<p>The <strong>built-in scope</strong> is encompassing all reserved keywords. They can be readily accessed anywhere in the program without requiring explicit definition before usage.
+For example built-in scope contain such names as <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, etc.</p>
+</section>
+</section>
+<section id="legb-rule-and-namespace-search-order">
+<h3>LEGB Rule and Namespace Search Order<a class="headerlink" href="#legb-rule-and-namespace-search-order" title="Permalink to this heading">#</a></h3>
+<p>The LEGB rule (Local, Enclosing, Global, Built-in) determines the order in which Python searches for a variable.</p>
+<p>When a variable is referenced, Python searches for it in the following order:</p>
+<ol class="arabic simple">
+<li><p>Local (L): Inside the current function’s local namespace.</p></li>
+<li><p>Enclosing (E): In the local scopes of any enclosing functions (for nested functions).</p></li>
+<li><p>Global (G): In the global namespace.</p></li>
+<li><p>Built-in (B): In the built-in namespace where Python’s predefined names reside.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When I think about namespaces and scopes, I picture it like looking for things in different rooms. Imagine your current room as your “local scope.” If you’re trying to find something (an object), you’d check your current room first. If it’s not there, you might check another room nearby (enclosing room), and so on. It’s like a step-by-step search through rooms until you find what you’re looking for!</p>
+</div>
+<video autoplay loop playsinline controls muted>
+    <source src="../_static/videos/scopes_analogy.mp4" type="video/mp4">
+</video></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -367,7 +524,9 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -395,10 +554,35 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#namespace-and-scopes">Namespace and Scopes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#namespace">Namespace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scopes">Scopes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#local-scope">Local scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enclosing-scope">Enclosing scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-scope">Global scope</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-scope">Built-in scope</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legb-rule-and-namespace-search-order">LEGB Rule and Namespace Search Order</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -428,7 +612,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -437,8 +621,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

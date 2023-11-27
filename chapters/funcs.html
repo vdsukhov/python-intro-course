@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Functions &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Modules and Packages" href="modules.html" />
     <link rel="prev" title="2D Lists, Dictionaries and Sets" href="dict_and_set.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -137,13 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Python Introduction Course - Home"/>
+    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Python Introduction Course - Home"/>`);</script>
   
   
 </a></div>
@@ -298,10 +310,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -309,7 +321,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -356,9 +368,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
 <section id="function-definition">
-<h2>Function Definition<a class="headerlink" href="#function-definition" title="Permalink to this headline">#</a></h2>
+<h2>Function Definition<a class="headerlink" href="#function-definition" title="Permalink to this heading">#</a></h2>
 <p>Functions are the workhorses of Python and many other programming languages.
 They are like versatile tools in a programmer’s toolbox, allowing you to encapsulate a set of instructions and give them a name.
 Functions play a pivotal role in making code organized, reusable, and easier to understand.
@@ -409,7 +421,7 @@ line: Hello, Alice!
 </div>
 </section>
 <section id="docstring">
-<h2>Docstring<a class="headerlink" href="#docstring" title="Permalink to this headline">#</a></h2>
+<h2>Docstring<a class="headerlink" href="#docstring" title="Permalink to this heading">#</a></h2>
 <p>Python has a special built-in function called <code class="docutils literal notranslate"><span class="pre">help</span></code>. It’s like an information guide for Python functions. With <code class="docutils literal notranslate"><span class="pre">help</span></code>, you can find out what different functions do without having to dig into their inner workings. For instance, you can use <code class="docutils literal notranslate"><span class="pre">help</span></code> to learn about the <code class="docutils literal notranslate"><span class="pre">print</span></code> function. It’s a bit like getting a manual that explains how something works!</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -504,7 +516,7 @@ greeting(name)
 <p>Writing docstrings for functions is essential for several reasons. First, it serves as documentation, making it easier for other programmers (and your future self) to understand how the function works and how to use it correctly. Second, it provides clarity on the expected input and output, reducing the chances of errors and misunderstandings. Additionally, docstrings facilitate code maintenance and collaboration, as they act as a reference point for anyone working with the code. Lastly, it promotes good coding practices, making your codebase more professional and accessible to a wider audience.</p>
 </section>
 <section id="function-arguments">
-<h2>Function arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">#</a></h2>
+<h2>Function arguments<a class="headerlink" href="#function-arguments" title="Permalink to this heading">#</a></h2>
 <p>Now let’s take a closer look at function arguments. In general, you can specify an arbitrary number of arguments. Let’s look at a couple of examples:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -589,7 +601,7 @@ greeting(name)
 <p>In Python, we call this a “Keyword Argument” or “named argument.” It gives you more control over the order of arguments.</p>
 </section>
 <section id="default-arguments">
-<h2>Default Arguments<a class="headerlink" href="#default-arguments" title="Permalink to this headline">#</a></h2>
+<h2>Default Arguments<a class="headerlink" href="#default-arguments" title="Permalink to this heading">#</a></h2>
 <p>Default arguments in Python allow you to assign a default value to a function parameter. If a value is not provided when the function is called, the default value is used instead. This is particularly useful when you want to make a function more flexible and provide a sensible default behavior.</p>
 <p>Here’s an example:</p>
 <div class="cell tag_hide-output docutils container">
@@ -638,7 +650,7 @@ Hello Bob
 </div>
 </section>
 <section id="arbitrary-number-of-arguments">
-<h2>Arbitrary Number of Arguments<a class="headerlink" href="#arbitrary-number-of-arguments" title="Permalink to this headline">#</a></h2>
+<h2>Arbitrary Number of Arguments<a class="headerlink" href="#arbitrary-number-of-arguments" title="Permalink to this heading">#</a></h2>
 <p>In situations where we don’t know in advance how many arguments will be passed to a function, Python offers a solution.
 Let’s consider an example where we want to find the minimum value among given arguments. Initially, we create a simple function for two arguments:</p>
 <div class="cell tag_hide-output docutils container">
@@ -701,7 +713,7 @@ Additionally, I highly recommend you to read about <code class="docutils literal
 It’s a powerful feature that can enhance your code’s flexibility and readability.</p>
 </section>
 <section id="arguments-unpacking">
-<h2>Arguments unpacking<a class="headerlink" href="#arguments-unpacking" title="Permalink to this headline">#</a></h2>
+<h2>Arguments unpacking<a class="headerlink" href="#arguments-unpacking" title="Permalink to this heading">#</a></h2>
 <p>Argument unpacking during a function call in Python allows you to pass a sequence (like a list or tuple) as arguments to a function.
 This is particularly useful when you want to pass multiple values from a sequence as individual arguments to a function.
 Python provides two ways to achieve this:</p>
@@ -762,7 +774,7 @@ Also, in these examples, we used the fstring for the first time. This allows us 
 <p>Argument unpacking is handy when you have data stored in lists, tuples, or dictionaries and want to pass that data as arguments to a function without manually extracting and passing each value. It makes your code more concise and readable, especially when working with functions that require a specific number of arguments or keyword arguments.</p>
 </section>
 <section id="return-statement">
-<h2><code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#return-statement" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">return</span></code> statement<a class="headerlink" href="#return-statement" title="Permalink to this heading">#</a></h2>
 <p>In our functions, it’s important to understand that we may or may not include a return statement.
 We’ve previously encountered various examples with explicit <code class="docutils literal notranslate"><span class="pre">return</span></code> statements.
 Now, let’s explore what happens when we don’t specify a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement explicitly.</p>
@@ -795,7 +807,7 @@ Now, let’s explore what happens when we don’t specify a <code class="docutil
 </div>
 </section>
 <section id="recursion">
-<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">#</a></h2>
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h2>
 <p>Recursion is a programming concept where a function calls itself to solve a problem. It’s like a “function loop” where the function keeps calling itself until it reaches a specific condition to stop.</p>
 <p>Key elements of recursion:</p>
 <ul class="simple">
@@ -854,7 +866,9 @@ Recursion can be a powerful and elegant way to solve certain problems, but it’
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -906,7 +920,7 @@ Recursion can be a powerful and elegant way to solve certain problems, but it’
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -936,7 +950,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -945,8 +959,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

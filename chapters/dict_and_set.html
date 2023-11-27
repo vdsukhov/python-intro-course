@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>2D Lists, Dictionaries and Sets &#8212; Python Introduction Course</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Functions" href="funcs.html" />
     <link rel="prev" title="Lists, Tuples and Strings" href="lists_and_tuples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -137,13 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/python_course_logo.png" class="logo__image only-light" alt="Python Introduction Course - Home"/>
+    <script>document.write(`<img src="../_static/python_course_logo.png" class="logo__image only-dark" alt="Python Introduction Course - Home"/>`);</script>
   
   
 </a></div>
@@ -298,10 +310,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -309,7 +321,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -364,10 +376,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="d-lists-dictionaries-and-sets">
-<h1>2D Lists, Dictionaries and Sets<a class="headerlink" href="#d-lists-dictionaries-and-sets" title="Permalink to this headline">#</a></h1>
+<h1>2D Lists, Dictionaries and Sets<a class="headerlink" href="#d-lists-dictionaries-and-sets" title="Permalink to this heading">#</a></h1>
 <p>In this episode, we will learn more about Python data types, such as dictionaries and sets. However, I want to begin with a brief overview of 2-dimensional lists, as they can be used effectively to understand some basics of linear algebra.</p>
 <section id="dimensional-lists">
-<h2>2-Dimensional Lists<a class="headerlink" href="#dimensional-lists" title="Permalink to this headline">#</a></h2>
+<h2>2-Dimensional Lists<a class="headerlink" href="#dimensional-lists" title="Permalink to this heading">#</a></h2>
 <p>In our previous discussion, we learned that we can create lists in Python. I mentioned that we can use objects of different data types as elements of a list. But have you ever thought about using lists themselves as elements? Surprisingly, there is nothing stopping us from doing so.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -447,7 +459,7 @@ Answer</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="dictionaries">
-<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h2>
 <p>A Python’s dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) is like a real-life dictionary or a phone book. It contains key-value pairs, where each key maps to a specific value. In Python, we create dictionaries using curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -481,7 +493,7 @@ Answer</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <section id="access-the-element-of-a-dict">
-<h3>Access the element of a dict<a class="headerlink" href="#access-the-element-of-a-dict" title="Permalink to this headline">#</a></h3>
+<h3>Access the element of a dict<a class="headerlink" href="#access-the-element-of-a-dict" title="Permalink to this heading">#</a></h3>
 <p>We can access values in dictionary by specifying the key.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -509,7 +521,7 @@ Answer</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="modifying-elements">
-<h3>Modifying Elements<a class="headerlink" href="#modifying-elements" title="Permalink to this headline">#</a></h3>
+<h3>Modifying Elements<a class="headerlink" href="#modifying-elements" title="Permalink to this heading">#</a></h3>
 <p>You can change values just like you would in a list</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -532,7 +544,7 @@ Answer</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="adding-a-new-element">
-<h3>Adding a new element<a class="headerlink" href="#adding-a-new-element" title="Permalink to this headline">#</a></h3>
+<h3>Adding a new element<a class="headerlink" href="#adding-a-new-element" title="Permalink to this heading">#</a></h3>
 <p>You can also add new key-value pairs to a dictionary.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -556,7 +568,7 @@ Answer</label><div class="sd-tab-content docutils">
 <p>Here we used a new key, <code class="docutils literal notranslate"><span class="pre">&quot;interests&quot;</span></code>, and assigned it a list value of <code class="docutils literal notranslate"><span class="pre">[&quot;Photography&quot;,</span> <span class="pre">&quot;Chess&quot;]</span></code>.</p>
 </section>
 <section id="iterating-throught-a-dictionary">
-<h3>Iterating throught a Dictionary<a class="headerlink" href="#iterating-throught-a-dictionary" title="Permalink to this headline">#</a></h3>
+<h3>Iterating throught a Dictionary<a class="headerlink" href="#iterating-throught-a-dictionary" title="Permalink to this heading">#</a></h3>
 <p>There are various ways to iterate over dictionaries. Let’s explore some examples.</p>
 <p><strong>Iterate over dict keys</strong></p>
 <div class="cell tag_hide-output docutils container">
@@ -666,7 +678,7 @@ itmes: [(&#39;name&#39;, &#39;Vlad&#39;), (&#39;dob&#39;, &#39;10/08/1994&#39;),
 </div>
 </section>
 <section id="checking-for-key-existence">
-<h3>Checking for Key Existence<a class="headerlink" href="#checking-for-key-existence" title="Permalink to this headline">#</a></h3>
+<h3>Checking for Key Existence<a class="headerlink" href="#checking-for-key-existence" title="Permalink to this heading">#</a></h3>
 <p>We can check if a key exists in a dictionary using <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -699,7 +711,7 @@ Here is an example:</p>
 </div>
 </section>
 <section id="dictionary-comprehension">
-<h3>Dictionary comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this headline">#</a></h3>
+<h3>Dictionary comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this heading">#</a></h3>
 <p>Last week, we explored list comprehension, a more advanced approach for creating lists. A similar method can be used for creating dictionaries. Let’s examine an example</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -748,7 +760,7 @@ Answer</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="sets">
-<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h2>
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">#</a></h2>
 <p>A set is a collection of unique elements, just like a bag of distinct objects. In Python, we create sets using curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> or the <code class="docutils literal notranslate"><span class="pre">set()</span></code> constructor.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -810,7 +822,7 @@ True
 </details>
 </div>
 <section id="set-methods">
-<h3>Set methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">#</a></h3>
+<h3>Set methods<a class="headerlink" href="#set-methods" title="Permalink to this heading">#</a></h3>
 <p>Here I will cover just some part of <a class="reference external" href="https://www.w3schools.com/python/python_ref_set.asp">all</a> possible set methods:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">add()</span></code> - adds an element to the set</p></li>
@@ -854,7 +866,7 @@ values after clear: set()
 </div>
 </section>
 <section id="set-operations">
-<h3>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this headline">#</a></h3>
+<h3>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this heading">#</a></h3>
 <p>Let’s create two sets:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -905,7 +917,7 @@ A &gt;= B: False
 </div>
 </section>
 <section id="iterating-through-a-set">
-<h3>Iterating Through a Set<a class="headerlink" href="#iterating-through-a-set" title="Permalink to this headline">#</a></h3>
+<h3>Iterating Through a Set<a class="headerlink" href="#iterating-through-a-set" title="Permalink to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to go through all elements in a set:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -971,7 +983,9 @@ You can verify this by running the following example several times:</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1031,7 +1045,7 @@ You can verify this by running the following example several times:</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1061,7 +1075,7 @@ By Vladimir Sukhov
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1070,8 +1084,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
