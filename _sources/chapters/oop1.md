@@ -99,6 +99,12 @@ For example built-in scope contain such names as `print`, `len`, `sum`, etc.
 
 
 ### LEGB Rule and Namespace Search Order
+
+
+```{image} ./pics/scopes.jpg
+:align: center
+```
+
 The LEGB rule (Local, Enclosing, Global, Built-in) determines the order in which Python searches for a variable.
 
 When a variable is referenced, Python searches for it in the following order:
@@ -295,6 +301,12 @@ Car.vehicle_status(camry)
 The code above is same as `camry.vehicle_status()`. The idea is that we can run it directly using the object without always explicitly specifying the class name. As you can see, `self` corresponds to `camry` in this specific case.
 
 ### Class as a factory
+
+<!-- class_factory -->
+
+```{image} ./pics/class_factory.jpg
+:align: center
+```
 
 Think of a class as a versatile factory capable of creating (instantiating) objects with distinct features. In the earlier example, our `Car` class allowed us to model and handle real-world objects — cars complete with their own attributes and behaviors.
 
