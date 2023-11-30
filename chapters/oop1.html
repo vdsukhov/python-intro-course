@@ -364,6 +364,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#init-method"><code class="docutils literal notranslate"><span class="pre">__init__</span></code> method</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-methodes">Class methodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-as-a-factory">Class as a factory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharable-class-attributes">Sharable class attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-methods">Magic methods</a></li>
 </ul>
 </li>
 </ul>
@@ -526,7 +529,7 @@ When called within a function or at the module level, it provides access to the 
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python-intro-course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7ffb2036b4c0&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7ffb2036bf70&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7ffb2036bf70&gt;, &#39;open&#39;: &lt;function open at 0x7ffb212eacb0&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7ffb20192290&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7ffb20192dd0&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7ffb20192d40&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7ffb20193010&gt;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python-intro-course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7ff5c87c34f0&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7ff5c87c3fa0&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7ff5c87c3fa0&gt;, &#39;open&#39;: &lt;function open at 0x7ff5c974acb0&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7ff5c85e6a70&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7ff5c85e6dd0&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7ff5c85e6b90&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7ff5c85e7130&gt;}
 </pre></div>
 </div>
 </div>
@@ -723,6 +726,185 @@ Doors are now unlocked.
 </div>
 </div>
 </div>
+<p>We could say that methods are functions that are associated with objects.
+They are defined within a class and operate on instances (objects) of that class.
+The crucial difference between methods and functions is that methods are linked to specific objects.
+When you call a method, often it operates on the particular instance (object) it is associated with.
+This connection enables objects to have behaviors tailored to their own state.
+For example, a <code class="docutils literal notranslate"><span class="pre">Car</span></code> object might have a <code class="docutils literal notranslate"><span class="pre">start_engine</span></code> method that makes sense for cars but might not make sense for other objects.</p>
+<p>When you execute a method with an object (<code class="docutils literal notranslate"><span class="pre">object.method()</span></code>), behind the scenes, it’s like saying <code class="docutils literal notranslate"><span class="pre">Car.method(object)</span></code>. In this context, <code class="docutils literal notranslate"><span class="pre">self</span></code> refers to the instance of the object you’re working with.</p>
+<p>For a quick check, you can run the explicit version by specifying the class name directly. It’s a way of saying, “Hey, this method is designed to work with this specific object.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Car</span><span class="o">.</span><span class="n">vehicle_status</span><span class="p">(</span><span class="n">camry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Car Status:
+-- Brand: Toyota
+-- Model: Camry
+-- Year: 2023
+-- Color: red
+-- Fuel Level: 100%
+-- Odometer: 0 miles
+-- Doors: Unlocked
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above is same as <code class="docutils literal notranslate"><span class="pre">camry.vehicle_status()</span></code>. The idea is that we can run it directly using the object without always explicitly specifying the class name. As you can see, <code class="docutils literal notranslate"><span class="pre">self</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">camry</span></code> in this specific case.</p>
+</section>
+<section id="class-as-a-factory">
+<h3>Class as a factory<a class="headerlink" href="#class-as-a-factory" title="Permalink to this heading">#</a></h3>
+<p>Think of a class as a versatile factory capable of creating (instantiating) objects with distinct features. In the earlier example, our <code class="docutils literal notranslate"><span class="pre">Car</span></code> class allowed us to model and handle real-world objects — cars complete with their own attributes and behaviors.</p>
+<p>In a broader sense, you can create different classes tailored to your specific needs, each with its own set of attributes and methods. For instance, imagine a class designed for working with gene expression data. Here, attributes might include a matrix of counts, while methods could encompass various normalizations and differential expression analysis techniques.</p>
+<p>To underscore this concept, consider the popular Python package scanpy designed for the analysis of single-cell data. In scanpy, you encounter specific classes and data types crafted for the nuanced demands of single-cell analysis. These classes seamlessly handle various tasks, showcasing the adaptability and power of object-oriented programming.</p>
+</section>
+<section id="sharable-class-attributes">
+<h3>Sharable class attributes<a class="headerlink" href="#sharable-class-attributes" title="Permalink to this heading">#</a></h3>
+<p>We can create class attributes that will be shared among all instances of the class. For example, let’s say we want to store the geographical location of our factory and have access to this information from any instance. Here is an example of how we can achieve this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="n">factory_location</span> <span class="o">=</span> <span class="s2">&quot;51.010406, 10.256190&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fuel</span> <span class="o">=</span> <span class="n">fuel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
+
+<span class="n">camry</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">tesla_x</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">camry</span><span class="o">.</span><span class="n">factory_location</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tesla_x</span><span class="o">.</span><span class="n">factory_location</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.010406, 10.256190
+51.010406, 10.256190
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="magic-methods">
+<h3>Magic methods<a class="headerlink" href="#magic-methods" title="Permalink to this heading">#</a></h3>
+<p>Let’s consider the following setup: we want to add a special attribute to cars that measures their horsepower. Now, let’s say we have a list of different cars and we want to sort them based on their horsepower values. Ideally, we would like to use <code class="docutils literal notranslate"><span class="pre">sorted([car1,</span> <span class="pre">car2,</span> <span class="pre">car3])</span></code> to achieve this.</p>
+<p>However, we cannot run this code right away because Python doesn’t know how to compare our car objects. In order to sort our objects, we need to be able to compare them. Currently, if we try to compare our car objects, we will encounter an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fuel</span> <span class="o">=</span> <span class="n">fuel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">=</span> <span class="n">horsepower</span>
+
+
+<span class="n">camry</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">210</span><span class="p">)</span>
+<span class="n">tesla_x</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparison <code class="docutils literal notranslate"><span class="pre">print(camry</span> <span class="pre">&lt;</span> <span class="pre">tesla_x)</span></code> lead us to the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;Car&#39;</span> <span class="ow">and</span> <span class="s1">&#39;Car&#39;</span>
+</pre></div>
+</div>
+<p>This is where magic methods come to our rescue. Basically, Python has a lot of reserved method names that, when implemented, add new possibilities for our objects.
+In this specific case, we want to check whether the left object is less than the right one. To do this, we can implement a method with the name <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>. Let’s implement it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fuel</span> <span class="o">=</span> <span class="n">fuel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">=</span> <span class="n">horsepower</span>
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">horsepower</span>
+
+
+<span class="n">camry</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">210</span><span class="p">)</span>
+<span class="n">tesla_x</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Camry has higher power rather Tesla:&quot;</span><span class="p">,</span> <span class="n">tesla_x</span> <span class="o">&lt;</span> <span class="n">camry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Camry has higher power rather Tesla: False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can sort our objects in ascending order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nissan_gtr</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">565</span><span class="p">)</span>
+<span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="n">tesla_x</span><span class="p">,</span> <span class="n">camry</span><span class="p">,</span> <span class="n">nissan_gtr</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">cars</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Car object at 0x7ff5c8646e60&gt;, &lt;__main__.Car object at 0x7ff5c86446a0&gt;, &lt;__main__.Car object at 0x7ff5c8647430&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> method works without any problems.
+However, the output doesn’t make a lot of sense to us.
+To address this, we can implement another magic method called <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fuel</span> <span class="o">=</span> <span class="n">fuel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">=</span> <span class="n">horsepower</span>
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">horsepower</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Brand: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s2">, Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="n">camry</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">210</span><span class="p">)</span>
+<span class="n">tesla_x</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">nissan_gtr</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Nissan&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;GT-R&quot;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">horsepower</span><span class="o">=</span><span class="mi">565</span><span class="p">)</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="n">tesla_x</span><span class="p">,</span> <span class="n">camry</span><span class="p">,</span> <span class="n">nissan_gtr</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="n">cars</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Brand: Toyota, Model: Camry
+Brand: Nissan, Model: GT-R
+Brand: Tesla, Model: X
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -806,6 +988,9 @@ Doors are now unlocked.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#init-method"><code class="docutils literal notranslate"><span class="pre">__init__</span></code> method</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-methodes">Class methodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-as-a-factory">Class as a factory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharable-class-attributes">Sharable class attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-methods">Magic methods</a></li>
 </ul>
 </li>
 </ul>

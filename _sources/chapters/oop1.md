@@ -279,3 +279,138 @@ camry.vehicle_status()
 camry.unlock()
 ```
 
+We could say that methods are functions that are associated with objects.
+They are defined within a class and operate on instances (objects) of that class.
+The crucial difference between methods and functions is that methods are linked to specific objects.
+When you call a method, often it operates on the particular instance (object) it is associated with.
+This connection enables objects to have behaviors tailored to their own state.
+For example, a `Car` object might have a `start_engine` method that makes sense for cars but might not make sense for other objects.
+
+When you execute a method with an object (`object.method()`), behind the scenes, it's like saying `Car.method(object)`. In this context, `self` refers to the instance of the object you're working with.
+
+For a quick check, you can run the explicit version by specifying the class name directly. It's a way of saying, "Hey, this method is designed to work with this specific object."
+```{code-cell} ipython3
+Car.vehicle_status(camry)
+```
+The code above is same as `camry.vehicle_status()`. The idea is that we can run it directly using the object without always explicitly specifying the class name. As you can see, `self` corresponds to `camry` in this specific case.
+
+### Class as a factory
+
+Think of a class as a versatile factory capable of creating (instantiating) objects with distinct features. In the earlier example, our `Car` class allowed us to model and handle real-world objects — cars complete with their own attributes and behaviors.
+
+In a broader sense, you can create different classes tailored to your specific needs, each with its own set of attributes and methods. For instance, imagine a class designed for working with gene expression data. Here, attributes might include a matrix of counts, while methods could encompass various normalizations and differential expression analysis techniques.
+
+To underscore this concept, consider the popular Python package scanpy designed for the analysis of single-cell data. In scanpy, you encounter specific classes and data types crafted for the nuanced demands of single-cell analysis. These classes seamlessly handle various tasks, showcasing the adaptability and power of object-oriented programming.
+
+### Sharable class attributes
+
+We can create class attributes that will be shared among all instances of the class. For example, let's say we want to store the geographical location of our factory and have access to this information from any instance. Here is an example of how we can achieve this:
+
+```{code-cell} ipython3
+class Car:
+    factory_location = "51.010406, 10.256190"
+    def __init__(self, brand, model, year, color, fuel=100, odometer=0, doors_locked=True):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.color = color
+        self.fuel = fuel
+        self.odometer = odometer
+        self.doors_locked = doors_locked
+
+camry = Car(brand="Toyota", model="Camry", year=2023, color="red")
+tesla_x = Car(brand="Tesla", model="X", year=2023, color="black")
+
+print(camry.factory_location)
+print(tesla_x.factory_location)
+```
+
+### Magic methods
+
+Let's consider the following setup: we want to add a special attribute to cars that measures their horsepower. Now, let's say we have a list of different cars and we want to sort them based on their horsepower values. Ideally, we would like to use `sorted([car1, car2, car3])` to achieve this.
+
+However, we cannot run this code right away because Python doesn't know how to compare our car objects. In order to sort our objects, we need to be able to compare them. Currently, if we try to compare our car objects, we will encounter an error.
+
+```{code-cell} ipython3
+class Car:
+    def __init__(self, brand, model, year, color, horsepower, fuel=100, odometer=0, doors_locked=True):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.color = color
+        self.fuel = fuel
+        self.odometer = odometer
+        self.doors_locked = doors_locked
+        self.horsepower = horsepower
+
+
+camry = Car(brand="Toyota", model="Camry", year=2023, color="red", horsepower=210)
+tesla_x = Car(brand="Tesla", model="X", year=2023, color="black", horsepower=800)
+```
+
+Comparison `print(camry < tesla_x)` lead us to the following error:
+```
+TypeError: '<' not supported between instances of 'Car' and 'Car'
+```
+
+This is where magic methods come to our rescue. Basically, Python has a lot of reserved method names that, when implemented, add new possibilities for our objects.
+In this specific case, we want to check whether the left object is less than the right one. To do this, we can implement a method with the name `__lt__`. Let's implement it:
+
+```{code-cell} ipython3
+class Car:
+    def __init__(self, brand, model, year, color, horsepower, fuel=100, odometer=0, doors_locked=True):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.color = color
+        self.fuel = fuel
+        self.odometer = odometer
+        self.doors_locked = doors_locked
+        self.horsepower = horsepower
+    def __lt__(self, other):
+        return self.horsepower < other.horsepower
+
+
+camry = Car(brand="Toyota", model="Camry", year=2023, color="red", horsepower=210)
+tesla_x = Car(brand="Tesla", model="X", year=2023, color="black", horsepower=800)
+
+print("Camry has higher power rather Tesla:", tesla_x < camry)
+```
+
+Now we can sort our objects in ascending order.
+```{code-cell} ipython3
+nissan_gtr = Car(brand="Tesla", model="X", year=2023, color="black", horsepower=565)
+cars = [tesla_x, camry, nissan_gtr]
+print(sorted(cars))
+```
+
+As you can see, the `sorted` method works without any problems.
+However, the output doesn't make a lot of sense to us.
+To address this, we can implement another magic method called `__repr__`.
+
+
+```{code-cell} ipython3
+class Car:
+    def __init__(self, brand, model, year, color, horsepower, fuel=100, odometer=0, doors_locked=True):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.color = color
+        self.fuel = fuel
+        self.odometer = odometer
+        self.doors_locked = doors_locked
+        self.horsepower = horsepower
+    def __lt__(self, other):
+        return self.horsepower < other.horsepower
+    def __repr__(self):
+        return f"Brand: {self.brand}, Model: {self.model}"
+
+
+camry = Car(brand="Toyota", model="Camry", year=2023, color="red", horsepower=210)
+tesla_x = Car(brand="Tesla", model="X", year=2023, color="black", horsepower=800)
+nissan_gtr = Car(brand="Nissan", model="GT-R", year=2023, color="black", horsepower=565)
+
+cars = [tesla_x, camry, nissan_gtr]
+print(*sorted(cars), sep='\n')
+```
+
