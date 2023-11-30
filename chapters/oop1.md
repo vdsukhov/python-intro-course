@@ -391,7 +391,7 @@ print("Camry has higher power rather Tesla:", tesla_x < camry)
 
 Now we can sort our objects in ascending order.
 ```{code-cell} ipython3
-nissan_gtr = Car(brand="Tesla", model="X", year=2023, color="black", horsepower=565)
+nissan_gtr = Car(brand="Nissan", model="GT-R", year=2023, color="black", horsepower=565)
 cars = [tesla_x, camry, nissan_gtr]
 print(sorted(cars))
 ```
