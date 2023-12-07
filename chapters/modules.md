@@ -305,13 +305,20 @@ Now, let's try to import it when we are not in the package's folder.
 ## Builtin packages
 
 In this section we will briefly cover some of the builtin packages in Python, specifically:
+1. <a href="https://docs.python.org/3/library/decimal.html" target="_blank">`decimal`</a>
+2. <a href="https://docs.python.org/3/library/math.html" target="_blank">`math`</a>
+3. <a href="https://docs.python.org/3/library/os.html" target="_blank">`os`</a>
+4. <a href="https://docs.python.org/3/library/sys.html" target="_blank">`sys`</a>
+5. <a href="https://docs.python.org/3/library/itertools.html" target="_blank">`itertools`</a>
+6. <a href="https://docs.python.org/3/library/datetime.html" target="_blank">`datetime`</a>
+<!-- 
 1. [`decimal`](https://docs.python.org/3/library/decimal.html)
 2. [`math`](https://docs.python.org/3/library/math.html)
 3. [`os`](https://docs.python.org/3/library/os.html)
 4. [`sys`](https://docs.python.org/3/library/sys.html)
 5. [`itertools`](https://docs.python.org/3/library/itertools.html)
 6. [`datetime`](https://docs.python.org/3/library/datetime.html)
-
+ -->
 ### `decimal`
 The decimal package in Python provides arbitrary-precision decimal arithmetic. It's particularly useful for applications where precision is critical, such as financial calculations, scientific research, and more. Here are some interesting examples of decimal package usage:
 
