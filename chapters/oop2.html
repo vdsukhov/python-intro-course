@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -141,7 +141,6 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -309,7 +308,6 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -320,7 +318,6 @@ document.write(`
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -328,7 +325,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -344,6 +343,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-superclass-and-subclass">Inheritance: superclass and subclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-inheritance">Default inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-inheritance">Multiple inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-resolution-order-mro">Method Resolution Order (MRO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#super-method"><code class="docutils literal notranslate"><span class="pre">super()</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-function"><code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-vs-isinstance"><code class="docutils literal notranslate"><span class="pre">type</span></code> vs <code class="docutils literal notranslate"><span class="pre">isinstance</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issubclass-function"><code class="docutils literal notranslate"><span class="pre">issubclass</span></code> function</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -355,6 +371,542 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="object-oriented-programming-part-2">
 <h1>Object-Oriented Programming (Part 2)<a class="headerlink" href="#object-oriented-programming-part-2" title="Permalink to this heading">#</a></h1>
+<p>As a quick recap, we’ve discovered that in Python, classes serve as blueprints, outlining both the structure and behavior of objects. Objects, in turn, are instances of these classes, embodying real-world entities.</p>
+<section id="inheritance-superclass-and-subclass">
+<h2>Inheritance: superclass and subclass<a class="headerlink" href="#inheritance-superclass-and-subclass" title="Permalink to this heading">#</a></h2>
+<p>In this episode, our focus shifts to a powerful OOP concept—inheritance. Imagine our familiar <code class="docutils literal notranslate"><span class="pre">Car</span></code> class; today, we’ll delve into how we can extend and refine its features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Brand: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="se">\n</span><span class="s2">Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">camry</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inheritance allows us to build on existing classes. We’ll explore how a new class (a subclass) can inherit attributes and methods from an existing class (a superclass). This elegant mechanism not only fosters code reuse but also establishes a hierarchy that mirrors real-world relationships.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">Car</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span> <span class="o">=</span> <span class="n">battery_level</span>
+<span class="n">tesla_s</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Model S&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tesla_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Brand: Tesla
+Model: Model S
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the example above, notice that we didn’t explicitly define the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method in the subclass. Instead, we inherited it from the superclass. This illustrates a fundamental aspect of inheritance, where the subclass can acquire and use methods defined in the superclass without having to redefine them.</p>
+<p>If our superclass included additional specialized methods, the subclass would automatically have access to them as well. This underscores the efficiency of inheritance, allowing us to leverage a set of common functionalities from a superclass while maintaining the flexibility to extend or override them in the subclass.</p>
+<p>‘d like to highlight a crucial concept: the ability to leverage the code specified in a superclass. To illustrate this, let’s enhance the complexity of our superclass:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
+    
+    <span class="k">def</span> <span class="nf">vehicle_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prints the status of the car including all attributes.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Car Status:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Brand: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Color: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2"> miles&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Doors: </span><span class="si">{</span><span class="s1">&#39;Locked&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Unlocked&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">unlock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Unlocks the doors of the car.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are now unlocked.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are already unlocked.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Locks the doors of the car.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are now locked.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are already locked.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In our previous episode, we implemented the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class. Now, let’s revisit that and extend our exploration by creating an <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> class, inheriting from the existing <code class="docutils literal notranslate"><span class="pre">Car</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">Car</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">odometer</span><span class="p">,</span> <span class="n">doors_locked</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span> <span class="o">=</span> <span class="n">battery_level</span>
+
+<span class="n">tesla_s</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="s2">&quot;Model S&quot;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can make use of all the methods that we’ve defined in the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tesla_s</span><span class="o">.</span><span class="n">vehicle_status</span><span class="p">()</span>
+<span class="n">tesla_s</span><span class="o">.</span><span class="n">unlock</span><span class="p">()</span>
+<span class="n">tesla_s</span><span class="o">.</span><span class="n">vehicle_status</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Car Status:
+-- Brand: Tesla
+-- Model: Model S
+-- Year: 2023
+-- Color: Black
+-- Odometer: 0 miles
+-- Doors: Locked
+Doors are now unlocked.
+Car Status:
+-- Brand: Tesla
+-- Model: Model S
+-- Year: 2023
+-- Color: Black
+-- Odometer: 0 miles
+-- Doors: Unlocked
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we have the opportunity to define specific methods exclusive to the <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> class. These methods will be accessible only for instances of the <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">Car</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">odometer</span><span class="p">,</span> <span class="n">doors_locked</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span> <span class="o">=</span> <span class="n">battery_level</span>
+
+    <span class="k">def</span> <span class="nf">battery_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery level: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">tesla_s</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="s2">&quot;Model S&quot;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">)</span>
+<span class="n">tesla_s</span><span class="o">.</span><span class="n">battery_status</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Battery level: 100
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="default-inheritance">
+<h2>Default inheritance<a class="headerlink" href="#default-inheritance" title="Permalink to this heading">#</a></h2>
+<p>In Python, everything is treated as an object. Let’s explore this concept by creating an empty class, avoiding any manually specified methods or attributes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EmptyClass</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the snippet above, the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword allows us to create a minimal class without implementing any specific functionality.
+Now, let’s inspect what kind of attributes and methods are associated with an instance of our <code class="docutils literal notranslate"><span class="pre">EmptyClass</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">EmptyClass</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Upon running this, you’ll observe a myriad of names associated with our object.
+This abundance is due to the fact that, by default, any class in Python is implicitly a subclass of a superclass known as the <code class="docutils literal notranslate"><span class="pre">object</span></code> class.
+This inheritance from the <code class="docutils literal notranslate"><span class="pre">object</span></code> class provides a set of default attributes and methods to every class, contributing to the comprehensive list we see when querying the instance.</p>
+</section>
+<section id="multiple-inheritance">
+<h2>Multiple inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this heading">#</a></h2>
+<p>In Python, our flexibility extends beyond inheriting from just one class.
+We have the capability to utilize multiple classes as superclasses for a single subclass.
+Let’s examine the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+ 
+        
+<span class="k">class</span> <span class="nc">Convertible</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">roof_open</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">Car</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roof</span> <span class="o">=</span> <span class="n">roof_open</span>
+        
+    <span class="k">def</span> <span class="nf">open_roof</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roof now is open&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roof</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roof is already open&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">close_roof</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roof now is closed&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roof</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roof is already closed&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">HybridCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">Car</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span> <span class="o">=</span> <span class="n">battery_level</span>
+
+    <span class="k">def</span> <span class="nf">charge_battery</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Battery was charged&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_level</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">class</span> <span class="nc">HybridConvertible</span><span class="p">(</span><span class="n">Convertible</span><span class="p">,</span> <span class="n">HybridCar</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">roof_open</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="c1"># Call constructors of both parent classes</span>
+        <span class="n">Convertible</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">roof_open</span><span class="p">)</span>
+        <span class="n">HybridCar</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">battery_level</span><span class="p">)</span>
+
+<span class="c1"># Creating an instance of HybridConvertible</span>
+<span class="n">hybrid_convertible</span> <span class="o">=</span> <span class="n">HybridConvertible</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Prius Convertible&quot;</span><span class="p">,</span> <span class="n">battery_level</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery Level: </span><span class="si">{</span><span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">battery_level</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current roof status: </span><span class="si">{</span><span class="s1">&#39;Open&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">roof</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Closed&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Accessing methods from both parent classes</span>
+<span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">open_roof</span><span class="p">()</span>      <span class="c1"># From Convertible class</span>
+<span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">charge_battery</span><span class="p">()</span>  <span class="c1"># From HybridCar class</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery Level: </span><span class="si">{</span><span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">battery_level</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current roof status: </span><span class="si">{</span><span class="s1">&#39;Open&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">hybrid_convertible</span><span class="o">.</span><span class="n">roof</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Closed&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Battery Level: 50
+Current roof status: Closed
+Roof now is open
+Battery was charged
+Battery Level: 100
+Current roof status: Open
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Car</span></code> class represents base class.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Convertible</span></code> class inherits from <code class="docutils literal notranslate"><span class="pre">Car</span></code> and adds specific methods <code class="docutils literal notranslate"><span class="pre">open_roof</span></code> and <code class="docutils literal notranslate"><span class="pre">close_roof</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">HybridCar</span></code> class also inherits from <code class="docutils literal notranslate"><span class="pre">Car</span></code> and adds a specific method <code class="docutils literal notranslate"><span class="pre">charge_battery</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">HybridConvertible</span></code> class inherits from both <code class="docutils literal notranslate"><span class="pre">Convertible</span></code> and <code class="docutils literal notranslate"><span class="pre">HybridCar</span></code>, showcasing multiple inheritance.</p></li>
+</ul>
+<p>Instances of <code class="docutils literal notranslate"><span class="pre">HybridConvertible</span></code> can access methods from all the parent classes, demonstrating the flexibility and power of multiple inheritance.</p>
+</section>
+<section id="method-resolution-order-mro">
+<h2>Method Resolution Order (MRO)<a class="headerlink" href="#method-resolution-order-mro" title="Permalink to this heading">#</a></h2>
+<p>In Python, when we encounter multiple inheritance, it’s not uncommon to have the same method names defined in different parent classes.
+This can pose a challenge: which method should be called when we invoke it on an instance of a subclass?
+To address this, Python uses the Method Resolution Order (MRO) to establish a systematic sequence for searching and determining the order in which methods are resolved.</p>
+<p>Here are the key points about the Method Resolution Order:</p>
+<p><strong>1. Depth-First, Left-to-Right (DRLR):</strong></p>
+<p>By default, Python follows a depth-first, left-to-right approach for method resolution. This means that it first looks in the current class, then in its superclass (from left to right), and continues this pattern until it finds the desired method or attribute.</p>
+<p><strong>2. <code class="docutils literal notranslate"><span class="pre">__mro__</span></code> attribute:</strong></p>
+<p>You can access the MRO of a class using the <code class="docutils literal notranslate"><span class="pre">__mro__</span></code> attribute or the <code class="docutils literal notranslate"><span class="pre">mro()</span></code> method.
+This provides a tuple representing the order in which Python searches for methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3. C3 Linearization Algorithm:</strong></p>
+<p>Python employs the C3 Linearization Algorithm to determine the MRO.
+This algorithm ensures consistency and avoids ambiguity in the order of method resolution.
+If you want to look at some details then click <a href="https://w.wiki/8QM2" target="_blank">here</a>.</p>
+<p><strong>4. Diamond Inheritance Issue:</strong></p>
+<p>In scenarios where there’s a diamond-shaped inheritance (e.g., class D inherits from both B and C, which both inherit from A), the MRO prevents ambiguity by following the DRLR approach.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">instance_d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">instance_d</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>  <span class="c1"># Outputs &quot;B method&quot; due to the MRO</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B method
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the MRO ensures that the method from class B takes precedence over the method from class C.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Understanding the Method Resolution Order is crucial, especially in complex class hierarchies involving multiple inheritance, as it helps predict which method or attribute will be accessed when called on an instance of a class.</p>
+</div>
+</section>
+<section id="super-method">
+<h2><code class="docutils literal notranslate"><span class="pre">super()</span></code> method<a class="headerlink" href="#super-method" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">super()</span></code> method in Python is used to call a method from a parent or superclass. It is often employed within the context of inheritance, where a subclass wants to invoke a method that is defined in its superclass. Here’s a breakdown of the <code class="docutils literal notranslate"><span class="pre">super()</span></code> method:</p>
+<p><strong>Usage in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method:</strong></p>
+<p>A common use case is within the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of a subclass. This allows the subclass to initialize its own attributes and then call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the superclass to handle its specific initialization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">additional_info</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">additional_info</span> <span class="o">=</span> <span class="n">additional_info</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">super().__init__(name)</span></code> calls the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Parent</span></code> class, allowing the <code class="docutils literal notranslate"><span class="pre">Child</span></code> class to inherit the name attribute.</p>
+<p><strong>Passing Arguments:</strong></p>
+<p>You use <code class="docutils literal notranslate"><span class="pre">super()</span></code> without arguments when you’re working within a class and Python dynamically figures out the appropriate superclass to call.
+If you need to be more explicit, you can pass the class and instance explicitly to <code class="docutils literal notranslate"><span class="pre">super()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parent method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Child method&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">super().some_method()</span></code> calls the <code class="docutils literal notranslate"><span class="pre">some_method</span></code> of the <code class="docutils literal notranslate"><span class="pre">Parent</span></code> class, allowing the <code class="docutils literal notranslate"><span class="pre">Child</span></code> class to extend or override the behavior.</p>
+<p><strong>Multiple Inheritance:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">super()</span></code> is particularly useful in multiple inheritance scenarios, where a class inherits from more than one superclass.
+It ensures that methods are called in the correct order in the inheritance chain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B method&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C method&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">instance_d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">instance_d</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B method
+C method
+A method
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">super().some_method()</span></code> ensures that the method is called from the next class in the method resolution order (MRO).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">super()</span></code> method is a powerful tool for maintaining a clean and consistent structure in code that involves inheritance. It fosters code reuse and supports the principles of modularity and extensibility in object-oriented programming.</p>
+</div>
+</section>
+<section id="isinstance-function">
+<h2><code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function<a class="headerlink" href="#isinstance-function" title="Permalink to this heading">#</a></h2>
+<p>The isinstance() method in Python is used to check whether an object is an instance of a particular class or a tuple of classes. It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the object is an instance of any of the specified classes; otherwise, it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s use our <code class="docutils literal notranslate"><span class="pre">Car</span></code> class as an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+<span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">battery_capacity</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">battery_capacity</span> <span class="o">=</span> <span class="n">battery_capacity</span>
+
+<span class="c1"># Creating instances of Car and ElectricCar</span>
+<span class="n">regular_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">)</span>
+<span class="n">electric_car</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Model S&quot;</span><span class="p">,</span> <span class="n">battery_capacity</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Using isinstance to check object types</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">regular_car</span><span class="p">,</span> <span class="n">Car</span><span class="p">))</span>          <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">regular_car</span><span class="p">,</span> <span class="n">ElectricCar</span><span class="p">))</span>  <span class="c1"># False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">electric_car</span><span class="p">,</span> <span class="n">Car</span><span class="p">))</span>         <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">electric_car</span><span class="p">,</span> <span class="n">ElectricCar</span><span class="p">))</span> <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(regular_car,</span> <span class="pre">Car)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">regular_car</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, which is true.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(regular_car,</span> <span class="pre">ElectricCar)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">regular_car</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> class, which is false.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(electric_car,</span> <span class="pre">Car)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">electric_car</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, which is true because <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(electric_car,</span> <span class="pre">ElectricCar)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">electric_car</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> class, which is true.</p></li>
+</ul>
+<p>This method is useful for checking the type of an object before performing certain operations, especially in scenarios involving inheritance and polymorphism.</p>
+<section id="type-vs-isinstance">
+<h3><code class="docutils literal notranslate"><span class="pre">type</span></code> vs <code class="docutils literal notranslate"><span class="pre">isinstance</span></code><a class="headerlink" href="#type-vs-isinstance" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">type()</span></code> and <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> functions in Python are used to determine the type or class of an object, but they differ in their use cases.
+The <code class="docutils literal notranslate"><span class="pre">type()</span></code> function is used to get the type of an object. It returns the type as a class object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">electric_car</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.ElectricCar&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It can also be used to compare the type of an object with a specific type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">electric_car</span><span class="p">)</span> <span class="o">==</span> <span class="n">ElectricCar</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">electric_car</span><span class="p">)</span> <span class="o">==</span> <span class="n">Car</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, using <code class="docutils literal notranslate"><span class="pre">type()</span></code> for checking types in the context of inheritance can be less flexible, especially when dealing with subclasses.</p>
+<p>In summary, while both <code class="docutils literal notranslate"><span class="pre">type()</span></code> and <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> can be used to check the type of an object, <code class="docutils literal notranslate"><span class="pre">type()</span></code> is more straightforward and is mainly used for direct type checking, whereas <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> is more versatile, considering inheritance relationships and often used in scenarios involving polymorphism and class hierarchies.</p>
+</section>
+</section>
+<section id="issubclass-function">
+<h2><code class="docutils literal notranslate"><span class="pre">issubclass</span></code> function<a class="headerlink" href="#issubclass-function" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">issubclass()</span></code> function in Python is used to check if a class is a subclass of another class.
+It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first class is a subclass of the second class, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Here’s an explanation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicle</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Using issubclass to check class relationships</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">Car</span><span class="p">,</span> <span class="n">Vehicle</span><span class="p">))</span>          <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">ElectricCar</span><span class="p">,</span> <span class="n">Car</span><span class="p">))</span>      <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">ElectricCar</span><span class="p">,</span> <span class="n">Vehicle</span><span class="p">))</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">,</span> <span class="n">Car</span><span class="p">))</span>          <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(Car,</span> <span class="pre">Vehicle)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">Car</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>, which is true.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(ElectricCar,</span> <span class="pre">Car)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Car</span></code>, which is true.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(ElectricCar,</span> <span class="pre">Vehicle)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">ElectricCar</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>, which is true because it indirectly inherits from <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> through <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(Vehicle,</span> <span class="pre">Car)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Car</span></code>, which is false.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">issubclass()</span></code> function is particularly useful when dealing with class hierarchies and inheritance. It allows you to check the relationship between two classes and determine whether one is derived from another. This function is often used in scenarios where you need to ensure the compatibility or hierarchy of classes in your code.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -385,7 +937,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="oop1.html"
@@ -412,6 +964,29 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-superclass-and-subclass">Inheritance: superclass and subclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-inheritance">Default inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-inheritance">Multiple inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-resolution-order-mro">Method Resolution Order (MRO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#super-method"><code class="docutils literal notranslate"><span class="pre">super()</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-function"><code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-vs-isinstance"><code class="docutils literal notranslate"><span class="pre">type</span></code> vs <code class="docutils literal notranslate"><span class="pre">isinstance</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issubclass-function"><code class="docutils literal notranslate"><span class="pre">issubclass</span></code> function</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -428,7 +1003,6 @@ By Vladimir Sukhov
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023.
@@ -455,8 +1029,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

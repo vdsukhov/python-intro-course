@@ -171,7 +171,7 @@ stress_level.append(100)
 print("after append:", stress_level)
 ```
 As you can see here, we use the following syntax: we put a `.` after the variable name and then specify the method name - `append`.
-There are many [more](https://www.w3schools.com/python/python_ref_list.asp) different methods associated with the `list` data type.
+There are many <a href="https://www.w3schools.com/python/python_ref_list.asp" target="_blank">more</a> different methods associated with the `list` data type.
 Let's take a look on some other examples:
 ```{code-cell} ipython3
 :tags: ['hide-output']
@@ -376,7 +376,7 @@ So, in summary, when you want data that won't change, use a tuple, and when you 
 
 ### Methods
 Previously, we have already seen the data type for strings in Python. Today, we will take a closer look at them and learn about their new features.
-Strings come with some helpful built-in functions, often called methods, that let you perform various operations on them. Here are a few common ones (the full list of methods you can find [here](https://www.w3schools.com/python/python_ref_string.asp)):
+Strings come with some helpful built-in functions, often called methods, that let you perform various operations on them. Here are a few common ones (the full list of methods you can find <a href="https://www.w3schools.com/python/python_ref_string.asp" target="_blank">here</a>):
 - `upper()`: Transforms all characters to uppercase.
 - `lower()`: Converts all characters to lowercase.
 - `replace()`: Substitutes one part of the string with another.
