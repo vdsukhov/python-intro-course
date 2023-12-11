@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Object-Oriented Programming (Part 1)
+# Object-Oriented Programming: Classes
 
 In this episode we will take a look at Object-Oriented Programming (OOP) in Python! 
 Object-oriented programming is a powerful paradigm that allows you to structure your code in a way that reflects the real-world entities and their interactions. 

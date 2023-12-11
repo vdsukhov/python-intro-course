@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Libraries" href="libs.html" />
-    <link rel="prev" title="Object-Oriented Programming (Part 2)" href="oop2.html" />
+    <link rel="next" title="Iterators" href="iterators.html" />
+    <link rel="prev" title="Object-Oriented Programming: Inheritance" href="oop2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -179,10 +180,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="funcs.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Modules and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files/files.html">File Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop1.html">Object-Oriented Programming (Part 1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop2.html">Object-Oriented Programming (Part 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop1.html">Object-Oriented Programming: Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop2.html">Object-Oriented Programming: Inheritance</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exception Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="libs.html">Introduction to Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterators.html">Iterators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Offtopic</span></p>
 <ul class="nav bd-sidenav">
@@ -308,6 +309,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -318,6 +320,7 @@ document.write(`
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -325,7 +328,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -341,6 +346,29 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-stack-functionality-using-the-list-data-type">Representing stack functionality using the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">Call Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-function-calls">Simple function calls</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-function">Recursive function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-overflow">Stack Overflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors-and-exceptions">Syntax Errors and Exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -352,6 +380,297 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exception-handling">
 <h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">#</a></h1>
+<p>Today, we will explore exceptions in Python. However, before we delve into exceptions, let’s briefly discuss the data structure known as the stack.</p>
+<section id="stack">
+<h2>Stack<a class="headerlink" href="#stack" title="Permalink to this heading">#</a></h2>
+<p>A stack is a data structure that follows the Last In, First Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. It can be visualized as a collection of elements with two main operations: push, which adds an element to the top of the stack, and pop, which removes the top element from the stack.</p>
+<p>Key points of stack:</p>
+<ul class="simple">
+<li><p>Abstract data type</p></li>
+<li><p>Collection of elements</p></li>
+<li><p><strong>Push</strong> operation: adds an element to the collection</p></li>
+<li><p><strong>Pop</strong> operation: removes the most recently added element</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Think of a stack data structure as a can of Pringles chips - a perfect analogy to understand how it works.</p>
+<div class="toggle docutils container">
+<p>In this analogy, the can symbolizes the stack, and the chips nestled inside represent the elements stored in the stack. Here’s a breakdown of how the analogy mirrors the operations of a stack:</p>
+<ul class="simple">
+<li><p><strong>Push Operation (Adding Chips):</strong></p>
+<ul>
+<li><p>Just like adding new chips to a can, the “push” operation allows us to add elements to the stack, but always at the top.</p></li>
+</ul>
+</li>
+<li><p><strong>Pop Operation (Taking the Top Chip):</strong></p>
+<ul>
+<li><p>The “pop” operation corresponds to taking a chip from the top of the can. It follows the principle of retrieving the most recently added element.</p></li>
+<li><p>If you want a chip, you reach for the top one - the last chip added to the can.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>By visualizing the stack as a can of Pringles, it’s easy to grasp the Last In, First Out (LIFO) nature of the stack data structure. The can’s opening serves as a reminder that we can only add or take chips from the top, illustrating the strict order in which elements are managed. This analogy provides a tangible way to understand the fundamental operations of a stack.</p>
+</div>
+<section id="representing-stack-functionality-using-the-list-data-type">
+<h3>Representing stack functionality using the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#representing-stack-functionality-using-the-list-data-type" title="Permalink to this heading">#</a></h3>
+<p>We can simulate a stack data structure efficiently by leveraging the built-in list data type in Python.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In reality, a list and a stack are distinct data structures. To delve deeper into their individual characteristics and functionalities, you can explore the following links:</p>
+<ul class="simple">
+<li><p><a href="https://w.wiki/8T8m" target="_blank">Stack</a></p></li>
+<li><p><a href="https://w.wiki/8T8n" target="_blank">List</a></p></li>
+</ul>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;element 1&quot;</span><span class="p">)</span> <span class="c1"># append ~ pop</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stack is: </span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;element 2&quot;</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;element 3&quot;</span><span class="p">)</span>
+
+<span class="n">popped_elem</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Popped element: </span><span class="si">{</span><span class="n">popped_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stack is: </span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stack is: [&#39;element 1&#39;]
+Popped element: element 3
+Stack is: [&#39;element 1&#39;, &#39;element 2&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="call-stack">
+<h3>Call Stack<a class="headerlink" href="#call-stack" title="Permalink to this heading">#</a></h3>
+<p>A call stack, often referred to simply as the “stack,” is a region of memory used in computer science to manage function and method calls in a program. It keeps track of the active subroutines (functions or methods) and their respective local variables. The call stack operates on the Last In, First Out (LIFO) principle, meaning that the last function call made is the first one to be resolved.</p>
+<section id="simple-function-calls">
+<h4>Simple function calls<a class="headerlink" href="#simple-function-calls" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_a</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function A start&quot;</span><span class="p">)</span>
+    <span class="n">func_b</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function A end&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func_b</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function B start&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function B end&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main program</span>
+<span class="n">func_a</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function A start
+Function B start
+Function B end
+Function A end
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">func_a</span></code> calls <code class="docutils literal notranslate"><span class="pre">func_b</span></code>, and the call stack looks like this:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">func_a</span></code> is called.</p></li>
+<li><p>Inside <code class="docutils literal notranslate"><span class="pre">func_a</span></code>, <code class="docutils literal notranslate"><span class="pre">func_b</span></code> is called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func_b</span></code> completes its execution.</p></li>
+<li><p>Control returns to the point immediately after the call to <code class="docutils literal notranslate"><span class="pre">func_b</span></code> inside <code class="docutils literal notranslate"><span class="pre">func_a</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func_a</span></code> completes its execution.</p></li>
+</ol>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">traceback</span></code> package to display the call stack at a particular point in our code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="k">def</span> <span class="nf">func_a</span><span class="p">():</span>
+    <span class="n">func_b</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">func_b</span><span class="p">():</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">()</span>
+
+
+<span class="c1"># Main program</span>
+<span class="n">func_a</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output for the provided code snippet is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">func_a</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="n">func_a</span>
+    <span class="n">func_b</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">7</span><span class="p">,</span> <span class="ow">in</span> <span class="n">func_b</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="recursive-function">
+<h4>Recursive function<a class="headerlink" href="#recursive-function" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Factorial of 5:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Factorial of 5: 120
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">factorial</span></code> function calls itself recursively.
+The call stack looks like this:</p>
+<div class="toggle docutils container">
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code> calls <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code> calls <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code> calls <code class="docutils literal notranslate"><span class="pre">factorial(2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(2)</span></code> calls <code class="docutils literal notranslate"><span class="pre">factorial(1)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(1)</span></code> returns 1 (base case)</p></li>
+<li><p>Control returns to <code class="docutils literal notranslate"><span class="pre">factorial(2)</span></code>, which returns 2 * 1 = 2</p></li>
+<li><p>Control returns to <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code>, which returns 3 * 2 = 6</p></li>
+<li><p>Control returns to <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code>, which returns 4 * 6 = 24</p></li>
+<li><p>Control returns to <code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code>, which returns 5 * 24 = 120</p></li>
+</ol>
+</div>
+</section>
+<section id="stack-overflow">
+<h4>Stack Overflow<a class="headerlink" href="#stack-overflow" title="Permalink to this heading">#</a></h4>
+<p>The call stack has a specific size, meaning that if a program has an excessive number of function calls, it can lead to a stack overflow error. This occurs when the available memory for the call stack is exhausted. Let’s examine an example to illustrate this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom function calculating factorial&quot;&quot;&quot;</span>
+    <span class="n">assert_msg</span> <span class="o">=</span> <span class="s2">&quot;Ordinary factorial defined for&quot;</span>\
+    <span class="s2">&quot; numbers greater or equal than zero&quot;</span>
+    <span class="k">assert</span> <span class="n">arg</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">assert_msg</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">arg</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">arg</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This situation emphasizes the importance of carefully managing recursion and function calls to prevent stack overflow errors, as exceeding the stack size can lead to program termination. Recursive functions should be designed with appropriate base cases to ensure that the recursion stops and doesn’t lead to an infinite loop, ultimately causing a stack overflow.</p>
+<p>However, In Python sometimes we could need to manually increase the call stack size. In this case we can use the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom function calculating factorial&quot;&quot;&quot;</span>
+    <span class="n">assert_msg</span> <span class="o">=</span> <span class="s2">&quot;Ordinary factorial defined for&quot;</span>\
+    <span class="s2">&quot; numbers greater or equal than zero&quot;</span>
+    <span class="k">assert</span> <span class="n">arg</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">assert_msg</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">arg</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">arg</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2000</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3000
+5735.520650549073
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Chances are you’ve come across a valuable resource known as Stack Overflow. If you’re curious about why it’s named the way it is, <a href="https://w.wiki/8T9F" target="_blank">here</a> you can find a few intriguing possibilities.</p>
+</div>
+<p>Understanding the call stack becomes particularly crucial when handling exceptions and interpreting their output. A solid grasp of the call stack allows developers to navigate through the sequence of function calls leading to an exception, aiding in the identification and resolution of issues within the code.</p>
+</section>
+</section>
+</section>
+<section id="syntax-errors-and-exceptions">
+<h2>Syntax Errors and Exceptions<a class="headerlink" href="#syntax-errors-and-exceptions" title="Permalink to this heading">#</a></h2>
+<p>In Python, errors can be broadly classified into two main categories: Syntax Errors and Exceptions.
+While they both signal that something has gone awry in our code, they play different roles in the debugging and error-handling process.</p>
+<section id="syntax-errors">
+<h3>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this heading">#</a></h3>
+<p>Let’s start by looking at Syntax Errors. These occur when the Python interpreter encounters code that violates the language’s syntax rules. In other words, it’s like a grammatical mistake in our code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a Syntax Error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span>
+</pre></div>
+</div>
+<p>In this example, a missing closing parenthesis will result in a SyntaxError. These errors are caught by the interpreter during the compilation phase, preventing the program from running.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Understanding and fixing syntax errors is fundamental. They are often the first roadblock we face when translating our ideas into executable code. Fortunately, Python provides clear error messages that guide us to the problematic lines.</p>
+</div>
+</section>
+<section id="exceptions">
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">#</a></h3>
+<p>In Python, an exception is a runtime error that interrupts the normal flow of a program. These errors can occur due to various reasons, such as invalid input, file not found, or division by zero. Understanding and handling exceptions is crucial for writing robust and reliable Python code.</p>
+<p>Python comes with a set of built-in exceptions, each serving a specific purpose. Some common built-in exceptions include:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>: Raised when the Python interpreter encounters a syntax error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code>: Raised when an operation or function is applied to an object of an inappropriate type.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: Raised when a built-in operation or function receives an argument of the correct type but an inappropriate value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>: Raised when a file or directory is requested but cannot be found.</p></li>
+</ol>
+<p>Some examples that can cause different exceptions include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span>
+</pre></div>
+</div>
+<p>In Python, exceptions follow a structured inheritance hierarchy, forming a conceptual tree that represents their relationships. This hierarchy is instrumental in understanding the various types of exceptions and how they relate to one another. Think of it as an organized family tree for Python’s exception classes.</p>
+<p>To explore this hierarchy comprehensively, you can refer to the complete structure <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">here</a>. This visual representation provides insights into the parent-child relationships among different exception classes, showcasing the inheritance patterns that define the Python exception system.</p>
+</section>
+<section id="id1">
+<h3>Exception Handling<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>We can handle exceptions in the Python. Let’s start from the classic example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result of division is:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;re trying to divide by zero &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -382,7 +701,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="oop2.html"
@@ -390,15 +709,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Object-Oriented Programming (Part 2)</p>
+        <p class="prev-next-title">Object-Oriented Programming: Inheritance</p>
       </div>
     </a>
     <a class="right-next"
-       href="libs.html"
+       href="iterators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Libraries</p>
+        <p class="prev-next-title">Iterators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -408,6 +727,35 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-stack-functionality-using-the-list-data-type">Representing stack functionality using the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">Call Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-function-calls">Simple function calls</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-function">Recursive function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-overflow">Stack Overflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors-and-exceptions">Syntax Errors and Exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -425,6 +773,7 @@ By Vladimir Sukhov
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -451,8 +800,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

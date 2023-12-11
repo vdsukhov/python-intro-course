@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Object-Oriented Programming (Part 2)
+# Object-Oriented Programming: Inheritance
 
 As a quick recap, we've discovered that in Python, classes serve as blueprints, outlining both the structure and behavior of objects. Objects, in turn, are instances of these classes, embodying real-world entities.
 
