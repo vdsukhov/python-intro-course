@@ -17,7 +17,7 @@ parts:
       - file: chapters/oop1.ipynb
       - file: chapters/oop2.ipynb
       - file: chapters/exceptions.ipynb
-      - file: chapters/libs.ipynb
+      - file: chapters/iterators.ipynb
 
     - caption: Offtopic
       chapters:
