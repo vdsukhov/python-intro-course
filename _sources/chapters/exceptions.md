@@ -403,6 +403,39 @@ You can see that we used the syntax `ValueError as e`, which allows us to refer 
 
 ### User-defined exceptions
 
+We can craft our custom exceptions through inheritance. To illustrate, let's create an exception inheriting from the base `Exception` class:
 
+```{code-cell} ipython3
+class BioSeqException(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+    def __str__(self):
+        return self.msg
+```
 
+Now, let's develop a class where we can apply our custom exception:
+
+```{code-cell} ipython3
+def check_seq(seq):
+    if set(seq) <= set(["A", "C", "G", "T"]):
+        return
+    raise BioSeqException("Sequence should contain only ACGT symbols")
+
+class BioSeq:
+    def __init__(self, seq):
+        check_seq(seq)
+        self.seq = seq
+```
+
+Attempting to create a sequence containing symbols outside of ACGT will trigger a `BioSeqException`:
+
+```python
+s = BioSeq("ACY")
+```
+
+```none
+BioSeqException: Sequence should contain only ACGT symbols
+```
+
+This way, we've defined a custom exception, `BioSeqException`, and utilized it in our `BioSeq` class to enforce constraints on the allowed sequence symbols. This enhances code clarity and facilitates the handling of specific error conditions related to biological sequences.
 

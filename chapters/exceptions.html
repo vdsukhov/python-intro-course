@@ -797,6 +797,42 @@ You can see that we used the syntax <code class="docutils literal notranslate"><
 </section>
 <section id="user-defined-exceptions">
 <h3>User-defined exceptions<a class="headerlink" href="#user-defined-exceptions" title="Permalink to this heading">#</a></h3>
+<p>We can craft our custom exceptions through inheritance. To illustrate, let’s create an exception inheriting from the base <code class="docutils literal notranslate"><span class="pre">Exception</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BioSeqException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s develop a class where we can apply our custom exception:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_seq</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]):</span>
+        <span class="k">return</span>
+    <span class="k">raise</span> <span class="n">BioSeqException</span><span class="p">(</span><span class="s2">&quot;Sequence should contain only ACGT symbols&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BioSeq</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span>
+        <span class="n">check_seq</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="n">seq</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Attempting to create a sequence containing symbols outside of ACGT will trigger a <code class="docutils literal notranslate"><span class="pre">BioSeqException</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">BioSeq</span><span class="p">(</span><span class="s2">&quot;ACY&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>BioSeqException: Sequence should contain only ACGT symbols
+</pre></div>
+</div>
+<p>This way, we’ve defined a custom exception, <code class="docutils literal notranslate"><span class="pre">BioSeqException</span></code>, and utilized it in our <code class="docutils literal notranslate"><span class="pre">BioSeq</span></code> class to enforce constraints on the allowed sequence symbols. This enhances code clarity and facilitates the handling of specific error conditions related to biological sequences.</p>
 </section>
 </section>
 </section>
