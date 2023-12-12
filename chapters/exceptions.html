@@ -364,7 +364,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors-and-exceptions">Syntax Errors and Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-statement"><code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> statement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-except-blocks">Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#else-and-finally-statements"><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code> statements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-hierarchy">Exceptions Hierarchy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-an-exception">Raise an exception</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-exceptions">User-defined exceptions</a></li>
 </ul>
 </li>
 </ul>
@@ -657,7 +665,15 @@ While they both signal that something has gone awry in our code, they play diffe
 </section>
 <section id="id1">
 <h3>Exception Handling<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>We can handle exceptions in the Python. Let’s start from the classic example:</p>
+<p>Python offers an elegant mechanism for dealing with exceptions. You might wonder why bother with it. However, handling exceptions in Python is essential for numerous reasons, enhancing the overall robustness, reliability, and maintainability of your code. Let’s explore key reasons why handling exceptions is so important:</p>
+<ol class="arabic simple">
+<li><p><strong>Preventing Program Crashes:</strong> Without proper exception handling, unanticipated errors can cause your program to crash. Handling exceptions allows you to gracefully manage errors, preventing the entire program from terminating unexpectedly.</p></li>
+<li><p><strong>User-Friendly Error Messages:</strong> Exception handling enables you to provide meaningful and user-friendly error messages. This helps users or developers understand what went wrong, making it easier to identify and fix issues.</p></li>
+<li><p><strong>Graceful Degradation:</strong> In the presence of unexpected conditions, well-handled exceptions allow your program to degrade gracefully. Instead of abruptly stopping, your application can take appropriate actions, log the error for later analysis, or prompt the user for corrective input.</p></li>
+</ol>
+<section id="try-except-statement">
+<h4><code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> statement<a class="headerlink" href="#try-except-statement" title="Permalink to this heading">#</a></h4>
+<p>The primary mechanism for handling exceptions in Python is the <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> block. Let’s start from the classic example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
@@ -669,6 +685,118 @@ While they both signal that something has gone awry in our code, they play diffe
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;re trying to divide by zero &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Let’s break down the code snippet step by step:</p>
+<ul class="simple">
+<li><p>The code starts with an infinite loop, denoted by <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>. This means the code inside the loop will keep executing indefinitely until a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is encountered.
+Within the loop, there’s a <code class="docutils literal notranslate"><span class="pre">try</span></code> block. The code inside this block is the main body of the loop that attempts to execute without error
+Inside the <code class="docutils literal notranslate"><span class="pre">try</span></code> block, the user is prompted to enter two integers using input statements.</p></li>
+<li><p>The entered values are converted to integers (<code class="docutils literal notranslate"><span class="pre">int()</span></code>), and if the user provides non-integer input, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.
+After successfully obtaining two integers (<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>), the code proceeds to perform a division operation.
+If the user enters <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">b</span></code>, a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> will be raised.
+If all the above steps are executed without encountering any errors, the code prints the result of the division:
+After printing the result, the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is encountered, which exits the loop.</p></li>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> occurs during the division operation (<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>), the control is transferred to the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">ZeroDivisionError</span></code> block.
+In this case, the program prints a message indicating that the user is attempting to divide by zero.
+After handling the exception, the loop continues, prompting the user to enter integers again.
+The user keeps entering values until a valid division operation is performed (i.e., a non-zero denominator is provided), and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is executed, exiting the loop.</p></li>
+</ul>
+</section>
+<section id="multiple-except-blocks">
+<h4>Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks<a class="headerlink" href="#multiple-except-blocks" title="Permalink to this heading">#</a></h4>
+<p>In our previous example, we effectively addressed the situation of <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>. However, it’s noteworthy that our program would crash if confronted with a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. To mitigate this, we can enhance our error handling by incorporating multiple except blocks in our program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result of division is:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;re trying to divide by zero &quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some of the input couldn&#39;t be converted to integer number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="else-and-finally-statements">
+<h4><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code> statements<a class="headerlink" href="#else-and-finally-statements" title="Permalink to this heading">#</a></h4>
+<p>We can include additional statements to the <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks:</p>
+<ol class="arabic simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> block is executed if no exceptions are raised in the <code class="docutils literal notranslate"><span class="pre">try</span></code> block.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">finally</span></code> block is always executed, whether an exception occurs or not. It is useful for cleanup operations.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result of division is:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;re trying to divide by zero &quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There were no exceptions&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finally block&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="exceptions-hierarchy">
+<h4>Exceptions Hierarchy<a class="headerlink" href="#exceptions-hierarchy" title="Permalink to this heading">#</a></h4>
+<p>The exception hierarchy in Python is a structured organization of exception classes that represent various types of errors. This hierarchy is designed to provide a systematic way to handle and categorize exceptions based on their relationships. The hierarchy can be visualized as a tree, with a base class at the root and specialized exception classes branching out from it.</p>
+<blockquote>
+<div><p>The full hierarchy of exceptions could be found <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">here</a></p>
+</div></blockquote>
+<p>Let’s delve into the Python exception hierarchy with code examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter integer: &quot;</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result of division is:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;General Exception happened&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;re trying to divide by zero&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The noteworthy aspect in this example is that if there is any exception that is a subclass of <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, it won’t be reached. Therefore, it is essential to consider the precedence of exceptions you intend to handle. Careful consideration of exception order ensures that specific exceptions are caught and processed before more general ones, leading to effective and precise error handling.</p>
+<p>Typically, it’s advisable to begin with more specific exceptions and place more general ones at the end of the except block. This ensures that the program prioritizes handling specific error conditions before addressing more general cases, contributing to a more nuanced and effective exception-handling strategy.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>It’s a good idea to not try to deal with specific types of issues like <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>, <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>, <code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>, and <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>. Handling these might cause unexpected problems, so it’s better to let them be and not interfere with how the program normally works. This helps maintain the program’s stability and expected behavior.</p>
+</div>
+</section>
+</section>
+<section id="raise-an-exception">
+<h3>Raise an exception<a class="headerlink" href="#raise-an-exception" title="Permalink to this heading">#</a></h3>
+<p>We can manually raise exceptions using the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement. This is helpful when a specific condition is not met, and you want to signal an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_age</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Age cannot be negative&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">age</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">user_age</span> <span class="o">=</span> <span class="n">validate_age</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Validation error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation error: Age cannot be negative
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we specify the situation inside the <code class="docutils literal notranslate"><span class="pre">validate_age</span></code> function where we raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception. Additionally, we provide a custom message for our exception.
+In case if a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised during the execution of the <code class="docutils literal notranslate"><span class="pre">try</span></code> block (which happens when the age is negative), the control transfers to the <code class="docutils literal notranslate"><span class="pre">except</span></code> block.
+The code inside the <code class="docutils literal notranslate"><span class="pre">except</span></code> block prints a message, including the error message from the raised <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.
+You can see that we used the syntax <code class="docutils literal notranslate"><span class="pre">ValueError</span> <span class="pre">as</span> <span class="pre">e</span></code>, which allows us to refer to the exception object later on inside the <code class="docutils literal notranslate"><span class="pre">exception</span></code> block.</p>
+</section>
+<section id="user-defined-exceptions">
+<h3>User-defined exceptions<a class="headerlink" href="#user-defined-exceptions" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -749,7 +877,15 @@ While they both signal that something has gone awry in our code, they play diffe
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors-and-exceptions">Syntax Errors and Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exception Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-statement"><code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> statement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-except-blocks">Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#else-and-finally-statements"><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code> statements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-hierarchy">Exceptions Hierarchy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-an-exception">Raise an exception</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-exceptions">User-defined exceptions</a></li>
 </ul>
 </li>
 </ul>
