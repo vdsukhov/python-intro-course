@@ -265,8 +265,16 @@ To explore this hierarchy comprehensively, you can refer to the complete structu
 
 ### Exception Handling
 
-We can handle exceptions in the Python. Let's start from the classic example:
+Python offers an elegant mechanism for dealing with exceptions. You might wonder why bother with it. However, handling exceptions in Python is essential for numerous reasons, enhancing the overall robustness, reliability, and maintainability of your code. Let's explore key reasons why handling exceptions is so important:
 
+1. **Preventing Program Crashes:** Without proper exception handling, unanticipated errors can cause your program to crash. Handling exceptions allows you to gracefully manage errors, preventing the entire program from terminating unexpectedly.
+2. **User-Friendly Error Messages:** Exception handling enables you to provide meaningful and user-friendly error messages. This helps users or developers understand what went wrong, making it easier to identify and fix issues.
+3. **Graceful Degradation:** In the presence of unexpected conditions, well-handled exceptions allow your program to degrade gracefully. Instead of abruptly stopping, your application can take appropriate actions, log the error for later analysis, or prompt the user for corrective input.
+
+
+#### `try` - `except` statement
+
+The primary mechanism for handling exceptions in Python is the `try` and `except` block. Let's start from the classic example:
 ```python
 while True:
     try:
@@ -278,5 +286,123 @@ while True:
     except ZeroDivisionError:
         print("You're trying to divide by zero ")
 ```
+
+Let's break down the code snippet step by step:
+
+
+* The code starts with an infinite loop, denoted by `while True`. This means the code inside the loop will keep executing indefinitely until a `break` statement is encountered.
+Within the loop, there's a `try` block. The code inside this block is the main body of the loop that attempts to execute without error
+Inside the `try` block, the user is prompted to enter two integers using input statements.
+
+* The entered values are converted to integers (`int()`), and if the user provides non-integer input, a `ValueError` will be raised.
+After successfully obtaining two integers (`a` and `b`), the code proceeds to perform a division operation.
+If the user enters `0` for `b`, a `ZeroDivisionError` will be raised.
+If all the above steps are executed without encountering any errors, the code prints the result of the division:
+After printing the result, the `break` statement is encountered, which exits the loop.
+
+
+* If a `ZeroDivisionError` occurs during the division operation (`result = a / b`), the control is transferred to the `except ZeroDivisionError` block.
+In this case, the program prints a message indicating that the user is attempting to divide by zero.
+After handling the exception, the loop continues, prompting the user to enter integers again.
+The user keeps entering values until a valid division operation is performed (i.e., a non-zero denominator is provided), and the `break` statement is executed, exiting the loop.
+
+#### Multiple `except` blocks
+
+In our previous example, we effectively addressed the situation of `ZeroDivisionError`. However, it's noteworthy that our program would crash if confronted with a `ValueError`. To mitigate this, we can enhance our error handling by incorporating multiple except blocks in our program:
+
+```python
+while True:
+    try:
+        a = int(input("Enter integer: "))
+        b = int(input("Enter integer: "))
+        result = a / b
+        print("result of division is:", result)
+        break
+    except ZeroDivisionError:
+        print("You're trying to divide by zero ")
+    except ValueError:
+        print("Some of the input couldn't be converted to integer number")
+```
+
+
+#### `else` and `finally` statements
+
+
+We can include additional statements to the `except` blocks:
+
+1. The `else` block is executed if no exceptions are raised in the `try` block.
+2. The `finally` block is always executed, whether an exception occurs or not. It is useful for cleanup operations.
+
+```python
+try:
+    a = int(input("Enter integer: "))
+    b = int(input("Enter integer: "))
+    result = a / b
+    print("result of division is:", result)
+except ZeroDivisionError:
+    print("You're trying to divide by zero ")
+else:
+    print("There were no exceptions")
+finally:
+    print("Finally block")
+```
+
+
+
+#### Exceptions Hierarchy
+
+The exception hierarchy in Python is a structured organization of exception classes that represent various types of errors. This hierarchy is designed to provide a systematic way to handle and categorize exceptions based on their relationships. The hierarchy can be visualized as a tree, with a base class at the root and specialized exception classes branching out from it.
+
+> The full hierarchy of exceptions could be found <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">here</a>
+
+Let's delve into the Python exception hierarchy with code examples:
+
+```python
+while True:
+    try:
+        a = int(input("Enter integer: "))
+        b = int(input("Enter integer: "))
+        result = a / b
+        print("result of division is:", result)
+        break
+    except Exception:
+        print("General Exception happened")
+    except ZeroDivisionError:
+        print("You're trying to divide by zero")
+```
+
+The noteworthy aspect in this example is that if there is any exception that is a subclass of `Exception`, it won't be reached. Therefore, it is essential to consider the precedence of exceptions you intend to handle. Careful consideration of exception order ensures that specific exceptions are caught and processed before more general ones, leading to effective and precise error handling.
+
+Typically, it's advisable to begin with more specific exceptions and place more general ones at the end of the except block. This ensures that the program prioritizes handling specific error conditions before addressing more general cases, contributing to a more nuanced and effective exception-handling strategy.
+
+```{caution}
+It's a good idea to not try to deal with specific types of issues like `SystemExit`, `KeyboardInterrupt`, `GeneratorExit`, and `AssertionError`. Handling these might cause unexpected problems, so it's better to let them be and not interfere with how the program normally works. This helps maintain the program's stability and expected behavior.
+```
+
+### Raise an exception
+
+We can manually raise exceptions using the `raise` statement. This is helpful when a specific condition is not met, and you want to signal an error.
+
+```{code-cell} ipython3
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    return age
+
+try:
+    user_age = validate_age(-5)
+except ValueError as e:
+    print(f"Validation error: {e}")
+```
+
+Here we specify the situation inside the `validate_age` function where we raise a `ValueError` exception. Additionally, we provide a custom message for our exception.
+In case if a `ValueError` is raised during the execution of the `try` block (which happens when the age is negative), the control transfers to the `except` block.
+The code inside the `except` block prints a message, including the error message from the raised `ValueError`.
+You can see that we used the syntax `ValueError as e`, which allows us to refer to the exception object later on inside the `exception` block.
+
+
+### User-defined exceptions
+
+
 
 
