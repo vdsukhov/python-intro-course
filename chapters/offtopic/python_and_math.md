@@ -185,16 +185,17 @@ fig, ax = plt.subplots(figsize = (4, 4))
 ax.set(xlim = (-10, 10), ylim = (-9, 9))
 
 dx_fixed = 0.01
-alpha = (f(0 + dx_fixed) - f(0)) / dx_fixed
+x0 = -9
+alpha = (f(x0 + dx_fixed) - f(x0)) / dx_fixed
 
 x_domain = np.linspace(-10, 10, 1001)
-x0 = -9
+
 y = [f(arg) for arg in x_domain]
 
 ax.plot(x_domain, y)
 ax.grid()
 
-line_approx = ax.plot(x_domain, [alpha * x for x in x_domain])
+line_approx = ax.plot(x_domain, [alpha * (x - x0) + f(x0) for x in x_domain])
 point = ax.plot([x0], [f(x0)], '.')
 plt.close()
 ```
