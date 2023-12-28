@@ -1,0 +1,75 @@
+Traceback (most recent call last):
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 162, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/vdsukhov/mambaforge/envs/jb/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
+HTML(anim.to_html5_video())
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[20], line 2[0m
+[1;32m      1[0m anim [38;5;241m=[39m animation[38;5;241m.[39mFuncAnimation(fig, animate, interval [38;5;241m=[39m [38;5;241m100[39m, frames [38;5;241m=[39m [38;5;241m100[39m)
+[0;32m----> 2[0m HTML([43manim[49m[38;5;241;43m.[39;49m[43mto_html5_video[49m[43m([49m[43m)[49m)
+
+File [0;32m~/mambaforge/envs/jb/lib/python3.10/site-packages/matplotlib/animation.py:1289[0m, in [0;36mAnimation.to_html5_video[0;34m(self, embed_limit)[0m
+[1;32m   1285[0m Writer [38;5;241m=[39m writers[mpl[38;5;241m.[39mrcParams[[38;5;124m'[39m[38;5;124manimation.writer[39m[38;5;124m'[39m]]
+[1;32m   1286[0m writer [38;5;241m=[39m Writer(codec[38;5;241m=[39m[38;5;124m'[39m[38;5;124mh264[39m[38;5;124m'[39m,
+[1;32m   1287[0m                 bitrate[38;5;241m=[39mmpl[38;5;241m.[39mrcParams[[38;5;124m'[39m[38;5;124manimation.bitrate[39m[38;5;124m'[39m],
+[1;32m   1288[0m                 fps[38;5;241m=[39m[38;5;241m1000.[39m [38;5;241m/[39m [38;5;28mself[39m[38;5;241m.[39m_interval)
+[0;32m-> 1289[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[38;5;28;43mstr[39;49m[43m([49m[43mpath[49m[43m)[49m[43m,[49m[43m [49m[43mwriter[49m[38;5;241;43m=[39;49m[43mwriter[49m[43m)[49m
+[1;32m   1290[0m [38;5;66;03m# Now open and base64 encode.[39;00m
+[1;32m   1291[0m vid64 [38;5;241m=[39m base64[38;5;241m.[39mencodebytes(path[38;5;241m.[39mread_bytes())
+
+File [0;32m~/mambaforge/envs/jb/lib/python3.10/site-packages/matplotlib/animation.py:1092[0m, in [0;36mAnimation.save[0;34m(self, filename, writer, fps, dpi, codec, bitrate, extra_args, metadata, extra_anim, savefig_kwargs, progress_callback)[0m
+[1;32m   1089[0m [38;5;28;01mwith[39;00m writer[38;5;241m.[39msaving([38;5;28mself[39m[38;5;241m.[39m_fig, filename, dpi), \
+[1;32m   1090[0m      cbook[38;5;241m.[39m_setattr_cm([38;5;28mself[39m[38;5;241m.[39m_fig[38;5;241m.[39mcanvas, _is_saving[38;5;241m=[39m[38;5;28;01mTrue[39;00m, manager[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m   1091[0m     [38;5;28;01mfor[39;00m anim [38;5;129;01min[39;00m all_anim:
+[0;32m-> 1092[0m         [43manim[49m[38;5;241;43m.[39;49m[43m_init_draw[49m[43m([49m[43m)[49m  [38;5;66;03m# Clear the initial frame[39;00m
+[1;32m   1093[0m     frame_number [38;5;241m=[39m [38;5;241m0[39m
+[1;32m   1094[0m     [38;5;66;03m# TODO: Currently only FuncAnimation has a save_count[39;00m
+[1;32m   1095[0m     [38;5;66;03m#       attribute. Can we generalize this to all Animations?[39;00m
+
+File [0;32m~/mambaforge/envs/jb/lib/python3.10/site-packages/matplotlib/animation.py:1749[0m, in [0;36mFuncAnimation._init_draw[0;34m(self)[0m
+[1;32m   1741[0m         warnings[38;5;241m.[39mwarn(
+[1;32m   1742[0m             [38;5;124m"[39m[38;5;124mCan not start iterating the frames for the initial draw. [39m[38;5;124m"[39m
+[1;32m   1743[0m             [38;5;124m"[39m[38;5;124mThis can be caused by passing in a 0 length sequence [39m[38;5;124m"[39m
+[0;32m   (...)[0m
+[1;32m   1746[0m             [38;5;124m"[39m[38;5;124mit may be exhausted due to a previous display or save.[39m[38;5;124m"[39m
+[1;32m   1747[0m         )
+[1;32m   1748[0m         [38;5;28;01mreturn[39;00m
+[0;32m-> 1749[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_draw_frame[49m[43m([49m[43mframe_data[49m[43m)[49m
+[1;32m   1750[0m [38;5;28;01melse[39;00m:
+[1;32m   1751[0m     [38;5;28mself[39m[38;5;241m.[39m_drawn_artists [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_init_func()
+
+File [0;32m~/mambaforge/envs/jb/lib/python3.10/site-packages/matplotlib/animation.py:1768[0m, in [0;36mFuncAnimation._draw_frame[0;34m(self, framedata)[0m
+[1;32m   1764[0m     [38;5;28mself[39m[38;5;241m.[39m_save_seq [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_save_seq[[38;5;241m-[39m[38;5;28mself[39m[38;5;241m.[39m_save_count:]
+[1;32m   1766[0m [38;5;66;03m# Call the func with framedata and args. If blitting is desired,[39;00m
+[1;32m   1767[0m [38;5;66;03m# func needs to return a sequence of any artists that were modified.[39;00m
+[0;32m-> 1768[0m [38;5;28mself[39m[38;5;241m.[39m_drawn_artists [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_func[49m[43m([49m[43mframedata[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_args[49m[43m)[49m
+[1;32m   1770[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_blit:
+[1;32m   1772[0m     err [38;5;241m=[39m [38;5;167;01mRuntimeError[39;00m([38;5;124m'[39m[38;5;124mThe animation function must return a sequence [39m[38;5;124m'[39m
+[1;32m   1773[0m                        [38;5;124m'[39m[38;5;124mof Artist objects.[39m[38;5;124m'[39m)
+
+Cell [0;32mIn[14], line 5[0m, in [0;36manimate[0;34m(i)[0m
+[1;32m      3[0m alpha [38;5;241m=[39m (f(x0_loc [38;5;241m+[39m dx_fixed) [38;5;241m-[39m f(x0_loc)) [38;5;241m/[39m dx_fixed
+[1;32m      4[0m line_approx[[38;5;241m0[39m][38;5;241m.[39mset_ydata([alpha [38;5;241m*[39m (x [38;5;241m-[39m x0_loc) [38;5;241m+[39m f(x0_loc) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m x_domain])
+[0;32m----> 5[0m [43mpoint[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[38;5;241m.[39mset_xdata([x0_loc])
+[1;32m      6[0m point[[38;5;241m0[39m][38;5;241m.[39mset_ydata([f(x0_loc)])
+
+[0;31mTypeError[0m: 'float' object is not subscriptable
+
