@@ -43,10 +43,13 @@ from IPython.display import HTML
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 from myst_nb import glue
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams["animation.html"] = "html5"
 ```
 
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 def line(x, x0, y0, x1, y1):
     slope = (y1 - y0) / (x1 - x0)
     return x * slope + y0 - x0 * slope
@@ -61,7 +64,6 @@ x_rng = np.linspace(0, 5, 100)
 fig = plt.figure(figsize = (3, 3))
 plt.plot(x_rng, line_vec(x_rng, x0, y0, x1, y1))
 plt.grid(True)
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -71,6 +73,7 @@ glue("line", fig, display=False)
 
 
 ```{glue:figure} line
+:height: 360px
 ```
 
 Once you grasp the straightforward process of determining the line between two points, the concept of derivatives becomes an accessible extension. It's like unlocking a key principle in calculus that opens the door to a broader understanding.
@@ -99,6 +102,7 @@ Now let's just put all of this in the form of code.
 In the beginning I will define function that I want to analyze:
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 def f(arg):
     return np.abs(arg) * np.sin(arg)
 
@@ -111,11 +115,11 @@ y_orig = f_vec(x_rng)
 Let's plot our function:
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 fig = plt.figure(figsize = (4, 4))
 
 plt.plot(x_rng, y_orig)
 plt.grid(True)
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -124,11 +128,13 @@ glue("f", fig, display=False)
 ```
 
 ```{glue:figure} f
+:height: 360px
 ```
 
 Let's assign values to our variables: $x_0 = 0$, $\Delta x = 1$. Now, let's examine what our approximation looks like:
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 fig, ax = plt.subplots(figsize = (4, 4))
 
 ax.set(xlim = (-1.5, 1.5), ylim = (-1, 1))
@@ -145,7 +151,6 @@ points = ax.plot([x0, x0 + deltax], [f(x0), f(x0 + deltax)], ".", label=r'$f(x_0
 
 leg = plt.legend(loc='upper left')
 plt.grid(True)
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -154,6 +159,7 @@ glue("approx", fig, display=False)
 ```
 
 ```{glue:figure} approx
+:height: 360px
 ```
 
 Alright, we have our initial approximation, but we can enhance it for our specific local point $x_0 = 0$ by attempting to reduce the value of $\Delta x \rightarrow 0$.
@@ -170,8 +176,17 @@ def animate(i):
 
 ```{code-cell} ipython3
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
-HTML(anim.to_html5_video())
 ```
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+glue("derivative", anim, display=False)
+```
+
+```{glue:figure} derivative
+:figwidth: 460px
+```
+
+
 
 Great! Now, we know how to approximate our functions using derivatives. Essentially, the expression for a derivative can be represented as follows:
 
@@ -180,6 +195,7 @@ $$f'(x_0) = \lim\limits_{\Delta x \rightarrow 0} \frac{f\left(x_0 + \Delta x\rig
 At the end, let's carry out the same procedure, but this time, we'll keep $\Delta x = 0.01$ constant and vary the value of $x_0$:
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 fig, ax = plt.subplots(figsize = (4, 4))
 
 ax.set(xlim = (-10, 10), ylim = (-9, 9))
@@ -197,7 +213,6 @@ ax.grid()
 
 line_approx = ax.plot(x_domain, [alpha * (x - x0) + f(x0) for x in x_domain])
 point = ax.plot([x0], [f(x0)], '.')
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -206,6 +221,7 @@ glue("approx_large", fig, display=False)
 ```
 
 ```{glue:figure} approx_large
+:height: 360px
 ```
 
 This our initial state and now let's animate it:
@@ -222,7 +238,15 @@ def animate(i):
 
 ```{code-cell} ipython3
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 200)
-HTML(anim.to_html5_video())
+```
+
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+glue("sliding_derivative", anim, display=False)
+```
+
+```{glue:figure} sliding_derivative
+:figwidth: 460px
 ```
 
 ## Integrals
@@ -261,6 +285,7 @@ Alright, let's proceed by dividing our interval $[a, b]$ into smaller pieces and
 
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 fig = plt.figure(figsize = (4, 4))
 
 ax = fig.add_subplot()
@@ -285,7 +310,6 @@ for i in range(nrec):
 
 leg = plt.legend(loc='upper center')
 plt.grid(True)
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -294,6 +318,7 @@ glue("integral", fig, display=False)
 ```
 
 ```{glue:figure} integral
+:height: 360px
 ```
 
 Absolutely, at its core, this is what an integral is all about. Our next step involves calculating the area, and for rectangles (the reason we divided it this way), this process is straightforward. The key is to make those $\Delta x_i$ values really small, approaching zero. Let's put this concept into action and animate the process concurrently:
@@ -318,8 +343,17 @@ def animate(rect_num):
 
 ```{code-cell} ipython3
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
-HTML(anim.to_html5_video())
 ```
+
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+glue("x2_area", anim, display=False)
+```
+
+```{glue:figure} x2_area
+:figwidth: 460px
+```
+
 
 
 ### Standard Normal Distribution
@@ -340,6 +374,7 @@ def f(x):
 For the interval of interest, I'll employ $[a, b] = [-10, 10]$. Here, I'll admit to a slight trick, utilizing a characteristic of this function—namely, that the majority of its values are concentrated around 0. This allows us to explore the essential properties without the need for an extensive interval, making our analysis more efficient.
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 fig = plt.figure(figsize = (4, 4))
 
 ax = fig.add_subplot()
@@ -349,7 +384,7 @@ b = -a
 ax.set_xlim(a, b)
 ax.set_ylim(0, 1.25 * f(0))
 
-x = np.linspace(a, b, 101)
+x = np.linspace(a, b, 1001)
 y = np.array([f(arg) for arg in x])
 
 ax.plot(x, y, 'm', label = "snd")
@@ -364,7 +399,6 @@ for i in range(nrec):
 
 leg = plt.legend(loc='upper right')
 plt.grid(True)
-plt.close()
 ```
 
 ```{code-cell} ipython3
@@ -373,6 +407,7 @@ glue("snd", fig, display=False)
 ```
 
 ```{glue:figure} snd
+:height: 360px
 ```
 
 
@@ -395,6 +430,19 @@ def animate(rect_num):
 ```
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
-HTML(anim.to_html5_video())
 ```
+
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+glue("snd_video", anim, display=False)
+```
+
+```{glue:figure} snd_video
+:figwidth: 460px
+```
+
+<!-- ```{glue:} snd_video
+:width: 300px
+``` -->
