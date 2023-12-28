@@ -22,5 +22,6 @@ parts:
     - caption: Offtopic
       chapters:
       - file: chapters/offtopic/matrix_multiplication.ipynb
+      - file: chapters/offtopic/python_and_math.ipynb
 
     
