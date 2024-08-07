@@ -5,12 +5,13 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
 # Lists, Tuples and Strings
 
 In this episode, we will discuss some iterable objects in Python, such as lists, tuples, and strings.
@@ -27,25 +28,29 @@ Imagine wanting to measure your stress level every five minutes. In this case, y
 </video>
 
 To address this issue, we can use lists in Python. Here is an example of how you can create a list in Python:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 stress_level = [0, 0, 10, 20, 100, 0, 0]
 ```
 
 In general lists could contain different data types:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 l = ["abc", 1, 42.0]
 print(l)
 ```
 
-
 ### Indexing
 
 Let's create the following list:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
@@ -60,20 +65,22 @@ In Python, indexing starts from `0`, so the first element in a list is associate
 Now let's use indexing to access elements from a list.Here are some examples:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("numbers[0]:", numbers[0])
 print("numbers[3]:", numbers[3])
 ```
 
 We can change specific elements of our list by using the indexes:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 numbers[0] = -100
 numbers[-1] = 0
 print(numbers)
 ```
-
 
 ### Slicing
 
@@ -90,8 +97,10 @@ Here:
 - `step` is the step for our slicing. Default value is `1`
 
 Let's take a look on some exapmles:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 print("numbers[:3]:", numbers[:3]) # same as numbers[0:3:1]
 print("numbers[3:]:", numbers[3:]) # same as numbers[3:10:1]
@@ -131,8 +140,10 @@ Because of this, when we modify `numbers_2`, we are also modifying the underlyin
 
 If you need to create an actual copy of the list, you can use slicing. Slicing always results in a new list.
 Here is an example:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 numbers_2 = numbers_1[::]
 
@@ -142,8 +153,10 @@ print("numbers_2:", numbers_2)
 ```
 
 However, if you want to check whether the underlying objects of the variables are the same, you can use the built-in `id` function. Here is how it works:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 numbers_2 = numbers_1
 
@@ -162,19 +175,22 @@ As you can see in the first case, the results of the "id" calls are the same. Ho
 ### `list` methods
 Before I did not mention it, but in reality, each object in Python has specific features that are specified by its data type. Lists are no exception. These features are called methods. Let's take a look at some of them.
 You can append new element to list:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 stress_level = [0, 0, 10, 20, 100, 0, 0]
 print("before append:", stress_level)
 stress_level.append(100)
 print("after append:", stress_level)
 ```
+
 As you can see here, we use the following syntax: we put a `.` after the variable name and then specify the method name - `append`.
 There are many <a href="https://www.w3schools.com/python/python_ref_list.asp" target="_blank">more</a> different methods associated with the `list` data type.
 Let's take a look on some other examples:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 stress_level = [0, 0, 10, 20, 100, 0, 0]
 stress_level.extend([90, 80, 70])
@@ -186,9 +202,11 @@ print("After pop:", stress_level)
 stress_level.sort()
 print("After sort:", stress_level)
 ```
+
 If you want to remove an element, you can use the method `remove`. However, if you prefer to remove the element by index, you can use the `del` operator instead of the `remove` method. Here is an example of how it works:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 stress_level = [0, 0, 10, 20, 100, 0, 0]
 print('stress_level before del:', stress_level)
@@ -196,8 +214,6 @@ print('stress_level before del:', stress_level)
 del stress_level[2]
 print('stress_level after del:', stress_level)
 ```
-
-
 
 In the beginning, we will rely on the predefined methods that come with Python data objects by default. However, eventually, we will learn how to write our own data types (classes) and specify the methods we need.
 
@@ -207,8 +223,9 @@ You can use the following operators with lists: `+` and `*`.
 - `+` - concatenates two lists into one, similar to how it works with strings.
 - `*` - repeats elements of a list a specified number of times.
 Examples:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 # we can create list filled with zeros
 stress_level = [0] * 10
@@ -218,14 +235,14 @@ stress_level = stress_level + [10] * 3
 print(stress_level)
 ```
 
-
 ### `len` function
 
 In python there is very easy and convinient way to get the length of the object.
 To get the length you can simply use the `len` function.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 print(len(numbers))
 ```
@@ -234,8 +251,10 @@ print(len(numbers))
 Now, let's imagine that we want to iterate over each element in a list and perform some action on it. In order to do this, we can use a `for` loop.
 
 First, let's start by creating the list using a `for` loop:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [] # here we create an empty list
 for i in range(10):
     numbers.append(i)
@@ -244,16 +263,21 @@ print(numbers)
 ```
 
 Now we can perform some actions over the list:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 for i in range(len(numbers)):
     print(numbers[i] ** 2)
 ```
+
 For example, we took each element from the list and calculated its square value.
 Take a look that we did not modify the original list, since we just print some values.
 However, if you want to modify values you can use indexing and reassign operator:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("List before modification:", numbers)
 
 for i in range(len(numbers)):
@@ -267,15 +291,19 @@ Python offers an alternative method for iterating over list elements using the `
 ````
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 for elem in numbers:
     print(elem, end = " ")
 ```
+
 In this example, instead of iterating over all possible indexes, we are directly iterating through the elements. We used the variable name `elem` and replaced the `range` function with the name of the list object.
 A key moment here is that the variable `elem` is associated with a new object that is a copy of the real element in the list. This means that we cannot directly change the elements of the list in-place.
 Here is the example:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [0, 1, 2, 3, 4]
 for elem in numbers:
     elem = elem + 5
@@ -289,20 +317,25 @@ So, you can use this approach if you do not want to modify the values in your li
 
 List comprehension is very cool way to define the list and fill it.
 We saw previously this way to fill list with using for loop:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = []
 for i in range(10):
     numbers.append(i)
 print(numbers)
 ```
+
 However, it requires a total of 4 lines of code to perform this simple action. In such situations, we can use list comprehension to simplify it.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [i for i in range(10)]
 print(numbers)
 ```
+
 Cool, isn't it? 
 It appears that we have placed the for loop inside the list declaration.
 Let's split it into two parts:
@@ -311,19 +344,24 @@ Let's split it into two parts:
 - `for i in range(10)`: This statement specifies the number of objects and the elements that should be used as a specimen to be placed into the list.
 
 Also we can specify some condition which will filter out elements from the list which don't meet some property:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = [i * 10 for i in range(10) if (i * 10) >= 50]
 print(numbers)
 ```
+
 Here we have three parts:
 - The element `i * 10` will be added to the list.
 - The statement `for i in range(10)` specifies the range for `i`.
 - The condition `if i >= 50` is used as a filter to keep only those elements that meet the given criteria.
 
 Additionally, you can use multiple for loops within a list comprehension.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 pairs = [str(i) + ", " + str(j) for i in range(3) for j in range(4)]
 print(pairs)
 ```
@@ -339,14 +377,18 @@ However, you should avoid list comprehensions when things get too complex. If yo
 Tuples are another example of a data type that can store multiple objects. However, once you create a `tuple` object, you cannot change its elements. To create a `tuple` object, use parentheses `()`.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 coordinates = (3, 4)
 ```
+
 In this example, we've created a tuple called coordinates with two values, (3, 4).
 
 You can access the elements of a tuple object using indexing, in the same way as we did with a list.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 x = coordinates[0]
 y = coordinates[1]
 print(x, y)
@@ -383,7 +425,8 @@ Strings come with some helpful built-in functions, often called methods, that le
 - `split()`: Breaks the string into a list using a separator.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 text = "Random text"
 upper_text = text.upper()
 lower_text = text.lower()
@@ -397,14 +440,18 @@ print("words:", words)
 ```
 
 An important note is that strings are immutable objects. In all cases of method usage, we did not modify the original string.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(text)
 ```
 
 We can determine the length of a string using the same method as we did with lists. Additionally, we can use indexing:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 for i in range(len(text)):
     print(str(i) + ": " + text[i])
 ```
@@ -422,40 +469,45 @@ TypeError: 'str' object does not support item assignment
 ### Converting a List to a String
 
 If you have a list and want to turn it into a single string, you can use the join() method. This method joins the elements of a list into a single string, with a specified separator in between.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 fruits = ["apple", "banana", "cherry"]
 fruit_string = "_".join(fruits)
 print(fruit_string)
 ```
-
 
 ### Converting a String to a List
 
 If you have a string and want to split it into a list of elements, you can use the split() method. This method breaks the string into parts using a specified separator.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 fruit_string = "apple, banana, cherry"
 fruits = fruit_string.split(", ")
 print(fruits)
 ```
 
 If you want to create a list where each symbol is a separate element, you can use the following approach:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 name_str = "Vladimir"
 name_list = list(name_str)
 print(name_list)
 ```
 
-
 ## Similarities between lists, tuples, and strings
 Despite their differences, lists, strings, and tuples also share some common features.
 
 - **One common feature is that they all have a length, which can be obtained using the `len` function:**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 line = "The happiness of your life depends upon the quality of your thoughts."
 numbers = [i * 10 for i in range(10)]
 configs = (1920, 1080, "Windows")
@@ -466,8 +518,10 @@ print(len(configs)) # number of elements
 ```
 
 - **Lists, strings, and tuples are iterable objects, allowing iteration over them using a `for` loop:**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 for elem in line:
     print(elem, end="")
 print()
@@ -480,14 +534,15 @@ for elem in configs:
     print(elem, end=" ")
 print()
 ```
+
 Here we use an additional `end` argument in the `print` function, which allows us to replace the default new line symbol `\n` with a custom one.
 
 - **We can check whether an element or substring is part of a list, tuple, or string by using the `in` operator:**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("happiness" in line)
 print(10 in numbers)
 print(1920 in configs)
 ```
-
-

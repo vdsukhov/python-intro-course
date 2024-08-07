@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -30,13 +30,16 @@ In the world of programming, our focus is on understanding things through a comp
 We can use numbers in Python in obvious way. To demonstrate this, we will use the `print` function to output some examples. Simply specify a number and print it to the standard output.
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print(42)
 ```
+
 This is an example of an integer number. In Python, integer numbers have the type `int`. Numbers with a fractional part (e.g. `42.3`, `1.0`) have the type `float`. You can always get the type of an object in Python by using the `type` function. Let's check out a couple of examples:
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print(type(42))
 print(type(42.3))
 ```
@@ -60,7 +63,8 @@ Almost always as expected, however you should try to execute the following code:
 Now let's look usage examples:
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print(3 + 5)
 print(8 - 3)
 print(3 * 5)
@@ -82,7 +86,8 @@ There are couple different ways how you can specify string in python:
 Examples:
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print("Line")
 print('Also line')
 print("""First Line
@@ -91,28 +96,36 @@ Third Line""")
 ```
 
 If you need to use `'` or `"` inside of your string there are examples how to do it:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print("I'm a human")
 print('I\'m a human') # Here we use enclosing for `'` symbol
 print('I am a "human"') 
 print("I am a \"human\"") 
 ```
+
 I would recommend use enclosing (`\'` and `\"`).
 
 ### Operations on strings
 - **Concatenation**.
 We can merge strings into one by using the `+` operator or by simply putting them one after the other.
 Here are some examples:
-```{code-cell} ipthon3
-:tags: ["hide-output"]
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
 print("Hello" " World!")
 print("Hello" + " World!")
 ```
+
 - **String repeation**.
 If you need to repeat a string, you can use the  operator, followed by the desired number of repeats. Here is an example:
-```{code-cell} ipthon3
-:tags: ["hide-output"]
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
 print("You talking to me? " * 3)
 ```
 
@@ -139,7 +152,8 @@ For now, let's review some basic logical operations:
 - `not` - logical not
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 # and
 print("True and True:", True and True)
 print("True and False:", True and False)
@@ -175,8 +189,10 @@ Here is the list of comparison operators:
 - `<=` - less than or equal to
 
 Let's take a look on couple examples:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print(1 == 0)
 print(1 != 0)
 print(1 > 0)
@@ -221,8 +237,10 @@ As usual you can enforce order of operations with parentheses `()`.
 
 ## Variables
 Okay, so far we have learned how to create objects in Python and print them immediately. However, we usually want to store objects and reuse them in our code. To do this, we use variables in Python. We can create a specific name and assign it to a specific object in Python. Here is an example:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 name = "Vladimir"
 print("Hello " + name)
 print(name + ", how are you today?")
@@ -238,8 +256,10 @@ A commonly used analogy for variables is to think of them as named boxes where w
 In the example above, we can think that we have a box named `name` that contains the string `"Vladimir"`.
 
 Some other examples of possible operations over variables:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 value_1 = 101
 value_2 = 42
 
@@ -249,22 +269,24 @@ print(value_1)
 ```
 
 In case you need to assign multiple variables at once you can use the following syntax:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
 
 x, y, z = "User", 1, True
 print(x, y, z)
 ```
 
 In Python, it is very easy to swap the values of two variables. While other programming languages often require an additional variable to accomplish this task, Python makes it much simpler:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 x, y = 1, 2
 print("x and y before swap:", x, y)
 x, y = y, x
 print("x and y after swap:", x, y)
 ```
-
 
 ### Rules for Python variables
 - A variable name must start with a letter or the underscore character
@@ -290,8 +312,10 @@ Let's look at some everyday examples of how to do this.
 ### `int` to `float`
 
 You can convert an integer to a floating-point number using the `float()` function. For example:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 integer_num = 5
 print(integer_num)
 float_num = float(integer_num)
@@ -300,8 +324,10 @@ print(float_num)
 
 ### `float` to `int`
 To convert a floating-point number to an integer, you can use the `int()` function. Be aware that this truncates the decimal part, not rounding. For example:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 float_num = 3.14
 print("float_num =", float_num)
 integer_num = int(float_num)  # int_num will be 3
@@ -310,8 +336,10 @@ print("int_num =", integer_num)
 
 ### `str` to `int` or `float`
 You can convert a string containing a numeric value to an integer or float using `int()` or `float()`. For example:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 num_str = "42"
 int_num = int(num_str)
 float_num = float(num_str)
@@ -335,8 +363,9 @@ ValueError: invalid literal for int() with base 10: 'xyz'
 
 ### `int` or `float` to `str`
 To convert an integer or float object to a string, you can use the `str()` function. For example:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
 
 int_num = 42
 float_num = 3.1415
@@ -354,20 +383,14 @@ To change an object into a logical data type, you can use the `bool()` function.
 
 This rule helps you understand how different values are seen by the computer in a true or false way.
 Examples:
+
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print(bool(0), bool(0.0), bool(""))
 print(bool(101), bool(-10), bool("ABC"))
 ```
+
 When certain values act like they are `True` in a computer's eyes, we call them **Truthy**. 
 Similarly, when values act like they are `False` we call them **Falsy**. 
-Understanding these concepts is important when dealing with conditions and decisions in programming. 
-
-
-
-
-
-
-
-
-
+Understanding these concepts is important when dealing with conditions and decisions in programming.

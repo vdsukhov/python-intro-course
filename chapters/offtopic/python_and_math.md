@@ -5,13 +5,12 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.0
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
-
 
 # From Math to Code: Python for Derivatives and Integrals
 
@@ -32,6 +31,7 @@ $$y = x \cdot \frac{y_1 - y_0}{x_1 - x_0} + y_0 - x_0 \cdot \frac{y_1 - y_0}{x_1
 
 Now that we have a grasp of the mathematical foundation, let's leverage the simplicity and power of Python to implement the two-point form.
 In the beginnin let's just import all packages:
+
 ```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,15 +41,16 @@ from IPython.display import HTML
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 from myst_nb import glue
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams["animation.html"] = "html5"
 ```
 
-
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 def line(x, x0, y0, x1, y1):
     slope = (y1 - y0) / (x1 - x0)
     return x * slope + y0 - x0 * slope
@@ -67,10 +68,10 @@ plt.grid(True)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("line", fig, display=False)
 ```
-
 
 ```{glue:figure} line
 :height: 360px
@@ -102,7 +103,8 @@ Now let's just put all of this in the form of code.
 In the beginning I will define function that I want to analyze:
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 def f(arg):
     return np.abs(arg) * np.sin(arg)
 
@@ -115,7 +117,8 @@ y_orig = f_vec(x_rng)
 Let's plot our function:
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 fig = plt.figure(figsize = (4, 4))
 
 plt.plot(x_rng, y_orig)
@@ -123,7 +126,8 @@ plt.grid(True)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("f", fig, display=False)
 ```
 
@@ -134,7 +138,8 @@ glue("f", fig, display=False)
 Let's assign values to our variables: $x_0 = 0$, $\Delta x = 1$. Now, let's examine what our approximation looks like:
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 fig, ax = plt.subplots(figsize = (4, 4))
 
 ax.set(xlim = (-1.5, 1.5), ylim = (-1, 1))
@@ -154,7 +159,8 @@ plt.grid(True)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("approx", fig, display=False)
 ```
 
@@ -177,8 +183,10 @@ def animate(i):
 ```{code-cell} ipython3
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
 ```
+
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("derivative", anim, display=False)
 ```
 
@@ -195,7 +203,8 @@ $$f'(x_0) = \lim\limits_{\Delta x \rightarrow 0} \frac{f\left(x_0 + \Delta x\rig
 At the end, let's carry out the same procedure, but this time, we'll keep $\Delta x = 0.01$ constant and vary the value of $x_0$:
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 fig, ax = plt.subplots(figsize = (4, 4))
 
 ax.set(xlim = (-10, 10), ylim = (-9, 9))
@@ -216,7 +225,8 @@ point = ax.plot([x0], [f(x0)], '.')
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("approx_large", fig, display=False)
 ```
 
@@ -225,7 +235,6 @@ glue("approx_large", fig, display=False)
 ```
 
 This our initial state and now let's animate it:
-
 
 ```{code-cell} ipython3
 def animate(i):
@@ -241,7 +250,8 @@ anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 200)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("sliding_derivative", anim, display=False)
 ```
 
@@ -264,6 +274,7 @@ Consider statistics, for instance – an essential field for understanding data 
 
 
 We will need some extra function from `matplotlib` package:
+
 ```{code-cell} ipython3
 from matplotlib.patches import Rectangle, Polygon
 ```
@@ -283,9 +294,9 @@ where $a = x_0 < x_1 < x_2 < \ldots < x_n = b$, $\Delta x_i = x_{i + 1} - x_i$ a
 
 Alright, let's proceed by dividing our interval $[a, b]$ into smaller pieces and visually represent the approximation using rectangles:
 
-
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 fig = plt.figure(figsize = (4, 4))
 
 ax = fig.add_subplot()
@@ -313,7 +324,8 @@ plt.grid(True)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("integral", fig, display=False)
 ```
 
@@ -346,7 +358,8 @@ anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("x2_area", anim, display=False)
 ```
 
@@ -374,7 +387,8 @@ def f(x):
 For the interval of interest, I'll employ $[a, b] = [-10, 10]$. Here, I'll admit to a slight trick, utilizing a characteristic of this function—namely, that the majority of its values are concentrated around 0. This allows us to explore the essential properties without the need for an extensive interval, making our analysis more efficient.
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 fig = plt.figure(figsize = (4, 4))
 
 ax = fig.add_subplot()
@@ -402,14 +416,14 @@ plt.grid(True)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("snd", fig, display=False)
 ```
 
 ```{glue:figure} snd
 :height: 360px
 ```
-
 
 ```{code-cell} ipython3
 total_area = ax.text(0.01, 0.9, "", transform=ax.transAxes)
@@ -430,12 +444,14 @@ def animate(rect_num):
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-output"]
+:tags: [remove-output]
+
 anim = animation.FuncAnimation(fig, animate, interval = 100, frames = 100)
 ```
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: [remove-cell]
+
 glue("snd_video", anim, display=False)
 ```
 

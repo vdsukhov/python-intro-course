@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -42,7 +42,6 @@ class ElectricCar(Car):
 tesla_s = ElectricCar(brand="Tesla", model="Model S")
 
 print(tesla_s)
-
 ```
 
 In the example above, notice that we didn't explicitly define the `__str__` method in the subclass. Instead, we inherited it from the superclass. This illustrates a fundamental aspect of inheritance, where the subclass can acquire and use methods defined in the superclass without having to redefine them.
@@ -51,8 +50,10 @@ If our superclass included additional specialized methods, the subclass would au
 
 
 'd like to highlight a crucial concept: the ability to leverage the code specified in a superclass. To illustrate this, let's enhance the complexity of our superclass:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 class Car:
     def __init__(self, brand, model, year, color, odometer=0, doors_locked=True):
         self.brand = brand
@@ -87,8 +88,8 @@ class Car:
             self.doors_locked = True
         else:
             print("Doors are already locked.")
-
 ```
+
 In our previous episode, we implemented the `Car` class. Now, let's revisit that and extend our exploration by creating an `ElectricCar` class, inheriting from the existing `Car` class:
 
 ```{code-cell} ipython3
@@ -109,6 +110,7 @@ tesla_s.vehicle_status()
 ```
 
 Now, we have the opportunity to define specific methods exclusive to the `ElectricCar` class. These methods will be accessible only for instances of the `ElectricCar` class:
+
 ```{code-cell} ipython3
 class ElectricCar(Car):
     def __init__(self, brand, model, year, color, battery_level=100, odometer=0, doors_locked=True):
@@ -122,7 +124,6 @@ tesla_s = ElectricCar("Tesla", "Model S", 2023, "Black")
 tesla_s.battery_status()
 ```
 
-
 ## Default inheritance
 
 In Python, everything is treated as an object. Let's explore this concept by creating an empty class, avoiding any manually specified methods or attributes:
@@ -131,6 +132,7 @@ In Python, everything is treated as an object. Let's explore this concept by cre
 class EmptyClass:
     pass
 ```
+
 In the snippet above, the `pass` keyword allows us to create a minimal class without implementing any specific functionality. 
 Now, let's inspect what kind of attributes and methods are associated with an instance of our `EmptyClass`:
 
@@ -138,6 +140,7 @@ Now, let's inspect what kind of attributes and methods are associated with an in
 obj = EmptyClass()
 print(dir(obj))
 ```
+
 Upon running this, you'll observe a myriad of names associated with our object. 
 This abundance is due to the fact that, by default, any class in Python is implicitly a subclass of a superclass known as the `object` class.
 This inheritance from the `object` class provides a set of default attributes and methods to every class, contributing to the comprehensive list we see when querying the instance.
@@ -201,6 +204,7 @@ hybrid_convertible.charge_battery()  # From HybridCar class
 print(f"Battery Level: {hybrid_convertible.battery_level}")
 print(f"Current roof status: {'Open' if hybrid_convertible.roof else 'Closed'}")
 ```
+
 In this example:
 
 * The `Car` class represents base class.
@@ -241,7 +245,6 @@ class D(B, C):
     pass
 
 print(D.__mro__)
-
 ```
 
 **3. C3 Linearization Algorithm:**
@@ -272,7 +275,6 @@ class D(B, C):
 
 instance_d = D()
 instance_d.method()  # Outputs "B method" due to the MRO
-
 ```
 
 In this example, the MRO ensures that the method from class B takes precedence over the method from class C.
@@ -300,7 +302,6 @@ class Child(Parent):
     def __init__(self, name, additional_info):
         super().__init__(name)
         self.additional_info = additional_info
-
 ```
 
 In this example, `super().__init__(name)` calls the `__init__` method of the `Parent` class, allowing the `Child` class to inherit the name attribute.
@@ -319,7 +320,6 @@ class Child(Parent):
     def some_method(self):
         super().some_method()
         print("Child method")
-
 ```
 
 In this example, `super().some_method()` calls the `some_method` of the `Parent` class, allowing the `Child` class to extend or override the behavior.
@@ -349,7 +349,6 @@ class D(B, C):
 
 instance_d = D()
 instance_d.some_method()
-
 ```
 
 Here, `super().some_method()` ensures that the method is called from the next class in the method resolution order (MRO).
@@ -383,7 +382,6 @@ print(isinstance(regular_car, ElectricCar))  # False
 
 print(isinstance(electric_car, Car))         # True
 print(isinstance(electric_car, ElectricCar)) # True
-
 ```
 
 In this example:
@@ -406,6 +404,7 @@ print(type(electric_car))
 ```
 
 It can also be used to compare the type of an object with a specific type.
+
 ```{code-cell} ipython3
 print(type(electric_car) == ElectricCar)  # True
 print(type(electric_car) == Car)  # False
@@ -420,6 +419,7 @@ In summary, while both `type()` and `isinstance()` can be used to check the type
 
 The `issubclass()` function in Python is used to check if a class is a subclass of another class. 
 It returns `True` if the first class is a subclass of the second class, and `False` otherwise. Here's an explanation:
+
 ```{code-cell} ipython3
 class Vehicle:
     pass

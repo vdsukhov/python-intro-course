@@ -5,12 +5,13 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
 # Control Flow
 
 
@@ -289,8 +290,10 @@ Here:
 - `val_opt_b` if the condition is false, this value will be returned
 
 Here's an example using the if-else ternary operator to determine the maximum of two numbers:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 a = 10
 b = 20
 
@@ -317,6 +320,7 @@ The syntax of loop is very easy:
 for i in range(3):
     print("Iteration:", i)
 ```
+
 Let's break this down into parts to make it easier to understand:
 
 1. `for` is the keyword that Python interprets as the start of a loop declaration.
@@ -355,7 +359,8 @@ range(start, stop, step)
 Examples:
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 print("Example 1 -- range(4):")
 for i in range(4):
     print(i)  # Outputs 0, 1, 2, 3
@@ -380,11 +385,13 @@ Let's consider the task of generating all possible pairs `(i, j)` where i takes 
 To accomplish this, we can use the following code:
 
 ```{code-cell} ipython3
-:tags: ["hide-output"]
+:tags: [hide-output]
+
 for i in range(1, 6):
     for j in range(1, 4):
         print("(", i, ", ", j, ")", sep="")
 ```
+
 Here, we are using the `sep` argument of the `print` function for the first time.
 This argument controls the separator used to separate the elements passed to the function.
 By default, the value for `sep` is a whitespace, but here we have changed it to an empty string.
@@ -426,8 +433,9 @@ Entered value was outisde of interval. Try one more time: 50
 
 
 Aslo, it is possible to use `while` in the same manner as we used `for` loop:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 i = 0
 while i < 10:
@@ -478,26 +486,28 @@ Echo: Are
 Sometimes, it is necessary to skip certain iterations or stop the entire loop. Python provides the `continue` and `break` statements to achieve this.
 
 Let's take a look at some examples:
-```{code-cell} ipython
-:tags: ['hide-output']
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
 for i in range(10):
     if i % 2 == 0:
         continue
     print(i)
 ```
+
 In this example, we skip the remaining body of the loop if the number `i` is even.
 
 
 In case you need to stop loop if some condition met:
-```{code-cell} ipython
-:tags: ['hide-output']
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
 for i in range(10):
     if i > 5:
         break
     print(i)
 ```
 
-
 Both `continue` and `break` work similar with `while` loop.
-
-

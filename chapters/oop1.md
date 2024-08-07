@@ -5,12 +5,13 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
 # Object-Oriented Programming: Classes
 
 In this episode we will take a look at Object-Oriented Programming (OOP) in Python! 
@@ -48,6 +49,7 @@ It's like having separate rooms for different things. Now, let's explore these s
 **Local scope** refers to the part of your code, usually within a function or method, where variables have local significance. Each function call creates its own local namespace.
 
 When a function is called, a local namespace is created, acting as a container for variables within that function. This namespace is isolated from the global namespace.
+
 ```{code-cell} ipython3
 def local_scope_example():
     local_variable = "I am local"
@@ -63,6 +65,7 @@ local_scope_example()
 **Enclosed scope**. This scope occur when functions are defined within other functions. Each function has its own local namespace, and it can access variables from its own namespace as well as those from the enclosing scopes.
 
 In the example below, `inner_function` has access to both its local namespace and the namespace of `outer_function`.
+
 ```{code-cell} ipython3
 def outer_function():
     outer_variable = "I am in the outer function"
@@ -82,6 +85,7 @@ outer_function()
 **Global scope** encompasses the entire Python script or module. Variables in the global scope are accessible from any part of the code.
 
 Variables defined outside any function or method belong to the global namespace. They persist throughout the program.
+
 ```{code-cell} ipython3
 global_variable = "I am global"
 
@@ -133,7 +137,8 @@ Let's explore each of them.
 When called within a function or at the module level, it provides access to the global namespace, allowing you to inspect or modify global variables.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 global_variable = "I am global"
 
 def check_globals():
@@ -144,8 +149,10 @@ check_globals()
 
 `locals()` returns a dictionary representing the local namepsace.
 When called within a function, it provides access to the local namespace of that function, allowing you to inspect or modify local variables.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def check_locals():
     local_variable = "I am local"
     print(locals())
@@ -175,7 +182,8 @@ We will use the following attributes to describe our class:
 -  `doors_locked` - current doors status (i.e. locked or unloced)
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 class Car:
     def __init__(self, brand, model, year, color, fuel=100, odometer=0, doors_locked=True):
         self.brand = brand
@@ -186,6 +194,7 @@ class Car:
         self.odometer = odometer
         self.doors_locked = doors_locked
 ```
+
 Here we defined our blueprint for objects using the `class` keyword. 
 Think of a class as a template that outlines the structure and behavior of our objects.
 Inside our class, we currently have one special method called `__init__`. 
@@ -194,14 +203,17 @@ This method is like a constructor and is used to create new instances (objects) 
 Now, let's put our class to use by creating a couple of objects. These objects will be unique instances of the Car class, each with its own set of attributes.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 camry = Car(brand="Toyota", model="Camry", year=2023, color="red")
 tesla_x = Car(brand="Tesla", model="X", year=2023, color="black")
 ```
 
 After specifying our objects, we can access their attributes by using a dot after the variable name and specifying the attribute name:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("camry fuel level:", camry.fuel)
 ```
 
@@ -232,9 +244,9 @@ As we going through the `__init__` method, we are like architects adding feature
 
 So far, we have explored the `__init__` method, and you may have observed that this particular method name includes leading and trailing double underscores. In Python, there are several reserved names that, when implemented, allow us to add additional functionality to our class. We will delve into more of these reserved names later in the course. However, we are not limited to using only these reserved methods. We have the flexibility to implement various custom methods of our own. Let's proceed by adding a couple of custom methods to our class.
 
-
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 class Car:
     def __init__(self, brand, model, year, color, fuel=100, odometer=0, doors_locked=True):
         self.brand = brand
@@ -295,9 +307,11 @@ For example, a `Car` object might have a `start_engine` method that makes sense 
 When you execute a method with an object (`object.method()`), behind the scenes, it's like saying `Car.method(object)`. In this context, `self` refers to the instance of the object you're working with.
 
 For a quick check, you can run the explicit version by specifying the class name directly. It's a way of saying, "Hey, this method is designed to work with this specific object."
+
 ```{code-cell} ipython3
 Car.vehicle_status(camry)
 ```
+
 The code above is same as `camry.vehicle_status()`. The idea is that we can run it directly using the object without always explicitly specifying the class name. As you can see, `self` corresponds to `camry` in this specific case.
 
 ### Class as a factory
@@ -390,6 +404,7 @@ print("Camry has higher power rather Tesla:", tesla_x < camry)
 ```
 
 Now we can sort our objects in ascending order.
+
 ```{code-cell} ipython3
 nissan_gtr = Car(brand="Nissan", model="GT-R", year=2023, color="black", horsepower=565)
 cars = [tesla_x, camry, nissan_gtr]
@@ -399,7 +414,6 @@ print(sorted(cars))
 As you can see, the `sorted` method works without any problems.
 However, the output doesn't make a lot of sense to us.
 To address this, we can implement another magic method called `__repr__`.
-
 
 ```{code-cell} ipython3
 class Car:
@@ -425,4 +439,3 @@ nissan_gtr = Car(brand="Nissan", model="GT-R", year=2023, color="black", horsepo
 cars = [tesla_x, camry, nissan_gtr]
 print(*sorted(cars), sep='\n')
 ```
-

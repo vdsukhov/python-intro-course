@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -25,6 +25,7 @@ print(M)
 ```
 
 After that we can work with such list as it was a matrix:
+
 ```{code-cell} ipython3
 M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(M[0][0])
@@ -74,7 +75,8 @@ for i in range(len(A)):
 A Python's dictionary (`dict`) is like a real-life dictionary or a phone book. It contains key-value pairs, where each key maps to a specific value. In Python, we create dictionaries using curly braces `{}`.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 person = {
     "name": "Vladimir",
     "dob": "10/08/1994",
@@ -82,6 +84,7 @@ person = {
 }
 print(person)
 ```
+
 Here, as you can see, we have a map between keys and values. In this specific case, we have the following keys: `"name"`, `"dob"`, `"age"`, and their corresponding values: `"Vladimir"`, `"10/08/1994"`, and `29`. It's important to note that as keys of a dictionary, you can use not just strings, but also other immutable objects.
 
 
@@ -96,10 +99,12 @@ wrong_dict = {[1, 2, 3]: "list"}
 We can access values in dictionary by specifying the key.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 name = person["name"]
 print(name)
 ```
+
 As you can see, the syntax is similar to a list where we use the index to access specific elements. However, when it comes to dictionaries (`dict`), we should use key instead.
 
 ```{warning}
@@ -107,56 +112,72 @@ In Python dictionaries, the order of keys was traditionally considered arbitrary
 ```
 ### Modifying Elements
 You can change values just like you would in a list
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 person["name"] = "Vlad"
 print(person)
 ```
 
 ### Adding a new element
 You can also add new key-value pairs to a dictionary.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 person["interests"] = ["Photography", "Chess"]
 print(person)
 ```
+
 Here we used a new key, `"interests"`, and assigned it a list value of `["Photography", "Chess"]`.
 
 ### Iterating throught a Dictionary
 There are various ways to iterate over dictionaries. Let's explore some examples.
 
 **Iterate over dict keys**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 # In this example we will iterate throught the values
 for k in person:
     print("Current key:", k)
     print("Value for this key:", person[k])
 ```
+
 Here, we use the syntax `k in person` within a `for` loop to iterate over all possible keys inside the dictionary.
 
 
 **Iterate over dict values**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 # In this example we will iterate throught the keys
 for value in person.values():
     print("Current value:", value)
 ```
+
 Here, we use the `.values()` method of the dict which generates a sequence of all values in the dict.
 
 **Iterate over dict key-value pairs**
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 for k, v in person.items():
     print(k, v)
 ```
+
 Here, we use the `.items()` method of the dict which generates a sequence of all key-value pairs of the dict.
 
 
 Sometimes, there may be a need to convert either keys, values, or key-value pairs into a list. To accomplish this, we can use the following syntax:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 keys = list(person.keys())
 values = list(person.values())
 items = list(person.items())
@@ -169,8 +190,10 @@ print("itmes:", items)
 ### Checking for Key Existence
 
 We can check if a key exists in a dictionary using `in`.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("name" in person)
 print("country" in person)
 ```
@@ -190,11 +213,14 @@ KeyError: 'Country'
 ### Dictionary comprehension
 
 Last week, we explored list comprehension, a more advanced approach for creating lists. A similar method can be used for creating dictionaries. Let's examine an example
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 letters = {i: chr(97 + i) for i in range(26)}
 print(letters)
 ```
+
 Here, we set our key-value pair with the expression `i: chr(97 + i)`. After that, we defined the interval for the `i` value using the `range` function.
 ```{note}
 The `ord()` and `chr()` functions in Python are a dynamic duo for working with character data. `ord()` stands for "ordinal" and is used to find the Unicode code point of a character. For example, `ord('A')` returns 65, which is the code point for the uppercase 'A'. On the other hand, `chr()` is short for "character" and does the reverse - it converts a Unicode code point back into the corresponding character. So, `chr(65)` will give you 'A'. These functions are handy for text processing and character manipulation in various applications, from encoding to cryptography.
@@ -224,19 +250,25 @@ print(freq_dict)
 A set is a collection of unique elements, just like a bag of distinct objects. In Python, we create sets using curly braces `{}` or the `set()` constructor.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 print(digits)
 ```
+
 Here, you can notice that we use the same braces as we do for `dict` definition. However, in this case, we don't use `key: value` syntax, which signals to Python that this is a different data type. As always, you can verify the type of an object by using the built-in `type` function.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(type(digits))
 ```
 
 We can check whether an element is in the set by using the `in` operator:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(0 in digits)
 print(10 not in digits) # here we check wheather 10 is not in the set by using 'not in'
 ```
@@ -250,7 +282,8 @@ Here I will cover just some part of [all](https://www.w3schools.com/python/pytho
 - `remove()` - removes the specified element from the set
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 numbers = {10, 20}
 
 numbers.add(30)
@@ -270,8 +303,10 @@ print("values after clear:", values)
 ### Set Operations
 
 Let's create two sets:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 A = {1, 2, 3, 4, 5}
 B = {2, 4, 5, 6, 7}
 ```
@@ -290,7 +325,8 @@ Python allows basic operations on sets, working as expected from a mathematical 
 </video>
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print("A == B:", A == B)
 print("A | B:", A | B)
 print("A & B:", A & B)
@@ -302,8 +338,10 @@ print("A >= B:", A >= B)
 ### Iterating Through a Set
 
 You can use `for` loops to go through all elements in a set:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 A = {1, 2, 3, 4, 5}
 for elem in A:
     print(elem)

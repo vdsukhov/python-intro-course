@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -56,10 +56,9 @@ In reality, a list and a stack are distinct data structures. To delve deeper int
 * <a href="https://w.wiki/8T8n" target="_blank">List</a>
 ```
 
-
-
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 stack = []
 
 stack.append("element 1") # append ~ pop
@@ -72,7 +71,6 @@ popped_elem = stack.pop()
 print(f"Popped element: {popped_elem}")
 print(f"Stack is: {stack}")
 ```
-
 
 ### Call Stack
 
@@ -93,7 +91,6 @@ def func_b():
 
 # Main program
 func_a()
-
 ```
 
 In this example, `func_a` calls `func_b`, and the call stack looks like this:
@@ -142,7 +139,6 @@ def factorial(n):
 
 result = factorial(5)
 print("Factorial of 5:", result)
-
 ```
 
 In this example, the `factorial` function calls itself recursively.
@@ -181,7 +177,8 @@ This situation emphasizes the importance of carefully managing recursion and fun
 However, In Python sometimes we could need to manually increase the call stack size. In this case we can use the `sys` module:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import sys
 import math
 
@@ -438,4 +435,3 @@ BioSeqException: Sequence should contain only ACGT symbols
 ```
 
 This way, we've defined a custom exception, `BioSeqException`, and utilized it in our `BioSeq` class to enforce constraints on the allowed sequence symbols. This enhances code clarity and facilitates the handling of specific error conditions related to biological sequences.
-

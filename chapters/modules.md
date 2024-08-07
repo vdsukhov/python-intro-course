@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -61,8 +61,10 @@ module_example/
 ```
 
 The `usage.py` file:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import math_module
 
 a = 10
@@ -73,6 +75,7 @@ print(math_module.factorial(a))
 print(math_module.e)
 print(math_module.pi)
 ```
+
 Now, we can access all objects from the `math_module.py` file using the following syntax: `import math_module`. After importing, we can access the objects by specifying the module name followed by a dot and the name of the object we want to access. For example, `math_module.gcd(a, b)` is a call to the gcd function.
 
 
@@ -85,8 +88,10 @@ The simplest use of import is to import an entire module. This makes all functio
 
 #### Renaming a module:
 You can give an imported module an alias to make it easier to reference in your code. This is especially useful when dealing with modules with long names.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import math_module as mm
 
 a = 10
@@ -97,8 +102,10 @@ print(mm.gcd(a, b))
 
 #### Importing Specific Functions or Variables:
 Sometimes, you only need specific functions or variables from a module. You can import them individually.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from math_module import gcd
 
 a = 10
@@ -112,17 +119,20 @@ print(gcd(a, b))
 You can import everything from a module and use its functions, variables, and classes directly without the module name prefix. However, this approach is generally discouraged as it can lead to naming conflicts.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from math_module import *
 
 print(e)
 print(pi)
 ```
+
 #### Importing a Specific Function or Variable with an Alias:
 You can combine aliasing and importing specific functions or variables for a more concise reference.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from math_module import factorial as f
 
 print(f(10))
@@ -141,19 +151,25 @@ python program.py
 then the Python interpreter will automatically set the value of `__name__` to the string `"__main__"`.
 
 To check it let's fill the `program.py` file with following code:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(__name__)
 ```
+
 As you can see, we have access to the `__name__` variable inside our program. When running the program from the command line, the value of this variable is `"__main__"`. 
 
 However, if your module is imported in another module, the value will be different. 
 Let's use our `math_module.py` module as an example again, but this time let's rewrite the `usage.py` as follows:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import math_module
 print(math_module.__name__)
 ```
+
 Here, you can see that if you import the module, the value of `__name__` is not equal to `"__main__"`.
 
 <video autoplay loop playsinline controls muted>
@@ -323,7 +339,8 @@ In this section we will briefly cover some of the builtin packages in Python, sp
 The decimal package in Python provides arbitrary-precision decimal arithmetic. It's particularly useful for applications where precision is critical, such as financial calculations, scientific research, and more. Here are some interesting examples of decimal package usage:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from decimal import Decimal
 
 # Perform precise arithmetic
@@ -331,14 +348,20 @@ x = Decimal('0.1')
 result = x + x + x
 print(result)
 ```
+
 As you remember in case of float numbers we could not get the precise result:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(0.1 + 0.1 + 0.1)
 ```
+
 Let's also calculate compound interest:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from decimal import Decimal
 
 deposit = Decimal('1_000_000')
@@ -348,12 +371,12 @@ outcome = deposit * (1 + rate_per_year) ** years
 print(outcome)
 ```
 
-
-
 ### `math`
 The Python math package is a built-in library that provides a wide range of mathematical functions for various calculations. Here are some interesting examples of math package usage:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import math
 
 # Basic math operations
@@ -363,8 +386,10 @@ print("math.sin(math.radians(30)):", math.sin(math.radians(30)))  # Sine functio
 ```
 
 Trigonometric Calculations:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 # Trigonometric functions
 angle = math.radians(45)
 sine = math.sin(angle)
@@ -374,8 +399,9 @@ print(sine, cosine, tangent)
 ```
 
 Ceiling and Floor Functions:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 # Ceiling (smallest integer >= number) and Floor (largest integer <= number) functions
 result1 = math.ceil(4.3)  # Ceiling
@@ -449,7 +475,8 @@ The itertools module in Python provides a collection of fast, memory-efficient t
 You can generate permutations and combinations of elements using `itertools.permutations` and `itertools.combinations`:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 import itertools
 
 elements = [1, 2, 3]
@@ -465,8 +492,10 @@ for comb in combinations:
 ```
 
 Cartesian product of input iterables:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from itertools import product
 
 print("First product result:")
@@ -484,8 +513,10 @@ for elem in product(range(2), repeat=3):
 The datetime module in Python provides classes for working with dates and times. Here are some interesting examples of datetime package usage.
 
 Current Date and Time:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from datetime import datetime
 
 # Get the current date and time
@@ -494,8 +525,9 @@ print(current_datetime)
 ```
 
 Formatting Dates and Times:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 from datetime import datetime
 
@@ -506,8 +538,9 @@ print(formatted_date)
 ```
 
 Parsing Date Strings:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 from datetime import datetime
 
@@ -515,13 +548,13 @@ from datetime import datetime
 date_str = "2023-11-06 15:30:00"
 parsed_date = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
 print(parsed_date)
-
 ```
 
 Date Arithmetic:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from datetime import datetime, timedelta
 
 # Perform date arithmetic
@@ -531,8 +564,10 @@ print(one_week_ago)
 ```
 
 Date Comparisons:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from datetime import datetime
 
 # Compare dates
@@ -543,8 +578,10 @@ if date1 < date2:
 ```
 
 Calculating Time Differences:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
@@ -555,7 +592,6 @@ difference = relativedelta(date2, date1)
 print(f"Years: {difference.years}, Months: {difference.months}, Days: {difference.days}")
 ```
 
-
 ## Third-party packages installation:
 To install third-party packages in Python, you can use a package manager like pip. pip is the most commonly used package manager for Python and makes it easy to download and install packages from the Python Package Index (PyPI) or other sources. Here's how you can install third-party packages.
 
@@ -563,6 +599,3 @@ To install a third-party package, open a terminal or command prompt and use the 
 ```bash
 pip install package-name
 ```
-
-
-

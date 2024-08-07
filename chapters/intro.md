@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -154,7 +154,6 @@ To give you an idea of how massive this data is, consider the following video: o
 </video>
 
 +++
-
 
 ### Multiplexed tissue image
 

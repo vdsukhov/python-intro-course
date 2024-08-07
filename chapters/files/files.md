@@ -5,12 +5,13 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
 # File Handling
 
 In this episode we will cover some aspects of working with files in Python.
@@ -57,9 +58,11 @@ but care more about their opinion than our own.
 ```
 
 Now to work with this file inside of Python we can use the following syntax:
+
 ```{code-cell} ipython3
 file = open("./quote.txt", "r")
 ```
+
 Here, the first argument specifies the relative path to the file, and the second argument specifies the mode used for reading the file.
 Here are the different modes available in Python:
 
@@ -73,7 +76,6 @@ Here are the different modes available in Python:
 ```{warning}
 We've covered the process of opening files, and it's important to note that, before extracting data, understanding how to properly close files is essential. Closing files in Python is vital for efficient resource management. When a file is opened, system resources are allocated, and neglecting to close it can result in leaks and unpredictable behavior. It is crucial to adhere to proper file-handling practices to ensure optimal resource utilization and maintain the integrity and reliability of the code. <a href="https://realpython.com/why-close-file-python/" target="_blank">Here</a> you can read more about why it is important to close files.
 ```
-
 
 ```{code-cell} ipython3
 file.close()
@@ -99,6 +101,7 @@ Excellent! With our understanding of file manipulation in Python, we're ready to
 - The `readline()` method returns one line from the file. You can also specified how many bytes from the line to return, by using the size parameter.
 
 Let's take a closer look on both of them
+
 ```{code-cell} ipython3
 with open("./quote.txt", "r") as inp_f:
    print(inp_f.read())
@@ -113,9 +116,11 @@ with open("./quote.txt", "r") as inp_f:
    print(f"line_1: {line_1}")
    print(f"line_2: {line_2}")
 ```
+
 Here I used the `strip()` method to trim the new line symbol which is by default returned in the `readline()` method.
 
 If you prefer to iterate over each line in your file, you can achieve this using a `for` loop in the following manner:
+
 ```{code-cell} ipython3
 with open("./quote.txt", "r") as inp_f:
    for line in inp_f:
@@ -172,5 +177,3 @@ on mastering what lies within your control.
 with open("./out.txt", "a") as out_f:
     out_f.write(text.rstrip())
 ```
-
-

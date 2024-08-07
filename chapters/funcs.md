@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -54,7 +54,6 @@ line = greeting("Alice")
 print("line:", line)
 ```
 
-
 ```{note}
 Defining a function in programming is a bit like creating your own recipe in the kitchen. You gather specific ingredients (input), follow a series of steps (instructions), and then you have a dish (output). Once you've perfected your recipe (function), you can use it anytime to cook that delicious meal (solve a specific task) without having to start from scratch each time. It's your customized, reusable cooking method, just as functions are custom, reusable sets of instructions in coding.
 ```
@@ -62,20 +61,26 @@ Defining a function in programming is a bit like creating your own recipe in the
 ## Docstring
 
 Python has a special built-in function called `help`. It's like an information guide for Python functions. With `help`, you can find out what different functions do without having to dig into their inner workings. For instance, you can use `help` to learn about the `print` function. It's a bit like getting a manual that explains how something works!
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 help(print)
 ```
 
 But if we try to use `help` with our `greeting` function, we won't get helpful information. It's like looking for answers in a book that has no useful information about our specific topic.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 help(greeting)
 ```
 
 To add information about our function, we can use something called a "docstring." This is just a special string that we put at the beginning of our function. Let's see an example:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def greeting(name):
     """
     This function creates a greeting message for the given name.
@@ -98,7 +103,8 @@ Writing docstrings for functions is essential for several reasons. First, it ser
 Now let's take a closer look at function arguments. In general, you can specify an arbitrary number of arguments. Let's look at a couple of examples:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def pi_constant():
     return 3.1415926535897932
 
@@ -109,9 +115,11 @@ def custom_sum(a, b):
 If your function requires a specific number of values, you must specify those values during the function call. Otherwise, you will encounter an error:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 print(custom_sum(1, 3))
 ```
+
 But in case you provide a fewer number of arguments:
 ```python
 print(custom_sum(1))
@@ -124,20 +132,24 @@ TypeError: custom_sum() missing 1 required positional argument: 'b'
 Python assigns values to function arguments based on their positions. Let's clarify this with an example:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def custom_division(a, b):
     return a / b
 
 print(custom_division(1, 2))
 ```
+
 In this example, Python assigns the value `1` to `a` and the value `2` to `b`.
 
 However, if you want to specify `b` first and then `a`, you can call the function by mentioning the argument names like this:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 print(custom_division(b = 1, a = 2))
 ```
+
 In Python, we call this a "Keyword Argument" or "named argument." It gives you more control over the order of arguments.
 
 ## Default Arguments
@@ -146,7 +158,7 @@ Default arguments in Python allow you to assign a default value to a function pa
 Here's an example:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
 
 def greet(name, message="Hello"):
     result = message + " " + name
@@ -185,7 +197,8 @@ In situations where we don't know in advance how many arguments will be passed t
 Let's consider an example where we want to find the minimum value among given arguments. Initially, we create a simple function for two arguments:
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def custom_min(a, b):
     return b if a >= b else a
 
@@ -193,8 +206,10 @@ print(custom_min(10, 5))
 ```
 
 Now, suppose we want to handle an arbitrary number of arguments (at least two). In this scenario, we can use a specific Python syntax that allows us to gather all arguments into one variable stored as a tuple. Here's an example:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def custom_min(a, b, *args):
     res = b if a >= b else a
     for elem in args:
@@ -204,6 +219,7 @@ def custom_min(a, b, *args):
 print(custom_min(10, 5, 1))
 print(custom_min(10, 5, 1, 100, 0, -10))
 ```
+
 In this code, we employ the `*args` syntax, which lets us collect all extra arguments into a variable named args. 
 This flexibility allows us to work with any number of arguments while maintaining code simplicity and clarity.
 
@@ -226,8 +242,10 @@ Python provides two ways to achieve this:
 **Unpacking with `*` (Asterisk):**
 
 You can use the `*` operator before a sequence to unpack its elements and pass them as separate arguments to a function. Here's how it works:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def add(a, b, c):
     return a + b + c
 
@@ -235,13 +253,16 @@ values = [1, 2, 3]
 result = add(*values)
 print(result)
 ```
+
 In this example, `*values` unpacks the elements from the values list and passes them as separate arguments to the add function.
 
 **Unpacking with `**` (Double Asterisk):**
 
 For dictionaries, you can use the `**` operator to unpack key-value pairs as keyword arguments to a function. Here's an example:
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def greet(name, age):
     return f"Hello, {name}! You are {age} years old."
 
@@ -249,6 +270,7 @@ person = {"name": "Alice", "age": 30}
 result = greet(**person)
 print(result)
 ```
+
 Here, `**person` unpacks the key-value pairs in the person dictionary and passes them as keyword arguments to the greet function.
 Also, in these examples, we used the fstring for the first time. This allows us to format our strings in a very nice way. You can read more information about them [here](https://realpython.com/python-f-strings/).
 
@@ -263,7 +285,8 @@ We've previously encountered various examples with explicit `return` statements.
 Now, let's explore what happens when we don't specify a `return` statement explicitly.
 
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def custom_sum(a, b):
     result = a + b
 
@@ -286,13 +309,16 @@ Key elements of recursion:
 - **Recursive call:** In a recursion function, there's a part where it calls itself with a slighlty simpler version of the problem. This is essential for making progress towards the base case.
 
 Let's take a look on example of calculating the factorial.
+
 ```{code-cell} ipython3
-:tags: ['hide-output']
+:tags: [hide-output]
+
 def factorial(n):
     if n == 1:
         return 1
     return n * factorial(n - 1)
 ```
+
 In this example the base case is when `n` equals 1. At that point, we return 1 because the factorial of 1 is 1.
 In the recursive call, the function calculates `n` times the factorial of `n-1`. It keeps calling itself with a smaller value until it reaches the base case.
 
@@ -308,4 +334,3 @@ Recursion can be a powerful and elegant way to solve certain problems, but it's 
 <video autoplay loop playsinline controls muted>
     <source src="../_static/videos/function_recursion.mp4" type="video/mp4">
 </video>
-
