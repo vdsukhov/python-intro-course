@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exception Handling &#8212; Python Introduction Course</title>
   
@@ -15,56 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/exceptions';</script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Iterators" href="iterators.html" />
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -160,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -204,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -213,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -258,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chapters/exceptions.md" target="_blank"
+      <li><a href="../_sources/chapters/exceptions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -313,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -324,14 +335,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -385,13 +396,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exception-handling">
-<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">#</a></h1>
+<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">#</a></h1>
 <p>Today, we will explore exceptions in Python. However, before we delve into exceptions, let’s briefly discuss the data structure known as the stack.</p>
 <section id="stack">
-<h2>Stack<a class="headerlink" href="#stack" title="Permalink to this heading">#</a></h2>
+<h2>Stack<a class="headerlink" href="#stack" title="Link to this heading">#</a></h2>
 <p>A stack is a data structure that follows the Last In, First Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. It can be visualized as a collection of elements with two main operations: push, which adds an element to the top of the stack, and pop, which removes the top element from the stack.</p>
 <p>Key points of stack:</p>
 <ul class="simple">
@@ -422,7 +433,7 @@ document.write(`
 <p>By visualizing the stack as a can of Pringles, it’s easy to grasp the Last In, First Out (LIFO) nature of the stack data structure. The can’s opening serves as a reminder that we can only add or take chips from the top, illustrating the strict order in which elements are managed. This analogy provides a tangible way to understand the fundamental operations of a stack.</p>
 </div>
 <section id="representing-stack-functionality-using-the-list-data-type">
-<h3>Representing stack functionality using the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#representing-stack-functionality-using-the-list-data-type" title="Permalink to this heading">#</a></h3>
+<h3>Representing stack functionality using the <code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#representing-stack-functionality-using-the-list-data-type" title="Link to this heading">#</a></h3>
 <p>We can simulate a stack data structure efficiently by leveraging the built-in list data type in Python.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -464,10 +475,10 @@ Stack is: [&#39;element 1&#39;, &#39;element 2&#39;]
 </div>
 </section>
 <section id="call-stack">
-<h3>Call Stack<a class="headerlink" href="#call-stack" title="Permalink to this heading">#</a></h3>
+<h3>Call Stack<a class="headerlink" href="#call-stack" title="Link to this heading">#</a></h3>
 <p>A call stack, often referred to simply as the “stack,” is a region of memory used in computer science to manage function and method calls in a program. It keeps track of the active subroutines (functions or methods) and their respective local variables. The call stack operates on the Last In, First Out (LIFO) principle, meaning that the last function call made is the first one to be resolved.</p>
 <section id="simple-function-calls">
-<h4>Simple function calls<a class="headerlink" href="#simple-function-calls" title="Permalink to this heading">#</a></h4>
+<h4>Simple function calls<a class="headerlink" href="#simple-function-calls" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_a</span><span class="p">():</span>
@@ -526,7 +537,7 @@ Function A end
 </div>
 </section>
 <section id="recursive-function">
-<h4>Recursive function<a class="headerlink" href="#recursive-function" title="Permalink to this heading">#</a></h4>
+<h4>Recursive function<a class="headerlink" href="#recursive-function" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -563,7 +574,7 @@ The call stack looks like this:</p>
 </div>
 </section>
 <section id="stack-overflow">
-<h4>Stack Overflow<a class="headerlink" href="#stack-overflow" title="Permalink to this heading">#</a></h4>
+<h4>Stack Overflow<a class="headerlink" href="#stack-overflow" title="Link to this heading">#</a></h4>
 <p>The call stack has a specific size, meaning that if a program has an excessive number of function calls, it can lead to a stack overflow error. This occurs when the available memory for the call stack is exhausted. Let’s examine an example to illustrate this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom function calculating factorial&quot;&quot;&quot;</span>
@@ -622,11 +633,11 @@ The call stack looks like this:</p>
 </section>
 </section>
 <section id="syntax-errors-and-exceptions">
-<h2>Syntax Errors and Exceptions<a class="headerlink" href="#syntax-errors-and-exceptions" title="Permalink to this heading">#</a></h2>
+<h2>Syntax Errors and Exceptions<a class="headerlink" href="#syntax-errors-and-exceptions" title="Link to this heading">#</a></h2>
 <p>In Python, errors can be broadly classified into two main categories: Syntax Errors and Exceptions.
 While they both signal that something has gone awry in our code, they play different roles in the debugging and error-handling process.</p>
 <section id="syntax-errors">
-<h3>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this heading">#</a></h3>
+<h3>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Link to this heading">#</a></h3>
 <p>Let’s start by looking at Syntax Errors. These occur when the Python interpreter encounters code that violates the language’s syntax rules. In other words, it’s like a grammatical mistake in our code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a Syntax Error</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span>
@@ -639,7 +650,7 @@ While they both signal that something has gone awry in our code, they play diffe
 </div>
 </section>
 <section id="exceptions">
-<h3>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">#</a></h3>
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">#</a></h3>
 <p>In Python, an exception is a runtime error that interrupts the normal flow of a program. These errors can occur due to various reasons, such as invalid input, file not found, or division by zero. Understanding and handling exceptions is crucial for writing robust and reliable Python code.</p>
 <p>Python comes with a set of built-in exceptions, each serving a specific purpose. Some common built-in exceptions include:</p>
 <ol class="arabic simple">
@@ -665,7 +676,7 @@ While they both signal that something has gone awry in our code, they play diffe
 <p>To explore this hierarchy comprehensively, you can refer to the complete structure <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">here</a>. This visual representation provides insights into the parent-child relationships among different exception classes, showcasing the inheritance patterns that define the Python exception system.</p>
 </section>
 <section id="id1">
-<h3>Exception Handling<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exception Handling<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Python offers an elegant mechanism for dealing with exceptions. You might wonder why bother with it. However, handling exceptions in Python is essential for numerous reasons, enhancing the overall robustness, reliability, and maintainability of your code. Let’s explore key reasons why handling exceptions is so important:</p>
 <ol class="arabic simple">
 <li><p><strong>Preventing Program Crashes:</strong> Without proper exception handling, unanticipated errors can cause your program to crash. Handling exceptions allows you to gracefully manage errors, preventing the entire program from terminating unexpectedly.</p></li>
@@ -673,7 +684,7 @@ While they both signal that something has gone awry in our code, they play diffe
 <li><p><strong>Graceful Degradation:</strong> In the presence of unexpected conditions, well-handled exceptions allow your program to degrade gracefully. Instead of abruptly stopping, your application can take appropriate actions, log the error for later analysis, or prompt the user for corrective input.</p></li>
 </ol>
 <section id="try-except-statement">
-<h4><code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> statement<a class="headerlink" href="#try-except-statement" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> statement<a class="headerlink" href="#try-except-statement" title="Link to this heading">#</a></h4>
 <p>The primary mechanism for handling exceptions in Python is the <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> block. Let’s start from the classic example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
@@ -703,7 +714,7 @@ The user keeps entering values until a valid division operation is performed (i.
 </ul>
 </section>
 <section id="multiple-except-blocks">
-<h4>Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks<a class="headerlink" href="#multiple-except-blocks" title="Permalink to this heading">#</a></h4>
+<h4>Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks<a class="headerlink" href="#multiple-except-blocks" title="Link to this heading">#</a></h4>
 <p>In our previous example, we effectively addressed the situation of <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>. However, it’s noteworthy that our program would crash if confronted with a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. To mitigate this, we can enhance our error handling by incorporating multiple except blocks in our program:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
@@ -720,7 +731,7 @@ The user keeps entering values until a valid division operation is performed (i.
 </div>
 </section>
 <section id="else-and-finally-statements">
-<h4><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code> statements<a class="headerlink" href="#else-and-finally-statements" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code> statements<a class="headerlink" href="#else-and-finally-statements" title="Link to this heading">#</a></h4>
 <p>We can include additional statements to the <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks:</p>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> block is executed if no exceptions are raised in the <code class="docutils literal notranslate"><span class="pre">try</span></code> block.</p></li>
@@ -741,7 +752,7 @@ The user keeps entering values until a valid division operation is performed (i.
 </div>
 </section>
 <section id="exceptions-hierarchy">
-<h4>Exceptions Hierarchy<a class="headerlink" href="#exceptions-hierarchy" title="Permalink to this heading">#</a></h4>
+<h4>Exceptions Hierarchy<a class="headerlink" href="#exceptions-hierarchy" title="Link to this heading">#</a></h4>
 <p>The exception hierarchy in Python is a structured organization of exception classes that represent various types of errors. This hierarchy is designed to provide a systematic way to handle and categorize exceptions based on their relationships. The hierarchy can be visualized as a tree, with a base class at the root and specialized exception classes branching out from it.</p>
 <blockquote>
 <div><p>The full hierarchy of exceptions could be found <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">here</a></p>
@@ -769,7 +780,7 @@ The user keeps entering values until a valid division operation is performed (i.
 </section>
 </section>
 <section id="raise-an-exception">
-<h3>Raise an exception<a class="headerlink" href="#raise-an-exception" title="Permalink to this heading">#</a></h3>
+<h3>Raise an exception<a class="headerlink" href="#raise-an-exception" title="Link to this heading">#</a></h3>
 <p>We can manually raise exceptions using the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement. This is helpful when a specific condition is not met, and you want to signal an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -797,7 +808,7 @@ The code inside the <code class="docutils literal notranslate"><span class="pre"
 You can see that we used the syntax <code class="docutils literal notranslate"><span class="pre">ValueError</span> <span class="pre">as</span> <span class="pre">e</span></code>, which allows us to refer to the exception object later on inside the <code class="docutils literal notranslate"><span class="pre">exception</span></code> block.</p>
 </section>
 <section id="user-defined-exceptions">
-<h3>User-defined exceptions<a class="headerlink" href="#user-defined-exceptions" title="Permalink to this heading">#</a></h3>
+<h3>User-defined exceptions<a class="headerlink" href="#user-defined-exceptions" title="Link to this heading">#</a></h3>
 <p>We can craft our custom exceptions through inheritance. To illustrate, let’s create an exception inheriting from the base <code class="docutils literal notranslate"><span class="pre">Exception</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,7 +876,7 @@ You can see that we used the syntax <code class="docutils literal notranslate"><
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -894,6 +905,7 @@ You can see that we used the syntax <code class="docutils literal notranslate"><
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -973,8 +985,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

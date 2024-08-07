@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Python &#8212; Python Introduction Course</title>
   
@@ -15,56 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intro';</script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Variables and Data Types" href="variable_and_data_types.html" />
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -160,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -204,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -213,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -258,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chapters/intro.md" target="_blank"
+      <li><a href="../_sources/chapters/intro.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -313,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -324,14 +335,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -380,16 +391,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
-<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Link to this heading">#</a></h1>
 <!-- ```{image} ./pics/python_introduction.png
 :width: 560px
 :align: center
 ``` -->
 <section id="python-interpreter">
-<h2>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Permalink to this heading">#</a></h2>
+<h2>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Link to this heading">#</a></h2>
 <p>Today, we will go through the process of installing Python on your computer.
 Python is a versatile and powerful programming language widely used for various applications.
 Before we begin, let’s understand the concept of a Python interpreter (programm that we are going to install) and draw an analogy to real life.</p>
@@ -400,9 +411,9 @@ So, you have a translator who understands both languages and can help you convey
 Similarly, a Python interpreter translates the human-readable code you write into a language that your computer understands.</p>
 </section>
 <section id="installation-process">
-<h2>Installation Process<a class="headerlink" href="#installation-process" title="Permalink to this heading">#</a></h2>
+<h2>Installation Process<a class="headerlink" href="#installation-process" title="Link to this heading">#</a></h2>
 <section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">#</a></h3>
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
 <p>This section covers the process of installing Python on an Ubuntu system (a Linux distribution based on Debian). In most cases, Python is already pre-installed on Ubuntu by default.</p>
 <p>To check whether Python is already installed on your system, run the following command in your terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
@@ -431,9 +442,9 @@ Similarly, a Python interpreter translates the human-readable code you write int
 </div>
 </section>
 <section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <section id="step-1-downloading-the-python-installer">
-<h4>Step 1: Downloading the Python installer<a class="headerlink" href="#step-1-downloading-the-python-installer" title="Permalink to this heading">#</a></h4>
+<h4>Step 1: Downloading the Python installer<a class="headerlink" href="#step-1-downloading-the-python-installer" title="Link to this heading">#</a></h4>
 <p>Open your web browser and navigate to the official Python website: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a>.
 Go to <em>Downloads</em> tab.
 I will install the default suggested Python version which in my case is <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.11.4</span></code>.</p>
@@ -445,7 +456,7 @@ Please make sure that you selected 3rd version as well.</p>
 </div>
 </section>
 <section id="step-2-starting-the-installation">
-<h4>Step 2: Starting the Installation<a class="headerlink" href="#step-2-starting-the-installation" title="Permalink to this heading">#</a></h4>
+<h4>Step 2: Starting the Installation<a class="headerlink" href="#step-2-starting-the-installation" title="Link to this heading">#</a></h4>
 <p>Once the installer is downloaded, locate the file and run it.</p>
 <div class="admonition-installation-on-windows admonition">
 <p class="admonition-title">Installation on Windows</p>
@@ -454,7 +465,7 @@ This option ensures that you can use Python from the command line.</p>
 </div>
 </section>
 <section id="step-3-completing-the-installation">
-<h4>Step 3: Completing the Installation<a class="headerlink" href="#step-3-completing-the-installation" title="Permalink to this heading">#</a></h4>
+<h4>Step 3: Completing the Installation<a class="headerlink" href="#step-3-completing-the-installation" title="Link to this heading">#</a></h4>
 <p>Once the installation is complete, you’ll see a screen that says “Setup was successful.”</p>
 <div class="admonition-installation-on-windows admonition">
 <p class="admonition-title">Installation on Windows</p>
@@ -463,7 +474,7 @@ This option ensures that you can use Python from the command line.</p>
 </section>
 </section>
 <section id="verifying-the-installation">
-<h3>Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Permalink to this heading">#</a></h3>
+<h3>Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Link to this heading">#</a></h3>
 <p>To ensure that Python is installed correctly, open a command prompt (Windows) or a terminal (macOS/Linux) and type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
 </pre></div>
@@ -482,7 +493,7 @@ Just like a translator facilitates communication between you and locals in a for
 </section>
 </section>
 <section id="programming-philosophy">
-<h2>Programming philosophy<a class="headerlink" href="#programming-philosophy" title="Permalink to this heading">#</a></h2>
+<h2>Programming philosophy<a class="headerlink" href="#programming-philosophy" title="Link to this heading">#</a></h2>
 <p>I will share my point of view about programming and why it is worth learning a programming language.
 My perspective is based on analyzing and researching the real world.</p>
 <p>Programming and computers can be considered useful tools that help us draw new laws and observations about world around us.
@@ -493,7 +504,7 @@ By using programming, we can create representations of real-world objects.</p>
 Nowadays, we live in a technology-driven world where an enormous amount of data is generated every day.
 To analyze and extract meaningful insights from this data, programming plays a crucial role. Here are a few examples where manual analysis would be impossible or inefficient in terms of time spent.</p>
 <section id="black-hole-image">
-<h3>Black hole image<a class="headerlink" href="#black-hole-image" title="Permalink to this heading">#</a></h3>
+<h3>Black hole image<a class="headerlink" href="#black-hole-image" title="Link to this heading">#</a></h3>
 <p>Here is the first image of a black hole:</p>
 <a class="reference internal image-reference" href="../_images/blackhole.jpg"><img alt="../_images/blackhole.jpg" class="align-center" src="../_images/blackhole.jpg" style="width: 360px;" /></a>
 <p>At first glance, it may seem funny, but the accumulated data for this project was mind-boggling. It equated to processing petabytes of information, which is an amount so vast that it could fill thousands of hard drives.
@@ -504,7 +515,7 @@ To give you an idea of how massive this data is, consider the following video: o
     <source src="../_static/videos/interstellar_compared_to_black_hole.mp4" type="video/mp4">
 </video></section>
 <section id="multiplexed-tissue-image">
-<h3>Multiplexed tissue image<a class="headerlink" href="#multiplexed-tissue-image" title="Permalink to this heading">#</a></h3>
+<h3>Multiplexed tissue image<a class="headerlink" href="#multiplexed-tissue-image" title="Link to this heading">#</a></h3>
 <p>What impresses me a lot is that you can obtain the huge amount of data even when you are not focusing on astro images of the universe. For instance, you can obtain a lot of information while analyzing cell biology. Let’s take a look at multiplexed tissue images as an example. Here is an image of whole-slide human FFPE sample with 2.5 million cells, imaged on the <a class="reference external" href="https://www.akoyabio.com/phenocycler/">PhenoCycler-Fusion System</a>:</p>
 <img alt="../_images/codex_example.gif" class="align-center" id="codex-image-example" src="../_images/codex_example.gif" />
 <p>This technology allows for the capture of the expression of dozens of proteins. Typically, the size of tissue used in such experiments is around 1cm by 1cm. However, the generated raw data size for one experiment can easily exceed 1TB.</p>
@@ -514,13 +525,13 @@ For instance, text analysis, where <a class="reference external" href="https://c
 </section>
 </section>
 <section id="flow">
-<h2>Flow<a class="headerlink" href="#flow" title="Permalink to this heading">#</a></h2>
+<h2>Flow<a class="headerlink" href="#flow" title="Link to this heading">#</a></h2>
 <p>I want to emphasize once again that our main task is to learn a new language, just as you would learn Spanish, Japanese, etc. This language enables us to communicate with computers and instruct them to perform certain actions.</p>
 <p>The general flow can be represented by the following scheme: we typically have input data, which can be in the form of tables (such as Google spreadsheets), images, music, etc. We then use commands in the Python language to instruct the computer on what to do with this data. After running these commands, we obtain output data, which can be in the form of spreadsheets, images, etc.</p>
 <img alt="../_images/flow.png" class="align-center" src="../_images/flow.png" />
 </section>
 <section id="first-program">
-<h2>First Program<a class="headerlink" href="#first-program" title="Permalink to this heading">#</a></h2>
+<h2>First Program<a class="headerlink" href="#first-program" title="Link to this heading">#</a></h2>
 <p>Let’s jump in and write our first program in Python.
 To start, we need to create a text file with our instructions for Python.
 Let’s create a file named <code class="docutils literal notranslate"><span class="pre">program.py</span></code>.
@@ -582,7 +593,7 @@ In this example, we did not have any input data. However, we did have our script
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -611,6 +622,7 @@ In this example, we did not have any input data. However, we did have our script
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -685,8 +697,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

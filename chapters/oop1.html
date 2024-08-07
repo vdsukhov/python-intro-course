@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Object-Oriented Programming: Classes &#8212; Python Introduction Course</title>
   
@@ -15,56 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/oop1';</script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Object-Oriented Programming: Inheritance" href="oop2.html" />
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -160,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -204,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -213,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -258,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chapters/oop1.md" target="_blank"
+      <li><a href="../_sources/chapters/oop1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -313,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -324,14 +335,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -382,18 +393,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="object-oriented-programming-classes">
-<h1>Object-Oriented Programming: Classes<a class="headerlink" href="#object-oriented-programming-classes" title="Permalink to this heading">#</a></h1>
+<h1>Object-Oriented Programming: Classes<a class="headerlink" href="#object-oriented-programming-classes" title="Link to this heading">#</a></h1>
 <p>In this episode we will take a look at Object-Oriented Programming (OOP) in Python!
 Object-oriented programming is a powerful paradigm that allows you to structure your code in a way that reflects the real-world entities and their interactions.
 In Python, OOP is a fundamental aspect of the language, providing a robust and flexible approach to designing and organizing code.</p>
 <p>However before we will start learning OOP I want to cover some aspects of Namespaces and Scopes in Python.</p>
 <section id="namespace-and-scopes">
-<h2>Namespace and Scopes<a class="headerlink" href="#namespace-and-scopes" title="Permalink to this heading">#</a></h2>
+<h2>Namespace and Scopes<a class="headerlink" href="#namespace-and-scopes" title="Link to this heading">#</a></h2>
 <section id="namespace">
-<h3>Namespace<a class="headerlink" href="#namespace" title="Permalink to this heading">#</a></h3>
+<h3>Namespace<a class="headerlink" href="#namespace" title="Link to this heading">#</a></h3>
 <p>Earlier in our discussions about variables in Python, we established that a variable essentially acts as a link to an object in the computer’s memory. Visualizing this relationship, we can group variables and their corresponding objects into pairs, creating a structured mapping.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obj1&quot;</span><span class="p">:</span> <span class="n">obj1</span><span class="p">,</span> <span class="s2">&quot;obj2&quot;</span><span class="p">:</span> <span class="n">obj2</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
 </pre></div>
@@ -410,9 +421,9 @@ Why? Well, Python has different areas, called “scopes”, and each of them has
 It’s like having separate rooms for different things. Now, let’s explore these scopes in Python.</p>
 </section>
 <section id="scopes">
-<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this heading">#</a></h3>
+<h3>Scopes<a class="headerlink" href="#scopes" title="Link to this heading">#</a></h3>
 <section id="local-scope">
-<h4>Local scope<a class="headerlink" href="#local-scope" title="Permalink to this heading">#</a></h4>
+<h4>Local scope<a class="headerlink" href="#local-scope" title="Link to this heading">#</a></h4>
 <p><strong>Local scope</strong> refers to the part of your code, usually within a function or method, where variables have local significance. Each function call creates its own local namespace.</p>
 <p>When a function is called, a local namespace is created, acting as a container for variables within that function. This namespace is isolated from the global namespace.</p>
 <div class="cell docutils container">
@@ -435,7 +446,7 @@ It’s like having separate rooms for different things. Now, let’s explore the
 </div>
 </section>
 <section id="enclosing-scope">
-<h4>Enclosing scope<a class="headerlink" href="#enclosing-scope" title="Permalink to this heading">#</a></h4>
+<h4>Enclosing scope<a class="headerlink" href="#enclosing-scope" title="Link to this heading">#</a></h4>
 <p><strong>Enclosed scope</strong>. This scope occur when functions are defined within other functions. Each function has its own local namespace, and it can access variables from its own namespace as well as those from the enclosing scopes.</p>
 <p>In the example below, <code class="docutils literal notranslate"><span class="pre">inner_function</span></code> has access to both its local namespace and the namespace of <code class="docutils literal notranslate"><span class="pre">outer_function</span></code>.</p>
 <div class="cell docutils container">
@@ -463,7 +474,7 @@ I am in the inner function
 </div>
 </section>
 <section id="global-scope">
-<h4>Global scope<a class="headerlink" href="#global-scope" title="Permalink to this heading">#</a></h4>
+<h4>Global scope<a class="headerlink" href="#global-scope" title="Link to this heading">#</a></h4>
 <p><strong>Global scope</strong> encompasses the entire Python script or module. Variables in the global scope are accessible from any part of the code.</p>
 <p>Variables defined outside any function or method belong to the global namespace. They persist throughout the program.</p>
 <div class="cell docutils container">
@@ -487,13 +498,13 @@ I am global
 </div>
 </section>
 <section id="built-in-scope">
-<h4>Built-in scope<a class="headerlink" href="#built-in-scope" title="Permalink to this heading">#</a></h4>
+<h4>Built-in scope<a class="headerlink" href="#built-in-scope" title="Link to this heading">#</a></h4>
 <p>The <strong>built-in scope</strong> is encompassing all reserved keywords. They can be readily accessed anywhere in the program without requiring explicit definition before usage.
 For example built-in scope contain such names as <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, etc.</p>
 </section>
 </section>
 <section id="legb-rule-and-namespace-search-order">
-<h3>LEGB Rule and Namespace Search Order<a class="headerlink" href="#legb-rule-and-namespace-search-order" title="Permalink to this heading">#</a></h3>
+<h3>LEGB Rule and Namespace Search Order<a class="headerlink" href="#legb-rule-and-namespace-search-order" title="Link to this heading">#</a></h3>
 <img alt="../_images/scopes.jpg" class="align-center" src="../_images/scopes.jpg" />
 <p>The LEGB rule (Local, Enclosing, Global, Built-in) determines the order in which Python searches for a variable.</p>
 <p>When a variable is referenced, Python searches for it in the following order:</p>
@@ -512,7 +523,7 @@ For example built-in scope contain such names as <code class="docutils literal n
 </video>
 </section>
 <section id="interaction-with-namespaces">
-<h3>Interaction with namespaces<a class="headerlink" href="#interaction-with-namespaces" title="Permalink to this heading">#</a></h3>
+<h3>Interaction with namespaces<a class="headerlink" href="#interaction-with-namespaces" title="Link to this heading">#</a></h3>
 <p>You can check namespaces using the <code class="docutils literal notranslate"><span class="pre">globals()</span></code>, <code class="docutils literal notranslate"><span class="pre">locals()</span></code> and <code class="docutils literal notranslate"><span class="pre">dir()</span></code> functions.
 Let’s explore each of them.</p>
 <p><code class="docutils literal notranslate"><span class="pre">globals()</span></code> function returns a dictionary representing the global namespace.
@@ -534,7 +545,7 @@ When called within a function or at the module level, it provides access to the 
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python-intro-course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7f646f64b130&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f646f64bbe0&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f646f64bbe0&gt;, &#39;open&#39;: &lt;function open at 0x7f64705caef0&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7f646f472d40&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7f646f473010&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7f646f472f80&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7f646f473370&gt;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python_intro_course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7f8204f8ef30&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f820c375bb0&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f820c375bb0&gt;, &#39;open&#39;: &lt;function open at 0x7f820e8eb060&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7f8204e1c2c0&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7f8204e1cc20&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7f8204e1ca40&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7f8204e1c220&gt;}
 </pre></div>
 </div>
 </div>
@@ -572,7 +583,7 @@ It’s a versatile function. When used without arguments, it shows the names in 
 </section>
 </section>
 <section id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <p>Let’s create a simple class for a <code class="docutils literal notranslate"><span class="pre">Car</span></code> in Python. A class is a blueprint for creating objects, and it encapsulates both data (attributes) and behavior (methods) related to the object. In this case, we’ll define a <code class="docutils literal notranslate"><span class="pre">Car</span></code> class with some basic attributes and methods.</p>
 <p>We will use the following attributes to describe our class:</p>
 <ul class="simple">
@@ -632,7 +643,7 @@ This method is like a constructor and is used to create new instances (objects) 
 </details>
 </div>
 <section id="init-method">
-<h3><code class="docutils literal notranslate"><span class="pre">__init__</span></code> method<a class="headerlink" href="#init-method" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">__init__</span></code> method<a class="headerlink" href="#init-method" title="Link to this heading">#</a></h3>
 <p>In Python, when we create a class, we use a special method called <code class="docutils literal notranslate"><span class="pre">__init__</span></code> to set up the initial state of the object.
 This method is like a guidebook for creating new objects based on the class.</p>
 <p>Now, here’s the trick: when we define methods inside a class, we need a way to refer to object itslef.
@@ -659,7 +670,7 @@ As we going through the <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="class-methodes">
-<h3>Class methodes<a class="headerlink" href="#class-methodes" title="Permalink to this heading">#</a></h3>
+<h3>Class methodes<a class="headerlink" href="#class-methodes" title="Link to this heading">#</a></h3>
 <p>So far, we have explored the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, and you may have observed that this particular method name includes leading and trailing double underscores. In Python, there are several reserved names that, when implemented, allow us to add additional functionality to our class. We will delve into more of these reserved names later in the course. However, we are not limited to using only these reserved methods. We have the flexibility to implement various custom methods of our own. Let’s proceed by adding a couple of custom methods to our class.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -761,7 +772,7 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 <p>The code above is same as <code class="docutils literal notranslate"><span class="pre">camry.vehicle_status()</span></code>. The idea is that we can run it directly using the object without always explicitly specifying the class name. As you can see, <code class="docutils literal notranslate"><span class="pre">self</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">camry</span></code> in this specific case.</p>
 </section>
 <section id="class-as-a-factory">
-<h3>Class as a factory<a class="headerlink" href="#class-as-a-factory" title="Permalink to this heading">#</a></h3>
+<h3>Class as a factory<a class="headerlink" href="#class-as-a-factory" title="Link to this heading">#</a></h3>
 <!-- class_factory -->
 <img alt="../_images/class_factory.jpg" class="align-center" src="../_images/class_factory.jpg" />
 <p>Think of a class as a versatile factory capable of creating (instantiating) objects with distinct features. In the earlier example, our <code class="docutils literal notranslate"><span class="pre">Car</span></code> class allowed us to model and handle real-world objects — cars complete with their own attributes and behaviors.</p>
@@ -769,7 +780,7 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 <p>To underscore this concept, consider the popular Python package scanpy designed for the analysis of single-cell data. In scanpy, you encounter specific classes and data types crafted for the nuanced demands of single-cell analysis. These classes seamlessly handle various tasks, showcasing the adaptability and power of object-oriented programming.</p>
 </section>
 <section id="sharable-class-attributes">
-<h3>Sharable class attributes<a class="headerlink" href="#sharable-class-attributes" title="Permalink to this heading">#</a></h3>
+<h3>Sharable class attributes<a class="headerlink" href="#sharable-class-attributes" title="Link to this heading">#</a></h3>
 <p>We can create class attributes that will be shared among all instances of the class. For example, let’s say we want to store the geographical location of our factory and have access to this information from any instance. Here is an example of how we can achieve this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,7 +812,7 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 </div>
 </section>
 <section id="magic-methods">
-<h3>Magic methods<a class="headerlink" href="#magic-methods" title="Permalink to this heading">#</a></h3>
+<h3>Magic methods<a class="headerlink" href="#magic-methods" title="Link to this heading">#</a></h3>
 <p>Let’s consider the following setup: we want to add a special attribute to cars that measures their horsepower. Now, let’s say we have a list of different cars and we want to sort them based on their horsepower values. Ideally, we would like to use <code class="docutils literal notranslate"><span class="pre">sorted([car1,</span> <span class="pre">car2,</span> <span class="pre">car3])</span></code> to achieve this.</p>
 <p>However, we cannot run this code right away because Python doesn’t know how to compare our car objects. In order to sort our objects, we need to be able to compare them. Currently, if we try to compare our car objects, we will encounter an error.</p>
 <div class="cell docutils container">
@@ -869,7 +880,7 @@ In this specific case, we want to check whether the left object is less than the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Car object at 0x7f646f4d11e0&gt;, &lt;__main__.Car object at 0x7f646f4d36d0&gt;, &lt;__main__.Car object at 0x7f646f4d1390&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Car object at 0x7f8204e0f380&gt;, &lt;__main__.Car object at 0x7f8204e0ce90&gt;, &lt;__main__.Car object at 0x7f8204e0fe00&gt;]
 </pre></div>
 </div>
 </div>
@@ -943,7 +954,7 @@ Brand: Tesla, Model: X
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -972,6 +983,7 @@ Brand: Tesla, Model: X
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1048,8 +1060,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
