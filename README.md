@@ -1,4 +1,4 @@
-# Introduction to Programming in Python
+# Introduction to Programming in Python <img src="https://vdsukhov.github.io/python-intro-course/_static/python_course_logo.png" align="right" height="150"/>
 
 Welcome to the repository for the book *Introduction to Programming in Python*. This book is designed to provide a comprehensive introduction to Python programming, covering fundamental concepts and practical applications. 
 
