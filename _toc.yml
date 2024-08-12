@@ -21,7 +21,7 @@ parts:
       - file: chapters/exceptions.ipynb
       - file: chapters/iterators.ipynb
 
-    - caption: Offtopic
+    - caption: Off topic
       chapters:
       - file: chapters/offtopic/matrix_multiplication.ipynb
       - file: chapters/offtopic/python_and_math.ipynb
