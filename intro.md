@@ -25,7 +25,7 @@ Get ready to unleash your creativity and dive into the captivating world of Pyth
 
 <a href="https://storyset.com/computer">On this website I use illustrations by Storyset</a>
 
-## Table of contents
+<!-- ## Table of contents
 
 ```{tableofcontents}
-```
+``` -->

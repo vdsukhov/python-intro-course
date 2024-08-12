@@ -10,9 +10,11 @@ parts:
       - file: chapters/variable_and_data_types.ipynb
       - file: chapters/control_flow.ipynb
       - file: chapters/lists_and_tuples.ipynb
+      - file: chapters/strings.ipynb
       - file: chapters/dict_and_set.ipynb
       - file: chapters/funcs.ipynb
       - file: chapters/modules.ipynb
+      - file: chapters/regex.ipynb
       - file: chapters/files/files.ipynb
       - file: chapters/oop1.ipynb
       - file: chapters/oop2.ipynb
