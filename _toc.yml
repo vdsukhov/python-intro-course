@@ -20,6 +20,7 @@ parts:
       - file: chapters/oop2.ipynb
       - file: chapters/exceptions.ipynb
       - file: chapters/iterators.ipynb
+      - file: chapters/functional_programming.ipynb
 
     - caption: Off topic
       chapters:
