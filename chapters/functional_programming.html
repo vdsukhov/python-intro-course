@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -373,6 +373,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming-tools-in-python">Functional programming tools in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-filter-and-reduce"><code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map"><code class="docutils literal notranslate"><span class="pre">map</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filter"><code class="docutils literal notranslate"><span class="pre">filter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce"><code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-examples">Basic examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-use-cases">Common use cases</a></li>
@@ -479,6 +485,273 @@ We have already covered recursion before, so let’s not focus on it today.</p>
 </section>
 <section id="functional-programming-tools-in-python">
 <h2>Functional programming tools in Python<a class="headerlink" href="#functional-programming-tools-in-python" title="Link to this heading">#</a></h2>
+<section id="map-filter-and-reduce">
+<h3><code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code><a class="headerlink" href="#map-filter-and-reduce" title="Link to this heading">#</a></h3>
+<section id="map">
+<h4><code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">map()</span></code> function is a built-in Python function that applies a given function to each item in an iterable (like a <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, or <code class="docutils literal notranslate"><span class="pre">set</span></code>) and returns a map object. This <code class="docutils literal notranslate"><span class="pre">map</span></code> object can be converted to a list or iterated over.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key features:</p>
+<ol class="arabic simple">
+<li><p>It takes at least two arguments: a function and an iterable.</p></li>
+<li><p>The function is applied to every item in the iterable.</p></li>
+<li><p>It can handle multiple iterables if the function takes multiple arguments.</p></li>
+<li><p>It returns a map object, which is an iterator.</p></li>
+</ol>
+</div>
+<p>Examples:
+Basic usage with a single iterable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared_numbers</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">squared_numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using map with built-in functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">]</span>
+<span class="n">integers</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">integers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Map with multiple iterables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">sums</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sums</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 22, 33]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Benefits of using <code class="docutils literal notranslate"><span class="pre">map()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>It provides a concise way to apply a function to all elements in an iterable.</p></li>
+<li><p>It’s memory-efficient as it returns an iterator.</p></li>
+<li><p>It can make code more readable by separating the function definition from its application.</p></li>
+</ol>
+<p>When to use <code class="docutils literal notranslate"><span class="pre">map()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>When you need to apply the same operation to all elements in a collection.</p></li>
+<li><p>When working with large datasets, as it’s more memory-efficient than list comprehensions.</p></li>
+<li><p>When you want to emphasize the functional programming style in your code.</p></li>
+</ol>
+</section>
+<section id="filter">
+<h4><code class="docutils literal notranslate"><span class="pre">filter</span></code><a class="headerlink" href="#filter" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function is a built-in Python function that creates an iterator from elements of an iterable for which a function returns True.
+It’s used to filter out elements from a sequence based on a given criteria.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key features:</p>
+<ol class="arabic simple">
+<li><p>It takes two arguments: a function and an iterable.</p></li>
+<li><p>The function should return a boolean value (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p>It returns a filter object, which is an iterator.</p></li>
+<li><p>Elements for which the function returns True are included in the result.</p></li>
+</ol>
+</div>
+<p>Examples:</p>
+<p>Basic usage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_even</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using filter with built-in functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">{}]</span>
+<span class="n">truthy_values</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="n">mixed_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">truthy_values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, True, &#39;hello&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Benefits of using <code class="docutils literal notranslate"><span class="pre">filter()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>It provides a concise way to select elements from an iterable based on a condition.</p></li>
+<li><p>It’s memory-efficient as it returns an iterator.</p></li>
+<li><p>It separates the filtering logic from the iteration, making the code more modular.</p></li>
+</ol>
+<p>When to use <code class="docutils literal notranslate"><span class="pre">filter()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>When you need to select elements from a sequence based on a specific condition.</p></li>
+<li><p>When working with large datasets, as it’s more memory-efficient than list comprehensions.</p></li>
+<li><p>When you want to emphasize the functional programming style in your code.</p></li>
+</ol>
+</section>
+<section id="reduce">
+<h4><code class="docutils literal notranslate"><span class="pre">reduce</span></code><a class="headerlink" href="#reduce" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">reduce()</span></code> function is part of the functools module in Python.
+It applies a function of two arguments cumulatively to the items of an iterable, from left to right, so as to reduce the iterable to a single value.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="n">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">[,</span> <span class="n">initializer</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Key features:</p>
+<ol class="arabic simple">
+<li><p>It takes a function that accepts two arguments and an iterable.</p></li>
+<li><p>Optionally, you can provide an initializer value.</p></li>
+<li><p>It applies the function to the first two items in the iterable, then to the result and the next item, and so on.</p></li>
+<li><p>It returns a single value.</p></li>
+</ol>
+</div>
+<p>Examples:</p>
+<p>Basic usage - summing numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">sum_result</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the maximum value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">maximum</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">max_value</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maximum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Concatenating strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concatenate</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s1</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">s2</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;awesome&#39;</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">concatenate</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>python-is-awesome
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">reduce</span></code> with an initializer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 10 is the initializer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240
+</pre></div>
+</div>
+</div>
+</div>
+<p>Benefits of using <code class="docutils literal notranslate"><span class="pre">reduce()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>It’s useful for performing cumulative calculations on sequences.</p></li>
+<li><p>It can express certain algorithms more concisely than explicit loops.</p></li>
+<li><p>It’s part of the functional programming paradigm in Python.</p></li>
+</ol>
+<p>When to use <code class="docutils literal notranslate"><span class="pre">reduce()</span></code>:</p>
+<ol class="arabic simple">
+<li><p>When you need to apply a function cumulatively to a sequence.</p></li>
+<li><p>For operations like summing all numbers, finding the maximum, or concatenating all strings in a list.</p></li>
+<li><p>When you want to express a fold or accumulation operation in a functional style.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s worth noting that for simple operations like summing numbers or finding the maximum, Python provides built-in functions (<code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>) which are often more readable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">sum_result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="n">max_result</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
 <section id="lambda-functions">
 <h3>Lambda functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">#</a></h3>
 <p>Lambda functions, also known as anonymous functions, are small, one-line functions that don’t require a formal def statement.
@@ -602,7 +875,9 @@ Example:</p>
 <p>This approach allows for concise data transformations without defining separate functions for each operation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In all these cases, lambda functions shine when the operation is simple and doesn’t need to be reused elsewhere in the code. They allow for more compact and sometimes more readable code by keeping the logic close to where it’s used. However, for more complex operations or when the same logic is used multiple times, it’s often better to define a regular named function instead.</p>
+<p>In all these cases, lambda functions shine when the operation is simple and doesn’t need to be reused elsewhere in the code.
+They allow for more compact and sometimes more readable code by keeping the logic close to where it’s used.
+However, for more complex operations or when the same logic is used multiple times, it’s often better to define a regular named function instead.</p>
 </div>
 </section>
 </section>
@@ -680,6 +955,12 @@ Example:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming-tools-in-python">Functional programming tools in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-filter-and-reduce"><code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map"><code class="docutils literal notranslate"><span class="pre">map</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filter"><code class="docutils literal notranslate"><span class="pre">filter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce"><code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-examples">Basic examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#common-use-cases">Common use cases</a></li>
