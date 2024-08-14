@@ -386,6 +386,19 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-functional-techniques">Advanced Functional Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-about-decarators">Basics about decarators</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-common-use-cases">Examples of Common Use Cases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-composition">Function Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-functional-programming-in-python">Pros and Cons of Functional Programming in Python</a></li>
 </ul>
             </nav>
         </div>
@@ -397,11 +410,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="functional-programming">
+  <section id="functional-programming">
 <h1>Functional Programming<a class="headerlink" href="#functional-programming" title="Link to this heading">#</a></h1>
 <p>Python supports multiple programming paradigms, and functional programming is one of them. So, let’s break it down.</p>
-<p><strong>What is Functional Programming?</strong></p>
-<p>Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions. It emphasizes the application of functions to inputs to produce outputs without changing state and avoiding mutable data.</p>
+<dl class="simple myst">
+<dt>What is Functional Programming?</dt><dd><p>Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions. It emphasizes the application of functions to inputs to produce outputs without changing state and avoiding mutable data.</p>
+</dd>
+</dl>
 <section id="key-concepts-of-functional-programming">
 <h2>Key concepts of Functional Programming<a class="headerlink" href="#key-concepts-of-functional-programming" title="Link to this heading">#</a></h2>
 <section id="pure-functions">
@@ -882,6 +897,241 @@ However, for more complex operations or when the same logic is used multiple tim
 </section>
 </section>
 </section>
+<section id="advanced-functional-techniques">
+<h2>Advanced Functional Techniques<a class="headerlink" href="#advanced-functional-techniques" title="Link to this heading">#</a></h2>
+<section id="decorators">
+<h3>Decorators<a class="headerlink" href="#decorators" title="Link to this heading">#</a></h3>
+<p>A <strong>decorator</strong> is a design pattern in Python that allows you to modify the behavior of a function or a method.
+You can think of decorators as wrappers that add functionality to an existing function or method without changing its actual code.</p>
+<section id="basics-about-decarators">
+<h4>Basics about decarators<a class="headerlink" href="#basics-about-decarators" title="Link to this heading">#</a></h4>
+<dl class="simple myst">
+<dt>How Decorators Work?</dt><dd><p>A decorator is essentially a function that takes another function as an argument, adds some code to it, and then returns a new function. When you apply a decorator to a function, you are replacing the original function with a modified version created by the decorator.</p>
+</dd>
+</dl>
+<p>Here’s the basic structure of how a decorator works:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="c1"># Code to run before the original function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something before the function.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Call the original function</span>
+        <span class="n">func</span><span class="p">()</span>
+
+        <span class="c1"># Code to run after the original function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something after the function.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this structure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">my_decorator</span></code> is the decorator function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code> is the original function being decorated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wrapper</span></code> is an inner function that adds behavior before and after the call to <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p></li>
+</ul>
+<p><strong>Applying a Decorator</strong></p>
+<p>You apply a decorator to a function using the <code class="docutils literal notranslate"><span class="pre">&#64;decorator_name</span></code> syntax, placed above the function definition. Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@my_decorator</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+
+<span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Something before the function.
+Hello!
+Something after the function.
+</pre></div>
+</div>
+</div>
+</div>
+<dl class="simple myst">
+<dt>When <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> is called:</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">my_decorator</span></code> function is called with <code class="docutils literal notranslate"><span class="pre">say_hello</span></code> as its argument.
+<code class="docutils literal notranslate"><span class="pre">my_decorator</span></code> returns the wrapper function.
+The wrapper function is executed, which in turn calls the original <code class="docutils literal notranslate"><span class="pre">say_hello</span></code> function but also adds the extra behavior.</p>
+</dd>
+</dl>
+<div class="dropdown note admonition">
+<p class="admonition-title">Why Use Decorators?</p>
+<p>Decorators are powerful because they allow you to:</p>
+<ol class="arabic simple">
+<li><p>Add behavior: You can easily add logging, security checks, performance monitoring, or any other cross-cutting concerns to functions.</p></li>
+<li><p>Keep code DRY: You avoid repeating code by encapsulating common functionality in a decorator.</p></li>
+<li><p>Enhance readability: By separating concerns, your main function code remains clean and focused on its primary purpose.</p></li>
+</ol>
+</div>
+</section>
+<section id="examples-of-common-use-cases">
+<h4>Examples of Common Use Cases<a class="headerlink" href="#examples-of-common-use-cases" title="Link to this heading">#</a></h4>
+<p><strong>Logging Decorator:</strong></p>
+<p>This decorator logs every time a function is called.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calling </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> with arguments </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@log_decorator</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calling add with arguments (3, 5) and {}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Timing Decorator:</strong></p>
+<p>This decorator measures how long a function takes to execute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">timer_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds to execute.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@timer_decorator</span>
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished sleeping&quot;</span><span class="p">)</span>
+
+<span class="n">slow_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished sleeping
+slow_function took 0.5005 seconds to execute.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Decorators are functions that modify the behavior of other functions or methods.</p></li>
+<li><p>They are applied using the <code class="docutils literal notranslate"><span class="pre">&#64;decorator_name</span></code> syntax.</p></li>
+<li><p>Decorators can add code before and after the original function runs, making them ideal for logging, timing, authentication, and more.</p></li>
+<li><p>They help keep your code clean, reusable, and maintainable by separating concerns.</p></li>
+</ul>
+</section>
+</section>
+<section id="partial-functions">
+<h3>Partial Functions<a class="headerlink" href="#partial-functions" title="Link to this heading">#</a></h3>
+<p>Partial functions allow you to fix a certain number of arguments of a function and generate a new function. This is useful when you need a simpler function with fewer arguments.</p>
+<dl class="simple myst">
+<dt>How do they work?</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> function is used to create a new function by fixing some arguments of the original function.</p>
+</dd>
+</dl>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="c1"># Create a new function that always multiplies by 2</span>
+<span class="n">double</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">double</span></code> is a new function where <code class="docutils literal notranslate"><span class="pre">x</span></code> is fixed as 2, so you only need to provide the <code class="docutils literal notranslate"><span class="pre">y</span></code> argument.</p>
+</section>
+<section id="function-composition">
+<h3>Function Composition<a class="headerlink" href="#function-composition" title="Link to this heading">#</a></h3>
+<p>Function composition is a technique where you combine two or more functions to produce a new function. The output of one function becomes the input of another.</p>
+<dl class="simple myst">
+<dt>How do they work?</dt><dd><p>You can compose functions manually or by using helper functions from libraries, where you pass the result of one function directly into another.</p>
+</dd>
+</dl>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">composed_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">multiply</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">composed_function</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">composed_function(3)</span></code> first adds 1 to 3 (resulting in 4) and then multiplies the result by 2, giving 8.</p>
+</section>
+<section id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Decorators are a way to modify functions without changing their code.</p></li>
+<li><p>Partial Functions allow you to pre-set some arguments of a function.</p></li>
+<li><p>Function Composition lets you combine functions to create new ones where the output of one is the input of another.</p></li>
+</ul>
+</section>
+</section>
+<section id="pros-and-cons-of-functional-programming-in-python">
+<h2>Pros and Cons of Functional Programming in Python<a class="headerlink" href="#pros-and-cons-of-functional-programming-in-python" title="Link to this heading">#</a></h2>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>Immutability and Statelessness: Reduces bugs and makes code easier to reason about.</p></li>
+<li><p>Modularity and Reusability: Functions can be easily composed and reused, leading to cleaner, more modular code.</p></li>
+<li><p>Concise and Expressive Code: Often results in shorter, more readable code, especially for data processing.</p></li>
+<li><p>Parallelism and Concurrency: Naturally suited for concurrent programming due to the lack of shared state.</p></li>
+<li><p>Predictable Behavior: Pure functions lead to more predictable and reliable code.</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>Steeper Learning Curve: Concepts like higher-order functions and immutability can be harder to grasp.</p></li>
+<li><p>Less Readable for Some: May be less intuitive for those used to imperative or object-oriented programming.</p></li>
+<li><p>Performance Overhead: Can introduce inefficiencies, especially with the creation of intermediate data structures.</p></li>
+<li><p>Limited Library Support: Python’s functional programming tools are not as extensive as in some other languages.</p></li>
+<li><p>Debugging Challenges: Can be harder to debug due to the abstract nature of the code.</p></li>
+</ul>
+<p><strong>When to Use Functional Programming:</strong></p>
+<ul class="simple">
+<li><p>Data Processing: Ideal for pipelines involving transformations and filtering.</p></li>
+<li><p>Concurrency: Useful for parallel and concurrent code.</p></li>
+<li><p>Small, Reusable Components: When you need modular, composable functions.</p></li>
+<li><p>Predictable and Testable Code: Great for applications requiring high reliability.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -968,6 +1218,19 @@ However, for more complex operations or when the same logic is used multiple tim
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-functional-techniques">Advanced Functional Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-about-decarators">Basics about decarators</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-common-use-cases">Examples of Common Use Cases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-composition">Function Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-functional-programming-in-python">Pros and Cons of Functional Programming in Python</a></li>
 </ul>
   </nav></div>
 
