@@ -343,7 +343,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -359,6 +361,53 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-iterators-in-python">Introduction to Iterators in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-an-iterator">Definition of an Iterator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-iterators-in-python">Importance of Iterators in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-iterators-and-iterables">Difference Between Iterators and Iterables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-iterator">Creating an iterator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterator-protocol">Iterator Protocol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-pythons-built-in-iter-and-next-functions-work">How Python’s Built-in <code class="docutils literal notranslate"><span class="pre">iter()</span></code> and <code class="docutils literal notranslate"><span class="pre">next()</span></code> Functions Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-iterators-in-loops">Using Iterators in Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-for-loops-work-with-iterators">How <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops Work with Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behind-the-scenes-unpacking-the-for-loop-mechanism">Behind the Scenes: Unpacking the <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Mechanism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-manually-iterating-over-an-iterator-using-next">Example: Manually Iterating Over an Iterator Using <code class="docutils literal notranslate"><span class="pre">next()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generator-functions">Generator Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generators-as-a-simple-way-to-create-iterators">Generators as a Simple Way to Create Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-generators-and-traditional-iterators">Difference Between Generators and Traditional Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-generator-function-using-yield">Example of a Generator Function Using <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-iterators">Infinite Iterators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-infinite-iterators">Creating Infinite Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-use-cases-for-infinite-iterators">Practical Use Cases for Infinite Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-implementing-an-infinite-iterator-using-generators">Example: Implementing an Infinite Iterator Using Generators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-and-combining-iterators">Chaining and Combining Iterators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-multiple-iterators-using-itertools-chain">Combining Multiple Iterators Using <code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tools-from-the-itertools-module">Useful Tools from the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> Module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-combining-two-lists-with-chain">Example: Combining Two Lists with <code class="docutils literal notranslate"><span class="pre">chain()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-points-about-iterators">Recap of Key Points About Iterators</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -370,7 +419,537 @@ document.write(`
                   
   <section id="iterators">
 <h1>Iterators<a class="headerlink" href="#iterators" title="Link to this heading">#</a></h1>
-<p>Iterators are a fundamental concept, empowering you to traverse through elements in a sequence, one at a time. Whether you’re dealing with lists, tuples, or custom objects, iterators offer a consistent and efficient way to access elements sequentially.</p>
+<section id="introduction-to-iterators-in-python">
+<h2>Introduction to Iterators in Python<a class="headerlink" href="#introduction-to-iterators-in-python" title="Link to this heading">#</a></h2>
+<section id="definition-of-an-iterator">
+<h3>Definition of an Iterator<a class="headerlink" href="#definition-of-an-iterator" title="Link to this heading">#</a></h3>
+<p>An <strong>iterator</strong> in Python is an object that enables a programmer to traverse through all the elements in a collection, such as a list or tuple, without the need to interact directly with the underlying structure of the collection.
+An iterator is defined by the presence of two key methods: <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method returns the iterator object itself, and the <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method returns the next item from the collection.
+When there are no more items to return, <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception, signaling the end of the iteration.</p>
+</section>
+<section id="importance-of-iterators-in-python">
+<h3>Importance of Iterators in Python<a class="headerlink" href="#importance-of-iterators-in-python" title="Link to this heading">#</a></h3>
+<p>Iterators are crucial in Python for several reasons:</p>
+<ol class="arabic simple">
+<li><p><strong>Memory Efficiency:</strong> Iterators allow you to handle large datasets by processing one element at a time, which is more memory-efficient than loading an entire dataset into memory at once.</p></li>
+<li><p><strong>Lazy Evaluation:</strong> Iterators evaluate and return elements only as needed, which is useful for managing resources efficiently and for working with infinite sequences or streams of data.</p></li>
+<li><p><strong>Simplified Loops:</strong> Iterators simplify the process of looping through elements, making the code cleaner and more readable. Python’s <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, for instance, implicitly use iterators.</p></li>
+<li><p><strong>Unified Interface:</strong> Many Python features and libraries rely on iterators, providing a unified interface for iterating over diverse data structures.</p></li>
+</ol>
+</section>
+<section id="difference-between-iterators-and-iterables">
+<h3>Difference Between Iterators and Iterables<a class="headerlink" href="#difference-between-iterators-and-iterables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Iterable:</strong> An iterable is any Python object capable of returning its members one at a time. Examples include lists, tuples, strings, and dictionaries. An iterable object has an <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method that returns an iterator object. When you use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop or other iteration mechanisms, Python internally calls <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> on the iterable to obtain an iterator.</p></li>
+<li><p><strong>Iterator:</strong> An iterator is the object that actually performs the iteration. It is returned by calling <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> on an iterable. The iterator then uses its <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method to return each element one by one. An iterator maintains its state, keeping track of where it is in the collection.</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterable: A list</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Creating an iterator from the iterable</span>
+<span class="n">my_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="c1"># Using the iterator to access elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_iterator</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_iterator</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_iterator</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>In summary:</p>
+<ul class="simple">
+<li><p>An <strong>iterable</strong> is an object that can return an iterator.</p></li>
+<li><p>An <strong>iterator</strong> is an object that can traverse through all the elements of an iterable, one element at a time.</p></li>
+</ul>
+</section>
+</section>
+<section id="creating-an-iterator">
+<h2>Creating an iterator<a class="headerlink" href="#creating-an-iterator" title="Link to this heading">#</a></h2>
+<section id="iterator-protocol">
+<h3>Iterator Protocol<a class="headerlink" href="#iterator-protocol" title="Link to this heading">#</a></h3>
+<p>The <strong>iterator protocol</strong> in Python is a set of rules that an object must follow to be considered an iterator. Specifically, an object must implement two methods: <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code>.</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> Method:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method is expected to return the iterator object itself. This is what allows an object to be used in a loop or other iteration context. When Python calls <code class="docutils literal notranslate"><span class="pre">iter()</span></code> on an iterable object, it internally calls the object’s <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method.</p></li>
+<li><p>If the object is already an iterator, <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> should simply return <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">__next__()</span></code> Method:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method returns the next item from the sequence each time it is called. If there are no more items to return, it raises the <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception, which signals the end of the iteration.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method keeps track of the current state of the iterator, meaning it knows which item to return next.</p></li>
+</ul>
+</li>
+</ol>
+<p>Here’s a simple example to illustrate how these methods work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyIterator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>  <span class="c1"># Returning the iterator object itself</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>  <span class="c1"># No more items to return</span>
+
+<span class="c1"># Usage</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">iterator</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+30
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MyIterator</span></code> class implements both <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> methods, making it an iterator.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method returns each item from <code class="docutils literal notranslate"><span class="pre">my_list</span></code> until there are no more items, at which point it raises <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>.</p></li>
+</ul>
+</section>
+<section id="how-pythons-built-in-iter-and-next-functions-work">
+<h3>How Python’s Built-in <code class="docutils literal notranslate"><span class="pre">iter()</span></code> and <code class="docutils literal notranslate"><span class="pre">next()</span></code> Functions Work<a class="headerlink" href="#how-pythons-built-in-iter-and-next-functions-work" title="Link to this heading">#</a></h3>
+<p>Python provides two built-in functions, <code class="docutils literal notranslate"><span class="pre">iter()</span></code> and <code class="docutils literal notranslate"><span class="pre">next()</span></code>, to interact with iterators.</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">iter()</span></code> Function:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">iter()</span></code> function takes an iterable object (like a list, tuple, or string) and returns an iterator object. Internally, <code class="docutils literal notranslate"><span class="pre">iter()</span></code> calls the iterable’s <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method to obtain this iterator.</p></li>
+<li><p>If the object you pass to <code class="docutils literal notranslate"><span class="pre">iter()</span></code> is already an iterator, it simply returns the object itself.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>  <span class="c1"># This calls my_list.__iter__()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">next()</span></code> Function:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">next()</span></code> function takes an iterator object as its argument and returns the next item in the sequence by internally calling the iterator’s <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method.</p></li>
+<li><p>If the iterator has no more items, <code class="docutils literal notranslate"><span class="pre">next()</span></code> raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception. This is typically handled in a loop or with error handling to avoid crashing the program.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Raises StopIteration</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">next()</span></code> sequentially retrieves each item from the iterator until there are no more items left, at which point it raises <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>.</p>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <strong>iterator protocol</strong> consists of two methods: <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> returns the iterator object, and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> returns the next item in the sequence.</p></li>
+<li><p>Python’s built-in <strong><code class="docutils literal notranslate"><span class="pre">iter()</span></code> function</strong> calls an iterable’s <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method to obtain an iterator, while <strong><code class="docutils literal notranslate"><span class="pre">next()</span></code></strong> retrieves the next item from an iterator using the <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> method, raising <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> when the sequence is exhausted.</p></li>
+</ul>
+<p>Understanding the iterator protocol and how these built-in functions work is key to effectively using and implementing iterators in Python.</p>
+</section>
+</section>
+<section id="using-iterators-in-loops">
+<h2>Using Iterators in Loops<a class="headerlink" href="#using-iterators-in-loops" title="Link to this heading">#</a></h2>
+<section id="how-for-loops-work-with-iterators">
+<h3>How <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops Work with Iterators<a class="headerlink" href="#how-for-loops-work-with-iterators" title="Link to this heading">#</a></h3>
+<p>In Python, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is a powerful and commonly used control structure that simplifies the process of iterating over elements in a sequence, such as a list, tuple, string, or any iterable object. When you use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, Python automatically handles the creation of the iterator and the iteration process.</p>
+<p><strong>How It Works:</strong></p>
+<ul class="simple">
+<li><p>When a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop starts, Python calls the <code class="docutils literal notranslate"><span class="pre">iter()</span></code> function on the iterable object to obtain an iterator.</p></li>
+<li><p>The loop then repeatedly calls the <code class="docutils literal notranslate"><span class="pre">next()</span></code> function on the iterator to retrieve each item in the sequence.</p></li>
+<li><p>The loop automatically stops when a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception is raised, which signals that there are no more items to retrieve.</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop internally:</p>
+<ol class="arabic simple">
+<li><p>Calls <code class="docutils literal notranslate"><span class="pre">iter(my_list)</span></code> to get an iterator.</p></li>
+<li><p>Repeatedly calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> on this iterator to get each element.</p></li>
+<li><p>Ends when <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> is raised, which happens after the last element.</p></li>
+</ol>
+</section>
+<section id="behind-the-scenes-unpacking-the-for-loop-mechanism">
+<h3>Behind the Scenes: Unpacking the <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Mechanism<a class="headerlink" href="#behind-the-scenes-unpacking-the-for-loop-mechanism" title="Link to this heading">#</a></h3>
+<p>To understand how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop works under the hood, let’s break down what happens step by step:</p>
+<ol class="arabic simple">
+<li><p><strong>Iterator Creation:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop starts by calling the <code class="docutils literal notranslate"><span class="pre">iter()</span></code> function on the iterable to create an iterator object.</p></li>
+</ul>
+</li>
+<li><p><strong>Item Retrieval:</strong></p>
+<ul class="simple">
+<li><p>The loop then enters an iteration process where it repeatedly calls the <code class="docutils literal notranslate"><span class="pre">next()</span></code> method on the iterator.</p></li>
+<li><p>Each time <code class="docutils literal notranslate"><span class="pre">next()</span></code> is called, it retrieves the next item in the sequence.</p></li>
+</ul>
+</li>
+<li><p><strong>Loop Termination:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop continues retrieving and processing items until the iterator raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception.</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> is raised, the loop automatically exits.</p></li>
+</ul>
+</li>
+</ol>
+<p>This mechanism allows the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to work seamlessly with any iterable object, providing a clean and efficient way to iterate over elements without requiring manual control over the iteration process.</p>
+</section>
+<section id="example-manually-iterating-over-an-iterator-using-next">
+<h3>Example: Manually Iterating Over an Iterator Using <code class="docutils literal notranslate"><span class="pre">next()</span></code><a class="headerlink" href="#example-manually-iterating-over-an-iterator-using-next" title="Link to this heading">#</a></h3>
+<p>You can manually iterate over an iterator using the <code class="docutils literal notranslate"><span class="pre">next()</span></code> function, which gives you finer control over the iteration process. This is how you can manually simulate what happens in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>  <span class="c1"># Create an iterator from the list</span>
+
+<span class="c1"># Manually iterate over the iterator</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 20</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># Output: 30</span>
+
+<span class="c1"># If we call next() again, it raises StopIteration because there are no more items</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># This will raise StopIteration</span>
+<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No more items.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+30
+No more items.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p>We start by creating an iterator from <code class="docutils literal notranslate"><span class="pre">my_list</span></code> using <code class="docutils literal notranslate"><span class="pre">iter()</span></code>.</p></li>
+<li><p>We then use <code class="docutils literal notranslate"><span class="pre">next()</span></code> to manually retrieve each item from the iterator, one at a time.</p></li>
+<li><p>Once all items are retrieved, the next call to <code class="docutils literal notranslate"><span class="pre">next()</span></code> raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception, which we can catch to handle the end of the iteration gracefully.</p></li>
+</ul>
+<p>This manual iteration process is exactly what happens inside a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, but Python abstracts this complexity away, making <code class="docutils literal notranslate"><span class="pre">for</span></code> loops easy to use while maintaining their power and flexibility.</p>
+</section>
+</section>
+<section id="generator-functions">
+<h2>Generator Functions<a class="headerlink" href="#generator-functions" title="Link to this heading">#</a></h2>
+<section id="generators-as-a-simple-way-to-create-iterators">
+<h3>Generators as a Simple Way to Create Iterators<a class="headerlink" href="#generators-as-a-simple-way-to-create-iterators" title="Link to this heading">#</a></h3>
+<p>Generators in Python are a special kind of iterator that allows you to iterate over data without creating the entire sequence in memory at once. They are defined using regular functions but use the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword instead of <code class="docutils literal notranslate"><span class="pre">return</span></code> to produce a series of values lazily, one at a time, as they are needed. This makes generators particularly useful for handling large datasets or streams of data efficiently.</p>
+<p>When you call a generator function, it doesn’t execute the function’s code immediately. Instead, it returns a generator object that can be iterated over. Each time you iterate through the generator, Python resumes the function’s execution from where it last left off, yielding the next value in the sequence.</p>
+</section>
+<section id="difference-between-generators-and-traditional-iterators">
+<h3>Difference Between Generators and Traditional Iterators<a class="headerlink" href="#difference-between-generators-and-traditional-iterators" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Creation:</strong></p>
+<ul class="simple">
+<li><p><strong>Traditional Iterators:</strong> You typically create a traditional iterator by defining a class that implements the <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> methods.</p></li>
+<li><p><strong>Generators:</strong> Generators are created using functions with the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword, which automatically creates an iterator for you.</p></li>
+</ul>
+</li>
+<li><p><strong>Memory Efficiency:</strong></p>
+<ul class="simple">
+<li><p><strong>Traditional Iterators:</strong> They might store all elements in memory at once if not designed carefully.</p></li>
+<li><p><strong>Generators:</strong> They produce items one at a time, which can be more memory-efficient, especially for large data sets.</p></li>
+</ul>
+</li>
+<li><p><strong>Simplicity:</strong></p>
+<ul class="simple">
+<li><p><strong>Traditional Iterators:</strong> Require more boilerplate code, such as manually managing state and defining <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> methods.</p></li>
+<li><p><strong>Generators:</strong> Simpler and more concise, as Python handles the iterator protocol behind the scenes.</p></li>
+</ul>
+</li>
+<li><p><strong>State Management:</strong></p>
+<ul class="simple">
+<li><p><strong>Traditional Iterators:</strong> The state of the iteration needs to be managed explicitly using instance variables.</p></li>
+<li><p><strong>Generators:</strong> Automatically remember their state between <code class="docutils literal notranslate"><span class="pre">yield</span></code> calls, making the code easier to write and read.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="example-of-a-generator-function-using-yield">
+<h3>Example of a Generator Function Using <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#example-of-a-generator-function-using-yield" title="Link to this heading">#</a></h3>
+<p>Here’s a simple example of a generator function that yields numbers from 1 to 5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_up_to</span><span class="p">(</span><span class="n">max_value</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">current</span> <span class="o">&lt;=</span> <span class="n">max_value</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">current</span>  <span class="c1"># Yield the current value and pause the function</span>
+        <span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Using the generator</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">count_up_to</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">count_up_to</span></code> function is a generator that produces numbers from 1 up to the specified <code class="docutils literal notranslate"><span class="pre">max_value</span></code>.</p></li>
+<li><p>Each time the <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement is executed, the function’s state is saved, and the current value is returned to the caller.</p></li>
+<li><p>The next time the generator is iterated, it resumes execution right after the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, continuing until it either yields another value or completes the loop.</p></li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul class="simple">
+<li><p>The use of <code class="docutils literal notranslate"><span class="pre">yield</span></code> allows the function to produce a sequence of values lazily, without storing the entire sequence in memory.</p></li>
+<li><p>Once the generator has yielded all values, further calls to <code class="docutils literal notranslate"><span class="pre">next()</span></code> will raise a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception, signaling that the iteration is complete.</p></li>
+</ul>
+<p>Generators provide a powerful and efficient way to create iterators with minimal code, especially when working with large datasets or streams of data that don’t need to be loaded into memory all at once.</p>
+</section>
+</section>
+<section id="infinite-iterators">
+<h2>Infinite Iterators<a class="headerlink" href="#infinite-iterators" title="Link to this heading">#</a></h2>
+<section id="creating-infinite-iterators">
+<h3>Creating Infinite Iterators<a class="headerlink" href="#creating-infinite-iterators" title="Link to this heading">#</a></h3>
+<p>Infinite iterators are iterators that can produce an endless sequence of values. Unlike finite iterators, which eventually raise a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception to signal the end of iteration, infinite iterators continue to generate values indefinitely, as long as the iteration is not manually stopped.</p>
+<p>Infinite iterators are commonly implemented using generators in Python because generators allow you to create sequences of values lazily and can easily be controlled or stopped based on certain conditions.</p>
+</section>
+<section id="practical-use-cases-for-infinite-iterators">
+<h3>Practical Use Cases for Infinite Iterators<a class="headerlink" href="#practical-use-cases-for-infinite-iterators" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Generating Infinite Sequences:</strong></p>
+<ul class="simple">
+<li><p>Infinite iterators can be used to generate endless sequences, such as a series of numbers or repeated patterns.</p></li>
+<li><p>Example: Continuously generating Fibonacci numbers or primes.</p></li>
+</ul>
+</li>
+<li><p><strong>Data Streams:</strong></p>
+<ul class="simple">
+<li><p>Infinite iterators are useful for reading or generating data from sources that don’t have a predefined end, such as live data feeds or sensor data.</p></li>
+</ul>
+</li>
+<li><p><strong>Repeated Operations:</strong></p>
+<ul class="simple">
+<li><p>In some scenarios, you might want to repeatedly perform an operation or provide a repeated sequence of values without defining an end.</p></li>
+<li><p>Example: A clock that ticks every second or a cyclic pattern generator.</p></li>
+</ul>
+</li>
+<li><p><strong>Simulating Events:</strong></p>
+<ul class="simple">
+<li><p>They can be used to simulate ongoing processes or events that occur continuously, such as a game loop or an event-driven system.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="example-implementing-an-infinite-iterator-using-generators">
+<h3>Example: Implementing an Infinite Iterator Using Generators<a class="headerlink" href="#example-implementing-an-infinite-iterator-using-generators" title="Link to this heading">#</a></h3>
+<p>Let’s implement a simple infinite iterator that generates an infinite sequence of even numbers using a generator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">infinite_even_numbers</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">n</span>  <span class="c1"># Yield the current even number</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span>   <span class="c1"># Move to the next even number</span>
+
+<span class="c1"># Using the infinite iterator</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="n">infinite_even_numbers</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># Let&#39;s just print the first 10 even numbers to avoid infinite loop</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">infinite_even_numbers</span></code> generator function starts at <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">0</span></code> and enters an infinite loop (<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code>).</p></li>
+<li><p>Each time <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">n</span></code> is called, the current value of <code class="docutils literal notranslate"><span class="pre">n</span></code> (an even number) is produced, and the generator’s state is paused.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+=</span> <span class="pre">2</span></code> line advances to the next even number.</p></li>
+<li><p>This generator will continue yielding even numbers indefinitely unless manually stopped, as shown by the controlled <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that limits the output to the first 10 even numbers.</p></li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul class="simple">
+<li><p><strong>Control:</strong> Infinite iterators must be used carefully. Without proper control, they can lead to infinite loops that may freeze or crash your program.</p></li>
+<li><p><strong>Use Cases:</strong> They are particularly useful when you don’t know in advance how many items you need or when dealing with continuous data streams.</p></li>
+<li><p><strong>Stopping Condition:</strong> Often, infinite iterators are used in combination with a condition that stops the iteration, either manually or through a specific criterion within a loop.</p></li>
+</ul>
+<p>Infinite iterators provide a flexible and powerful tool for generating endless sequences of data, making them essential for certain types of tasks in programming, especially when dealing with streams or ongoing processes.</p>
+</section>
+</section>
+<section id="chaining-and-combining-iterators">
+<h2>Chaining and Combining Iterators<a class="headerlink" href="#chaining-and-combining-iterators" title="Link to this heading">#</a></h2>
+<section id="combining-multiple-iterators-using-itertools-chain">
+<h3>Combining Multiple Iterators Using <code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code><a class="headerlink" href="#combining-multiple-iterators-using-itertools-chain" title="Link to this heading">#</a></h3>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module provides a powerful function called <code class="docutils literal notranslate"><span class="pre">chain()</span></code> that allows you to combine multiple iterators into a single continuous sequence. This means you can take several iterators (such as lists, tuples, or other iterable objects) and chain them together so that they are treated as one unified iterator.</p>
+<p><strong>How <code class="docutils literal notranslate"><span class="pre">chain()</span></code> Works:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code> takes multiple iterable objects as arguments and returns a new iterator that sequentially yields elements from each input iterable.</p></li>
+<li><p>The resulting iterator will yield all elements from the first iterable, followed by all elements from the second, and so on, until all elements from all iterables have been exhausted.</p></li>
+</ul>
+</section>
+<section id="useful-tools-from-the-itertools-module">
+<h3>Useful Tools from the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> Module<a class="headerlink" href="#useful-tools-from-the-itertools-module" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module includes many other functions that extend the power of iterators in Python. Here are a few notable ones:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">itertools.islice()</span></code></strong></p>
+<ul class="simple">
+<li><p>Allows you to slice an iterator, effectively allowing you to take a subset of elements from it.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">islice(range(10),</span> <span class="pre">2,</span> <span class="pre">8)</span></code> yields the numbers 2 through 7.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">itertools.cycle()</span></code></strong></p>
+<ul class="simple">
+<li><p>Repeats an iterable indefinitely. This is useful for creating an infinite loop of elements.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">cycle([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> yields <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">...</span></code> infinitely.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">itertools.zip_longest()</span></code></strong></p>
+<ul class="simple">
+<li><p>Combines multiple iterators into tuples, filling in missing values with a specified fill value if the iterators are of unequal lengths.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">zip_longest([1,</span> <span class="pre">2],</span> <span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c'],</span> <span class="pre">fillvalue='?')</span></code> yields <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">'a'),</span> <span class="pre">(2,</span> <span class="pre">'b'),</span> <span class="pre">(?,</span> <span class="pre">'c')</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">itertools.product()</span></code></strong></p>
+<ul class="simple">
+<li><p>Produces the Cartesian product of input iterables, which is useful for generating combinations of multiple iterators.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">product([1,</span> <span class="pre">2],</span> <span class="pre">['a',</span> <span class="pre">'b'])</span></code> yields <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">'a'),</span> <span class="pre">(1,</span> <span class="pre">'b'),</span> <span class="pre">(2,</span> <span class="pre">'a'),</span> <span class="pre">(2,</span> <span class="pre">'b')</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">itertools.groupby()</span></code></strong></p>
+<ul class="simple">
+<li><p>Groups consecutive elements of an iterable based on a specified key function.</p></li>
+<li><p>Example: Grouping elements in a list by their parity (odd or even).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="example-combining-two-lists-with-chain">
+<h3>Example: Combining Two Lists with <code class="docutils literal notranslate"><span class="pre">chain()</span></code><a class="headerlink" href="#example-combining-two-lists-with-chain" title="Link to this heading">#</a></h3>
+<p>Let’s see an example of how to use <code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code> to combine two lists:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Combine the two lists using itertools.chain</span>
+<span class="n">combined_iterator</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
+
+<span class="c1"># Iterate through the combined iterator and print the elements</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">combined_iterator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p>We have two lists, <code class="docutils literal notranslate"><span class="pre">list1</span></code> and <code class="docutils literal notranslate"><span class="pre">list2</span></code>.</p></li>
+<li><p>By passing these lists to <code class="docutils literal notranslate"><span class="pre">itertools.chain(list1,</span> <span class="pre">list2)</span></code>, we create an iterator that first yields all elements from <code class="docutils literal notranslate"><span class="pre">list1</span></code>, followed by all elements from <code class="docutils literal notranslate"><span class="pre">list2</span></code>.</p></li>
+<li><p>The combined sequence is then printed out in a single loop.</p></li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code> is a simple and efficient way to concatenate multiple iterators, making it ideal for tasks where you need to process elements from several sources as a single sequence.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module offers a variety of tools that enhance the functionality of iterators, enabling more complex and flexible data processing.</p></li>
+</ul>
+<p>By leveraging <code class="docutils literal notranslate"><span class="pre">chain()</span></code> and other tools from the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module, you can create more powerful and efficient iterator-based workflows in your Python programs.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<section id="recap-of-key-points-about-iterators">
+<h3>Recap of Key Points About Iterators<a class="headerlink" href="#recap-of-key-points-about-iterators" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Iterators</strong> enable sequential access to elements in a collection using the <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> methods.</p></li>
+<li><p><strong>Iterables</strong> return iterators, allowing easy looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p></li>
+<li><p><strong>Generators</strong> offer a simple, memory-efficient way to create iterators with the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword.</p></li>
+<li><p><strong>Infinite iterators</strong> generate endless sequences, useful for continuous data streams.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">itertools</span></code> module</strong> provides tools like <code class="docutils literal notranslate"><span class="pre">chain()</span></code> to combine and manipulate iterators.</p></li>
+</ul>
+<p>Iterators are crucial in Python, powering loops, comprehensions, and data processing. Mastering iterators helps you handle large datasets efficiently and write clean, powerful Python code.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,6 +1006,60 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-iterators-in-python">Introduction to Iterators in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-an-iterator">Definition of an Iterator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-iterators-in-python">Importance of Iterators in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-iterators-and-iterables">Difference Between Iterators and Iterables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-iterator">Creating an iterator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterator-protocol">Iterator Protocol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-pythons-built-in-iter-and-next-functions-work">How Python’s Built-in <code class="docutils literal notranslate"><span class="pre">iter()</span></code> and <code class="docutils literal notranslate"><span class="pre">next()</span></code> Functions Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-iterators-in-loops">Using Iterators in Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-for-loops-work-with-iterators">How <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops Work with Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behind-the-scenes-unpacking-the-for-loop-mechanism">Behind the Scenes: Unpacking the <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Mechanism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-manually-iterating-over-an-iterator-using-next">Example: Manually Iterating Over an Iterator Using <code class="docutils literal notranslate"><span class="pre">next()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generator-functions">Generator Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generators-as-a-simple-way-to-create-iterators">Generators as a Simple Way to Create Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-generators-and-traditional-iterators">Difference Between Generators and Traditional Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-generator-function-using-yield">Example of a Generator Function Using <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-iterators">Infinite Iterators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-infinite-iterators">Creating Infinite Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-use-cases-for-infinite-iterators">Practical Use Cases for Infinite Iterators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-implementing-an-infinite-iterator-using-generators">Example: Implementing an Infinite Iterator Using Generators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-and-combining-iterators">Chaining and Combining Iterators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-multiple-iterators-using-itertools-chain">Combining Multiple Iterators Using <code class="docutils literal notranslate"><span class="pre">itertools.chain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tools-from-the-itertools-module">Useful Tools from the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> Module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-combining-two-lists-with-chain">Example: Combining Two Lists with <code class="docutils literal notranslate"><span class="pre">chain()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-points-about-iterators">Recap of Key Points About Iterators</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
