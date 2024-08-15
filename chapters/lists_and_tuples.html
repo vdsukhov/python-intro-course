@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -379,6 +379,15 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type"><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities-between-lists-and-tuples">Similarities Between Lists and Tuples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-collections">Ordered Collections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-for-membership-testing">Support for Membership Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -605,9 +614,9 @@ numbers_2: [100, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ids after numbers_2 = numbers_1
-140142772179904 140142772179904
+140682693925888 140682693925888
 Ids after numbers_2 = numbers_1[::]
-140142772179904 140142772238464
+140682693925888 140682693928704
 </pre></div>
 </div>
 </div>
@@ -1040,6 +1049,137 @@ Let’s split it into two parts:</p>
 </ul>
 <p>So, in summary, when you want data that won’t change, use a tuple, and when you need flexibility, go with a list. It’s like choosing between a sealed bag (tuple) and a versatile backpack (list) based on your specific needs in Python.</p>
 </section>
+<section id="similarities-between-lists-and-tuples">
+<h2>Similarities Between Lists and Tuples<a class="headerlink" href="#similarities-between-lists-and-tuples" title="Link to this heading">#</a></h2>
+<section id="ordered-collections">
+<h3>Ordered Collections<a class="headerlink" href="#ordered-collections" title="Link to this heading">#</a></h3>
+<p>Both lists and tuples maintain the order of elements.
+This means that the items in a list or tuple are indexed, and you can access elements by their position in the sequence.</p>
+</section>
+<section id="indexing-and-slicing">
+<h3>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h3>
+<p>You can access individual elements using zero-based indexing, and you can slice them to get sub-sequences. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+ <span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+ 
+ <span class="c1"># Accessing elements</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Output: 3</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Output: 3</span>
+
+ <span class="c1"># Slicing</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Output: [2, 3]</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Output: (2, 3)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+3
+[2, 3]
+(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iteration">
+<h3>Iteration<a class="headerlink" href="#iteration" title="Link to this heading">#</a></h3>
+<p>Both lists and tuples support iteration. You can use loops (e.g., <code class="docutils literal notranslate"><span class="pre">for</span></code> loops) to iterate over the elements in a list or a tuple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_tuple</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 3 4 
+1 2 3 4 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="support-for-membership-testing">
+<h3>Support for Membership Testing<a class="headerlink" href="#support-for-membership-testing" title="Link to this heading">#</a></h3>
+<p>Both lists and tuples in Python support membership testing using the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators, which allow you to check whether an element exists in the collection or not.</p>
+<p>You can check if an item exists in a list or a tuple using the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">my_tuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">in</span> <span class="n">my_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator checks if an element is <strong>not</strong> present in a list. It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the element is not found and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># Check if 5 is not in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">)</span>  <span class="c1"># Output: True</span>
+
+<span class="c1"># Check if 2 is not in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">)</span>  <span class="c1"># Output: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator checks if an element is <strong>not</strong> present in a tuple. It behaves in the same way as with lists, returning <code class="docutils literal notranslate"><span class="pre">True</span></code> if the element is not found and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</section>
+<section id="length">
+<h3>Length<a class="headerlink" href="#length" title="Link to this heading">#</a></h3>
+<p>Both lists and tuples support the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, which returns the number of elements in the collection:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>  <span class="c1"># Output: 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">))</span>  <span class="c1"># Output: 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<p>While lists and tuples have several similarities, such as being ordered, indexable, iterable, and capable of containing multiple data types and nested structures, they differ primarily in their mutability:</p>
+<ul class="simple">
+<li><p><strong>Lists</strong> are mutable, meaning their elements can be modified after creation. You can add, remove, or change elements in a list.</p></li>
+<li><p><strong>Tuples</strong> are immutable, meaning once created, their elements cannot be changed. This immutability makes tuples useful for fixed data that shouldn’t change.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1118,6 +1258,15 @@ Let’s split it into two parts:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type"><code class="docutils literal notranslate"><span class="pre">tuple</span></code> data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities-between-lists-and-tuples">Similarities Between Lists and Tuples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-collections">Ordered Collections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-for-membership-testing">Support for Membership Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
