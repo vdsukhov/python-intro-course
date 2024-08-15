@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -507,42 +507,28 @@ Here is an possible code example to handle such case:</p>
 </pre></div>
 </div>
 <p>Here are possible outputs for two different inputs:</p>
-<p><strong>Input-1:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Input 1</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">name</span><span class="p">:</span> <span class="n">Vladimir</span>
 <span class="n">Enter</span> <span class="n">your</span> <span class="n">message</span><span class="p">:</span> <span class="n">I</span> <span class="n">always</span> <span class="n">wanted</span> <span class="n">to</span> <span class="n">say</span> <span class="n">u</span> <span class="n">smth</span>
 <span class="n">Your</span> <span class="n">message</span> <span class="n">was</span> <span class="n">read</span>
 <span class="n">End</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span>
 </pre></div>
 </div>
-<p><strong>Input-2:</strong></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Input 2</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Enter your name: Lucy
 Enter your message: Hi. How are u?
 Message was ignored
 End of the program
 </pre></div>
 </div>
-<!-- ::::{grid}
-:gutter: 2
-
-:::{grid-item-card} Input-1
-```
-Enter your name: Vladimir
-Enter your message: I always wanted to say u smth
-Your message was read
-End of the program
-```
-:::
-
-:::{grid-item-card} Input-2
-```
-Enter your name: Lucy
-Enter your message: Hi. How are u?
-Message was ignored
-End of the program
-```
-:::
-
-:::: -->
+</div>
+</div>
 <p>In this example person reads message if the message came from <code class="docutils literal notranslate"><span class="pre">&quot;Vladimir&quot;</span></code> otherwise the person ingore it.</p>
 </section>
 <section id="if-elif-else">
@@ -570,8 +556,8 @@ The possible code could be:</p>
 </div>
 <p>Here are examples of output with different input:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
 Input 1</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">name</span><span class="p">:</span> <span class="n">Vladimir</span>
 <span class="n">Enter</span> <span class="n">your</span> <span class="n">message</span><span class="p">:</span> <span class="n">I</span> <span class="n">always</span> <span class="n">wanted</span> <span class="n">to</span> <span class="n">say</span> <span class="n">u</span> <span class="n">smth</span>
@@ -580,8 +566,8 @@ Input 1</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 Input 2</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Enter your name: Lucy
 Enter your message: Hey. How are u?
@@ -589,8 +575,8 @@ Message was ignored
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 Input 3</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">name</span><span class="p">:</span> <span class="n">Jim</span>
 <span class="n">Enter</span> <span class="n">your</span> <span class="n">message</span><span class="p">:</span> <span class="n">Hey</span>
@@ -622,8 +608,8 @@ Input 3</label><div class="sd-tab-content docutils">
 </div>
 <p>Here are possible output for different input:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 Input 1</label><div class="sd-tab-content docutils">
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>Enter your name: Vladimir
 Enter message: Hello
@@ -632,8 +618,8 @@ Message was read
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 Input 2</label><div class="sd-tab-content docutils">
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>Enter your name: Vladimir
 Enter message: Hello
