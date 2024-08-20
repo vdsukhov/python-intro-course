@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ff6e0ac6" />
@@ -59,6 +59,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/offtopic/matrix_multiplication';</script>
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -369,13 +371,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="matrix-multiplication">
+  <section class="tex2jax_ignore mathjax_ignore" id="matrix-multiplication">
 <h1>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h1>
-<p>In this section, I will cover matrix multiplication. My objective is to explain why the matrix multiplication $C = A \cdot B$ uses this expression to calculate the $c_{ij}$ entry:</p>
-<p>$$
+<p>In this section, I will cover matrix multiplication. My objective is to explain why the matrix multiplication <span class="math notranslate nohighlight">\(C = A \cdot B\)</span> uses this expression to calculate the <span class="math notranslate nohighlight">\(c_{ij}\)</span> entry:</p>
+<div class="math notranslate nohighlight">
+\[
 c_{ij} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{in} \cdot b_{nj} = \sum\limits_{k  = 1}^{n} a_{ik} \cdot b_{kj},
-$$
-where $A$ is an $(m \times n)$ matrix and $B$ is an $(n \times p)$ matrix.</p>
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is an <span class="math notranslate nohighlight">\((m \times n)\)</span> matrix and <span class="math notranslate nohighlight">\(B\)</span> is an <span class="math notranslate nohighlight">\((n \times p)\)</span> matrix.</p>
 </section>
 
     <script type="text/x-thebe-config">

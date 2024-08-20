@@ -13,15 +13,16 @@ The book is organized into two main parts: **Main Part** and **Offtopic**. Below
 3. [Control Flow](chapters/control_flow.ipynb)
 4. [Lists and Tuples](chapters/lists_and_tuples.ipynb)
 5. [Strings](chapters/strings.ipynb)
-6. [Dictionaries and Sets](chapters/dict_and_set.ipynb)
+6. [2D Lists, Dictionaries and Sets](chapters/dict_and_set.ipynb)
 7. [Functions](chapters/funcs.ipynb)
-8. [Modules](chapters/modules.ipynb)
+8. [Modules and Packages](chapters/modules.ipynb)
 9. [Regular Expressions](chapters/regex.ipynb)
-10. [Files](chapters/files/files.ipynb)
-11. [Object-Oriented Programming - Part 1](chapters/oop1.ipynb)
-12. [Object-Oriented Programming - Part 2](chapters/oop2.ipynb)
+10. [File Handling](chapters/files/files.ipynb)
+11. [Object-Oriented Programming: Classes](chapters/oop1.ipynb)
+12. [Object-Oriented Programming: Inheritance](chapters/oop2.ipynb)
 13. [Exceptions](chapters/exceptions.ipynb)
 14. [Iterators](chapters/iterators.ipynb)
+15. [Functional Programming](chapters/functional_programming.ipynb)
 
 ### Offtopic
 

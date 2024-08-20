@@ -367,7 +367,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantification">Quantification</a></li>
 </ul>
             </nav>
@@ -380,7 +385,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="regular-expressions">
+  <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
 <h1>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Link to this heading">#</a></h1>
 <p>The main task of regular expressions (regex) is to search, match, and manipulate patterns within text.
 They allow you to efficiently find specific sequences, validate formats like emails or phone numbers, and perform complex text processing tasks with minimal code.
@@ -389,6 +394,20 @@ Regex is a powerful tool for working with text data in a precise and flexible wa
 <p>Let’s start with very basic examples.</p>
 <section id="regex-basics">
 <h2>Regex basics<a class="headerlink" href="#regex-basics" title="Link to this heading">#</a></h2>
+<section id="main-components-of-regex">
+<h3>Main components of regex<a class="headerlink" href="#main-components-of-regex" title="Link to this heading">#</a></h3>
+<p>Three main components of regex:</p>
+<dl class="simple myst">
+<dt>Pattern</dt><dd><p>The pattern is a sequence of characters that defines the search criteria. It could be a specific sequence of characters, a set of characters, or a more complex structure using special symbols to represent various possibilities.</p>
+</dd>
+<dt>Text</dt><dd><p>The text or sequence of characters that you want to search within. The pattern is applied to this text to find matches or perform substitutions.</p>
+</dd>
+<dt>Match</dt><dd><p>The match is the outcome of applying the pattern to the string. It indicates where and how the pattern fits within the string. A match can refer to the exact location, the part of the string that corresponds to the pattern, or simply a boolean value indicating whether a match exists or not.</p>
+</dd>
+</dl>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <p>We can use regex in the similar way as we would use basic string methods to find some substring in the text:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -432,6 +451,18 @@ bool(res): True
 </div>
 <p>This was just a basic example of what regex can do, but it’s far from showcasing their true power.
 Now, let’s dive into the key advantages and capabilities of regular expressions.</p>
+</section>
+</section>
+<section id="re-functions">
+<h2><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions<a class="headerlink" href="#re-functions" title="Link to this heading">#</a></h2>
+<p>The main functions provided by the re module include:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">re.match</span></code>: Checks for a match only at the beginning of the string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.search</span></code>: Searches the entire string for a match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.findall</span></code>: Returns a list of all matches found in the string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.finditer</span></code>: Returns an iterator yielding match objects for all matches found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.sub</span></code>: Replaces occurrences of the pattern with a replacement string.</p></li>
+</ol>
 </section>
 <section id="quantification">
 <h2>Quantification<a class="headerlink" href="#quantification" title="Link to this heading">#</a></h2>
@@ -533,7 +564,12 @@ Here’s a rundown of common quantifiers and their meanings:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantification">Quantification</a></li>
 </ul>
   </nav></div>
