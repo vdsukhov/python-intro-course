@@ -369,11 +369,29 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-string-methods">Basic String Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">regex approach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantification">Quantification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters">Metacharacters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-vs-literal-dot">Dot vs Literal Dot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters-and">Metacharacters: <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-sets">Character Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-character-set">Basic Character Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
 </ul>
             </nav>
         </div>
@@ -409,6 +427,8 @@ Regex is a powerful tool for working with text data in a precise and flexible wa
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <p>We can use regex in the similar way as we would use basic string methods to find some substring in the text:</p>
+<section id="basic-string-methods">
+<h4>Basic String Methods<a class="headerlink" href="#basic-string-methods" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Don’t explain your philosophy. Embody it.&quot;</span>
@@ -426,6 +446,9 @@ in: True
 </div>
 </div>
 </div>
+</section>
+<section id="regex-approach">
+<h4>regex approach<a class="headerlink" href="#regex-approach" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -453,6 +476,7 @@ bool(res): True
 Now, let’s dive into the key advantages and capabilities of regular expressions.</p>
 </section>
 </section>
+</section>
 <section id="re-functions">
 <h2><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions<a class="headerlink" href="#re-functions" title="Link to this heading">#</a></h2>
 <p>The main functions provided by the re module include:</p>
@@ -464,8 +488,182 @@ Now, let’s dive into the key advantages and capabilities of regular expression
 <li><p><code class="docutils literal notranslate"><span class="pre">re.sub</span></code>: Replaces occurrences of the pattern with a replacement string.</p></li>
 </ol>
 </section>
-<section id="quantification">
-<h2>Quantification<a class="headerlink" href="#quantification" title="Link to this heading">#</a></h2>
+<section id="metacharacters">
+<h2>Metacharacters<a class="headerlink" href="#metacharacters" title="Link to this heading">#</a></h2>
+<p>A metacharacter in regular expressions is a special character that has a unique meaning and function, rather than being interpreted as a literal character. These characters are used to create patterns that can match different types of text.</p>
+<section id="dot-metacharacter">
+<h3>Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter<a class="headerlink" href="#dot-metacharacter" title="Link to this heading">#</a></h3>
+<section id="explanation">
+<h4>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">#</a></h4>
+<p>The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> is one of the most commonly used metacharacters in regular expressions. It’s simple yet powerful, and it plays a key role in pattern matching.</p>
+<p>The Basic Function:</p>
+<ul class="simple">
+<li><p>The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> matches any single character except a newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p></li>
+<li><p>This means it can represent any letter, digit, symbol, or even a space.</p></li>
+</ul>
+<p>Examples:</p>
+<p>Suppose you have the regex pattern <code class="docutils literal notranslate"><span class="pre">'a.c'</span></code>. This pattern matches:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">‘abc’</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">‘a1c’</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">‘a-c’</span></p>
+<p>and in general any string where <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is followed by any single character and then <code class="docutils literal notranslate"><span class="pre">'c'</span></code>.</p>
+<p>Non-matching examples:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">‘ac’</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">‘abdc’</span></p>
+</section>
+<section id="implementation">
+<h4>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;a1c&#39;</span><span class="p">,</span> <span class="s1">&#39;a-c&#39;</span><span class="p">,</span> <span class="s1">&#39;ac&#39;</span><span class="p">,</span> <span class="s1">&#39;abdc&#39;</span><span class="p">]</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;a.c&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern found in </span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern found in  abc: True
+Pattern found in  a1c: True
+Pattern found in  a-c: True
+Pattern found in   ac: False
+Pattern found in abdc: False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Raw Strings</p>
+<p>In Python, an r string (or raw string) is a string prefixed with the letter <code class="docutils literal notranslate"><span class="pre">r</span></code> or <code class="docutils literal notranslate"><span class="pre">R</span></code>. The primary purpose of a raw string is to treat backslashes <code class="docutils literal notranslate"><span class="pre">\</span></code> as literal characters and not as escape characters. This is particularly useful when working with regular expressions or file paths, where backslashes are common.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rline</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Line 1\nLine 2\tTabbed&quot;</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;Line 1</span><span class="se">\n</span><span class="s2">Line 2</span><span class="se">\t</span><span class="s2">Tabbed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Raw line:&#39;</span><span class="p">,</span> <span class="n">rline</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regular line:&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="dot-vs-literal-dot">
+<h3>Dot vs Literal Dot<a class="headerlink" href="#dot-vs-literal-dot" title="Link to this heading">#</a></h3>
+<p>If you want to match an actual dot (a period or full stop), you need to escape it with a backslash <code class="docutils literal notranslate"><span class="pre">\.</span></code>.</p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">'a.c'</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">abc</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a.c</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a-c</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a c</span></p></li>
+</ul>
+</li>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">'a\.c'</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">abc</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a.c</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">a-c</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">a c</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;a.c&#39;</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;a\.c&#39;</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;a.c&#39;</span><span class="p">,</span> <span class="s1">&#39;a-c&#39;</span><span class="p">,</span> <span class="s1">&#39;a c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p1 in </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; | &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p2 in </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p1 in abc: True | p2 in abc: False
+p1 in a.c: True | p2 in a.c: True
+p1 in a-c: True | p2 in a-c: False
+p1 in a c: True | p2 in a c: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metacharacters-and">
+<h3>Metacharacters: <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code><a class="headerlink" href="#metacharacters-and" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code>: Matches the start of a string</p>
+<ul>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">'^cat'</span></code>:</p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">cat dog</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">dog cat</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code>: Matches the end of a string</p>
+<ul>
+<li><p>Pattern <code class="docutils literal notranslate"><span class="pre">'dog$'</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">cat dog</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">dog cat</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^cat&#39;</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;dog$&#39;</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat dog&#39;</span><span class="p">,</span> <span class="s1">&#39;dog cat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p1 in </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">l</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p2 in </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">l</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p1 in cat dog: True
+p2 in cat dog: True
+p1 in dog cat: False
+p2 in dog cat: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="character-sets">
+<h2>Character Sets<a class="headerlink" href="#character-sets" title="Link to this heading">#</a></h2>
+<p>Character sets, also known as character classes, are a feature in regular expressions that allow you to match any one of several characters at a specific position in the text. They are defined using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<p><strong>How Character Sets Work</strong>
+When you place characters inside square brackets, the regex engine will match any single character from that set.
+For example, the character set <code class="docutils literal notranslate"><span class="pre">[abc]</span></code> will match any one of the characters <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code>.</p>
+<section id="basic-character-set">
+<h3>Basic Character Set<a class="headerlink" href="#basic-character-set" title="Link to this heading">#</a></h3>
+<p>Pattern: <code class="docutils literal notranslate"><span class="pre">h[aeoiu]t</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hat</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hot</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hit</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">htt</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">hbt</span></p>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;h[aeiou]t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hat&#39;</span><span class="p">,</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="s1">&#39;hit&#39;</span><span class="p">,</span> <span class="s1">&#39;htt&#39;</span><span class="p">,</span> <span class="s1">&#39;hbt&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p in </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p in hat: True
+p in hot: True
+p in hit: True
+p in htt: False
+p in hbt: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="quantifiers">
+<h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Link to this heading">#</a></h2>
 <p>In regular expressions, quantifiers are special characters that specify how many times an element in the regex should be matched.
 They provide control over the number of occurrences of a character, group, or pattern in the input string.
 Here’s a rundown of common quantifiers and their meanings:</p>
@@ -566,11 +764,29 @@ Here’s a rundown of common quantifiers and their meanings:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-basics">Regex basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-string-methods">Basic String Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">regex approach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantification">Quantification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters">Metacharacters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-vs-literal-dot">Dot vs Literal Dot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters-and">Metacharacters: <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-sets">Character Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-character-set">Basic Character Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
 </ul>
   </nav></div>
 
