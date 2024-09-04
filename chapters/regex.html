@@ -405,11 +405,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
 <h1>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Link to this heading">#</a></h1>
-<p>The main task of regular expressions (regex) is to search, match, and manipulate patterns within text.
+<p>The main task of regular expressions (regex) is to <em>search</em>, <em>match</em>, and <em>manipulate</em> patterns within text.
 They allow you to efficiently find specific sequences, validate formats like emails or phone numbers, and perform complex text processing tasks with minimal code.
 Regex is a powerful tool for working with text data in a precise and flexible way.</p>
-<p>Python has a special module called <code class="docutils literal notranslate"><span class="pre">re</span></code> that can be used to work with regular expressions.</p>
-<p>Let’s start with very basic examples.</p>
 <section id="regex-basics">
 <h2>Regex basics<a class="headerlink" href="#regex-basics" title="Link to this heading">#</a></h2>
 <section id="main-components-of-regex">
@@ -449,6 +447,7 @@ in: True
 </section>
 <section id="regex-approach">
 <h4>regex approach<a class="headerlink" href="#regex-approach" title="Link to this heading">#</a></h4>
+<p>Python has a special module called <code class="docutils literal notranslate"><span class="pre">re</span></code> that can be used to work with regular expressions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -637,8 +636,13 @@ When you place characters inside square brackets, the regex engine will match an
 For example, the character set <code class="docutils literal notranslate"><span class="pre">[abc]</span></code> will match any one of the characters <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code>.</p>
 <section id="basic-character-set">
 <h3>Basic Character Set<a class="headerlink" href="#basic-character-set" title="Link to this heading">#</a></h3>
-<p>Pattern: <code class="docutils literal notranslate"><span class="pre">h[aeoiu]t</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hat</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hot</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hit</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">htt</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">hbt</span></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">h[aeoiu]t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hat</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hot</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">hit</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">htt</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">hbt</span></p></li>
+</ul>
+</li>
+</ul>
 <p><strong>Implementation</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
