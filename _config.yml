@@ -3,7 +3,7 @@
 
 title: Python Introduction Course
 author: Vladimir Sukhov
-logo: python_course_logo.png
+logo: logo.png
 copyright: "2024"
 
 # Force re-execution of notebooks on each build.
