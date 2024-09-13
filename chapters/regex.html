@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -388,6 +388,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-sets">Character Sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-character-set">Basic Character Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ranges">Ranges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-character-sets">Negative Character Sets</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
@@ -664,6 +666,91 @@ p in hbt: False
 </div>
 </div>
 </section>
+<section id="ranges">
+<h3>Ranges<a class="headerlink" href="#ranges" title="Link to this heading">#</a></h3>
+<p>Ranges in regular expression character sets are used to specify a sequence of characters that should be matched.
+A range is defined using a hyphen <code class="docutils literal notranslate"><span class="pre">-</span></code> between two characters inside square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and it tells the regex engine to match any character between those two characters.</p>
+<p><strong>How ranges work</strong></p>
+<ul class="simple">
+<li><p>A range is represented as <code class="docutils literal notranslate"><span class="pre">[start-end]</span></code>, where start and end are characters.</p></li>
+<li><p>The regex will match any character that falls within that range.</p></li>
+</ul>
+<p><strong>Common examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">[a-z]</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">b</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">y</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">A</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Z</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">3</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">5</span></p></li>
+</ul>
+</li>
+<li><p>Patter: <code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">a</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">b</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">y</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">A</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Z</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">3</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">5</span></p></li>
+</ul>
+</li>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">[0-9]</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">a</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">b</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">y</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">A</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Z</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">3</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">5</span></p></li>
+</ul>
+</li>
+<li><p>Combining Multiple Ranges: <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9]</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">a</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">b</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">y</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">A</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Z</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">3</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">5</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;[a-z]&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;[A-Z]&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;[0-9]&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;[a-zA-Z0-9]&#39;</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current pattern is: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current pattern is: [a-z]
+	a: True | b: True | y: True | A: False | Z: False | 3: False | 5: False
+Current pattern is: [A-Z]
+	a: False | b: False | y: False | A: True | Z: True | 3: False | 5: False
+Current pattern is: [0-9]
+	a: False | b: False | y: False | A: False | Z: False | 3: True | 5: True
+Current pattern is: [a-zA-Z0-9]
+	a: True | b: True | y: True | A: True | Z: True | 3: True | 5: True
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Using Hyphen as a Literal</p>
+<p>To match a literal hyphen, place it at the start or end of the character set.
+Example: <code class="docutils literal notranslate"><span class="pre">[a-z-]</span></code> matches any lowercase letter or the hyphen <code class="docutils literal notranslate"><span class="pre">-</span></code>.
+If the hyphen is placed in the middle (e.g., <code class="docutils literal notranslate"><span class="pre">[a-z-0-9]</span></code>), it’s interpreted as a range.</p>
+</div>
+</section>
+<section id="negative-character-sets">
+<h3>Negative Character Sets<a class="headerlink" href="#negative-character-sets" title="Link to this heading">#</a></h3>
+<p>Negative character set in regular expressions allows you to match any character except the ones specified inside the set.
+It’s a powerful feature when you want to exclude certain characters from matching.</p>
+<p><strong>How to Negate a Character Set</strong></p>
+<p>To negate a character set, you place a caret <code class="docutils literal notranslate"><span class="pre">^</span></code> immediately after the opening square bracket <code class="docutils literal notranslate"><span class="pre">[</span></code>.
+This means “match any character that is not in the set.”</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern <code class="docutils literal notranslate"><span class="pre">[^aeiou]</span></code>: match any character that is not a vowel (i.e., anything other than “a”, “e”, “i”, “o”, or “u”).</p></li>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">[^0-9]</span></code>: Match any character that is not a digit (anything other than “0” to “9”)</p></li>
+</ul>
+</section>
 </section>
 <section id="quantifiers">
 <h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Link to this heading">#</a></h2>
@@ -787,6 +874,8 @@ Here’s a rundown of common quantifiers and their meanings:</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-sets">Character Sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-character-set">Basic Character Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ranges">Ranges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-character-sets">Negative Character Sets</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
