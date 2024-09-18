@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -392,7 +392,34 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-character-sets">Negative Character Sets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-quantifiers">Common Quantifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-asterisk-quantifier">The Asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantifier">The <code class="docutils literal notranslate"><span class="pre">+</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-question-mark-quantifier">The Question Mark <code class="docutils literal notranslate"><span class="pre">?</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-quantifier-n">Exact Quantifier <code class="docutils literal notranslate"><span class="pre">{n}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-quantifier-n-m">Range Quantifier <code class="docutils literal notranslate"><span class="pre">{n,m}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-ended-quantifiers-n-and-m">Open-Ended Quantifiers <code class="docutils literal notranslate"><span class="pre">{n,}</span></code> and <code class="docutils literal notranslate"><span class="pre">{,m}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greedy-vs-non-greedy-quantifiers">Greedy vs. Non-Greedy Quantifiers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-groups">Understanding Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-groups">Why Use Groups?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-numbering">Groups Numbering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -754,9 +781,10 @@ This means “match any character that is not in the set.”</p>
 </section>
 <section id="quantifiers">
 <h2>Quantifiers<a class="headerlink" href="#quantifiers" title="Link to this heading">#</a></h2>
-<p>In regular expressions, quantifiers are special characters that specify how many times an element in the regex should be matched.
-They provide control over the number of occurrences of a character, group, or pattern in the input string.
-Here’s a rundown of common quantifiers and their meanings:</p>
+<p>Quantifiers in regular expressions specify how many times a particular character, group, or character class should appear in the input for a match to occur. They are essential tools that allow you to fine-tune your pattern matching, making your regex as specific or as general as needed.</p>
+<section id="common-quantifiers">
+<h3>Common Quantifiers<a class="headerlink" href="#common-quantifiers" title="Link to this heading">#</a></h3>
+<p>Here is the table with the most commonly used quantifiers in regular expressions:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-right"><p>Symbol</p></th>
@@ -779,12 +807,424 @@ Here’s a rundown of common quantifiers and their meanings:</p>
 <tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">{n,}</span></code></p></td>
 <td class="text-left"><p>Matches <code class="docutils literal notranslate"><span class="pre">n</span></code> or more occurrences of the preceding element.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">{n,m}</span></code></p></td>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">{,m}</span></code></p></td>
+<td class="text-left"><p>Matches up to <code class="docutils literal notranslate"><span class="pre">m</span></code> (including zero) occurrences of the preceding element</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">{n,m}</span></code></p></td>
 <td class="text-left"><p>Matches between <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">m</span></code> occurrences of the preceding element.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="the-asterisk-quantifier">
+<h3>The Asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> Quantifier<a class="headerlink" href="#the-asterisk-quantifier" title="Link to this heading">#</a></h3>
+<p><strong>Explanation</strong>. The <code class="docutils literal notranslate"><span class="pre">*</span></code> quantifier tells the regex engine to match the preceding element <strong>zero or more times</strong>.
+It’s like saying, “Match this element if it appears any number of times, including not at all.”</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">ca*t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“ct”</span> (zero <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“bat”</span> (doesn’t start with <code class="docutils literal notranslate"><span class="pre">'c'</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca*t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern matches &#39;ct&#39;: True
+Pattern matches &#39;cat&#39;: True
+Pattern matches &#39;caaat&#39;: True
+Pattern matches &#39;bat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-quantifier">
+<h3>The <code class="docutils literal notranslate"><span class="pre">+</span></code> Quantifier<a class="headerlink" href="#the-quantifier" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong> The <code class="docutils literal notranslate"><span class="pre">+</span></code> quantifier matches the preceding element <strong>one or more times</strong>. It’s like ordering at least one item: “I want one or more scoops of ice cream.”</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">ca+t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“ct”</span> (no <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, so it doesn’t match)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“bat”</span> (doesn’t start with <code class="docutils literal notranslate"><span class="pre">'c'</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca+t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern matches &#39;ct&#39;: False
+Pattern matches &#39;cat&#39;: True
+Pattern matches &#39;caaat&#39;: True
+Pattern matches &#39;bat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-question-mark-quantifier">
+<h3>The Question Mark <code class="docutils literal notranslate"><span class="pre">?</span></code> Quantifier<a class="headerlink" href="#the-question-mark-quantifier" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong> The <code class="docutils literal notranslate"><span class="pre">?</span></code> quantifier matches the preceding element <strong>zero or one time</strong>. It’s useful when an element is optional in the pattern.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">ca?t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“ct”</span> (zero <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“caaat”</span> (more than one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, so it doesn’t match)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca?t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern matches &#39;ct&#39;: True
+Pattern matches &#39;cat&#39;: True
+Pattern matches &#39;caaat&#39;: False
+Pattern matches &#39;bat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exact-quantifier-n">
+<h3>Exact Quantifier <code class="docutils literal notranslate"><span class="pre">{n}</span></code><a class="headerlink" href="#exact-quantifier-n" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong> The <code class="docutils literal notranslate"><span class="pre">{n}</span></code> quantifier matches <strong>exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> occurrences</strong> of the preceding element.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">ca{2}t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“ct”</span> (zero <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caat”</span> (exactly two <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca</span><span class="si">{2}</span><span class="s1">t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern matches &#39;ct&#39;: False
+Pattern matches &#39;cat&#39;: False
+Pattern matches &#39;caat&#39;: True
+Pattern matches &#39;caaat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="range-quantifier-n-m">
+<h3>Range Quantifier <code class="docutils literal notranslate"><span class="pre">{n,m}</span></code><a class="headerlink" href="#range-quantifier-n-m" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong> The <code class="docutils literal notranslate"><span class="pre">{n,m}</span></code> quantifier matches <strong>between <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">m</span></code> occurrences</strong> of the preceding element.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">ca{1,3}t</span></code></p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“ct”</span> (zero <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caat”</span> (two <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“caaaat”</span> (four <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca{1,3}t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaaat&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern matches &#39;ct&#39;: False
+Pattern matches &#39;cat&#39;: True
+Pattern matches &#39;caat&#39;: True
+Pattern matches &#39;caaat&#39;: True
+Pattern matches &#39;caaaat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="open-ended-quantifiers-n-and-m">
+<h3>Open-Ended Quantifiers <code class="docutils literal notranslate"><span class="pre">{n,}</span></code> and <code class="docutils literal notranslate"><span class="pre">{,m}</span></code><a class="headerlink" href="#open-ended-quantifiers-n-and-m" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{n,}</span></code>: Matches <strong><code class="docutils literal notranslate"><span class="pre">n</span></code> or more</strong> occurrences.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{,m}</span></code>: Matches <strong>up to <code class="docutils literal notranslate"><span class="pre">m</span></code></strong> occurrences (including zero).</p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Pattern <code class="docutils literal notranslate"><span class="pre">ca{2,}t</span></code> matches two or more <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s:</p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caat”</span> (two <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+</ul>
+</li>
+<li><p>Pattern <code class="docutils literal notranslate"><span class="pre">ca{,2}t</span></code> matches up to two <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s:</p>
+<ul>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“ct”</span> (zero <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“cat”</span> (one <code class="docutils literal notranslate"><span class="pre">'a'</span></code>)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">“caat”</span> (two <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">“caaat”</span> (three <code class="docutils literal notranslate"><span class="pre">'a'</span></code>s)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pattern for two or more &#39;a&#39;s</span>
+<span class="n">pattern_n_or_more</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca{2,}t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pattern: &#39;ca{2,}t&#39;&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern_n_or_more</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+
+<span class="c1"># Pattern for up to two &#39;a&#39;s</span>
+<span class="n">pattern_up_to_m</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ca{,2}t&#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ct&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;caat&#39;</span><span class="p">,</span> <span class="s1">&#39;caaat&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Pattern: &#39;ca{,2}t&#39;&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pattern matches &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern_up_to_m</span><span class="p">,</span> <span class="n">word</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pattern: &#39;ca{2,}t&#39;
+Pattern matches &#39;cat&#39;: False
+Pattern matches &#39;caat&#39;: True
+Pattern matches &#39;caaat&#39;: True
+
+Pattern: &#39;ca{,2}t&#39;
+Pattern matches &#39;ct&#39;: True
+Pattern matches &#39;cat&#39;: True
+Pattern matches &#39;caat&#39;: True
+Pattern matches &#39;caaat&#39;: False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="greedy-vs-non-greedy-quantifiers">
+<h3>Greedy vs. Non-Greedy Quantifiers<a class="headerlink" href="#greedy-vs-non-greedy-quantifiers" title="Link to this heading">#</a></h3>
+<p><strong>Explanation.</strong> By default, quantifiers are <strong>greedy</strong>, meaning they match as many occurrences as possible.
+Sometimes, you might want them to be <strong>non-greedy</strong> (or <strong>lazy</strong>), matching as few occurrences as needed.</p>
+<p>To make a quantifier non-greedy, you append a <code class="docutils literal notranslate"><span class="pre">?</span></code> to it.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Greedy Pattern: <code class="docutils literal notranslate"><span class="pre">&quot;&lt;.*&gt;&quot;</span></code></p>
+<ul>
+<li><p>Matches the longest possible string starting with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Non-Greedy Pattern: <code class="docutils literal notranslate"><span class="pre">&quot;&lt;.*?&gt;&quot;</span></code></p>
+<ul>
+<li><p>Matches the shortest possible string starting with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&lt;div&gt;Content&lt;/div&gt;&lt;span&gt;More&lt;/span&gt;&quot;</span>
+
+<span class="c1"># Greedy match</span>
+<span class="n">pattern_greedy</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;.*&gt;&#39;</span>
+<span class="n">match_greedy</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern_greedy</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Greedy match:&quot;</span><span class="p">,</span> <span class="n">match_greedy</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+
+<span class="c1"># Non-greedy match</span>
+<span class="n">pattern_non_greedy</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span>
+<span class="n">match_non_greedy</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern_non_greedy</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Non-greedy match:&quot;</span><span class="p">,</span> <span class="n">match_non_greedy</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Greedy match: &lt;div&gt;Content&lt;/div&gt;&lt;span&gt;More&lt;/span&gt;
+Non-greedy match: &lt;div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="groups">
+<h2>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h2>
+<p>Groups in regular expressions allow you to capture parts of the matching text and work with them separately.
+They are like containers that hold specific portions of the text you’re interested in.
+Groups make complex pattern matching and text manipulation tasks more manageable.</p>
+<section id="understanding-groups">
+<h3>Understanding Groups<a class="headerlink" href="#understanding-groups" title="Link to this heading">#</a></h3>
+<p>Imagine you’re sorting a collection of colored balls into boxes based on their colors:</p>
+<ul class="simple">
+<li><p><strong>Red balls go into the red box.</strong></p></li>
+<li><p><strong>Blue balls go into the blue box.</strong></p></li>
+<li><p><strong>Green balls go into the green box.</strong></p></li>
+</ul>
+<p>Each box represents a group that holds items of a particular type. Similarly, in regex, groups let you isolate and handle specific parts of the text that match certain patterns.</p>
+</section>
+<section id="why-use-groups">
+<h3>Why Use Groups?<a class="headerlink" href="#why-use-groups" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Extraction</strong>: Pull out specific pieces of data from a larger text.</p></li>
+<li><p><strong>Repetition</strong>: Apply quantifiers to entire patterns, not just single characters.</p></li>
+<li><p><strong>Substitution</strong>: Replace or rearrange parts of the text.</p></li>
+<li><p><strong>Referencing</strong>: Reuse matched groups elsewhere in the pattern or replacement text.</p></li>
+</ul>
+</section>
+<section id="capturing-groups">
+<h3>Capturing Groups<a class="headerlink" href="#capturing-groups" title="Link to this heading">#</a></h3>
+<p>A capturing group is created by placing the desired pattern inside parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<section id="basic-syntax">
+<h4>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(subpattern)</span></code></p></li>
+</ul>
+</section>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(cat)</span></code></p>
+<ul>
+<li><p>Matches and captures the exact string <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(\d{3})-(\d{2})-(\d{4})</span></code></p>
+<ul>
+<li><p>Captures three groups of digits in a Social Security number format.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="groups-numbering">
+<h4>Groups Numbering<a class="headerlink" href="#groups-numbering" title="Link to this heading">#</a></h4>
+<p>Groups are automatically numbered based on the order of their opening parentheses <code class="docutils literal notranslate"><span class="pre">(</span></code> from left to right.</p>
+<ul class="simple">
+<li><p><strong>Group 0</strong>: The entire match.</p></li>
+<li><p><strong>Group 1</strong>: The first capturing group.</p></li>
+<li><p><strong>Group 2</strong>: The second capturing group.</p></li>
+<li><p><strong>And so on…</strong></p></li>
+</ul>
+</section>
+<section id="id1">
+<h4>Implementation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;440-27-9201&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{3}</span><span class="s1">)-(\d</span><span class="si">{2}</span><span class="s1">)-(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">res</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Group </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group 0: 440-27-9201
+Group 1: 440
+Group 2: 27
+Group 3: 9201
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="named-groups">
+<h3>Named Groups<a class="headerlink" href="#named-groups" title="Link to this heading">#</a></h3>
+<p>Named groups assign a name to a group, making your regex more readable and the code easier to maintain.</p>
+<section id="syntax">
+<h4>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(?P&lt;name&gt;subpattern)</span></code></p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Date: 2023-09-17&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;year&gt;\d</span><span class="si">{4}</span><span class="s1">)-(?P&lt;month&gt;\d</span><span class="si">{2}</span><span class="s1">)-(?P&lt;day&gt;\d</span><span class="si">{2}</span><span class="s1">)&#39;</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Year:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Month:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Day:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year: 2023
+Month: 09
+Day: 17
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -878,7 +1318,34 @@ Here’s a rundown of common quantifiers and their meanings:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-character-sets">Negative Character Sets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-quantifiers">Common Quantifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-asterisk-quantifier">The Asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantifier">The <code class="docutils literal notranslate"><span class="pre">+</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-question-mark-quantifier">The Question Mark <code class="docutils literal notranslate"><span class="pre">?</span></code> Quantifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-quantifier-n">Exact Quantifier <code class="docutils literal notranslate"><span class="pre">{n}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-quantifier-n-m">Range Quantifier <code class="docutils literal notranslate"><span class="pre">{n,m}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-ended-quantifiers-n-and-m">Open-Ended Quantifiers <code class="docutils literal notranslate"><span class="pre">{n,}</span></code> and <code class="docutils literal notranslate"><span class="pre">{,m}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greedy-vs-non-greedy-quantifiers">Greedy vs. Non-Greedy Quantifiers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-groups">Understanding Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-groups">Why Use Groups?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-numbering">Groups Numbering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
