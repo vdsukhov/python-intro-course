@@ -418,6 +418,11 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-capturing-groups">Non-Capturing Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-groups">Nested Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backreferences">Backreferences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-groups-in-substitutions">Using Groups in Substitutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -1225,6 +1230,151 @@ Day: 17
 </div>
 </section>
 </section>
+<section id="non-capturing-groups">
+<h3>Non-Capturing Groups<a class="headerlink" href="#non-capturing-groups" title="Link to this heading">#</a></h3>
+<p>Sometimes you need to group parts of a pattern without capturing them. Non-capturing groups help in such cases.</p>
+<p><strong>Syntax</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">(?:subpattern)</span></code></p></li>
+</ul>
+<p><strong>Why Use Non-Capturing Groups?</strong></p>
+<ul class="simple">
+<li><p>Performance: Avoids unnecessary capturing, which can speed up the regex.</p></li>
+<li><p>Clarity: Keeps the numbering of capturing groups consistent.</p></li>
+</ul>
+<p>Example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;redapple greenapple yellowapple&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?:red|green|yellow)(apple)&#39;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(0, 8), match=&#39;redapple&#39;&gt; (&#39;apple&#39;,)
+&lt;re.Match object; span=(9, 19), match=&#39;greenapple&#39;&gt; (&#39;apple&#39;,)
+&lt;re.Match object; span=(20, 31), match=&#39;yellowapple&#39;&gt; (&#39;apple&#39;,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nested-groups">
+<h3>Nested Groups<a class="headerlink" href="#nested-groups" title="Link to this heading">#</a></h3>
+<p>Groups can be nested within other groups. Numbering is assigned by the opening parenthesis from left to right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;((a)(b)(c))(\d</span><span class="si">{3}</span><span class="s1">)&#39;</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 0:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 1:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 2:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 3:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 4:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 5:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group 0: abc123
+Group 1: abc
+Group 2: a
+Group 3: b
+Group 4: c
+Group 5: 123
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="backreferences">
+<h3>Backreferences<a class="headerlink" href="#backreferences" title="Link to this heading">#</a></h3>
+<p>Backreferences allow you to match the same text as previously matched by a capturing group.</p>
+<p><strong>Syntax</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">\number</span></code> where <code class="docutils literal notranslate"><span class="pre">number</span></code> is the group number.</p></li>
+</ul>
+<p><strong>Example:</strong> Matching Duplicate Words</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is is a test test.&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b(\w+)\s+\1\b&#39;</span>
+<span class="c1"># \b assert position at a word boundary</span>
+<span class="c1"># \w+ matches 1 or more occurrences of any word character </span>
+<span class="c1"># \s+ matches 1 or more occurrences of any whitespace character</span>
+<span class="c1"># \1 matches the same text as most recently matched by the 1st capturing group</span>
+
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duplicate words:&quot;</span><span class="p">,</span> <span class="n">matches</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Duplicate words: [&#39;is&#39;, &#39;test&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-groups-in-substitutions">
+<h3>Using Groups in Substitutions<a class="headerlink" href="#using-groups-in-substitutions" title="Link to this heading">#</a></h3>
+<p>Groups are extremely useful in the <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> function for performing complex text substitutions.</p>
+<p><strong>Example:</strong> Swapping First and Last Names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Doe, John&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+),\s+(\w+)&#39;</span>
+<span class="n">replacement</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\2 \1&#39;</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reformatted name:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reformatted name: John Doe
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<p>Groups in regular expressions are powerful tools that allow you to:</p>
+<ul class="simple">
+<li><p>Capture specific parts of the text.</p></li>
+<li><p>Refer back to those parts within your pattern or replacement text.</p></li>
+<li><p>Organize complex patterns into manageable sections.</p></li>
+</ul>
+<p>Understanding groups is like having a well-organized toolbox—you know exactly where each tool is and how to use it effectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><em>Capturing Groups:</em> Use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> to capture.</p></li>
+<li><p><em>Named Groups:</em> Use <code class="docutils literal notranslate"><span class="pre">(?P&lt;name&gt;)</span></code> for better readability.</p></li>
+<li><p><em>Non-Capturing Groups:</em> Use <code class="docutils literal notranslate"><span class="pre">(?:)</span></code> when you need grouping without capturing.</p></li>
+<li><p><em>Backreferences:</em> Use <code class="docutils literal notranslate"><span class="pre">\number</span></code> to refer back to captured groups.</p></li>
+<li><p><em>Substitutions:</em> Use groups in <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> to manipulate text.</p></li>
+</ul>
+</div>
+<p>With groups, your regular expressions become more flexible and powerful, enabling you to handle complex text processing tasks with ease.</p>
+</section>
 </section>
 </section>
 
@@ -1344,6 +1494,11 @@ Day: 17
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-capturing-groups">Non-Capturing Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-groups">Nested Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backreferences">Backreferences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-groups-in-substitutions">Using Groups in Substitutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
