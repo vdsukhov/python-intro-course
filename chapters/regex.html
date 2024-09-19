@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -377,11 +377,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters">Metacharacters</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-vs-literal-dot">Dot vs Literal Dot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters-and">Metacharacters: <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code></a></li>
 </ul>
@@ -515,9 +511,7 @@ Now, let’s dive into the key advantages and capabilities of regular expression
 <p>A metacharacter in regular expressions is a special character that has a unique meaning and function, rather than being interpreted as a literal character. These characters are used to create patterns that can match different types of text.</p>
 <section id="dot-metacharacter">
 <h3>Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter<a class="headerlink" href="#dot-metacharacter" title="Link to this heading">#</a></h3>
-<section id="explanation">
-<h4>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">#</a></h4>
-<p>The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> is one of the most commonly used metacharacters in regular expressions. It’s simple yet powerful, and it plays a key role in pattern matching.</p>
+<p><strong>Explanation.</strong> The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> is one of the most commonly used metacharacters in regular expressions. It’s simple yet powerful, and it plays a key role in pattern matching.</p>
 <p>The Basic Function:</p>
 <ul class="simple">
 <li><p>The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> matches any single character except a newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p></li>
@@ -529,9 +523,7 @@ Now, let’s dive into the key advantages and capabilities of regular expression
 <p>and in general any string where <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is followed by any single character and then <code class="docutils literal notranslate"><span class="pre">'c'</span></code>.</p>
 <p>Non-matching examples:</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">‘ac’</span> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">‘abdc’</span></p>
-</section>
-<section id="implementation">
-<h4>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h4>
+<p><strong>Implementation</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;a1c&#39;</span><span class="p">,</span> <span class="s1">&#39;a-c&#39;</span><span class="p">,</span> <span class="s1">&#39;ac&#39;</span><span class="p">,</span> <span class="s1">&#39;abdc&#39;</span><span class="p">]</span>
@@ -564,7 +556,6 @@ Pattern found in abdc: False
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 <section id="dot-vs-literal-dot">
 <h3>Dot vs Literal Dot<a class="headerlink" href="#dot-vs-literal-dot" title="Link to this heading">#</a></h3>
@@ -1430,11 +1421,7 @@ Group 5: 123
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-functions"><code class="docutils literal notranslate"><span class="pre">re</span></code> Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters">Metacharacters</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-metacharacter">Dot <code class="docutils literal notranslate"><span class="pre">.</span></code> metacharacter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-vs-literal-dot">Dot vs Literal Dot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacharacters-and">Metacharacters: <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code></a></li>
 </ul>
