@@ -370,7 +370,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-string-methods">Basic String Methods</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">regex approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">Regex approach</a></li>
 </ul>
 </li>
 </ul>
@@ -406,18 +406,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-groups">Understanding Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-groups">Why Use Groups?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-numbering">Groups Numbering</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-capturing-groups">Non-Capturing Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-groups">Nested Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backreferences">Backreferences</a></li>
@@ -479,7 +469,7 @@ in: True
 </div>
 </section>
 <section id="regex-approach">
-<h4>regex approach<a class="headerlink" href="#regex-approach" title="Link to this heading">#</a></h4>
+<h4>Regex approach<a class="headerlink" href="#regex-approach" title="Link to this heading">#</a></h4>
 <p>Python has a special module called <code class="docutils literal notranslate"><span class="pre">re</span></code> that can be used to work with regular expressions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,14 +1125,11 @@ Groups make complex pattern matching and text manipulation tasks more manageable
 <section id="capturing-groups">
 <h3>Capturing Groups<a class="headerlink" href="#capturing-groups" title="Link to this heading">#</a></h3>
 <p>A capturing group is created by placing the desired pattern inside parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
-<section id="basic-syntax">
-<h4>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h4>
+<p><strong>Basic Syntax</strong></p>
 <ul class="simple">
-<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(subpattern)</span></code></p></li>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">(subpattern)</span></code></p></li>
 </ul>
-</section>
-<section id="examples">
-<h4>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h4>
+<p><strong>Examples</strong></p>
 <ul class="simple">
 <li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(cat)</span></code></p>
 <ul>
@@ -1155,19 +1142,14 @@ Groups make complex pattern matching and text manipulation tasks more manageable
 </ul>
 </li>
 </ul>
-</section>
-<section id="groups-numbering">
-<h4>Groups Numbering<a class="headerlink" href="#groups-numbering" title="Link to this heading">#</a></h4>
-<p>Groups are automatically numbered based on the order of their opening parentheses <code class="docutils literal notranslate"><span class="pre">(</span></code> from left to right.</p>
+<p><strong>Groups Numbering.</strong> Groups are automatically numbered based on the order of their opening parentheses <code class="docutils literal notranslate"><span class="pre">(</span></code> from left to right.</p>
 <ul class="simple">
 <li><p><strong>Group 0</strong>: The entire match.</p></li>
 <li><p><strong>Group 1</strong>: The first capturing group.</p></li>
 <li><p><strong>Group 2</strong>: The second capturing group.</p></li>
 <li><p><strong>And so on…</strong></p></li>
 </ul>
-</section>
-<section id="id1">
-<h4>Implementation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p><strong>Implementation</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -1193,18 +1175,14 @@ Group 3: 9201
 </div>
 </div>
 </section>
-</section>
 <section id="named-groups">
 <h3>Named Groups<a class="headerlink" href="#named-groups" title="Link to this heading">#</a></h3>
 <p>Named groups assign a name to a group, making your regex more readable and the code easier to maintain.</p>
-<section id="syntax">
-<h4>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h4>
+<p><strong>Syntax</strong></p>
 <ul class="simple">
-<li><p><strong>Pattern</strong>: <code class="docutils literal notranslate"><span class="pre">(?P&lt;name&gt;subpattern)</span></code></p></li>
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">(?P&lt;name&gt;subpattern)</span></code></p></li>
 </ul>
-</section>
-<section id="id2">
-<h4>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p><strong>Example</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -1228,7 +1206,6 @@ Day: 17
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="non-capturing-groups">
 <h3>Non-Capturing Groups<a class="headerlink" href="#non-capturing-groups" title="Link to this heading">#</a></h3>
@@ -1446,7 +1423,7 @@ Group 5: 123
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-components-of-regex">Main components of regex</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-string-methods">Basic String Methods</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">regex approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-approach">Regex approach</a></li>
 </ul>
 </li>
 </ul>
@@ -1482,18 +1459,8 @@ Group 5: 123
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-groups">Understanding Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-groups">Why Use Groups?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-numbering">Groups Numbering</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-groups">Capturing Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-groups">Named Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-capturing-groups">Non-Capturing Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-groups">Nested Groups</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backreferences">Backreferences</a></li>
