@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
@@ -411,6 +411,26 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lookahead-and-lookbehind">Lookahead and Lookbehind</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookahead">Lookahead</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lookahead">Positive Lookahead <code class="docutils literal notranslate"><span class="pre">(?=...)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-lookahead">Negative Lookahead <code class="docutils literal notranslate"><span class="pre">(?!...)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookbehind">Lookbehind</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lookbehind">Positive Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;=...)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-lookbehind">Negative Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;!...)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-re-usage">Examples of <code class="docutils literal notranslate"><span class="pre">re</span></code> usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-extracting-urls-from-text">Example 1: Extracting URLs from text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-validating-and-masking-credit-card-numbers">Example 2: Validating and Masking Credit Card Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -1344,6 +1364,304 @@ Group 5: 123
 <p>With groups, your regular expressions become more flexible and powerful, enabling you to handle complex text processing tasks with ease.</p>
 </section>
 </section>
+<section id="lookahead-and-lookbehind">
+<h2>Lookahead and Lookbehind<a class="headerlink" href="#lookahead-and-lookbehind" title="Link to this heading">#</a></h2>
+<p>Lookahead and lookbehind are assertions in regular expressions that allow you to match a pattern only if it is (or isn’t) followed or preceded by another pattern, without including that surrounding text in the match.</p>
+<section id="lookahead">
+<h3>Lookahead<a class="headerlink" href="#lookahead" title="Link to this heading">#</a></h3>
+<section id="positive-lookahead">
+<h4>Positive Lookahead <code class="docutils literal notranslate"><span class="pre">(?=...)</span></code><a class="headerlink" href="#positive-lookahead" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Syntax <code class="docutils literal notranslate"><span class="pre">X(?=Y)</span></code></p></li>
+<li><p>Meaning: Match <code class="docutils literal notranslate"><span class="pre">X</span></code> only if it is followed by <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">\w+(?=\s+car)</span></code></p></li>
+<li><p>Text: <code class="docutils literal notranslate"><span class="pre">&quot;red</span> <span class="pre">car,</span> <span class="pre">blue</span> <span class="pre">bike,</span> <span class="pre">green</span> <span class="pre">car&quot;</span></code></p></li>
+<li><p>Matches: <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;red car, blue bike, green car&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+(?=\s+car)&#39;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(0, 3), match=&#39;red&#39;&gt; red
+&lt;re.Match object; span=(20, 25), match=&#39;green&#39;&gt; green
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-lookahead">
+<h4>Negative Lookahead <code class="docutils literal notranslate"><span class="pre">(?!...)</span></code><a class="headerlink" href="#negative-lookahead" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Syntax: <code class="docutils literal notranslate"><span class="pre">X(?!Y)</span></code></p></li>
+<li><p>Meaning: Match <code class="docutils literal notranslate"><span class="pre">X</span></code> only if it is not followed by <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">\w+(?:\s+)(?!car)</span></code></p></li>
+<li><p>Text: <code class="docutils literal notranslate"><span class="pre">&quot;red</span> <span class="pre">car,</span> <span class="pre">blue</span> <span class="pre">bike,</span> <span class="pre">green</span> <span class="pre">car&quot;</span></code></p></li>
+<li><p>Matches: <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;red car, blue bike, green car&quot;</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+(?:\s+)(?!car)&#39;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(9, 14), match=&#39;blue &#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lookbehind">
+<h3>Lookbehind<a class="headerlink" href="#lookbehind" title="Link to this heading">#</a></h3>
+<section id="positive-lookbehind">
+<h4>Positive Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;=...)</span></code><a class="headerlink" href="#positive-lookbehind" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Syntax: <code class="docutils literal notranslate"><span class="pre">(?&lt;=Y)X</span></code></p></li>
+<li><p>Meaning: Match <code class="docutils literal notranslate"><span class="pre">X</span></code> only if it is preceded by <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">(?&lt;=\$)\d+</span></code></p></li>
+<li><p>Text: <code class="docutils literal notranslate"><span class="pre">&quot;Price:</span> <span class="pre">$100,</span> <span class="pre">$200&quot;</span></code></p></li>
+<li><p>Matches: <code class="docutils literal notranslate"><span class="pre">&quot;100&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;200&quot;</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Price: $100, $200&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?&lt;=\$)\d+&#39;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(8, 11), match=&#39;100&#39;&gt; 100
+&lt;re.Match object; span=(14, 17), match=&#39;200&#39;&gt; 200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-lookbehind">
+<h4>Negative Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;!...)</span></code><a class="headerlink" href="#negative-lookbehind" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Syntax: <code class="docutils literal notranslate"><span class="pre">(?&lt;!Y)X</span></code></p></li>
+<li><p>Meaning: Match <code class="docutils literal notranslate"><span class="pre">X</span></code> only if it is not preceded by <code class="docutils literal notranslate"><span class="pre">Y</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>Pattern: <code class="docutils literal notranslate"><span class="pre">(?&lt;!\$)\b\d+\b</span></code></p></li>
+<li><p>Text: <code class="docutils literal notranslate"><span class="pre">&quot;Items:</span> <span class="pre">$5,</span> <span class="pre">10,</span> <span class="pre">$15,</span> <span class="pre">20&quot;</span></code></p></li>
+<li><p>Matches: <code class="docutils literal notranslate"><span class="pre">&quot;10&quot;,</span> <span class="pre">&quot;20&quot;</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Items: $5, 10, $15, 20&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?&lt;!\$)\b\d+\b&#39;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(11, 13), match=&#39;10&#39;&gt; 10
+&lt;re.Match object; span=(20, 22), match=&#39;20&#39;&gt; 20
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Positive Lookahead <code class="docutils literal notranslate"><span class="pre">(?=...)</span></code>: Ensures a pattern follows.</p></li>
+<li><p>Negative Lookahead <code class="docutils literal notranslate"><span class="pre">(?!...)</span></code>: Ensures a pattern does not follow.</p></li>
+<li><p>Positive Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;=...)</span></code>: Ensures a pattern precedes.</p></li>
+<li><p>Negative Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;!...)</span></code>: Ensures a pattern does not precede.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can combine lookaheads and lookbehinds for precise matching.</p>
+</div>
+</section>
+</section>
+<section id="examples-of-re-usage">
+<h2>Examples of <code class="docutils literal notranslate"><span class="pre">re</span></code> usage<a class="headerlink" href="#examples-of-re-usage" title="Link to this heading">#</a></h2>
+<section id="example-1-extracting-urls-from-text">
+<h3>Example 1: Extracting URLs from text<a class="headerlink" href="#example-1-extracting-urls-from-text" title="Link to this heading">#</a></h3>
+<p><strong>Objective:</strong> Extract all URLs from a block of text, including those starting with <em>http://</em>, <em>https://</em>, or <em>www.</em>, and capture the domain and path separately.</p>
+<p>Techniques Used:</p>
+<ul class="simple">
+<li><p>Groups: To capture the domain and path.</p></li>
+<li><p>Quantifiers: To match variable-length patterns.</p></li>
+<li><p>Lookahead: To ensure the match ends at the correct point.</p></li>
+<li><p>Character Classes: To match specific sets of characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.findall</span></code> Function: To find all occurrences.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Visit our website at https://www.example.com/path/to/page or our sister site at http://example.org.</span>
+<span class="s2">Don&#39;t forget to check out www.example.net for more information.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(https?://|www\.)&#39;</span>            <span class="c1"># Protocol or www</span>
+<span class="n">pattern</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;([A-Za-z0-9.-]+)&#39;</span>            <span class="c1"># Domain</span>
+<span class="n">pattern</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;(\.[A-Za-z]{2,6})&#39;</span>           <span class="c1"># Top-level domain</span>
+<span class="n">pattern</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;(/[A-Za-z0-9./?=&amp;%-]*)?&#39;</span>     <span class="c1"># Optional path</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(https?://|www\.)</span></code>: Matches <em>http://</em>, <em>https://</em>, or <em>www.</em> using a group and alternation <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">([A-Za-z0-9.-]+)</span></code>: Captures the domain name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(\.[A-Za-z]{2,6})</span></code>: Captures the top-level domain (e.g., .com, .org).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(/[A-Za-z0-9./?=&amp;%-]*)?</span></code>: Optionally captures the path and query string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="n">protocol_or_www</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">tld</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">match</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Full URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Protocol or &#39;www.&#39;: </span><span class="si">{</span><span class="n">protocol_or_www</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Domain: </span><span class="si">{</span><span class="n">domain</span><span class="si">}{</span><span class="n">tld</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path: </span><span class="si">{</span><span class="n">path</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full URL: https://www.example.com/path/to/page
+Protocol or &#39;www.&#39;: https://
+Domain: www.example.com
+Path: /path/to/page
+
+Full URL: http://example.org
+Protocol or &#39;www.&#39;: http://
+Domain: example.org
+Path: /
+
+Full URL: www.example.net
+Protocol or &#39;www.&#39;: www.
+Domain: example.net
+Path: /
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2-validating-and-masking-credit-card-numbers">
+<h3>Example 2: Validating and Masking Credit Card Numbers<a class="headerlink" href="#example-2-validating-and-masking-credit-card-numbers" title="Link to this heading">#</a></h3>
+<p><strong>Objective:</strong> Identify credit card numbers in a text, validate their format, and mask all but the last four digits for security.</p>
+<p>Techniques Used:</p>
+<ul class="simple">
+<li><p>Groups: To capture parts of the credit card number.</p></li>
+<li><p>Quantifiers: To specify exact and variable lengths.</p></li>
+<li><p>Lookbehind: To ensure numbers are not preceded by certain words.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.sub</span></code> Function: For substitution and masking.</p></li>
+<li><p>Non-Capturing Groups: To group without capturing.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Customer data:</span>
+<span class="s2">Name: John Doe</span>
+<span class="s2">Credit Card: 1234-5678-9012-3456</span>
+<span class="s2">SSN: 123-45-6789</span>
+
+<span class="s2">Name: Jane Smith</span>
+<span class="s2">Credit Card: 9876 5432 1098 7654</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Pattern to match credit card numbers</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?&lt;!\d)(?:\d</span><span class="si">{4}</span><span class="s1">[-\s]?)</span><span class="si">{3}</span><span class="s1">\d</span><span class="si">{4}</span><span class="s1">(?!\d)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(?&lt;!\d)</span></code>: Negative lookbehind to ensure the number is not part of a longer number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(?:\d{4}[-\s]?){3}</span></code>: Non-capturing group matching three sets of four digits, optionally followed by - or space.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\d{4}</span></code>: Matches the last four digits.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(?!\d)</span></code>: Negative lookahead to ensure no digit follows.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to mask credit card numbers</span>
+<span class="k">def</span> <span class="nf">mask_cc</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+    <span class="n">full_cc</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    <span class="n">masked_cc</span> <span class="o">=</span> <span class="s1">&#39;****-****-****-&#39;</span> <span class="o">+</span> <span class="n">full_cc</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">masked_cc</span>
+
+<span class="c1"># Masking credit card numbers</span>
+<span class="n">masked_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">mask_cc</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">masked_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Customer data:
+Name: John Doe
+Credit Card: ****-****-****-3456
+SSN: 123-45-6789
+
+Name: Jane Smith
+Credit Card: ****-****-****-7654
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Summary<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Regular expressions, commonly known as regex, are sequences of characters that define search patterns, primarily used for string matching and manipulation. In Python, the <code class="docutils literal notranslate"><span class="pre">re</span></code> module provides support for working with regular expressions.</p>
+<div class="note admonition">
+<p class="admonition-title">Core Components</p>
+<ul class="simple">
+<li><p>Metacharacters: Special characters that have unique meanings (e.g., <code class="docutils literal notranslate"><span class="pre">.,</span> <span class="pre">^,</span> <span class="pre">$,</span> <span class="pre">*,</span> <span class="pre">+,</span> <span class="pre">?,</span> <span class="pre">{},</span> <span class="pre">[],</span> <span class="pre">|,</span> <span class="pre">(),</span> <span class="pre">\</span></code>).</p></li>
+<li><p>Quantifiers: Specify the number of occurrences (<code class="docutils literal notranslate"><span class="pre">*,</span> <span class="pre">+,</span> <span class="pre">?,</span> <span class="pre">{n},</span> <span class="pre">{n,},</span> <span class="pre">{,m},</span> <span class="pre">{n,m}</span></code>).</p></li>
+<li><p>Character Sets: Use square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> to define a set of characters to match.</p></li>
+<li><p>Groups: Use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> to capture parts of the matched text for reuse.</p></li>
+<li><p>Lookahead and Lookbehind: Allow assertions about what precedes or follows the current position without including it in the match.</p></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1455,6 +1773,26 @@ Group 5: 123
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lookahead-and-lookbehind">Lookahead and Lookbehind</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookahead">Lookahead</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lookahead">Positive Lookahead <code class="docutils literal notranslate"><span class="pre">(?=...)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-lookahead">Negative Lookahead <code class="docutils literal notranslate"><span class="pre">(?!...)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookbehind">Lookbehind</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lookbehind">Positive Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;=...)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-lookbehind">Negative Lookbehind <code class="docutils literal notranslate"><span class="pre">(?&lt;!...)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-re-usage">Examples of <code class="docutils literal notranslate"><span class="pre">re</span></code> usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-extracting-urls-from-text">Example 1: Extracting URLs from text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-validating-and-masking-credit-card-numbers">Example 2: Validating and Masking Credit Card Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
 </ul>
   </nav></div>
 
