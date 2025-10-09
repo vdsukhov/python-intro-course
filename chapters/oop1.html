@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ff6e0ac6" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="File Handling" href="files/files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Python Introduction Course - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Python Introduction Course - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python Introduction Course - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -211,9 +200,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -325,24 +319,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -431,7 +417,7 @@ It’s like having separate rooms for different things. Now, let’s explore the
 <p>When a function is called, a local namespace is created, acting as a container for variables within that function. This namespace is isolated from the global namespace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">local_scope_example</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">local_scope_example</span><span class="p">():</span>
     <span class="n">local_variable</span> <span class="o">=</span> <span class="s2">&quot;I am local&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
 
@@ -454,10 +440,10 @@ It’s like having separate rooms for different things. Now, let’s explore the
 <p>In the example below, <code class="docutils literal notranslate"><span class="pre">inner_function</span></code> has access to both its local namespace and the namespace of <code class="docutils literal notranslate"><span class="pre">outer_function</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer_function</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">outer_function</span><span class="p">():</span>
     <span class="n">outer_variable</span> <span class="o">=</span> <span class="s2">&quot;I am in the outer function&quot;</span>
 
-    <span class="k">def</span> <span class="nf">inner_function</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inner_function</span><span class="p">():</span>
         <span class="n">inner_variable</span> <span class="o">=</span> <span class="s2">&quot;I am in the inner function&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">outer_variable</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">inner_variable</span><span class="p">)</span>
@@ -484,7 +470,7 @@ I am in the inner function
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">global_variable</span> <span class="o">=</span> <span class="s2">&quot;I am global&quot;</span>
 
-<span class="k">def</span> <span class="nf">global_scope_example</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">global_scope_example</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">global_variable</span><span class="p">)</span>
 
 <span class="n">global_scope_example</span><span class="p">()</span>
@@ -535,7 +521,7 @@ When called within a function or at the module level, it provides access to the 
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">global_variable</span> <span class="o">=</span> <span class="s2">&quot;I am global&quot;</span>
 
-<span class="k">def</span> <span class="nf">check_globals</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_globals</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">globals</span><span class="p">())</span>
 
 <span class="n">check_globals</span><span class="p">()</span>
@@ -548,7 +534,7 @@ When called within a function or at the module level, it provides access to the 
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python-intro-course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7fb75c1782f0&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7fb75c4c6b40&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7fb75c4c6b40&gt;, &#39;open&#39;: &lt;function open at 0x7fb75e285e40&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7fb75c183920&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7fb75c182ac0&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7fb75c183740&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7fb75c1839c0&gt;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Automatically created module for IPython interactive environment&#39;, &#39;__package__&#39;: None, &#39;__loader__&#39;: None, &#39;__spec__&#39;: None, &#39;__builtin__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;_ih&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;_oh&#39;: {}, &#39;_dh&#39;: [PosixPath(&#39;/home/vdsukhov/gitrepos/github/python-intro-course/chapters&#39;)], &#39;In&#39;: [&#39;&#39;, &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;], &#39;Out&#39;: {}, &#39;get_ipython&#39;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x7f201429ad50&gt;&gt;, &#39;exit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f2014226270&gt;, &#39;quit&#39;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x7f2014226270&gt;, &#39;open&#39;: &lt;function open at 0x7f201947c0e0&gt;, &#39;_&#39;: &#39;&#39;, &#39;__&#39;: &#39;&#39;, &#39;___&#39;: &#39;&#39;, &#39;_i&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;_ii&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;_iii&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;_i1&#39;: &#39;def local_scope_example():\n    local_variable = &quot;I am local&quot;\n    print(local_variable)\n\nlocal_scope_example()\n# This line would raise an error as local_variable is not accessible here.\n# print(local_variable)&#39;, &#39;local_scope_example&#39;: &lt;function local_scope_example at 0x7f201423a2a0&gt;, &#39;_i2&#39;: &#39;def outer_function():\n    outer_variable = &quot;I am in the outer function&quot;\n\n    def inner_function():\n        inner_variable = &quot;I am in the inner function&quot;\n        print(outer_variable)\n        print(inner_variable)\n\n    inner_function()\n\nouter_function()&#39;, &#39;outer_function&#39;: &lt;function outer_function at 0x7f201423a480&gt;, &#39;_i3&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef global_scope_example():\n    print(global_variable)\n\nglobal_scope_example()\nprint(global_variable)&#39;, &#39;global_variable&#39;: &#39;I am global&#39;, &#39;global_scope_example&#39;: &lt;function global_scope_example at 0x7f201423a5c0&gt;, &#39;_i4&#39;: &#39;global_variable = &quot;I am global&quot;\n\ndef check_globals():\n    print(globals())\n\ncheck_globals()&#39;, &#39;check_globals&#39;: &lt;function check_globals at 0x7f201423ac00&gt;}
 </pre></div>
 </div>
 </div>
@@ -558,7 +544,7 @@ When called within a function or at the module level, it provides access to the 
 When called within a function, it provides access to the local namespace of that function, allowing you to inspect or modify local variables.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_locals</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_locals</span><span class="p">():</span>
     <span class="n">local_variable</span> <span class="o">=</span> <span class="s2">&quot;I am local&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 
@@ -600,8 +586,8 @@ It’s a versatile function. When used without arguments, it shows the names in 
 </ul>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -677,8 +663,8 @@ As we going through the <code class="docutils literal notranslate"><span class="
 <p>So far, we have explored the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, and you may have observed that this particular method name includes leading and trailing double underscores. In Python, there are several reserved names that, when implemented, allow us to add additional functionality to our class. We will delve into more of these reserved names later in the course. However, we are not limited to using only these reserved methods. We have the flexibility to implement various custom methods of our own. Let’s proceed by adding a couple of custom methods to our class.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -687,7 +673,7 @@ As we going through the <code class="docutils literal notranslate"><span class="
         <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
     
-    <span class="k">def</span> <span class="nf">vehicle_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vehicle_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Prints the status of the car including all attributes.&quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Car Status:&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Brand: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -698,7 +684,7 @@ As we going through the <code class="docutils literal notranslate"><span class="
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2"> miles&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- Doors: </span><span class="si">{</span><span class="s1">&#39;Locked&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Unlocked&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">unlock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unlock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Unlocks the doors of the car.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are now unlocked.&quot;</span><span class="p">)</span>
@@ -706,7 +692,7 @@ As we going through the <code class="docutils literal notranslate"><span class="
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are already unlocked.&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Locks the doors of the car.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doors are now locked.&quot;</span><span class="p">)</span>
@@ -787,9 +773,9 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 <p>We can create class attributes that will be shared among all instances of the class. For example, let’s say we want to store the geographical location of our factory and have access to this information from any instance. Here is an example of how we can achieve this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
     <span class="n">factory_location</span> <span class="o">=</span> <span class="s2">&quot;51.010406, 10.256190&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -820,8 +806,8 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 <p>However, we cannot run this code right away because Python doesn’t know how to compare our car objects. In order to sort our objects, we need to be able to compare them. Currently, if we try to compare our car objects, we will encounter an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -846,8 +832,8 @@ For example, a <code class="docutils literal notranslate"><span class="pre">Car<
 In this specific case, we want to check whether the left object is less than the right one. To do this, we can implement a method with the name <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>. Let’s implement it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -856,7 +842,7 @@ In this specific case, we want to check whether the left object is less than the
         <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">=</span> <span class="n">horsepower</span>
-    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">horsepower</span>
 
 
@@ -883,7 +869,7 @@ In this specific case, we want to check whether the left object is less than the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Car object at 0x7fb75d8abe30&gt;, &lt;__main__.Car object at 0x7fb75470a510&gt;, &lt;__main__.Car object at 0x7fb75c17a2a0&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Car object at 0x7f2014084800&gt;, &lt;__main__.Car object at 0x7f2014084f50&gt;, &lt;__main__.Car object at 0x7f20140842c0&gt;]
 </pre></div>
 </div>
 </div>
@@ -893,8 +879,8 @@ However, the output doesn’t make a lot of sense to us.
 To address this, we can implement another magic method called <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">horsepower</span><span class="p">,</span> <span class="n">fuel</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">odometer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doors_locked</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
@@ -903,9 +889,9 @@ To address this, we can implement another magic method called <code class="docut
         <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="n">odometer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">doors_locked</span> <span class="o">=</span> <span class="n">doors_locked</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">=</span> <span class="n">horsepower</span>
-    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">horsepower</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">horsepower</span>
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Brand: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s2">, Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
@@ -985,7 +971,8 @@ Brand: Tesla, Model: X
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1063,8 +1050,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
